@@ -1,125 +1,315 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teuku Rijul – Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teuku Rijul — Freelancer Profesional</title>
+  <meta name="description" content="Teuku Rijul — Freelancer: general support, project assistance, data security. Cepat, rapi, dapat diandalkan."/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background: #050505;
-        color: white;
-        text-align: center;
-    }
+  <style>
+  :root{
+    --bg-0:#05060a; --bg-1:linear-gradient(180deg,#071017,#030409);
+    --muted:#9aa3ac;
+    --accent1:#00f2ff; --accent2:#ff00aa;
+  }
+  /* Reset */
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    background:var(--bg-1); color:#e6eef6; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden; transition:background .25s,color .25s;
+  }
 
-    /* ===== PROFILE IMAGE (ANTI RUSAK) ===== */
-    .profile-container {
-        width: 180px;
-        height: 180px;
-        margin: 40px auto 20px auto;
-        border-radius: 50%;
-        overflow: hidden;
-        box-shadow: 0 0 25px rgba(0,255,255,0.6);
-    }
+  /* Preloader (light & safe) */
+  #preloader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg-0);z-index:9999}
+  .loader{width:72px;height:72px;border:7px solid rgba(255,255,255,0.06);border-top-color:var(--accent1);border-radius:999px;animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
 
-    .profile-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-    }
+  /* NAVBAR */
+  .navbar{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:92%;max-width:1100px;display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-radius:12px;background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);z-index:90;border:1px solid rgba(255,255,255,0.03)}
+  .brand{font-weight:700;color:var(--accent1)}
+  .nav-links{display:flex;gap:14px}
+  .nav-links a{color:#bfefff;text-decoration:none;padding:6px 10px;border-radius:8px;font-weight:600}
+  .nav-links a:hover{color:var(--accent2)}
 
-    /* ===== TITLE ===== */
-    h1 {
-        font-size: 26px;
-        margin-top: 10px;
-        text-shadow: 0 0 10px cyan;
-    }
+  /* Hero */
+  .hero{min-height:68vh;display:flex;align-items:center;justify-content:center;padding:85px 20px 40px;background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920');background-size:cover;background-position:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,23,0.56),rgba(2,6,23,0.66));z-index:0}
+  .hero-inner{position:relative;z-index:2;max-width:1100px;width:100%;display:grid;grid-template-columns:280px 1fr;gap:30px;align-items:center}
 
-    p.desc {
-        font-size: 14px;
-        opacity: 0.8;
-        margin-bottom: 30px;
-    }
+  /* Profile (safe responsive) */
+  .profile-container{width:200px;height:200px;border-radius:50%;overflow:hidden;margin:0 auto;border:3px solid rgba(0,255,255,0.22);box-shadow:0 8px 30px rgba(0,255,255,0.08);position:relative}
+  .profile-img{width:100%;height:100%;object-fit:cover;display:block;image-rendering:auto}
+  .profile-name{margin-top:12px;text-align:center;font-weight:700;font-size:20px;color:#e9ffff}
+  .profile-sub{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
 
-    /* ===== CARD ===== */
-    .card {
-        width: 90%;
-        max-width: 480px;
-        background: rgba(0,255,255,0.05);
-        border: 1px solid rgba(0,255,255,0.3);
-        border-radius: 12px;
-        margin: 15px auto;
-        padding: 18px;
-        backdrop-filter: blur(6px);
-        box-shadow: 0 0 15px rgba(0,255,255,0.2);
-    }
+  /* Hero text */
+  .hero-text h1{margin:0;font-size:40px;line-height:1.02;color:#e8fbff;text-shadow:0 6px 20px rgba(0,255,255,0.04)}
+  .hero-text p{color:#c8eaf0;margin:10px 0 0}
 
-    .card h2 {
-        margin-top: 0;
-        text-shadow: 0 0 8px cyan;
-    }
+  .cta-row{display:flex;gap:12px;margin-top:18px}
+  .cta-btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041021;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,0.45)}
+  .cta-secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:#bcdde6;text-decoration:none}
 
-    .price {
-        font-size: 22px;
-        color: cyan;
-        margin: 10px 0;
-    }
+  /* Sections */
+  main{max-width:1100px;margin:28px auto;padding:0 18px}
+  .section{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:28px;border-radius:12px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.03)}
+  .section h2{margin:0 0 10px;color:#e8fbff}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .card{padding:16px;border-radius:12px;background:rgba(255,255,255,0.02);text-align:center;border:1px solid rgba(255,255,255,0.02)}
 
-    /* ===== BUTTON ===== */
-    .btn {
-        display: inline-block;
-        padding: 10px 18px;
-        margin-top: 10px;
-        border: 1px solid cyan;
-        color: cyan;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: 0.2s;
-    }
+  /* Portfolio */
+  .portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .portfolio-item{position:relative;border-radius:10px;overflow:hidden}
+  .portfolio-item img{width:100%;height:170px;object-fit:cover;transition:transform .35s ease,filter .35s ease}
+  .portfolio-item:hover img{transform:scale(1.06);filter:brightness(.7)}
+  .portfolio-info{position:absolute;left:12px;right:12px;bottom:8px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));padding:10px;border-radius:8px;color:#fff;opacity:0;transform:translateY(8px);transition:.3s}
+  .portfolio-item:hover .portfolio-info{opacity:1;transform:translateY(0)}
 
-    .btn:hover {
-        background: cyan;
-        color: black;
-        box-shadow: 0 0 15px cyan;
-    }
+  /* Footer & social */
+  footer{text-align:center;padding:22px;color:var(--muted)}
+  .social-links{display:flex;gap:12px;justify-content:center;margin-top:10px}
+  .social-links img{width:34px;filter:invert(1) hue-rotate(160deg) saturate(1.6)}
 
-    footer {
-        margin: 40px 0 20px 0;
-        opacity: 0.4;
-    }
-</style>
+  /* Floating WA & toggle */
+  .floating-wa{position:fixed;right:16px;bottom:16px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,0.16);z-index:80}
+  .cyber-toggle{position:fixed;left:16px;bottom:16px;background:rgba(0,0,0,0.45);padding:8px 12px;border-radius:10px;color:var(--accent1);border:1px solid rgba(0,255,255,0.08);z-index:80;cursor:pointer}
 
+  /* Counters */
+  .counter-boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:14px}
+  .counter{padding:12px;border-radius:8px;background:rgba(255,255,255,0.02);text-align:center}
+  .counter .num{font-size:28px;font-weight:800;color:var(--accent1)}
+
+  /* QR grid */
+  .qr-grid{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  .qr-grid img{width:120px;border-radius:10px;filter:drop-shadow(0 6px 16px rgba(0,255,255,0.08))}
+
+  /* Responsive */
+  @media (max-width:880px){.hero-inner{grid-template-columns:1fr;gap:18px}.nav-links{display:none}.navbar{left:12px;transform:none;width:calc(100% - 24px)}}
+  @media (max-width:480px){.hero-text h1{font-size:28px}.profile-container{width:140px;height:140px}}
+
+  /* Reduced-motion preference */
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  </style>
 </head>
 <body>
+  <!-- Preloader -->
+  <div id="preloader" role="status" aria-label="Memuat..."><div class="loader" aria-hidden="true"></div></div>
 
-    <!-- PROFILE SECTION -->
-    <div class="profile-container">
-        <img src="assets/profile_optimized.jpg" alt="Profile">
+  <!-- NAVBAR -->
+  <header class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="brand">Teuku Rijul</div>
+    <nav class="nav-links" role="menubar" aria-label="Menu">
+      <a href="#home">Home</a>
+      <a href="#services">Layanan</a>
+      <a href="#pricing">Harga</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div>
+          <div class="profile-container" aria-hidden="false">
+            <!-- Use the optimized file uploaded to assets -->
+            <img id="profileImg" class="profile-img" src="assets/profile_optimized.jpg"
+                 alt="Foto Teuku Rijul"
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='https://via.placeholder.com/400?text=Teuku+Rijul'">
+          </div>
+          <div class="profile-name">Teuku Rijul</div>
+          <div class="profile-sub">Freelancer Profesional · Cepat · Rapi · Dapat Diandalkan</div>
+        </div>
+
+        <div class="hero-text">
+          <h1 id="hero-title">Freelancer Profesional untuk Semua Kebutuhanmu</h1>
+          <p>General support, project assistance, dan data security—layanan lengkap, rapi, dan tepat waktu.</p>
+          <div class="cta-row">
+            <a class="cta-btn" href="https://wa.me/62895328323138" target="_blank" rel="noopener">Hubungi Sekarang</a>
+            <a class="cta-secondary" href="#portfolio">Lihat Portfolio</a>
+          </div>
+
+          <div class="counter-boxes" aria-hidden="false">
+            <div class="counter"><div class="num" data-target="250">0</div><div class="label">Project Selesai</div></div>
+            <div class="counter"><div class="num" data-target="120">0</div><div class="label">Klien Puas</div></div>
+            <div class="counter"><div class="num" data-target="5">0</div><div class="label">Tahun Pengalaman</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <h2>Layanan Premium</h2>
+      <p>Solusi cepat, rapi, dan aman untuk kebutuhan personal & bisnis.</p>
+      <div class="cards">
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" width="56" alt=""><h3>General Support</h3><p class="muted">Bantuan tugas sesuai kebutuhan.</p></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="56" alt=""><h3>Project Assistance</h3><p class="muted">Hasil rapi & cepat.</p></div>
+        <div class="card"><img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" width="56" alt=""><h3>Data Security</h3><p class="muted">Kerahasiaan & keamanan.</p></div>
+      </div>
+    </section>
+
+    <!-- SHOWCASE SLIDER -->
+    <section class="section" aria-hidden="true">
+      <div style="overflow:hidden;border-radius:12px"><div style="display:flex;animation:slide 12s infinite"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400" style="width:100%;height:320px;object-fit:cover" alt=""><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1400" style="width:100%;height:320px;object-fit:cover" alt=""></div></div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <h2>Paket Layanan</h2>
+      <div style="margin-top:12px" class="pricing">
+        <div class="card"><h3>Ultimate</h3><div style="font-weight:800;color:var(--accent1)">Rp 2.999.999</div><div class="muted">Full support + premium</div></div>
+        <div class="card"><h3>Pro</h3><div style="font-weight:800;color:var(--accent1)">Rp 1.999.999</div><div class="muted">Proses cepat</div></div>
+        <div class="card"><h3>Basic</h3><div style="font-weight:800;color:var(--accent1)">Rp 999.999</div><div class="muted">Standar</div></div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section">
+      <h2>Portfolio</h2>
+      <p>Contoh karya — klik untuk detail.</p>
+      <div class="portfolio">
+        <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?w=900" alt="Project A"><div class="portfolio-info">Project A • Desain • 2024</div></div>
+        <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900" alt="Project B"><div class="portfolio-info">Project B • Automation • 2023</div></div>
+        <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900" alt="Project C"><div class="portfolio-info">Project C • Data • 2022</div></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+      <h2>Testimonial</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <div class="card">“Pelayanan cepat dan sangat membantu.” — <strong>A. Rahman</strong></div>
+        <div class="card">“Hasil kerja rapi dan profesional.” — <strong>S. Putri</strong></div>
+        <div class="card">“Komunikasi jelas, pengerjaan tepat waktu.” — <strong>M. Hadi</strong></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Kontak</h2>
+      <p>Hubungi saya untuk pekerjaan atau kerja sama:</p>
+      <p><a href="https://wa.me/62895328323138" target="_blank" rel="noopener">WhatsApp: +62 895-3283-2313-8</a></p>
+      <div style="margin-top:12px" class="qr-grid">
+        <div><img alt="QR FB" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.facebook.com/share/1BsavFiyEV/"><div style="text-align:center;color:var(--accent1);font-weight:600">Facebook</div></div>
+        <div><img alt="QR IG" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.instagram.com/teuku_rijul?igsh=dHN5OHlodGZjemIw"><div style="text-align:center;color:var(--accent1);font-weight:600">Instagram</div></div>
+        <div><img alt="QR TT" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.tiktok.com/@teuku.rijul?_r=1&_t=ZS-91rxkLXSvJ4"><div style="text-align:center;color:var(--accent1);font-weight:600">TikTok</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Teuku Rijul — Semua Hak Dilindungi</p>
+    <div class="social-links" aria-hidden="false">
+      <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="facebook"></a>
+      <a href="https://www.instagram.com/teuku_rijul" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="instagram"></a>
+      <a href="https://www.tiktok.com/@teuku.rijul" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="tiktok"></a>
     </div>
+  </footer>
 
-    <h1>Teuku Rijul</h1>
-    <p class="desc">Web Developer • Cyber UI Designer • Portfolio</p>
+  <!-- Floating WA & Cyber Toggle -->
+  <a class="floating-wa" href="https://wa.me/62895328323138" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="wa" style="width:28px;filter:invert(1)"></a>
+  <button class="cyber-toggle" id="cyberToggle" aria-pressed="false">Cyberpunk Mode</button>
 
-    <!-- SERVICE CARD -->
-    <div class="card">
-        <h2>Paket Jasa Portfolio</h2>
-        <div class="price">Rp 999.999 – Rp 2.999.999</div>
-        <p>Membuat website personal premium dengan style futuristik/cyberpunk.</p>
-        <a class="btn" href="https://wa.me/628***">Hubungi Saya</a>
-    </div>
+  <!-- JS (safe & optimized) -->
+  <script>
+  // Hide preloader & safe fade-in
+  window.addEventListener('load', () => {
+    const p = document.getElementById('preloader');
+    if(p) p.style.display = 'none';
+    setTimeout(()=>document.body.style.opacity = '1', 60);
 
-    <!-- PROJECT CARD -->
-    <div class="card">
-        <h2>Contoh Project</h2>
-        <p>Beberapa project website modern & ringan.</p>
-        <a class="btn" href="#">Lihat Project</a>
-    </div>
+    // start counters after load
+    document.querySelectorAll('.num').forEach(el=>{
+      const target = +el.dataset.target || 0;
+      let cur = 0;
+      const inc = Math.max(1, Math.floor(target / 120));
+      const tick = () => {
+        cur += inc;
+        if(cur < target){ el.innerText = cur; setTimeout(tick, 18); } else el.innerText = target;
+      };
+      tick();
+    });
 
-<footer>© 2025 Teuku Rijul</footer>
+    // delay heavier effects slightly (rain/hologram)
+    setTimeout(()=>{ enableOptionalEffects(); }, 900);
+  });
 
+  // Optional effects (light & safe)
+  function enableOptionalEffects(){
+    // Example: enable gentle rain canvas only on wider screens
+    if(window.innerWidth > 700){ initRainCanvas(); }
+    // You can add more safe effects here
+  }
+
+  // Rain Canvas (optimized)
+  function initRainCanvas(){
+    const canvas = document.createElement('canvas');
+    canvas.id = 'rainCanvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = 0; canvas.style.left = 0;
+    canvas.style.width = '100%'; canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none'; canvas.style.zIndex = '2'; canvas.style.opacity = '0.12';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    function resize(){ canvas.width = innerWidth; canvas.height = innerHeight; }
+    window.addEventListener('resize', resize); resize();
+
+    const drops = [];
+    const count = Math.min(80, Math.floor(innerWidth/12));
+    for(let i=0;i<count;i++){
+      drops.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,len:8+Math.random()*24,spd:2+Math.random()*3});
+    }
+    function draw(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.strokeStyle = 'rgba(0,255,255,0.12)';
+      ctx.lineWidth = 1.6;
+      drops.forEach(d=>{
+        ctx.beginPath(); ctx.moveTo(d.x,d.y); ctx.lineTo(d.x,d.y+d.len); ctx.stroke();
+        d.y += d.spd;
+        if(d.y > canvas.height){ d.y = -20; d.x = Math.random()*canvas.width; }
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      const href = this.getAttribute('href');
+      if(href.length>1){
+        e.preventDefault();
+        const dest = document.querySelector(href);
+        if(dest) dest.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+  });
+
+  // Cyberpunk toggle (manual)
+  const cyberToggle = document.getElementById('cyberToggle');
+  cyberToggle.addEventListener('click', ()=> {
+    const on = document.body.classList.toggle('cyberpunk');
+    cyberToggle.setAttribute('aria-pressed', String(on));
+    // optional style toggles
+    if(on){
+      document.documentElement.style.setProperty('--accent1','#00f2ff');
+    } else {
+      document.documentElement.style.setProperty('--accent1','#00f2ff');
+    }
+  });
+
+  // Image fallback robust (in case profile optimized missing)
+  document.getElementById('profileImg').addEventListener('error', function(){
+    this.src = 'https://via.placeholder.com/400?text=Teuku+Rijul';
+  });
+
+  </script>
 </body>
 </html>

@@ -1,343 +1,125 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Teuku Rijul — Freelancer Profesional</title>
-  <meta name="description" content="Teuku Rijul — Freelancer profesional: general support, project assistance, data security. Cepat, rapi, dapat diandalkan." />
-  <meta name="keywords" content="freelancer, general support, project assistance, data security, Teuku Rijul" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teuku Rijul – Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <style>
-    :root{
-      --bg:#0b0b0d;
-      --card:#0f1720;
-      --muted:#9aa3ac;
-      --accent1:#00f2ff;
-      --accent2:#ff00aa;
-      --glass: rgba(255,255,255,0.06);
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #050505;
+        color: white;
+        text-align: center;
     }
 
-    /* Reset & base */
-    *{box-sizing:border-box}
-    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,#0a0a0b,#071017);color:#e6eef6;line-height:1.6;-webkit-font-smoothing:antialiased}
-    a{color:inherit}
+    /* ===== PROFILE IMAGE (ANTI RUSAK) ===== */
+    .profile-container {
+        width: 180px;
+        height: 180px;
+        margin: 40px auto 20px auto;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 25px rgba(0,255,255,0.6);
+    }
 
-    /* Preloader */
-    #preloader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:9999}
-    .loader{width:84px;height:84px;border:7px solid rgba(255,255,255,0.08);border-top-color:var(--accent1);border-radius:999px;animation:spin 1s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
+    .profile-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
 
-    /* NAVBAR */
-    .navbar{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:92%;max-width:1100px;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));backdrop-filter:blur(8px);z-index:90;border:1px solid rgba(255,255,255,0.04)}
-    .nav-left{display:flex;gap:14px;align-items:center}
-    .brand{font-weight:700;color:var(--accent1);letter-spacing:0.4px}
-    .nav-links{display:flex;gap:18px}
-    .nav-links a{color:#bfefff;text-decoration:none;font-weight:600;padding:6px 8px;border-radius:8px}
-    .nav-links a:hover{background:rgba(0,255,255,0.04);color:var(--accent2)}
+    /* ===== TITLE ===== */
+    h1 {
+        font-size: 26px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px cyan;
+    }
 
-    /* Hero */
-    .hero{min-height:72vh;display:flex;align-items:center;justify-content:center;padding:110px 20px 60px;background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920');background-size:cover;background-position:center;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,23,0.5),rgba(2,6,23,0.6))}
-    .hero-content{position:relative;z-index:2;max-width:1100px;width:100%;display:grid;grid-template-columns:320px 1fr;gap:34px;align-items:center}
+    p.desc {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-bottom: 30px;
+    }
 
-    /* Profile (cyberpunk) */
-    .profile-wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
-    .profile-frame{position:relative;width:200px;height:200px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-    .profile{width:180px;height:180px;border-radius:50%;object-fit:cover;border:3px solid rgba(0,255,255,0.28);z-index:3;display:block}
-    .profile-frame::before{content:'';position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 0deg, var(--accent1),var(--accent2),#7bff6a,var(--accent1));filter:blur(22px);z-index:1;opacity:0.95;animation:rotateRing 8s linear infinite}
-    .profile-frame::after{content:'';position:absolute;inset:-28px;border-radius:50%;background:radial-gradient(circle at 20% 20%, rgba(0,255,255,0.06), transparent 30%), radial-gradient(circle at 80% 80%, rgba(255,0,170,0.04), transparent 30%);filter:blur(36px);z-index:0}
-    @keyframes rotateRing{to{transform:rotate(360deg)}}
-    @keyframes cyberPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+    /* ===== CARD ===== */
+    .card {
+        width: 90%;
+        max-width: 480px;
+        background: rgba(0,255,255,0.05);
+        border: 1px solid rgba(0,255,255,0.3);
+        border-radius: 12px;
+        margin: 15px auto;
+        padding: 18px;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    }
 
-    .profile-name{margin-top:12px;font-weight:700;font-size:20px;color:#ffffff}
-    .profile-sub{font-size:13px;color:var(--muted);margin-top:6px}
+    .card h2 {
+        margin-top: 0;
+        text-shadow: 0 0 8px cyan;
+    }
 
-    /* Hero text */
-    .hero-text h1{font-size:44px;margin:0 0 8px;line-height:1.02;color:#e8fbff;text-shadow:0 8px 40px rgba(0,255,255,0.06);-webkit-text-stroke:0.6px rgba(0,0,0,0.15)}
-    .hero-text p{margin:0 0 18px;color:#c8eaf0;font-size:18px}
-    .cta-row{display:flex;gap:12px;align-items:center}
-    .cta-btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041021;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,0.45)}
-    .cta-secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:#bcdde6;text-decoration:none}
+    .price {
+        font-size: 22px;
+        color: cyan;
+        margin: 10px 0;
+    }
 
-    /* Sections */
-    main{max-width:1100px;margin:30px auto;padding:0 20px}
-    .section{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:34px;border-radius:14px;margin-bottom:28px;border:1px solid rgba(255,255,255,0.03)}
-    .section h2{margin:0 0 12px;font-size:22px;color:#e8fbff}
-    .section p{color:var(--muted);margin:0 0 8px}
+    /* ===== BUTTON ===== */
+    .btn {
+        display: inline-block;
+        padding: 10px 18px;
+        margin-top: 10px;
+        border: 1px solid cyan;
+        color: cyan;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: 0.2s;
+    }
 
-    /* Service cards */
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .card{background:linear-gradient(180deg,rgba(0,0,0,0.18),rgba(255,255,255,0.02));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);text-align:center}
-    .card img{width:58px}
-    .card h3{margin:10px 0 6px}
-    .card p{color:var(--muted)}
+    .btn:hover {
+        background: cyan;
+        color: black;
+        box-shadow: 0 0 15px cyan;
+    }
 
-    /* Slider */
-    .slider{overflow:hidden;border-radius:12px}
-    .slides{display:flex;width:300%;animation:slide 12s infinite}
-    .slide{flex:1;min-width:100%}
-    .slide img{width:100%;height:320px;object-fit:cover}
-    @keyframes slide{0%{transform:translateX(0)}33%{transform:translateX(-100%)}66%{transform:translateX(-200%)}100%{transform:translateX(0)}}
-
-    /* Pricing */
-    .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .price-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);text-align:center}
-    .price-tag{font-size:28px;font-weight:800;color:var(--accent1)}
-    .price-note{font-size:13px;color:var(--muted)}
-
-    /* Portfolio */
-    .portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-    .portfolio-item{position:relative;border-radius:12px;overflow:hidden}
-    .portfolio-item img{width:100%;height:170px;object-fit:cover;display:block;transition:transform .45s ease,filter .45s ease}
-    .portfolio-item:hover img{transform:scale(1.08);filter:brightness(0.64)}
-    .portfolio-info{position:absolute;bottom:10px;left:12px;right:12px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));padding:10px;border-radius:8px;color:#fff;opacity:0;transform:translateY(8px);transition:all .35s}
-    .portfolio-item:hover .portfolio-info{opacity:1;transform:translateY(0)}
-
-    /* Testimonials */
-    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .testimonial{padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
-
-    /* Footer */
-    footer{padding:28px;text-align:center;color:var(--muted)}
-    .social-links{display:flex;gap:12px;justify-content:center;margin-top:10px}
-    .social-links a img{width:34px;filter:invert(1) hue-rotate(160deg) saturate(1.6)}
-
-    /* Floating elements */
-    .floating-wa{position:fixed;right:18px;bottom:18px;background:#25D366;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,0.18);z-index:90}
-    .toggle-dark{position:fixed;left:18px;bottom:18px;background:linear-gradient(90deg,#1b1f24,#0f1216);padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);cursor:pointer;z-index:90}
-
-    /* Counters */
-    .counter-boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:16px}
-    .counter{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:14px;border-radius:10px;text-align:center}
-    .counter .num{font-size:26px;font-weight:800;color:var(--accent1)}
-
-    /* Responsive */
-    @media(max-width:880px){.hero-content{grid-template-columns:1fr;gap:18px}.nav-links{display:none}.navbar{left:12px;transform:none;width:calc(100% - 24px)}.hero{padding-top:90px}}
-    @media(max-width:480px){.hero-text h1{font-size:28px}.profile{width:130px;height:130px}.profile-frame{width:150px;height:150px}.hero{min-height:60vh}}
-
-    /* Accessibility tweaks */
-    a:focus{outline:2px dashed rgba(0,255,255,0.18);outline-offset:3px}
-  .qr-section { text-align:center; margin-top:40px; }
-.qr-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
-.qr-item img { width:130px; filter:drop-shadow(0 0 12px #0ff); border-radius:12px; }
-.qr-item p { margin-top:8px; font-weight:600; color:#0ff; }
-
-.glitch { position:relative; color:#fff; font-weight:700; text-shadow:0 0 5px #0ff,0 0 8px #f0f; }
-.glitch::before,.glitch::after{ content:attr(data-text); position:absolute; top:0; left:0; width:100%; height:100%; }
-.glitch::before{ left:2px; text-shadow:-2px 0 #f0f; animation:glitch-1 2s infinite linear alternate-reverse; }
-.glitch::after{ left:-2px; text-shadow:-2px 0 #0ff; animation:glitch-2 3s infinite linear alternate-reverse; }
-@keyframes glitch-1{0%{clip-path:inset(0 0 20% 0);}50%{clip-path:inset(20% 0 40% 0);}100%{clip-path:inset(40% 0 0 0);} }
-@keyframes glitch-2{0%{clip-path:inset(0 0 30% 0);}50%{clip-path:inset(30% 0 10% 0);}100%{clip-path:inset(10% 0 0 0);} }
+    footer {
+        margin: 40px 0 20px 0;
+        opacity: 0.4;
+    }
 </style>
+
 </head>
 <body>
 
-  <!-- Preloader -->
-  <div id="preloader"><div class="loader" aria-hidden="true"></div></div>
-
-  <!-- Navbar -->
-  <div class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-left"><div class="brand">Teuku Rijul</div></div>
-    <div class="nav-links" role="menubar">
-      <a href="#home">Home</a>
-      <a href="#services">Layanan</a>
-      <a href="#pricing">Harga</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Kontak</a>
+    <!-- PROFILE SECTION -->
+    <div class="profile-container">
+        <img src="assets/profile_optimized.jpg" alt="Profile">
     </div>
-  </div>
 
-  <!-- Hero -->
-  <header id="home" class="hero">
-    <div class="hero-content">
-      <div class="profile-wrap">
-        <div class="profile-frame" aria-hidden="true">
-          <img class="profile" src="https://teukurijul.github.io/assets/img/profile.jpg" alt="Foto Teuku Rijul" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300?text=Teuku+Rijul'" />
-        </div>
-        <div class="profile-name">Teuku Rijul</div>
-        <div class="profile-sub">Freelancer Profesional • Cepat • Rapi • Dapat Diandalkan</div>
-      </div>
+    <h1>Teuku Rijul</h1>
+    <p class="desc">Web Developer • Cyber UI Designer • Portfolio</p>
 
-      <div class="hero-text">
-        <h1>Freelancer Profesional untuk Semua Kebutuhanmu</h1>
-        <p>General support, project assistance, dan data security — layanan lengkap dengan hasil rapi dan tepat waktu.</p>
-        <div class="cta-row">
-          <a class="cta-btn" href="https://wa.me/62895328323138" target="_blank" rel="noopener">Hubungi Sekarang</a>
-          <a class="cta-secondary" href="#portfolio">Lihat Portfolio</a>
-        </div>
-        <div class="counter-boxes" aria-hidden="false">
-          <div class="counter"><div class="num" data-target="250">0</div><div class="label">Project Selesai</div></div>
-          <div class="counter"><div class="num" data-target="120">0</div><div class="label">Klien Puas</div></div>
-          <div class="counter"><div class="num" data-target="5">0</div><div class="label">Tahun Pengalaman</div></div>
-        </div>
-      </div>
+    <!-- SERVICE CARD -->
+    <div class="card">
+        <h2>Paket Jasa Portfolio</h2>
+        <div class="price">Rp 999.999 – Rp 2.999.999</div>
+        <p>Membuat website personal premium dengan style futuristik/cyberpunk.</p>
+        <a class="btn" href="https://wa.me/628***">Hubungi Saya</a>
     </div>
-  </header>
 
-  <main>
-    <!-- Services -->
-    <section id="services" class="section">
-      <h2>Layanan Premium</h2>
-      <p>Solusi cepat, rapi, dan aman untuk kebutuhan personal dan bisnis.</p>
-      <div class="cards">
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="support icon" loading="lazy" />
-          <h3>General Support</h3>
-          <p>Bantuan tugas profesional sesuai kebutuhan.</p>
-        </div>
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="project icon" loading="lazy" />
-          <h3>Project Assistance</h3>
-          <p>Pengerjaan project cepat dan hasil rapi.</p>
-        </div>
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="security icon" loading="lazy" />
-          <h3>Data Security</h3>
-          <p>Kerahasiaan & keamanan data tingkat tinggi.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slider / Showcase -->
-    <section class="section">
-      <div class="slider" aria-hidden="true">
-        <div class="slides">
-          <div class="slide"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400" alt="showcase 1" loading="lazy"></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1400" alt="showcase 2" loading="lazy"></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1400" alt="showcase 3" loading="lazy"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="section">
-      <h2>Paket Layanan</h2>
-      <p>Pilihan paket yang jelas, transparan, dan kompetitif.</p>
-      <div class="pricing">
-        <div class="price-card">
-          <h3>Ultimate</h3>
-          <div class="price-tag">Rp 2.999.999</div>
-          <div class="price-note">Full support + layanan premium</div>
-        </div>
-        <div class="price-card">
-          <h3>Pro</h3>
-          <div class="price-tag">Rp 1.999.999</div>
-          <div class="price-note">Proses cepat, prioritas</div>
-        </div>
-        <div class="price-card">
-          <h3>Basic</h3>
-          <div class="price-tag">Rp 999.999</div>
-          <div class="price-note">Layanan standar untuk kebutuhan sederhana</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section id="portfolio" class="section">
-      <h2>Portfolio</h2>
-      <p>Contoh karya — klik untuk detail.</p>
-      <div class="portfolio">
-        <div class="portfolio-item">
-          <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?w=900" alt="Project A" loading="lazy">
-          <div class="portfolio-info">Project A • Desain • 2024</div>
-        </div>
-        <div class="portfolio-item">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900" alt="Project B" loading="lazy">
-          <div class="portfolio-info">Project B • Automation • 2023</div>
-        </div>
-        <div class="portfolio-item">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900" alt="Project C" loading="lazy">
-          <div class="portfolio-info">Project C • Data & Security • 2022</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section">
-      <h2>Testimonial</h2>
-      <div class="testimonials">
-        <div class="testimonial">“Pelayanan cepat dan sangat membantu, rekomendasi banget!” — <strong>A. Rahman</strong></div>
-        <div class="testimonial">“Hasil kerja rapi dan profesional. Terpercaya.” — <strong>S. Putri</strong></div>
-        <div class="testimonial">“Komunikasi jelas, pengerjaan tepat waktu. Mantap!” — <strong>M. Hadi</strong></div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <h2>Kontak</h2>
-      <p>Hubungi saya untuk pekerjaan atau kerja sama:</p>
-      <p><a href="https://wa.me/62895328323138" target="_blank" rel="noopener">WhatsApp: +62 895-3283-2313-8</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Teuku Rijul — Semua Hak Dilindungi</p>
-    <div class="social-links">
-      <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="facebook" /></a>
-      <a href="https://www.instagram.com/teuku_rijul" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="instagram" /></a>
-      <a href="https://www.tiktok.com/@teuku.rijul" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="tiktok" /></a>
+    <!-- PROJECT CARD -->
+    <div class="card">
+        <h2>Contoh Project</h2>
+        <p>Beberapa project website modern & ringan.</p>
+        <a class="btn" href="#">Lihat Project</a>
     </div>
-    <div class="qr-section">
-    <h3 class="qr-title">QR Code Social Media</h3>
-    <div class="qr-grid">
-      <div class="qr-item">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.facebook.com/share/1BsavFiyEV/" alt="QR Facebook" />
-        <p>Facebook</p>
-      </div>
-      <div class="qr-item">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.instagram.com/teuku_rijul?igsh=dHN5OHlodGZjemIw" alt="QR Instagram" />
-        <p>Instagram</p>
-      </div>
-      <div class="qr-item">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.tiktok.com/@teuku.rijul?_r=1&_t=ZS-91rxkLXSvJ4" alt="QR Tiktok" />
-        <p>TikTok</p>
-      </div>
-    </div>
-  </div>
-</footer>
 
-  <!-- Floating / Controls -->
-  <a class="floating-wa" href="https://wa.me/62895328323138" target="_blank" rel="noopener" aria-label="Contact via WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="whatsapp" style="width:30px;filter:invert(1);"></a>
-  <div class="toggle-dark" onclick="document.documentElement.classList.toggle('light')" aria-hidden="false">Mode</div>
-
-  <script>
-    // Hide preloader
-    window.addEventListener('load', ()=>{const p=document.getElementById('preloader');if(p) p.style.display='none';});
-
-    // Counters
-    document.addEventListener('DOMContentLoaded',()=>{
-      const counters = document.querySelectorAll('.num');
-      counters.forEach(el=>{
-        const update = ()=>{
-          const target = +el.getAttribute('data-target');
-          const current = +el.innerText;
-          const inc = Math.max(1,Math.floor(target/120));
-          if(current<target){el.innerText = current+inc;setTimeout(update,18);}else{el.innerText = target}
-        };
-        update();
-      });
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        e.preventDefault();
-        const t=document.querySelector(this.getAttribute('href'));
-        if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-      });
-    });
-
-    // On-image error placeholder already inline with onerror attribute
-
-    // Accessibility: reduce motion for users who prefer it
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if(mq && mq.matches){
-      document.querySelectorAll('.slides').forEach(s=>s.style.animation='none');
-      document.querySelectorAll('.profile-frame::before');
-    }
-  </script>
+<footer>© 2025 Teuku Rijul</footer>
 
 </body>
 </html>

@@ -75,10 +75,41 @@
     }
 
     .profile {
-      width: 100%;
-      height: 100%;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      position: relative;
+      border: 4px solid #0ff;
+      box-shadow: 0 0 25px #0ff, 0 0 45px #0ff, 0 0 70px rgba(0,255,255,0.6);
+      animation: cyberPulse 3s infinite ease-in-out;
+    }
+
+    /* Cyberpunk glow ring */
+    .profile::after {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: calc(100% + 24px);
+      height: calc(100% + 24px);
+      border-radius: 50%;
+      background: conic-gradient(#0ff, #f0f, #ff00aa, #0ff);
+      filter: blur(18px);
+      z-index: -1;
+      animation: rotateRing 6s linear infinite;
+    }
+
+    @keyframes cyberPulse {
+      0%,100% { box-shadow: 0 0 25px #0ff, 0 0 45px #0ff; }
+      50% { box-shadow: 0 0 40px #0ff, 0 0 70px #0ff; }
+    }
+
+    @keyframes rotateRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .header {
@@ -228,7 +259,16 @@
 
     .floating-wa img { width: 32px; filter: brightness(0) invert(1); }
 
-  </style>
+    /* Fix Foto Profil + Glow Premium */
+  .profile-img, .profile img {
+    width: 220px!important;
+    height: 220px!important;
+    object-fit: cover!important;
+    box-shadow: 0 0 25px rgba(0,255,204,0.65), 0 0 60px rgba(0,255,204,0.35);
+    border: 4px solid rgba(0,255,204,0.55);
+    border-radius: 50%!important;
+  }
+</style>
   <!-- Added Ultra-Premium Enhancements -->
   <style>
     /* Sticky Glassmorphic Navbar */
@@ -459,17 +499,17 @@
     <div class="pricing">
       <div class="price-card">
         <h3>Basic</h3>
-        <div class="price-tag">Rp 50K</div>
+        <div class="price-tag">Rp 999.999</div>
         <p>Layanan standar untuk kebutuhan sederhana.</p>
       </div>
       <div class="price-card">
         <h3>Pro</h3>
-        <div class="price-tag">Rp 150K</div>
+        <div class="price-tag">Rp 1.999.999</div>
         <p>Proses cepat, prioritas, hasil rapi.</p>
       </div>
       <div class="price-card">
         <h3>Ultimate</h3>
-        <div class="price-tag">Rp 300K</div>
+        <div class="price-tag">Rp 2.999.999</div>
         <p>Full support + layanan premium tanpa batas.</p>
       </div>
     </div>

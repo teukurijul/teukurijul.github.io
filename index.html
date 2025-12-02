@@ -1,74 +1,167 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teuku Rijul – Premium Personal Branding</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teuku Rijul — Freelancer Premium</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #0e0e0e;
+      color: #f1f1f1;
+      line-height: 1.7;
+    }
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920') center/cover;
+      padding: 150px 20px 200px;
+      text-align: center;
+      color: #fff;
+    }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    .hero h1 { font-size: 58px; font-weight: 700; }
+    .hero p { font-size: 22px; opacity: 0.95; }
+    .cta-btn {
+      margin-top: 35px;
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 16px 34px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+    .cta-btn:hover { transform: translateY(-4px); opacity: 0.9; }
+
+    /* PROFILE PHOTO UPGRADE */
+    .profile {
+      width: 220px;
+      height: 220px;
+      border-radius: 26px;
+      object-fit: cover;
+      border: 3px solid #ffffff33;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+      transition: 0.3s ease;
+    }
+
+    .profile:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.65);
+    }
+
+    /* BLURRED CARD */
+    .section {
+      max-width: 980px;
+      margin: -120px auto 60px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(15px);
+      padding: 50px;
+      border-radius: 22px;
+      box-shadow: 0 0px 45px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+      text-align: center;
+      transition: 0.2s;
+      border-top: 4px solid #fff;
+    }
+
+    .card:hover { transform: translateY(-6px); }
+
+    /* SOCIALS */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .socials a img {
+      width: 42px;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      transition: 0.2s;
+    }
+
+    .socials a img:hover { opacity: 1; transform: scale(1.1); }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      background: #25D366;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      z-index: 1000;
+    }
+
+    .floating-wa img { width: 36px; filter: brightness(0) invert(1); }
+
+  </style>
 </head>
-
 <body>
 
-    <!-- HERO SECTION -->
-    <header class="hero">
-        <div class="hero-content">
-            <img src="profile.jpg" alt="Foto Teuku Rijul" class="profile-photo">
+  <div class="hero">
+    <h1>Teuku Rijul</h1>
+    <p>Freelancer Premium • Kecepatan • Kerahasiaan • Hasil Maksimal</p>
+    <a class="cta-btn" href="https://wa.me/62895328323138" target="_blank">Hubungi Sekarang</a>
+  </div>
 
-            <div class="hero-text">
-                <h1 class="name">Teuku Rijul</h1>
-                <p class="role">Freelance • Personal Branding • Digital Identity</p>
-                <p class="tagline">Membangun citra profesional yang mudah ditemukan & dipercaya.</p>
-            </div>
-        </div>
-    </header>
+  <div class="section">
+    <div style="display:flex;gap:35px;align-items:center;justify-content:center;flex-wrap:wrap;">
+      <img src="https://drive.google.com/uc?export=view&id=1IufR_Ym4ox8t6jbtzgLXfoBU2lENW7l1" class="profile" />
+      <div style="max-width:430px;">
+        <h2>Tentang Saya</h2>
+        <p>Saya adalah freelancer profesional yang mengutamakan kualitas, keamanan, dan hasil kerja terbaik. Setiap project ditangani secara premium dengan fokus pada kecepatan dan kepercayaan klien.</p>
+      </div>
+    </div>
+  </div>
 
-    <!-- SERVICES -->
-    <section class="services">
-        <h2 class="section-title">Layanan Premium</h2>
+  <div class="section">
+    <h2>Layanan Premium</h2>
+    <div class="cards">
+      <div class="card"><h3>General Support</h3><p>Bantuan berbagai kebutuhan klien.</p></div>
+      <div class="card"><h3>Project Assistance</h3><p>Pengerjaan project cepat & rapi.</p></div>
+      <div class="card"><h3>Data Security</h3><p>Kerahasiaan & keamanan tingkat tinggi.</p></div>
+      <div class="card"><h3>Consulting</h3><p>Konsultasi kebutuhan kerja & project.</p></div>
+    </div>
+  </div>
 
-        <div class="service-grid">
+  <div class="section">
+    <h2>Sosial Media</h2>
+    <div class="socials">
+      <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" /></a>
+      <a href="https://www.instagram.com/teuku_rijul?igsh=dHN5OHlodGZjemIw" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" /></a>
+      <a href="https://www.tiktok.com/@teuku.rijul?_r=1&_t=ZS-91rxkLXSvJ4" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" /></a>
+    </div>
+  </div>
 
-            <div class="service-card">
-                <div class="icon">🔍</div>
-                <h3>Optimasi Google</h3>
-                <p>Nama Anda mudah dicari dan muncul di pencarian Google.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">🎨</div>
-                <h3>Personal Branding</h3>
-                <p>Membangun identitas digital yang kuat & profesional.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">📌</div>
-                <h3>Digital Profile Setup</h3>
-                <p>Profil premium untuk media sosial dan keperluan bisnis.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SOCIAL MEDIA -->
-    <section class="social">
-        <h2 class="section-title">Ikuti Saya</h2>
-
-        <div class="social-links">
-            <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank" class="social-btn fb">Facebook</a>
-            <a href="https://www.instagram.com/teuku_rijul?igsh=dHN5OHlodGZjemIw" target="_blank" class="social-btn ig">Instagram</a>
-            <a href="https://www.tiktok.com/@teuku.rijul?_r=1&_t=ZS-91rxkLXSvJ4" target="_blank" class="social-btn tt">TikTok</a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>© 2025 Teuku Rijul • Personal Branding Premium</p>
-    </footer>
+  <a class="floating-wa" href="https://wa.me/62895328323138" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
+  </a>
 
 </body>
 </html>

@@ -1,100 +1,239 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Mail, Phone, Briefcase, User, CheckCircle } from "lucide-react";
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teuku Rijul — Freelancer Premium</title>
 
-export default function Portfolio() {
-  return (
-    <div className="min-h-screen bg-gray-50 p-10 flex justify-center text-gray-900 font-sans">
-      <div className="w-full max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Card className="shadow-2xl rounded-2xl border border-gray-300 bg-white">
-            <CardContent className="p-10 space-y-10">
+  <!-- SEO Optimization -->
+  <meta name="description" content="Teuku Rijul - Freelancer Premium dengan layanan cepat, aman, dan futuristik.">
+  <meta name="keywords" content="Freelancer Premium, Teuku Rijul, Jasa Profesional, Layanan Premium">
+  <meta name="author" content="Teuku Rijul">
 
-              {/* Header */}
-              <div className="text-center space-y-5 flex flex-col items-center">
-                <motion.img
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.4 }}
-                  src="/profile.jpg"
-                  alt="Foto Profil"
-                  className="w-36 h-36 rounded-full object-cover border-4 border-gray-200 shadow-md"
-                />
-                <div>
-                  <h1 className="text-4xl font-bold tracking-wide text-gray-900">
-                    Teuku Rijul — Portfolio Resmi
-                  </h1>
-                  <p className="text-gray-700 text-lg">Professional Digital Presence</p>
-                </div>
-              </div>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Teuku Rijul — Freelancer Premium">
+  <meta property="og:description" content="Layanan freelance premium dengan kualitas tinggi.">
+  <meta property="og:image" content="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg">
+  <meta property="og:type" content="website">
 
-              {/* Bio */}
-              <div className="bg-white p-6 rounded-2xl border border-gray-300 shadow-md">
-                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><User size={22}/> Bio Singkat</h2>
-                <p className="text-gray-800 leading-relaxed text-justify">
-                  Saya adalah individu yang berdedikasi di bidang digital, teknologi, dan pekerjaan profesional. Dengan disiplin tinggi, komunikasi yang baik, dan komitmen terhadap kualitas, saya berusaha memberikan hasil terbaik pada setiap tugas yang dipercayakan.
-                </p>
-              </div>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-              {/* Experience */}
-              <div className="bg-white p-6 rounded-2xl border border-gray-300 shadow-md">
-                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Briefcase size={22}/> Pengalaman</h2>
-                <ul className="space-y-3 text-gray-800">
-                  <li className="flex items-start gap-2"><CheckCircle className="mt-1 text-green-600" size={18}/> Pengalaman kerja di lingkungan profesional dengan tugas administratif.</li>
-                  <li className="flex items-start gap-2"><CheckCircle className="mt-1 text-green-600" size={18}/> Mampu mengikuti instruksi kerja secara formal dan konsisten.</li>
-                  <li className="flex items-start gap-2"><CheckCircle className="mt-1 text-green-600" size={18}/> Berpengalaman dalam pengelolaan dokumen, digitalisasi, serta pelaporan.</li>
-                </ul>
-              </div>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #0b0f19;
+      color: #e4f3ff;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
 
-              {/* Contact */}
-              <div className="bg-white p-6 rounded-2xl border border-gray-300 shadow-md">
-                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Mail size={22}/> Kontak Resmi</h2>
-                <div className="space-y-3 text-gray-800">
-                  <p className="flex items-center gap-2"><Mail size={18}/> Email: <span className="font-medium">teukuri******@gmail.com</span></p>
-                  <p className="flex items-center gap-2"><Phone size={18}/> Telepon: <span className="font-medium">+62 8*********</span></p>
-                </div>
-              </div>
+    /* ===== HERO SECTION PREMIUM ===== */
+    .hero {
+      padding: 130px 20px;
+      text-align: center;
+      background: linear-gradient(180deg, #0f1f3d 0%, #0b0f19 100%);
+      border-bottom: 1px solid rgba(0,255,255,0.18);
+    }
 
-              {/* Reviews */}
-              <div className="bg-white p-6 rounded-2xl border border-gray-300 shadow-md">
-                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><CheckCircle size={22}/> Ulasan</h2>
-                <div className="space-y-4 text-gray-800">
-                  <div className="p-4 rounded-xl bg-white border border-gray-300 shadow-md">
-                    <p className="font-semibold">Rahmat S.</p>
-                    <p className="text-yellow-500 text-lg">★★★★★</p>
-                    <p className="text-gray-600 text-sm">"Pelayanan sangat baik, komunikasi ramah dan profesional. Sangat direkomendasikan!"</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white border border-gray-300 shadow-md">
-                    <p className="font-semibold">Andi P.</p>
-                    <p className="text-yellow-500 text-lg">★★★★★</p>
-                    <p className="text-gray-600 text-sm">"Kerja cepat dan rapi. Komunikasi jelas dan mudah diarahkan."</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white border border-gray-300 shadow-md">
-                    <p className="font-semibold">Dewi L.</p>
-                    <p className="text-yellow-500 text-lg">★★★★★</p>
-                    <p className="text-gray-600 text-sm">"Profesional dan bertanggung jawab. Sangat puas dengan hasil kerja!"</p>
-                  </div>
-                </div>
-                <p className="text-center text-gray-700 font-medium mt-4">⭐ Total 3.000+ ulasan lainnya</p>
-              </div>
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #d9f6ff;
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 12px rgba(0,200,255,0.45);
+      margin-bottom: 10px;
+    }
 
-              {/* Button */}
-              <div className="text-center pt-2">
-                <Button className="px-8 py-6 text-lg rounded-xl shadow-md bg-gray-900 text-white hover:bg-gray-800 transition-all">
-                  Hubungi Saya
-                </Button>
-              </div>
+    .subtitle {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-top: 5px;
+      color: #b7dfff;
+    }
 
-            </CardContent>
-          </Card>
-        </motion.div>
+    .cta-btn {
+      padding: 15px 34px;
+      margin-top: 28px;
+      background: linear-gradient(90deg, #00c6ff, #006dff);
+      color: white;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 14px rgba(0,150,255,0.55);
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 0 20px rgba(0,180,255,0.85);
+    }
+
+    /* ===== PREMIUM CONTAINER ===== */
+    .section {
+      max-width: 980px;
+      margin: 65px auto;
+      background: rgba(255,255,255,0.03);
+      padding: 45px 30px;
+      border-radius: 22px;
+      border: 1px solid rgba(0,200,255,0.12);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 40px rgba(0,200,255,0.08);
+    }
+
+    .profile {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 2px solid rgba(0,200,255,0.45);
+      box-shadow: 0 0 20px rgba(0,200,255,0.25);
+      animation: glow 4s infinite alternate ease-in-out;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 12px #00eaff; }
+      to { box-shadow: 0 0 26px #7b00ff; }
+    }
+
+    h2 {
+      color: #d9f6ff;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    /* ===== CARDS ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,200,255,0.18);
+      text-align: center;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 18px rgba(0,200,255,0.35);
+    }
+
+    .price-box {
+      margin-top: 18px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #8fcdff;
+    }
+
+    /* ===== SOCIAL ICONS ===== */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 30px;
+    }
+
+    .socials img {
+      width: 44px;
+      opacity: 0.9;
+      transition: 0.3s ease;
+    }
+
+    .socials img:hover {
+      transform: scale(1.12);
+      opacity: 1;
+    }
+
+    /* ===== FLOATING WA ===== */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 62px;
+      height: 62px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(0,255,150,0.45);
+      z-index: 1000;
+    }
+
+    .floating-wa img { width: 34px; filter: brightness(0) invert(1); }
+
+    /* ===== CYBER BACKGROUND GRID ===== */
+    .background-cyber {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background: repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0 2px, transparent 2px 80px),
+                  repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0 2px, transparent 2px 80px);
+      animation: gridmove 15s linear infinite;
+    }
+
+    @keyframes gridmove {
+      from { transform: translateY(0); }
+      to { transform: translateY(80px); }
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="background-cyber"></div>
+
+  <div class="hero">
+    <h1>Teuku Rijul</h1>
+    <p class="subtitle">Freelancer Premium • Kecepatan • Kerahasiaan • Hasil Futuristik</p>
+    <a class="cta-btn" href="https://wa.me/62895328323138" target="_blank">Hubungi Sekarang</a>
+  </div>
+
+  <div class="section">
+    <div style="display:flex; gap:30px; align-items:center; justify-content:center; flex-wrap:wrap;">
+
+      <img src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" class="profile" />
+
+      <div style="max-width:420px; text-align:center;">
+        <h2>Tentang Saya</h2>
+        <p>
+          Saya adalah seorang freelancer profesional yang mengutamakan kualitas premium,
+          kecepatan, dan keamanan tingkat tinggi. Setiap proyek dikerjakan dengan pendekatan
+          futuristik untuk memastikan hasil yang optimal dan berstandar tinggi.
+        </p>
+
+        <div class="price-box">
+          Harga Jasa<br>
+          <span style="font-size:17px;color:#00eaff;">
+            Mulai dari IDR 1.999.999,00 – IDR 5.999.999,00
+          </span>
+        </div>
       </div>
+
     </div>
-  );
-}
+  </div>
+
+  <!-- SECTION KOSONG YANG TADI TERBUKA, SEKARANG DITUTUP RAPI -->
+  <div class="section">
+    <h2>Ulasan Klien</h2>
+    <p style="text-align:center; opacity:0.85; font-size:16px;">
+      Lebih dari <strong>3.000+</strong> ulasan positif dari klien nyata yang puas dengan hasil kerja premium.
+    </p>
+  </div>
+
+  <!-- FLOATING WA -->
+  <a class="floating-wa" href="https://wa.me/62895328323138" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+  </a>
+
+</body>
+</html>

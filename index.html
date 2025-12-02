@@ -1,232 +1,74 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teuku Rijul</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #111;
-      transition: 0.3s ease-in-out;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teuku Rijul – Premium Personal Branding</title>
 
-    .navbar {
-      width: 100%;
-      background: #ffffff;
-      padding: 15px 20px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    #cyberToggle {
-      border: none;
-      padding: 10px 15px;
-      background: #111;
-      color: #fff;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    #cyberToggle:hover {
-      opacity: .8;
-    }
-
-    .hero {
-      margin-top: 100px;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-      margin: 20px auto;
-      display: block;
-    }
-
-    h1 {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 16px;
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    .section {
-      background: #fff;
-      width: 90%;
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    .barcode-wrapper {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .barcode-wrapper img {
-      width: 220px;
-      border-radius: 14px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-      background: white;
-      padding: 15px;
-      border: 1px solid #eee;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 18px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .cta-btn:hover {
-      background: #0060d4;
-    }
-
-    #rainCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    body.cyber {
-      background: #04050a !important;
-      color: #d6feff !important;
-      filter: hue-rotate(60deg);
-    }
-
-    body.cyber .navbar,
-    body.cyber .section {
-      background: rgba(0, 255, 255, 0.06) !important;
-      box-shadow: 0 0 15px rgba(0,255,255,0.15) !important;
-    }
-
-    body.cyber .cta-btn {
-      background: linear-gradient(90deg, #ff00e6, #00eaff) !important;
-    }
-  </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <canvas id="rainCanvas"></canvas>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <img src="profile.jpg" alt="Foto Teuku Rijul" class="profile-photo">
 
-  <div class="navbar">
-    <div class="logo">Teuku Rijul</div>
-    <button id="cyberToggle" aria-pressed="false">Cyberpunk Mode</button>
-  </div>
+            <div class="hero-text">
+                <h1 class="name">Teuku Rijul</h1>
+                <p class="role">Freelance • Personal Branding • Digital Identity</p>
+                <p class="tagline">Membangun citra profesional yang mudah ditemukan & dipercaya.</p>
+            </div>
+        </div>
+    </header>
 
-  <div class="hero">
-    <img
-      src="https://drive.google.com/uc?export=view&id=17psZ27Y6H83bdFAAkS3CEfHXR--ER-AY"
-      alt="Foto Profil"
-      class="profile-img"
-    />
-    <h1>Teuku Rijul</h1>
-    <p>Web Developer • Freelancer • UI/UX Enthusiast</p>
-  </div>
+    <!-- SERVICES -->
+    <section class="services">
+        <h2 class="section-title">Layanan Premium</h2>
 
-  <div class="section">
-    <h2>Tentang Saya</h2>
-    <p>
-      Saya adalah seorang freelancer yang fokus pada pembuatan website modern,
-      cepat, dan mobile-friendly. Siap membantu pembuatan landing page, company
-      profile, portofolio, hingga toko online.
-    </p>
-  </div>
+        <div class="service-grid">
 
-  <div class="section barcode-wrapper">
-    <h2>Barcode Saya</h2>
-    <img src="assets/barcode.png" alt="Barcode" />
-  </div>
+            <div class="service-card">
+                <div class="icon">🔍</div>
+                <h3>Optimasi Google</h3>
+                <p>Nama Anda mudah dicari dan muncul di pencarian Google.</p>
+            </div>
 
-  <div class="section">
-    <h2>Hubungi Saya</h2>
-    <p>Siap mengerjakan project kapan saja.</p>
-    <a class="cta-btn" href="https://wa.me/628xxxxxxx">WhatsApp</a>
-  </div>
+            <div class="service-card">
+                <div class="icon">🎨</div>
+                <h3>Personal Branding</h3>
+                <p>Membangun identitas digital yang kuat & profesional.</p>
+            </div>
 
-  <script>
-    const canvas = document.getElementById('rainCanvas');
-    const ctx = canvas.getContext('2d');
+            <div class="service-card">
+                <div class="icon">📌</div>
+                <h3>Digital Profile Setup</h3>
+                <p>Profil premium untuk media sosial dan keperluan bisnis.</p>
+            </div>
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+        </div>
+    </section>
 
-    const drops = Array(180).fill().map(() => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      len: Math.random() * 20 + 10,
-      spd: Math.random() * 4 + 2
-    }));
+    <!-- SOCIAL MEDIA -->
+    <section class="social">
+        <h2 class="section-title">Ikuti Saya</h2>
 
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.strokeStyle = 'rgba(0,120,255,0.4)';
-      ctx.lineWidth = 1.2;
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank" class="social-btn fb">Facebook</a>
+            <a href="https://www.instagram.com/teuku_rijul?igsh=dHN5OHlodGZjemIw" target="_blank" class="social-btn ig">Instagram</a>
+            <a href="https://www.tiktok.com/@teuku.rijul?_r=1&_t=ZS-91rxkLXSvJ4" target="_blank" class="social-btn tt">TikTok</a>
+        </div>
+    </section>
 
-      drops.forEach(d => {
-        ctx.beginPath();
-        ctx.moveTo(d.x, d.y);
-        ctx.lineTo(d.x, d.y + d.len);
-        ctx.stroke();
-
-        d.y += d.spd;
-        if (d.y > canvas.height) {
-          d.y = -20;
-          d.x = Math.random() * canvas.width;
-        }
-      });
-
-      requestAnimationFrame(draw);
-    }
-    draw();
-
-    const cyberBtn = document.getElementById('cyberToggle');
-    cyberBtn.addEventListener('click', () => {
-      const active = document.body.classList.toggle('cyber');
-      cyberBtn.setAttribute('aria-pressed', active);
-    });
-  </script>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 Teuku Rijul • Personal Branding Premium</p>
+    </footer>
 
 </body>
 </html>

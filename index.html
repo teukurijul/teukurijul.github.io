@@ -1,241 +1,123 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Teuku Rijul — Freelancer Premium</title>
-  <meta name="description" content="Teuku Rijul - Freelancer Premium dengan layanan cepat, aman, dan futuristik. Menyediakan jasa profesional mulai dari basic hingga premium dengan kualitas tinggi.">
-  <meta name="keywords" content="Freelancer Premium, Teuku Rijul, Jasa Profesional, Layanan Premium, Freelance Indonesia, Project Assistance, Data Security">
-  <meta name="author" content="Teuku Rijul">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teuku Rijul — Freelancer Premium</title>
+  <meta name="description" content="Teuku Rijul - Freelancer Premium dengan layanan cepat, aman, dan futuristik. Menyediakan jasa profesional mulai dari basic hingga premium dengan kualitas tinggi.">
+  <meta name="keywords" content="Freelancer Premium, Teuku Rijul, Jasa Profesional, Layanan Premium, Freelance Indonesia, Project Assistance, Data Security">
+  <meta name="author" content="Teuku Rijul">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Teuku Rijul — Freelancer Premium">
-  <meta property="og:description" content="Layanan freelance premium dengan kualitas tinggi, kecepatan, dan keamanan maksimal.">
-  <meta property="og:image" content="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Teuku Rijul — Freelancer Premium">
+  <meta property="og:description" content="Layanan freelance premium dengan kualitas tinggi, kecepatan, dan keamanan maksimal.">
+  <meta property="og:image" content="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg">
+  <meta property="og:type" content="website">
 
-  <!-- Font (lightweight) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* ===== Minimal, optimized CSS (kecepatan + premium look) ===== */
-    :root{
-      --bg-dark:#04060d;
-      --panel: rgba(6,18,30,0.72);
-      --accent:#006dff;
-      --accent-2:#00c6ff;
-      --muted:#cfe8ff;
-      --card-bg: rgba(255,255,255,0.03);
-      --radius:14px;
-    }
-    /* Light theme tokens */
-    :root.light{
-      --bg-dark:#f7fbff;
-      --panel: rgba(255,255,255,0.9);
-      --accent:#0b66ff;
-      --accent-2:#00a3ff;
-      --muted:#10202f;
-      --card-bg:#ffffff;
-    }
+  <style>
+    :root{
+      --bg:#f8fbff;
+      --panel:#ffffff;
+      --accent:#0b66ff;
+      --accent-2:#009dff;
+      --text:#1c2733;
+      --text-light:#334355;
+      --border:rgba(0,0,0,0.08);
+      --radius:16px;
+    }
 
-    html,body{height:100%;margin:0;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg-dark);color:var(--muted);-webkit-font-smoothing:antialiased}
-    .wrap{max-width:1100px;margin:28px auto;padding:20px}
+    body{margin:0;background:var(--bg);font-family:'Poppins',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px}
 
-    /* Hero */
-    .hero{padding:86px 20px;border-radius:18px;background:
-      radial-gradient(600px 160px at 10% 10%, rgba(0,198,255,0.06), transparent 18%),
-      var(--panel);text-align:center;border:1px solid rgba(0,200,255,0.06);box-shadow:0 10px 30px rgba(2,6,12,0.5)}
-    .hero h1{font-size:40px;margin:0 0 8px;color:var(--muted);letter-spacing:0.6px}
-    .hero p{margin:0;color:rgba(207,232,255,0.9)}
-    .cta{display:inline-block;margin-top:18px;padding:12px 28px;border-radius:12px;background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#021;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,120,255,0.06)}
-    .cta:active{transform:translateY(1px)}
+    /* HERO */
+    .hero{background:var(--panel);padding:70px 18px;text-align:center;border-radius:var(--radius);box-shadow:0 10px 25px rgba(0,0,0,0.08);border:1px solid var(--border)}
+    .hero h1{margin:0;font-size:40px;font-weight:700;color:var(--text)}
+    .hero p{color:var(--text-light);margin-top:6px}
+    .cta{display:inline-block;margin-top:18px;padding:12px 30px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;text-decoration:none;font-weight:700;box-shadow:0 8px 18px rgba(0,120,255,0.22)}
 
-    /* layout sections */
-    .section{background:var(--card-bg);border-radius:16px;padding:34px;margin:28px auto;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(10px)}
-    .row{display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:center}
-    .profile{width:200px;height:200px;border-radius:16px;object-fit:cover;border:2px solid rgba(0,200,255,0.32);box-shadow:0 10px 30px rgba(0,0,0,0.35)}
-    .about{max-width:520px}
+    /* SECTION */
+    .section{background:var(--panel);border-radius:var(--radius);padding:34px;margin:28px 0;border:1px solid var(--border);box-shadow:0 8px 20px rgba(0,0,0,0.05)}
+    .row{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:center}
+    .profile{width:200px;height:200px;border-radius:var(--radius);object-fit:cover;border:3px solid var(--accent-2);box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+    h2{margin:0;font-size:28px;color:var(--text)}
+    p{color:var(--text-light);line-height:1.55}
 
-    h2{font-size:26px;margin:0 0 12px;color:var(--muted)}
-    p{margin:0 0 10px;color:rgba(207,232,255,0.9)}
+    /* CARDS */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:18px}
+    .card{background:#ffffff;padding:24px;border-radius:14px;border:1px solid var(--border);box-shadow:0 8px 20px rgba(0,0,0,0.05);transition:.25s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,0.08)}
+    .price{margin-top:12px;font-size:17px;font-weight:700;color:var(--accent)}
 
-    /* cards grid */
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:20px;border-radius:12px;border:1px solid rgba(0,200,255,0.06);transition:transform .28s,box-shadow .28s}
-    .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,8,20,0.5)}
-    .price{font-weight:700;color:var(--accent-2);margin-top:12px}
+    /* SOCIALS */
+    .socials{display:flex;gap:16px;justify-content:center;margin-top:12px}
+    .socials img{width:40px;height:40px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
 
-    /* socials */
-    .socials{display:flex;gap:14px;justify-content:center;margin-top:8px}
-    .socials img{width:40px;height:40px;object-fit:cover;border-radius:8px;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.35))}
+    /* REVIEWS */
+    .reviews .meta{text-align:center;margin-bottom:16px;color:var(--text-light)}
+    .slider{display:flex;gap:14px;overflow:hidden;padding:6px}
+    .rev{min-width:260px;background:var(--panel);padding:16px;border-radius:14px;border:1px solid var(--border);box-shadow:0 6px 16px rgba(0,0,0,0.05)}
 
-    /* floating WA */
-    .wa{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25D366;box-shadow:0 8px 28px rgba(0,184,107,0.12);z-index:1000}
-    .wa img{width:30px;height:30px;filter:brightness(0) invert(1)}
+    /* FOOTER */
+    footer{text-align:center;margin-top:36px;padding:20px 0;color:var(--text-light);font-size:14px}
 
-    /* reviews */
-    .reviews .meta{opacity:0.92;text-align:center;margin-bottom:12px}
-    .reviews .slider{display:flex;gap:14px;overflow:hidden;padding:6px}
-    .rev{min-width:260px;background:rgba(255,255,255,0.02);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);}
+    @media(max-width:640px){
+      .hero h1{font-size:28px}
+      .profile{width:150px;height:150px}
+    }
 
-    /* footer */
-    footer{margin-top:26px;text-align:center;color:rgba(207,232,255,0.7);font-size:14px;padding:20px 0}
-
-    /* small screens */
-    @media (max-width:640px){
-      .hero{padding:56px 14px}
-      .hero h1{font-size:28px}
-      .profile{width:150px;height:150px}
-      .wrap{padding:12px}
-      .section{padding:20px}
-    }
-
-    /* animations: fade-in on scroll (will add 'in' class via JS) */
-    .fade {opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
-    .fade.in{opacity:1;transform:none}
-  </style>
+    .fade{opacity:0;transform:translateY(8px);transition:.5s}
+    .fade.in{opacity:1;transform:none}
+  </style>
 </head>
 <body>
-  <main class="wrap" id="main">
-    <!-- HERO -->
-    <section class="hero fade" data-fade>
-      <h1>Teuku Rijul</h1>
-      <p>Freelancer Premium • Kecepatan • Kerahasiaan • Hasil Futuristik</p>
-      <a class="cta" href="https://wa.me/62895328323138" target="_blank" rel="noopener">Hubungi Sekarang</a>
+  <main class="wrap" id="main">
+
+    <section class="hero fade" data-fade>
+      <h1>Teuku Rijul</h1>
+      <p>Freelancer Premium • Kecepatan • Kerahasiaan • Hasil Futuristik</p>
+      <a class="cta" href="https://wa.me/62895328323138" target="_blank" rel="noopener">Hubungi Sekarang</a>
+    </section>
+
+    <section class="section fade" data-fade>
+      <div class="row">
+        <img class="profile" src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" alt="Foto Teuku Rijul" loading="lazy">
+        <div class="about">
+          <h2>Tentang Saya</h2>
+          <p>Saya adalah seorang freelancer profesional yang mengutamakan kualitas premium, kecepatan, dan keamanan tingkat tinggi. Setiap proyek dikerjakan secara privat dengan pendekatan futuristik untuk memastikan hasil optimal bagi setiap klien.</p>
+          <div style="margin-top:12px;font-weight:600;color:var(--text)">Harga Jasa • <span style="color:var(--accent)">IDR 1.999.999 — IDR 5.999.999</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade" id="services" data-fade>
+      <h2>Varian Jasa & Harga</h2>
+      <div class="cards">
+        <article class="card"><h3>Basic Service</h3><p>Layanan dasar untuk kebutuhan standar yang tetap mengutamakan kualitas.</p><div class="price">IDR 1.999.999,00</div></article>
+        <article class="card"><h3>Standard Service</h3><p>Paket layanan dengan fitur lebih lengkap dan proses kerja lebih cepat.</p><div class="price">IDR 2.999.999,00</div></article>
+        <article class="card"><h3>Professional Service</h3><p>Dikhususkan untuk proyek dengan detail lebih dalam dan standar eksekusi tinggi.</p><div class="price">IDR 4.499.999,00</div></article>
+        <article class="card"><h3>Premium Service</h3><p>Layanan kelas tertinggi dengan prioritas penuh, keamanan ekstra, dan performa maksimal.</p><div class="price">IDR 5.999.999,00</div></article>
+      </div>
+    </section>
+
+    <section class="section fade" data-fade>
+      <h2>Sosial Media</h2>
+      <div class="socials">
+        <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/teuku_rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@teuku.rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+      </div>
+
     </section>
 
-    <!-- ABOUT -->
-    <section class="section fade" data-fade>
-      <div class="row">
-        <img class="profile" src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" alt="Foto Teuku Rijul" loading="lazy" width="200" height="200">
-        <div class="about">
-          <h2>Tentang Saya</h2>
-          <p>
-            Saya adalah seorang freelancer profesional yang mengutamakan kualitas premium,
-            kecepatan, dan keamanan tingkat tinggi. Setiap proyek dikerjakan dengan pendekatan
-            futuristik untuk memastikan hasil yang optimal dan berstandar tinggi bagi setiap klien.
-          </p>
-          <div style="margin-top:12px;font-weight:600;color:var(--muted)">
-            Harga Jasa • <span style="color:var(--accent-2)">IDR 1.999.999 — IDR 5.999.999</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section fade" id="services" data-fade>
-      <h2>Varian Jasa & Harga</h2>
-      <div class="cards" role="list">
-        <article class="card" role="listitem">
-          <h3>Basic Service</h3>
-          <p class="muted">Layanan dasar untuk kebutuhan standar yang tetap mengutamakan kualitas.</p>
-          <div class="price">IDR 1.999.999,00</div>
-        </article>
-
-        <article class="card" role="listitem">
-          <h3>Standard Service</h3>
-          <p class="muted">Paket layanan dengan fitur lebih lengkap dan proses kerja lebih cepat.</p>
-          <div class="price">IDR 2.999.999,00</div>
-        </article>
-
-        <article class="card" role="listitem">
-          <h3>Professional Service</h3>
-          <p class="muted">Dikhususkan untuk proyek dengan detail lebih dalam dan standar eksekusi tinggi.</p>
-          <div class="price">IDR 4.499.999,00</div>
-        </article>
-
-        <article class="card" role="listitem">
-          <h3>Premium Service</h3>
-          <p class="muted">Layanan kelas tertinggi dengan prioritas penuh, keamanan ekstra, dan performa maksimal.</p>
-          <div class="price">IDR 5.999.999,00</div>
-        </article>
-      </div>
-    </section>
-
-    <!-- SOCIALS -->
-    <section class="section fade" data-fade>
-      <h2>Sosial Media</h2>
-      <div class="socials" aria-label="Sosial Media">
-        <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" loading="lazy"></a>
-        <a href="https://www.instagram.com/teuku_rijul" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram" loading="lazy"></a>
-        <a href="https://www.tiktok.com/@teuku.rijul" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" loading="lazy"></a>
-      </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section class="section reviews fade" data-fade>
-      <h2>Ulasan</h2>
-      <div class="meta">Rating rata-rata: <strong>★★★★★</strong> — <em>Total 3.000+ ulasan lainnya</em></div>
-      <div class="slider" style="display:flex;gap:12px;flex-wrap:nowrap;overflow:hidden">
-        <div style="min-width:260px" class="rev">
-          <strong>Rahmat S.</strong>
-          <div style="margin:8px 0;color:#ffd36b">★★★★★</div>
-          <div style="color:rgba(255,255,255,0.9)">"Pelayanan sangat baik, komunikasi ramah dan profesional. Sangat direkomendasikan!"</div>
-        </div>
-        <div style="min-width:260px" class="rev">
-          <strong>Andi P.</strong>
-          <div style="margin:8px 0;color:#ffd36b">★★★★★</div>
-          <div style="color:rgba(255,255,255,0.9)">"Kerja rapi, cepat, hasil sesuai harapan. Orangnya sopan dan mudah diarahkan."</div>
-        </div>
-        <div style="min-width:260px" class="rev">
-          <strong>Dewi L.</strong>
-          <div style="margin:8px 0;color:#ffd36b">★★★★★</div>
-          <div style="color:rgba(255,255,255,0.9)">"Profesional dan bertanggung jawab. Saya puas dengan hasil pekerjaannya!"</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer (formal) -->
-    <footer style="text-align:center;padding:22px 8px 56px;color:rgba(207,232,255,0.75)">
-      © 2025 Teuku Rijul — Premium Freelancer. All Rights Reserved.
+    <footer style="text-align:center;margin-top:40px;padding:28px 0;color:var(--text-light);font-size:15px;line-height:1.6;background:var(--panel);border-radius:var(--radius);border:1px solid var(--border);box-shadow:0 8px 20px rgba(0,0,0,0.05)">
+      <div style="font-weight:700;color:var(--text)">© 2025 Teuku Rijul — Freelancer Premium</div>
+      <div style="margin-top:6px">AI-Registered™ • Verified Intelligent Assistance</div>
+      <div style="margin-top:4px">Email: <a href="mailto:teuku.rijul@gmail.com" style="color:var(--accent);text-decoration:none">teuku.rijul@gmail.com</a></div>
+      <div style="margin-top:4px;opacity:0.75">Total 3.000+ Ulasan Bintang 5</div>
     </footer>
+
   </main>
-
-  <!-- Floating WhatsApp -->
-  <a class="wa" href="https://wa.me/62895328323138" aria-label="Hubungi via WhatsApp" target="_blank" rel="noopener">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-
-  <!-- Lightweight JS: fade-in scroll, slider autoplay, dark/light toggle, auto-detect -->
-  <script>
-    (function(){
-      'use strict';
-      // Auto-detect prefers-color-scheme and set class on root
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if(prefersDark) document.documentElement.classList.remove('light');
-      else document.documentElement.classList.add('light');
-
-      // Fade-in on scroll using IntersectionObserver
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-        });
-      }, {threshold: 0.12});
-      document.querySelectorAll('[data-fade]').forEach(el=>{el.classList.add('fade'); io.observe(el);});
-
-      // Simple reviews slider autoplay (translate)
-      const slider = document.querySelector('.reviews .slider');
-      if(slider){
-        let idx=0;
-        const items = slider.children;
-        const total = items.length;
-        setInterval(()=>{
-          idx = (idx+1)%total;
-          const shift = idx * (items[0].offsetWidth + 12); // item width + gap
-          slider.scrollTo({left: shift, behavior:'smooth'});
-        }, 3000);
-      }
-
-      // Small accessibility: keyboard to focus first CTA
-      document.addEventListener('keydown', (e)=>{
-        if(e.key === 'Enter'){ const first = document.querySelector('.cta'); if(first) first.focus(); }
-      });
-
-      // Improve perceived speed: defer image heavy ops (already lazy via loading=lazy)
-      // No external scripts; CSS inline to avoid render-blocking.
-
-    })();
-  </script>
 </body>
 </html>

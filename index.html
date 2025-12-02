@@ -1,206 +1,98 @@
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Teuku Rijul — Freelancer Premium</title>
-  <meta name="description" content="Teuku Rijul - Freelancer Premium: layanan cepat, aman, dan futuristik." />
-  <meta name="author" content="Teuku Rijul" />
-  <meta name="keywords" content="Freelancer Premium, Teuku Rijul, Jasa Profesional, Freelance Indonesia" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Teuku Rijul — Freelancer Premium" />
-  <meta property="og:description" content="Layanan freelance premium dengan kualitas, kecepatan, dan keamanan." />
-  <meta property="og:image" content="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" />
-  <meta property="og:type" content="website" />
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Mail, Phone, Briefcase, User, CheckCircle } from "lucide-react";
 
-  <!-- Preconnect for fonts (lightweight) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-neutral-900 text-gray-100 p-6 flex justify-center">
+      <div className="w-full max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="shadow-xl rounded-2xl border border-gray-300 bg-white/90 backdrop-blur">
+            <CardContent className="p-8 space-y-8">
 
-  <style>
-    :root{
-      --bg:#030512; /* deep space */
-      --panel: rgba(8,20,35,0.48);
-      --accent: #00e0ff;
-      --accent-2: #7b5cff;
-      --muted: rgba(207,232,255,0.12);
-      --glass: rgba(255,255,255,0.04);
-      --radius: 14px;
-      --maxw: 1100px;
-      --ff: 'Poppins',system-ui,Segoe UI,Roboto,Arial;
-    }
+              {/* Header */}
+              <div className="text-center space-y-4 flex flex-col items-center">
+                <motion.img
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.5 }}
+                  src="/profile.jpg"
+                  alt="Foto Profil"
+                  className="w-32 h-32 rounded-full object-cover border-4 border-gray-300 shadow-xl ring-2 ring-white hover:shadow-2xl transition-all duration-500"
+                />
+                <div>
+                  <h1 className="text-4xl font-bold tracking-wide text-gray-900">
+                    Teuku Rijul — Portfolio Resmi
+                  </h1>
+                  <p className="text-gray-600 text-lg">Professional Digital Presence</p>
+                </div>
+              </div>
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--ff);
-      background:linear-gradient(180deg,var(--bg) 0%, #01020a 100%);
-      color:#cfe8ff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
-      padding-bottom:80px; /* for floating button */
-    }
+              {/* Bio Section */}
+              <div className="bg-gray-100 p-6 rounded-2xl border border-gray-300">
+                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><User size={22}/> Bio Singkat</h2>
+                <p className="text-gray-700 leading-relaxed text-justify">
+                  Saya adalah individu dengan semangat tinggi untuk berkembang di bidang digital, teknologi, dan pekerjaan profesional. Memiliki komitmen kuat terhadap kualitas kerja, disiplin, serta komunikasi yang baik, saya selalu berusaha memberikan hasil terbaik dalam setiap pekerjaan yang saya jalankan.
+                </p>
+              </div>
 
-    /* container */
-    .wrap{max-width:var(--maxw);margin:32px auto;padding:24px}
+              {/* Experience Section */}
+              <div className="bg-gray-100 p-6 rounded-2xl border border-gray-300">
+                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Briefcase size={22}/> Pengalaman</h2>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start gap-2"><CheckCircle className="mt-1" size={18}/> Pernah bekerja di lingkungan profesional dengan tanggung jawab administratif dan komunikasi.</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="mt-1" size={18}/> Mampu mengikuti instruksi kerja formal dan menyelesaikan tugas tepat waktu.</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="mt-1" size={18}/> Memiliki pengalaman dasar dalam pengelolaan dokumen, digitalisasi, dan pelaporan.</li>
+                </ul>
+              </div>
 
-    /* hero */
-    header.hero{
-      display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;
-      background:radial-gradient(600px 180px at 10% 20%, rgba(0,224,255,0.06), transparent 20%), var(--panel);
-      padding:22px;border-radius:18px;border:1px solid rgba(0,224,255,0.08);
-      box-shadow:0 10px 30px rgba(2,6,12,0.6),0 0 40px rgba(123,92,255,0.04) inset;
-    }
+              {/* Contact Section */}
+              <div className="bg-gray-100 p-6 rounded-2xl border border-gray-300">
+                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Mail size={22}/> Kontak Resmi</h2>
+                <div className="space-y-3 text-gray-700">
+                  <p className="flex items-center gap-2"><Mail size={18}/> Email: <span className="font-medium">teukuri******@gmail.com</span></p>
+                  <p className="flex items-center gap-2"><Phone size={18}/> Telepon: <span className="font-medium">+62 8*********</span></p>
+                </div>
+              </div>
 
-    .avatar{
-      width:120px;height:120px;border-radius:16px;overflow:hidden;flex:0 0 120px;border:1px solid rgba(255,255,255,0.06);
-      display:inline-grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));padding:4px;
-    }
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;filter:saturate(0.98)}
+              {/* Button */}
+              <div className="text-center pt-4">
+                <Button className="px-8 py-6 text-lg rounded-xl shadow-md hover:shadow-lg transition-all bg-black text-white hover:bg-gray-800">
+                  Hubungi Saya
+                </Button>
+              </div>
 
-    header .title{display:flex;flex-direction:column;gap:6px}
-    h1{font-size:22px;margin:0;color:#dff7ff}
-    .tag{font-weight:600;color:var(--accent);font-size:13px;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,rgba(0,224,255,0.06),rgba(123,92,255,0.04));display:inline-block}
-    p.lead{margin:6px 0 0;color:rgba(207,232,255,0.92)}
+              <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm mt-8">
+                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><CheckCircle size={22}/> Ulasan</h2>
+                <div className="space-y-4 text-gray-700">
+                  <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 shadow-sm">
+                    <p className="font-semibold">Rahmat S.</p>
+                    <p className="text-yellow-500 text-lg">★★★★★</p>
+                    <p className="text-gray-600 text-sm">"Pelayanan sangat baik, komunikasi ramah dan profesional. Sangat direkomendasikan!"</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 shadow-sm">
+                    <p className="font-semibold">Andi P.</p>
+                    <p className="text-yellow-500 text-lg">★★★★★</p>
+                    <p className="text-gray-600 text-sm">"Kerja rapi, cepat, hasil sesuai harapan. Orangnya sopan dan mudah diarahkan."</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 shadow-sm">
+                    <p className="font-semibold">Dewi L.</p>
+                    <p className="text-yellow-500 text-lg">★★★★★</p>
+                    <p className="text-gray-600 text-sm">"Profesional dan bertanggung jawab. Saya puas dengan hasil pekerjaannya!"</p>
+                  </div>
+                </div>
+              </div>
 
-    .cta-row{display:flex;gap:12px;margin-top:12px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:600}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021;box-shadow:0 8px 22px rgba(0,224,255,0.08)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:#cfe8ff}
-
-    /* sections */
-    section.card{margin-top:20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-
-    /* pricing */
-    .price{font-weight:700;color:var(--accent);font-size:18px}
-    .service{padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(0,224,255,0.04)}
-    .service h3{margin:0 0 8px 0}
-
-    /* socials */
-    .socials{display:flex;gap:12px}
-    .icon{width:40px;height:40px;display:inline-grid;place-items:center;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.03)}
-    .icon svg{width:20px;height:20px}
-
-    /* floating whatsapp */
-    .wa{position:fixed;right:22px;bottom:22px;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#25D366,#00B86B);box-shadow:0 10px 28px rgba(0,184,107,0.12);z-index:60}
-    .wa img{width:36px;height:36px}
-
-    /* neon lines background (subtle & perf friendly) */
-    .neon-bg{position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(ellipse at 10% 10%, rgba(0,224,255,0.03) 0, transparent 20%), linear-gradient(180deg, rgba(123,92,255,0.01), transparent 30%)}
-
-    /* responsiveness */
-    @media (max-width:640px){header.hero{grid-template-columns:92px 1fr;padding:16px} .avatar{width:92px;height:92px} h1{font-size:18px}}
-
-    /* small utility */
-    .muted{color:rgba(207,232,255,0.72);font-size:14px}
-    .center{text-align:center}
-
-    /* subtle card hover */
-    .service:hover{transform:translateY(-6px);transition:all .28s cubic-bezier(.2,.9,.2,1)}
-  </style>
-</head>
-<body>
-  <div class="neon-bg"></div>
-  <main class="wrap">
-    <header class="hero" role="banner">
-      <div class="avatar" aria-hidden="true">
-        <img src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" alt="Foto Teuku Rijul" loading="lazy" decoding="async">
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
-
-      <div class="title">
-        <h1>Teuku Rijul — Freelancer Premium</h1>
-        <div class="tag">Kecepatan • Kerahasiaan • Hasil Futuristik</div>
-        <p class="lead">Saya menghadirkan solusi digital profesional dengan pendekatan futuristik dan keamanan tingkat tinggi untuk client yang menginginkan hasil sempurna dalam waktu singkat.</p>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://wa.me/62895328323138" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
-          <a class="btn btn-ghost" href="#services">Lihat Layanan</a>
-        </div>
-      </div>
-    </header>
-
-    <section id="services" class="card">
-      <h2 style="margin:0 0 12px 0">Varian Jasa & Harga</h2>
-      <p class="muted" style="margin:0 0 14px 0">Paket dirancang agar mudah dipahami — semua harga dalam IDR.</p>
-
-      <div class="grid">
-        <article class="service">
-          <h3>Basic Service</h3>
-          <p class="muted">Ideal untuk kebutuhan dasar yang rapi dan cepat.</p>
-          <div class="price">IDR 1.999.999</div>
-        </article>
-
-        <article class="service">
-          <h3>Standard Service</h3>
-          <p class="muted">Lebih fitur dan proses yang dipercepat.</p>
-          <div class="price">IDR 2.999.999</div>
-        </article>
-
-        <article class="service">
-          <h3>Professional Service</h3>
-          <p class="muted">Untuk proyek detail, quality-assured.</p>
-          <div class="price">IDR 4.499.999</div>
-        </article>
-
-        <article class="service">
-          <h3>Premium Service</h3>
-          <p class="muted">Prioritas penuh, keamanan ekstra, dan review tak terbatas.</p>
-          <div class="price">IDR 5.999.999</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="card" style="margin-top:18px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
-      <div style="min-width:220px">
-        <h2 style="margin:0 0 6px 0">Tentang Saya</h2>
-        <p class="muted" style="margin:0">Freelancer profesional yang mengutamakan kualitas premium, kecepatan, dan kerahasiaan. Setiap proyek ditangani dengan pendekatan modern agar hasil optimal.</p>
-      </div>
-
-      <div style="display:flex;gap:12px;align-items:center">
-        <div class="muted center" style="min-width:180px">
-          Harga Jasa<br><strong style="color:var(--accent);font-size:18px">IDR 1.999.999 — IDR 5.999.999</strong>
-        </div>
-
-        <div class="socials">
-          <a class="icon" href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank" rel="noopener" aria-label="Facebook">
-            <!-- facebook svg -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07C2 17.06 5.66 21.2 10.44 21.95v-6.9H7.9v-2.98h2.54V9.4c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.74l-.44 2.98h-2.3v6.9C18.34 21.2 22 17.06 22 12.07z"/></svg>
-          </a>
-
-          <a class="icon" href="https://www.instagram.com/teuku_rijul" target="_blank" rel="noopener" aria-label="Instagram">
-            <!-- instagram svg -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm6.3-.7a1.12 1.12 0 1 1 0 2.24 1.12 1.12 0 0 1 0-2.24zM12 15.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4z"/></svg>
-          </a>
-
-          <a class="icon" href="https://www.tiktok.com/@teuku.rijul" target="_blank" rel="noopener" aria-label="TikTok">
-            <!-- tiktok svg -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2v4.6c2.9 0 5.2 2.3 5.2 5.2V17c0 2.2-1.8 4-4 4s-4-1.8-4-4a4 4 0 0 1 4-4c.2 0 .4 0 .6.04V6H12z"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- floating whatsapp -->
-  <a class="wa" href="https://wa.me/62895328323138" target="_blank" rel="noopener" aria-label="Hubungi via WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-
-  <script>
-    // small progressive enhancement: smooth scroll for internal links
-    (function(){
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', e=>{
-          const id = a.getAttribute('href').slice(1);
-          const el = document.getElementById(id);
-          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
-        })
-      })
-    })();
-  </script>
-</body>
-</html>
+    </div>
+  );
+}

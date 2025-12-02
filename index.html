@@ -1,4 +1,4 @@
-<!-- HTML Template Clean Minimalist White Version -->
+<!-- HTML Template Cyber Futuristic Version -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -11,122 +11,139 @@
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
-      background: #fafafa;
-      color: #333;
+      background: #04060d;
+      color: #cfe8ff;
       line-height: 1.7;
+    }
+
+    /* GLOW EFFECT */
+    .glow {
+      text-shadow: 0 0 12px rgba(0,180,255,0.75), 0 0 24px rgba(0,180,255,0.45);
     }
 
     /* HERO */
     .hero {
-      padding: 140px 20px 160px;
+      padding: 150px 20px 170px;
       text-align: center;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e5e5;
+      background: radial-gradient(circle at top, #081427, #02040a 60%);
+      border-bottom: 1px solid rgba(0,255,255,0.15);
     }
 
     .hero h1 {
-      font-size: 54px;
+      font-size: 56px;
       font-weight: 700;
-      margin-bottom: 10px;
-      color: #111;
+      margin-bottom: 12px;
+      color: #b8eaff;
     }
 
     .hero p {
       font-size: 20px;
-      opacity: 0.7;
-      margin-bottom: 30px;
+      opacity: 0.85;
+      margin-bottom: 35px;
     }
 
     .cta-btn {
       display: inline-block;
-      padding: 15px 34px;
-      background: #111;
+      padding: 16px 36px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
       color: #fff;
       text-decoration: none;
-      border-radius: 12px;
+      border-radius: 14px;
       font-weight: 600;
-      transition: 0.25s;
+      transition: 0.3s;
+      box-shadow: 0 0 12px rgba(0,200,255,0.5);
     }
 
     .cta-btn:hover {
-      background: #333;
-      transform: translateY(-3px);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 18px rgba(0,200,255,0.8);
     }
 
     /* PROFILE PHOTO */
     .profile {
-      width: 210px;
-      height: 210px;
+      width: 220px;
+      height: 220px;
       object-fit: cover;
-      border-radius: 16px;
-      border: 2px solid #ddd;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      background: #fff;
+      border-radius: 18px;
+      border: 2px solid rgba(0,200,255,0.4);
+      box-shadow: 0 0 25px rgba(0,200,255,0.25);
     }
 
     /* SECTIONS */
     .section {
-      max-width: 960px;
-      margin: 60px auto;
-      background: #ffffff;
+      max-width: 980px;
+      margin: 70px auto;
+      background: rgba(0,20,40,0.45);
       padding: 50px;
-      border-radius: 18px;
-      border: 1px solid #e8e8e8;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      border-radius: 20px;
+      border: 1px solid rgba(0,200,255,0.2);
+      box-shadow: 0 0 35px rgba(0,200,255,0.12);
+      backdrop-filter: blur(12px);
     }
 
     h2 {
       font-size: 32px;
       font-weight: 600;
-      margin-bottom: 18px;
-      color: #111;
+      margin-bottom: 20px;
+      color: #b8eaff;
     }
 
     /* CARDS */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
 
     .card {
-      background: #fff;
-      border: 1px solid #eaeaea;
-      padding: 24px;
+      background: rgba(0,30,55,0.5);
+      border: 1px solid rgba(0,200,255,0.2);
+      padding: 26px;
       border-radius: 14px;
       text-align: center;
       transition: 0.25s;
+      color: #cfe8ff;
     }
 
     .card:hover {
-      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      box-shadow: 0 0 18px rgba(0,200,255,0.4);
       transform: translateY(-4px);
+    }
+
+    /* PRICING */
+    .price-box {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #7fd6ff;
+      text-shadow: 0 0 10px rgba(0,200,255,0.4);
     }
 
     /* SOCIAL */
     .socials {
       display: flex;
       justify-content: center;
-      gap: 25px;
-      margin-top: 28px;
+      gap: 28px;
+      margin-top: 30px;
     }
 
     .socials img {
-      width: 40px;
-      opacity: 0.8;
-      transition: 0.2s;
+      width: 42px;
+      opacity: 0.85;
+      transition: 0.25s;
+      filter: drop-shadow(0 0 8px rgba(0,200,255,0.4));
     }
 
     .socials img:hover {
       opacity: 1;
-      transform: scale(1.1);
+      transform: scale(1.12);
     }
 
     /* FLOATING WA */
     .floating-wa {
       position: fixed;
       bottom: 25px;
-      right: 22px;
+      right: 25px;
       width: 62px;
       height: 62px;
       background: #25D366;
@@ -134,39 +151,58 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 0 18px rgba(0,255,150,0.45);
       z-index: 1000;
     }
 
     .floating-wa img { width: 34px; filter: brightness(0) invert(1); }
 
-  </style>
+  :root { --neon: #00eaff; --neon2: #8f00ff; }
+
+body { background: radial-gradient(circle at center, #0a0f1c, #000); }
+
+header h1, header p { text-shadow: 0 0 15px var(--neon); }
+
+.cyber-btn { background: linear-gradient(45deg, var(--neon), var(--neon2)); box-shadow: 0 0 20px var(--neon); transition: 0.3s ease; }
+.cyber-btn:hover { box-shadow: 0 0 30px var(--neon2); transform: translateY(-3px); }
+
+.profile { box-shadow: 0 0 25px var(--neon2); animation: glow 3s infinite alternate; }
+
+@keyframes glow { from { box-shadow: 0 0 10px var(--neon); } to { box-shadow: 0 0 25px var(--neon2); } }
+
+.background-cyber { position: fixed; inset: 0; background: repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0 2px, transparent 2px 80px), repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0 2px, transparent 2px 80px); pointer-events:none; z-index:-1; animation: gridmove 15s linear infinite; }
+
+@keyframes gridmove { from { transform: translateY(0); } to { transform: translateY(80px); } }
+</style>
 </head>
 <body>
+<div class="background-cyber"></div>
 
   <div class="hero">
-    <h1>Teuku Rijul</h1>
-    <p>Freelancer Premium • Kecepatan • Kerahasiaan • Hasil Maksimal</p>
+    <h1 class="glow">Teuku Rijul</h1>
+    <p class="glow">Freelancer Premium • Kecepatan • Kerahasiaan • Hasil Futuristik</p>
     <a class="cta-btn" href="https://wa.me/62895328323138" target="_blank">Hubungi Sekarang</a>
   </div>
 
   <div class="section">
-    <div style="display:flex;gap:35px;align-items:center;justify-content:center;flex-wrap:wrap;">
+    <div style="display:flex;gap:40px;align-items:center;justify-content:center;flex-wrap:wrap;">
 
       <img src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" class="profile" />
 
-      <div style="max-width:430px;">
-        <h2>Tentang Saya</h2>
+      <div style="max-width:440px;">
+        <h2 class="glow">Tentang Saya</h2>
         <p>
-          Saya adalah freelancer profesional yang mengutamakan kualitas, keamanan, dan hasil kerja terbaik.
-          Setiap project ditangani dengan pendekatan premium, cepat, dan berfokus pada kepuasan klien.
+          Saya adalah freelancer profesional dengan fokus pada kualitas premium, kecepatan, dan keamanan tinggi.
+          Menggunakan pendekatan futuristik untuk setiap project agar memberikan hasil terbaik bagi klien.
         </p>
+        <div class="price-box">Harga Jasa<br><span style="font-size:18px;color:#00eaff;">Mulai dari Rp 1.999 – 4.999 </span></div>
       </div>
+
     </div>
   </div>
 
   <div class="section">
-    <h2>Layanan Premium</h2>
+    <h2 class="glow">Layanan Premium</h2>
     <div class="cards">
       <div class="card"><h3>General Support</h3><p>Bantuan berbagai kebutuhan klien.</p></div>
       <div class="card"><h3>Project Assistance</h3><p>Pengerjaan project cepat & rapi.</p></div>
@@ -176,7 +212,7 @@
   </div>
 
   <div class="section">
-    <h2>Sosial Media</h2>
+    <h2 class="glow">Sosial Media</h2>
     <div class="socials">
       <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" /></a>
       <a href="https://www.instagram.com/teuku_rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" /></a>

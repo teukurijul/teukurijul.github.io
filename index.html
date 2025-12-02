@@ -1,10 +1,21 @@
-<!-- HTML Template Cyber Futuristic Version -->
+<!-- Updated HTML with corrected 'Tentang Saya' and detailed Varian Jasa & Harga -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teuku Rijul — Freelancer Premium</title>
+  <!-- SEO Optimization -->
+  <meta name="description" content="Teuku Rijul - Freelancer Premium dengan layanan cepat, aman, dan futuristik. Menyediakan jasa profesional mulai dari basic hingga premium dengan kualitas tinggi.">
+  <meta name="keywords" content="Freelancer Premium, Teuku Rijul, Jasa Profesional, Layanan Premium, Freelance Indonesia, Project Assistance, Data Security">
+  <meta name="author" content="Teuku Rijul">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Teuku Rijul — Freelancer Premium">
+  <meta property="og:description" content="Layanan freelance premium dengan kualitas tinggi, kecepatan, dan keamanan maksimal.">
+  <meta property="og:image" content="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-github-pages-url">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -16,12 +27,10 @@
       line-height: 1.7;
     }
 
-    /* GLOW EFFECT */
     .glow {
       text-shadow: 0 0 12px rgba(0,180,255,0.75), 0 0 24px rgba(0,180,255,0.45);
     }
 
-    /* HERO */
     .hero {
       padding: 150px 20px 170px;
       text-align: center;
@@ -59,7 +68,6 @@
       box-shadow: 0 0 18px rgba(0,200,255,0.8);
     }
 
-    /* PROFILE PHOTO */
     .profile {
       width: 220px;
       height: 220px;
@@ -69,7 +77,6 @@
       box-shadow: 0 0 25px rgba(0,200,255,0.25);
     }
 
-    /* SECTIONS */
     .section {
       max-width: 980px;
       margin: 70px auto;
@@ -88,7 +95,6 @@
       color: #b8eaff;
     }
 
-    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -110,7 +116,6 @@
       transform: translateY(-4px);
     }
 
-    /* PRICING */
     .price-box {
       margin-top: 20px;
       font-size: 22px;
@@ -119,7 +124,6 @@
       text-shadow: 0 0 10px rgba(0,200,255,0.4);
     }
 
-    /* SOCIAL */
     .socials {
       display: flex;
       justify-content: center;
@@ -139,7 +143,6 @@
       transform: scale(1.12);
     }
 
-    /* FLOATING WA */
     .floating-wa {
       position: fixed;
       bottom: 25px;
@@ -157,23 +160,25 @@
 
     .floating-wa img { width: 34px; filter: brightness(0) invert(1); }
 
-  :root { --neon: #00eaff; --neon2: #8f00ff; }
+    /* Cyber theme */
+    :root { --neon: #00eaff; --neon2: #8f00ff; }
 
-body { background: radial-gradient(circle at center, #0a0f1c, #000); }
+    .profile { box-shadow: 0 0 25px var(--neon2); animation: glow 3s infinite alternate; }
 
-header h1, header p { text-shadow: 0 0 15px var(--neon); }
+    @keyframes glow { from { box-shadow: 0 0 10px var(--neon); } to { box-shadow: 0 0 25px var(--neon2); } }
 
-.cyber-btn { background: linear-gradient(45deg, var(--neon), var(--neon2)); box-shadow: 0 0 20px var(--neon); transition: 0.3s ease; }
-.cyber-btn:hover { box-shadow: 0 0 30px var(--neon2); transform: translateY(-3px); }
+    .background-cyber {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0 2px, transparent 2px 80px),
+                  repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0 2px, transparent 2px 80px);
+      pointer-events:none;
+      z-index:-1;
+      animation: gridmove 15s linear infinite;
+    }
 
-.profile { box-shadow: 0 0 25px var(--neon2); animation: glow 3s infinite alternate; }
-
-@keyframes glow { from { box-shadow: 0 0 10px var(--neon); } to { box-shadow: 0 0 25px var(--neon2); } }
-
-.background-cyber { position: fixed; inset: 0; background: repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0 2px, transparent 2px 80px), repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0 2px, transparent 2px 80px); pointer-events:none; z-index:-1; animation: gridmove 15s linear infinite; }
-
-@keyframes gridmove { from { transform: translateY(0); } to { transform: translateY(80px); } }
-</style>
+    @keyframes gridmove { from { transform: translateY(0); } to { transform: translateY(80px); } }
+  </style>
 </head>
 <body>
 <div class="background-cyber"></div>
@@ -192,8 +197,9 @@ header h1, header p { text-shadow: 0 0 15px var(--neon); }
       <div style="max-width:440px;">
         <h2 class="glow">Tentang Saya</h2>
         <p>
-          Saya adalah freelancer profesional dengan fokus pada kualitas premium, kecepatan, dan keamanan tinggi.
-          Menggunakan pendekatan futuristik untuk setiap project agar memberikan hasil terbaik bagi klien.
+          Saya adalah seorang freelancer profesional yang mengutamakan kualitas premium,
+          kecepatan, dan keamanan tingkat tinggi. Setiap proyek dikerjakan dengan pendekatan
+          futuristik untuk memastikan hasil yang optimal dan berstandar tinggi bagi setiap klien.
         </p>
         <div class="price-box">Harga Jasa<br><span style="font-size:18px;color:#00eaff;">Mulai dari Rp 1.999 – 4.999 </span></div>
       </div>
@@ -202,12 +208,33 @@ header h1, header p { text-shadow: 0 0 15px var(--neon); }
   </div>
 
   <div class="section">
-    <h2 class="glow">Layanan Premium</h2>
+    <h2 class="glow">Varian Jasa & Harga</h2>
     <div class="cards">
-      <div class="card"><h3>General Support</h3><p>Bantuan berbagai kebutuhan klien.</p></div>
-      <div class="card"><h3>Project Assistance</h3><p>Pengerjaan project cepat & rapi.</p></div>
-      <div class="card"><h3>Data Security</h3><p>Kerahasiaan & keamanan tingkat tinggi.</p></div>
-      <div class="card"><h3>Consulting</h3><p>Konsultasi kebutuhan kerja & project.</p></div>
+
+      <div class="card">
+        <h3>Basic Service</h3>
+        <p>Layanan dasar untuk kebutuhan standar yang tetap mengutamakan kualitas.</p>
+        <div class="price-box">IDR 1.999.999,00</div>
+      </div>
+
+      <div class="card">
+        <h3>Standard Service</h3>
+        <p>Paket layanan dengan fitur lebih lengkap dan proses kerja lebih cepat.</p>
+        <div class="price-box">IDR 2.999.999,00</div>
+      </div>
+
+      <div class="card">
+        <h3>Professional Service</h3>
+        <p>Dikhususkan untuk proyek dengan detail lebih dalam dan standar eksekusi tinggi.</p>
+        <div class="price-box">IDR 4.499.999,00</div>
+      </div>
+
+      <div class="card">
+        <h3>Premium Service</h3>
+        <p>Layanan kelas tertinggi dengan prioritas penuh, keamanan ekstra, dan performa maksimal.</p>
+        <div class="price-box">IDR 5.999.999,00</div>
+      </div>
+
     </div>
   </div>
 

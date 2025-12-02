@@ -1,150 +1,180 @@
 <!doctype html>
-<html lang="id" class="light premium-final">
+<html lang="id" class="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Teuku Rijul — Freelancer Premium</title>
-  <meta name="description" content="Teuku Rijul - Freelancer Premium berkelas tinggi dengan kualitas terbaik dan tampilan paling futuristik." />
-  <meta name="author" content="Teuku Rijul" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Teuku Rijul — Freelancer Premium</title>
+<meta name="description" content="Teuku Rijul - Freelancer Premium dengan kualitas tinggi, aman, dan futuristik. Tema terang premium." />
+<meta name="author" content="Teuku Rijul" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <style>
-    :root{
-      --bg:#eef3ff;
-      --glass:rgba(255,255,255,0.55);
-      --glass-border:rgba(255,255,255,0.4);
-      --text:#0f1c2e;
-      --soft:#4d6075;
-      --accent:#0066ff;
-      --accent-2:#00c6ff;
-      --rad:20px;
-    }
-    body{
-      margin:0;
-      font-family:Poppins,system-ui;
-      background:linear-gradient(140deg,#f8fbff,#e5edff,#f0f4ff);
-      color:var(--text);
-      overflow-x:hidden;
-    }
-    .wrap{max-width:1180px;margin:40px auto;padding:22px;}
+<style>
+:root {
+  --bg:#eef3ff;
+  --glass:rgba(255,255,255,0.55);
+  --glass-border:rgba(255,255,255,0.4);
+  --text:#0f1c2e;
+  --soft:#4d6075;
+  --accent:#0066ff;
+  --accent-2:#00c6ff;
+  --rad:20px;
+}
 
-    .glass{
-      background:var(--glass);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-      border:1px solid var(--glass-border);
-      border-radius:var(--rad);
-      box-shadow:0 20px 40px rgba(0,0,0,0.06);
-    }
+body{
+  margin:0;
+  font-family:Poppins,system-ui;
+  background:linear-gradient(140deg,#f8fbff,#e5edff,#f0f4ff);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-    .hero{
-      padding:110px 20px;
-      text-align:center;
-      background:linear-gradient(135deg,#ffffffaa,#e8f1ffdd);
-    }
-    .hero h1{font-size:48px;margin:0;font-weight:700;animation:fadeUp .9s ease forwards;opacity:0;}
-    .hero p{margin:10px 0 0;font-size:20px;color:var(--soft);animation:fadeUp 1.2s ease forwards;opacity:0;}
+.wrap{max-width:1180px;margin:40px auto;padding:22px;}
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+.glass{
+  background:var(--glass);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--glass-border);
+  border-radius:var(--rad);
+  box-shadow:0 20px 40px rgba(0,0,0,0.06);
+}
 
-    .cta{
-      display:inline-block;margin-top:28px;padding:15px 36px;border-radius:14px;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;
-      font-weight:700;text-decoration:none;font-size:18px;
-      box-shadow:0 12px 30px rgba(0,120,255,0.25);
-      transition:.25s;
-    }
-    .cta:hover{transform:translateY(-4px);}
+/* HERO */
+.hero{
+  padding:110px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#ffffffaa,#e8f1ffdd);
+}
+.hero h1{font-size:48px;margin:0;font-weight:700;animation:fadeUp .9s ease forwards;opacity:0;}
+.hero p{margin:10px 0 0;font-size:20px;color:var(--soft);animation:fadeUp 1.2s ease forwards;opacity:0;}
 
-    .section{padding:48px;margin:45px 0;}
-    .row{display:flex;flex-wrap:wrap;gap:34px;align-items:center;}
-    .profile{
-      width:230px;height:230px;border-radius:var(--rad);
-      object-fit:cover;border:4px solid var(--accent-2);
-      box-shadow:0 18px 40px rgba(0,0,0,0.12);
-    }
-    h2{margin:0 0 14px;font-size:32px;font-weight:700;}
-    p{color:var(--soft);line-height:1.65;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
 
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
-    .card{
-      padding:24px;border-radius:var(--rad);
-      background:rgba(255,255,255,0.7);
-      border:1px solid var(--glass-border);
-      backdrop-filter:blur(12px);
-      transition:.3s;box-shadow:0 15px 30px rgba(0,0,0,0.06);
-    }
-    .card:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(0,0,0,0.1);}
-    .price{margin-top:12px;font-size:22px;font-weight:700;color:var(--accent);}  
+.cta{
+  display:inline-block;margin-top:28px;padding:15px 36px;border-radius:14px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;
+  font-weight:700;text-decoration:none;font-size:18px;
+  box-shadow:0 12px 30px rgba(0,120,255,0.25);
+  transition:.25s;
+}
+.cta:hover{transform:translateY(-4px);}
 
-    .socials{display:flex;gap:16px;margin-top:14px;justify-content:center;}
-    .socials img{width:46px;height:46px;border-radius:14px;box-shadow:0 12px 22px rgba(0,0,0,0.12);transition:.3s;}
-    .socials img:hover{transform:scale(1.12);}  
+/* SECTIONS */
+.section{padding:48px;margin:45px 0;}
+.row{display:flex;flex-wrap:wrap;gap:34px;align-items:center;}
+.profile{width:230px;height:230px;border-radius:var(--rad);object-fit:cover;border:4px solid var(--accent-2);box-shadow:0 18px 40px rgba(0,0,0,0.12);}
+h2{margin:0 0 14px;font-size:32px;font-weight:700;}
+p{color:var(--soft);line-height:1.65;}
 
-    .reviews .meta{text-align:center;color:var(--soft);margin-bottom:14px;}
-    .slider{display:flex;gap:18px;overflow:hidden;padding:8px;}
-    .rev{
-      min-width:270px;padding:22px;border-radius:var(--rad);
-      background:rgba(255,255,255,0.75);
-      backdrop-filter:blur(10px);
-      border:1px solid var(--glass-border);
-      box-shadow:0 14px 30px rgba(0,0,0,0.05);
-    }
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.card{
+  padding:24px;border-radius:var(--rad);
+  background:rgba(255,255,255,0.7);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(12px);
+  transition:.3s;box-shadow:0 15px 30px rgba(0,0,0,0.06);
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(0,0,0,0.1);}
+.price{margin-top:12px;font-size:22px;font-weight:700;color:var(--accent);}
 
-    footer{text-align:center;color:var(--soft);padding:40px 0;font-size:15px;}
+/* SOCIALS */
+.socials{display:flex;gap:16px;margin-top:14px;justify-content:center;}
+.socials img{width:46px;height:46px;border-radius:14px;box-shadow:0 12px 22px rgba(0,0,0,0.12);transition:.3s;}
+.socials img:hover{transform:scale(1.12);}
 
-    .wa{position:fixed;right:18px;bottom:18px;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 28px rgba(0,184,107,.2);z-index:999;}
-    .wa img{width:36px;height:36px;filter:brightness(0) invert(1);}  
+/* REVIEWS */
+.reviews .meta{text-align:center;color:var(--soft);margin-bottom:14px;}
+.slider{display:flex;gap:18px;overflow:hidden;padding:8px;}
+.rev{min-width:270px;padding:22px;border-radius:var(--rad);background:rgba(255,255,255,0.75);backdrop-filter:blur(10px);border:1px solid var(--glass-border);box-shadow:0 14px 30px rgba(0,0,0,0.05);}
 
-    .fade{opacity:0;transform:translateY(14px);transition:1s ease;}
-    .fade.in{opacity:1;transform:none;}  
+/* FOOTER */
+footer{text-align:center;color:var(--soft);padding:40px 0;font-size:15px;}
 
-    @media(max-width:640px){.hero h1{font-size:34px;} .profile{width:170px;height:170px;}}
-  </style>
+/* WHATSAPP */
+.wa{position:fixed;right:18px;bottom:18px;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 28px rgba(0,184,107,.2);z-index:999;}
+.wa img{width:36px;height:36px;filter:brightness(0) invert(1);}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(14px);transition:1s ease;}
+.fade.in{opacity:1;transform:none;}
+
+@media(max-width:640px){.hero h1{font-size:34px;}.profile{width:170px;height:170px;}}
+</style>
 </head>
 <body>
-  <main class="wrap" id="main">
+<main class="wrap" id="main">
 
-    <section class="hero glass fade" data-fade>
-      <h1>Teuku Rijul</h1>
-      <p>Freelancer Premium • Futuristik • Aman • Kualitas Maksimal</p>
-      <a class="cta" href="https://wa.me/62895328323138" target="_blank">Hubungi Sekarang</a>
-    </section>
+<section class="hero glass fade" data-fade>
+<h1>Teuku Rijul</h1>
+<p>Freelancer Premium • Futuristik • Aman • Kualitas Maksimal</p>
+<a class="cta" href="https://wa.me/62895328323138" target="_blank">Hubungi Sekarang</a>
+</section>
 
-    <section class="section glass fade" data-fade>
-      <div class="row">
-        <img class="profile" src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg"/>
-        <div>
-          <h2>Tentang Saya</h2>
-          <p>Saya adalah freelancer premium yang fokus pada kualitas tertinggi, detail presisi, dan keamanan proyek tingkat profesional. Semua pengerjaan dilakukan dengan standar internasional.</p>
-          <div style="margin-top:12px;font-weight:600;color:var(--text)">Harga Jasa • <span style="color:var(--accent)">IDR 1.999.999 — IDR 5.999.999</span></div>
-        </div>
-      </div>
-    </section>
+<section class="section glass fade" data-fade>
+<div class="row">
+<img class="profile" src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" alt="Teuku Rijul"/>
+<div>
+<h2>Tentang Saya</h2>
+<p>Saya adalah freelancer premium fokus pada kualitas tertinggi, detail presisi, dan keamanan proyek profesional.</p>
+<div style="margin-top:12px;font-weight:600;color:var(--text)">Harga Jasa • <span style="color:var(--accent)">IDR 1.999.999 — IDR 5.999.999</span></div>
+</div>
+</div>
+</section>
 
-    <section class="section glass fade" data-fade>
-      <h2>Varian Jasa & Harga</h2>
-      <div class="cards">
-        <div class="card"><h3>Basic Service</h3><p>Layanan solid dan profesional.</p><div class="price">IDR 1.999.999</div></div>
-        <div class="card"><h3>Standard Service</h3><p>Lebih cepat & lebih lengkap.</p><div class="price">IDR 2.999.999</div></div>
-        <div class="card"><h3>Professional Service</h3><p>Fokus detail & kualitas tinggi.</p><div class="price">IDR 4.499.999</div></div>
-        <div class="card"><h3>Premium Service</h3><p>Prioritas tertinggi & keamanan ekstra.</p><div class="price">IDR 5.999.999</div></div>
-      </div>
-    </section>
+<section class="section glass fade" data-fade>
+<h2>Varian Jasa & Harga</h2>
+<div class="cards">
+<div class="card"><h3>Basic Service</h3><p>Layanan solid dan profesional.</p><div class="price">IDR 1.999.999</div></div>
+<div class="card"><h3>Standard Service</h3><p>Lebih cepat & lebih lengkap.</p><div class="price">IDR 2.999.999</div></div>
+<div class="card"><h3>Professional Service</h3><p>Fokus detail & kualitas tinggi.</p><div class="price">IDR 4.499.999</div></div>
+<div class="card"><h3>Premium Service</h3><p>Prioritas tertinggi & keamanan ekstra.</p><div class="price">IDR 5.999.999</div></div>
+</div>
+</section>
 
-    <section class="section glass fade" data-fade>
-      <h2>Sosial Media</h2>
-      <div class="socials">
-        <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png"></a>
-        <a href="https://www.instagram.com/teuku_rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png"></a>
-        <a href="https://www.tiktok.com/@teuku.rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
-      </div>
-    </section>
+<section class="section glass fade" data-fade>
+<h2>Sosial Media</h2>
+<div class="socials">
+<a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"/></a>
+<a href="https://www.instagram.com/teuku_rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"/></a>
+<a href="https://www.tiktok.com/@teuku.rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"/></a>
+</div>
+</section>
 
-    <section class="section glass fade reviews" data-fade>
-      <h2>Ulasan</h2>
-      <div class="meta">★★★★★ — 3.000+ Klien Puas</div>
-      <div class="slider" id="slider">
-        <div class="rev"><strong>Rahmat S.</strong><div style="color:#ffb400">★★★★★</div><p>Kerja sangat cepat dan hasil rapi.</p></div>
-        <div class="rev"><strong>Andi P.</strong><div style="color:#ffb400">★★★★★</div><p>Sangat profesional dan komunikatif.</p></
+<section class="section glass fade reviews" data-fade>
+<h2>Ulasan</h2>
+<div class="meta">★★★★★ — 3.000+ Klien Puas</div>
+<div class="slider" id="slider">
+<div class="rev"><strong>Rahmat S.</strong><div style="color:#ffb400">★★★★★</div><p>Kerja cepat dan rapi.</p></div>
+<div class="rev"><strong>Andi P.</strong><div style="color:#ffb400">★★★★★</div><p>Sangat profesional dan komunikatif.</p></div>
+<div class="rev"><strong>Dewi L.</strong><div style="color:#ffb400">★★★★★</div><p>Hasil memuaskan dan sesuai harapan.</p></div>
+</div>
+</section>
+
+<footer>© 2025 Teuku Rijul — Premium Freelancer. All Rights Reserved.</footer>
+</main>
+
+<a class="wa" href="https://wa.me/62895328323138" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/></a>
+
+<script>
+// Fade in on scroll
+const io = new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.2});
+document.querySelectorAll('[data-fade]').forEach(el=>io.observe(el));
+
+// Simple slider
+const slider = document.getElementById('slider');
+if(slider){
+let idx=0;
+const items = slider.children;
+const total = items.length;
+setInterval(()=>{
+  idx=(idx+1)%total;
+  slider.scrollTo({left: idx*(items[0].offsetWidth+18), behavior:'smooth'});
+},3000);
+}
+</script>
+</body>
+</html>

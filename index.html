@@ -1,303 +1,193 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Temporary Guarantee Legality — Document Generator</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Temporary Guarantee Legality — Premium Document</title>
 
-  <!-- jsPDF & qrcode library CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+<!-- FONT & STYLE -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --navy:#1a237e; --muted:#6b7280; --bg:#f6f7fb;
-      --card:#fff;
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        background: #f4f6f9;
+        margin: 0;
+        padding: 0;
     }
-    body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);margin:0;padding:28px;color:#111;}
-    .container{max-width:980px;margin:0 auto;background:var(--card);border-radius:16px;padding:30px 36px;box-shadow:0 8px 30px rgba(15,23,42,0.08);position:relative;overflow:hidden;}
-    .header{display:flex;align-items:center;justify-content:space-between;gap:16px;}
-    .brand{display:flex;gap:16px;align-items:center;}
-    .logo{width:220px;border-radius:12px;}
-    h1{font-size:20px;margin:0;color:var(--navy);letter-spacing:0.2px;}
-    .tag{font-size:12px;color:var(--muted);margin-top:4px;}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;}
-    label{display:block;font-weight:600;font-size:13px;margin-bottom:6px;color:#0f172a;}
-    input[type="text"], textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e6e9f2;background:#fbfcff;font-size:14px;outline:none}
-    textarea{min-height:96px;resize:vertical}
-    .full{grid-column:1 / -1}
-    .actions{display:flex;gap:12px;margin-top:18px;align-items:center;}
-    button{background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:700}
-    button.secondary{background:#fff;color:var(--navy);border:1px solid rgba(26,35,126,0.12)}
-    .preview{margin-top:26px;padding:18px;border-radius:12px;background:linear-gradient(180deg, #fff, #fbfdff);border:1px solid rgba(10,15,40,0.03)}
-    .field{margin-bottom:8px}
-    .val{background:#eef1fa;padding:8px 10px;border-radius:8px;display:inline-block;margin-top:6px}
-    /* watermark */
-    .watermark{position:absolute;left:10%;top:38%;font-size:86px;color:var(--navy);opacity:0.06;transform:rotate(-25deg);pointer-events:none;user-select:none}
-    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
-    .qr-preview{width:110px;height:110px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid rgba(10,15,40,0.05)}
-    @media(max-width:720px){.form-grid{grid-template-columns:1fr}}
-  </style>
+
+    .header {
+        background: linear-gradient(135deg, #0a1a3c, #123067);
+        color: white;
+        padding: 30px;
+        text-align: center;
+        border-bottom: 5px solid gold;
+    }
+
+    .header img {
+        width: 160px;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        max-width: 850px;
+        background: white;
+        margin: 30px auto;
+        padding: 30px;
+        border-radius: 14px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    /* Watermark */
+    .watermark {
+        position: absolute;
+        font-size: 70px;
+        top: 35%;
+        left: 10%;
+        opacity: 0.06;
+        transform: rotate(-25deg);
+        font-weight: 700;
+        color: #0a1a3c;
+        pointer-events: none;
+    }
+
+    label {
+        font-weight: 600;
+        margin-top: 10px;
+        display: block;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        background: #0a1a3c;
+        border: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #132d63;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 15px;
+        font-size: 13px;
+        color: #555;
+        opacity: 0.8;
+    }
+
+    .qr-preview {
+        display: block;
+        margin-left: auto;
+        width: 130px;
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+</style>
 </head>
+
 <body>
 
-<div class="container">
-  <div class="watermark">TEMPORARY GUARANTEE LEGALITY</div>
-
-  <div class="header">
-    <div class="brand">
-      <img class="logo" id="logoImg"
-        src="https://dummyimage.com/600x240/1a237e/ffffff&text=Temporary+Guarantee+Legality"
-        alt="Company Logo">
-      <div>
-        <h1>TEMPORARY GUARANTEE LEGALITY</h1>
-        <div class="tag">Secure Legal Assistance • Document Verification System</div>
-      </div>
-    </div>
-
-    <div style="text-align:right">
-      <div class="qr-preview" id="qrPreview">QR</div>
-      <div style="margin-top:8px;font-size:12px;color:var(--muted)">Scan untuk verifikasi</div>
-    </div>
-  </div>
-
-  <form id="docForm" onsubmit="return false;">
-    <div class="form-grid">
-      <div>
-        <label>Nomor Dokumen</label>
-        <input type="text" id="documentNumber" readonly />
-      </div>
-
-      <div>
-        <label>Tanggal</label>
-        <input type="text" id="date" />
-      </div>
-
-      <div class="full">
-        <label>Nama Klien</label>
-        <input type="text" id="clientName" placeholder="Nama lengkap / nama perusahaan" />
-      </div>
-
-      <div class="full">
-        <label>Alamat</label>
-        <input type="text" id="address" placeholder="Alamat lengkap" />
-      </div>
-
-      <div>
-        <label>Nomor Telepon</label>
-        <input type="text" id="phone" placeholder="08xxxxxxxxxx" />
-      </div>
-
-      <div>
-        <label>Jenis Dokumen</label>
-        <input type="text" id="documentType" placeholder="Contoh: Legalitas Jaminan Pengiriman" />
-      </div>
-
-      <div class="full">
-        <label>Deskripsi / Catatan</label>
-        <textarea id="description" placeholder="Keterangan tambahan..."></textarea>
-      </div>
-
-      <div>
-        <label>Petugas</label>
-        <input type="text" id="officer" placeholder="Nama petugas verifikasi" />
-      </div>
-
-      <div>
-        <label>&nbsp;</label>
-        <div style="opacity:0.8;font-size:12px">Pilih warna tema</div>
-        <select id="themeSel" style="padding:10px;border-radius:10px;margin-top:6px">
-          <option value="navy">Biru Navy (Default)</option>
-          <option value="gold">Emas Elegan</option>
-          <option value="black">Hitam Profesional</option>
-        </select>
-      </div>
-
-    </div>
-
-    <div class="actions">
-      <button id="btnGenerate">Generate PDF</button>
-      <button class="secondary" id="btnPreview">Perbarui Preview</button>
-      <button class="secondary" id="btnReset" type="button">Reset</button>
-    </div>
-  </form>
-
-  <div class="preview" id="previewArea" aria-live="polite">
-    <div class="field"><strong>Nomor Dokumen</strong><div class="val" id="pvNumber">-</div></div>
-    <div class="field"><strong>Tanggal</strong><div class="val" id="pvDate">-</div></div>
-    <div class="field"><strong>Nama Klien</strong><div class="val" id="pvClient">-</div></div>
-    <div class="field"><strong>Alamat</strong><div class="val" id="pvAddress">-</div></div>
-    <div class="field"><strong>Jenis Dokumen</strong><div class="val" id="pvType">-</div></div>
-    <div class="field"><strong>Deskripsi</strong><div class="val" id="pvDesc">-</div></div>
-    <div class="field"><strong>Petugas</strong><div class="val" id="pvOfficer">-</div></div>
-  </div>
-
-  <footer>
-    <strong style="color:var(--navy)">Temporary Guarantee Legality</strong> — Secure Legal Assistance · Verified Document Processing
-  </footer>
+<div class="header">
+    <img src="https://dummyimage.com/300x120/0a1a3c/ffffff&text=TGL+Premium+Logo" alt="Company Logo">
+    <h1>Temporary Guarantee Legality</h1>
+    <p>Premium Legalization Support Service</p>
 </div>
 
+<div class="container">
+
+    <div class="watermark">TGL PREMIUM</div>
+
+    <!-- QR CODE PREVIEW -->
+    <img id="qrImage" class="qr-preview" 
+         src="https://dummyimage.com/300x300/000/fff&text=QR+Code"
+         alt="QR Code">
+
+    <h2 style="color:#0a1a3c;">Legal Document Generator</h2>
+
+    <label>Client Name</label>
+    <input id="clientName" type="text" placeholder="Enter client name">
+
+    <label>Address</label>
+    <input id="address" type="text" placeholder="Enter address">
+
+    <label>Phone Number</label>
+    <input id="phone" type="text" placeholder="Enter phone number">
+
+    <label>Document Type</label>
+    <input id="documentType" type="text" placeholder="Document type">
+
+    <label>Description</label>
+    <textarea id="description" placeholder="Additional notes..."></textarea>
+
+    <label>Date</label>
+    <input id="date" type="date">
+
+    <label>Officer</label>
+    <input id="officer" type="text" placeholder="Officer name">
+
+    <button onclick="generatePDF()">Generate PDF</button>
+</div>
+
+<div class="footer">
+    <strong>Temporary Guarantee Legality</strong><br>
+    Gold–Navy Elite Edition • Verified Compliance Support
+</div>
+
+<!-- JS + PDF Creator -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <script>
-  (function(){
-    // Utilities
-    function random4(){ return Math.floor(1000 + Math.random()*9000) }
-    function formatDate(d){ return d.toLocaleDateString('id-ID', { year:'numeric', month:'long', day:'numeric'}) }
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
 
-    // Elements
-    const docNumEl = document.getElementById('documentNumber');
-    const dateEl = document.getElementById('date');
-    const clientEl = document.getElementById('clientName');
-    const addressEl = document.getElementById('address');
-    const phoneEl = document.getElementById('phone');
-    const typeEl = document.getElementById('documentType');
-    const descEl = document.getElementById('description');
-    const officerEl = document.getElementById('officer');
-    const themeSel = document.getElementById('themeSel');
-    const qrPreview = document.getElementById('qrPreview');
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(18);
+    pdf.text("TEMPORARY GUARANTEE LEGALITY", 20, 20);
 
-    // Preview fields
-    const pvNumber = document.getElementById('pvNumber');
-    const pvDate = document.getElementById('pvDate');
-    const pvClient = document.getElementById('pvClient');
-    const pvAddress = document.getElementById('pvAddress');
-    const pvType = document.getElementById('pvType');
-    const pvDesc = document.getElementById('pvDesc');
-    const pvOfficer = document.getElementById('pvOfficer');
+    pdf.setFontSize(12);
+    pdf.text("Premium Legalization Service", 20, 28);
 
-    // Initialize
-    function init(){
-      const now = new Date();
-      const num = `TGL-${now.getFullYear()}-${random4()}`;
-      docNumEl.value = num;
-      dateEl.value = formatDate(now);
-      updatePreview();
-      updateQR();
+    pdf.line(20, 32, 190, 32);
+
+    let y = 45;
+
+    function write(label, value) {
+        pdf.text(`${label}:`, 20, y);
+        pdf.text(value || "-", 80, y);
+        y += 10;
     }
 
-    function updatePreview(){
-      pvNumber.textContent = docNumEl.value;
-      pvDate.textContent = dateEl.value;
-      pvClient.textContent = clientEl.value || '-';
-      pvAddress.textContent = addressEl.value || '-';
-      pvType.textContent = typeEl.value || '-';
-      pvDesc.textContent = descEl.value || '-';
-      pvOfficer.textContent = officerEl.value || '-';
-    }
+    write("Client Name", document.getElementById("clientName").value);
+    write("Address", document.getElementById("address").value);
+    write("Phone", document.getElementById("phone").value);
+    write("Document Type", document.getElementById("documentType").value);
+    write("Description", document.getElementById("description").value);
+    write("Date", document.getElementById("date").value);
+    write("Officer", document.getElementById("officer").value);
 
-    function updateQR(){
-      const link = `https://verify.example.com/doc/${encodeURIComponent(docNumEl.value)}`;
-      // generate dataURL and show as image inside div
-      QRCode.toDataURL(link, {width:250, margin:1})
-        .then(url=>{
-          qrPreview.innerHTML = '';
-          const img = document.createElement('img');
-          img.src = url; img.style.width='100%'; img.style.height='100%'; img.style.objectFit='contain'; img.style.borderRadius='8px';
-          qrPreview.appendChild(img);
-        })
-        .catch(err=>{
-          qrPreview.textContent = 'QR Err';
-          console.error(err);
-        });
-    }
-
-    // Theme
-    themeSel.addEventListener('change', ()=>{
-      const t = themeSel.value;
-      if(t==='gold'){
-        document.documentElement.style.setProperty('--navy','#854d0e');
-        document.documentElement.style.setProperty('--bg','#fffaf0');
-      } else if(t==='black'){
-        document.documentElement.style.setProperty('--navy','#0f172a');
-        document.documentElement.style.setProperty('--bg','#f3f4f6');
-      } else {
-        document.documentElement.style.setProperty('--navy','#1a237e');
-        document.documentElement.style.setProperty('--bg','#f6f7fb');
-      }
-    });
-
-    // Buttons
-    document.getElementById('btnPreview').addEventListener('click', (ev)=>{
-      ev.preventDefault();
-      updatePreview();
-      updateQR();
-      alert('Preview diperbarui.');
-    });
-
-    document.getElementById('btnReset').addEventListener('click', ()=>{
-      clientEl.value = addressEl.value = phoneEl.value = typeEl.value = descEl.value = officerEl.value = '';
-      init();
-    });
-
-    // Generate PDF
-    document.getElementById('btnGenerate').addEventListener('click', async (ev)=>{
-      ev.preventDefault();
-      updatePreview();
-      updateQR();
-
-      // collect data
-      const data = {
-        documentNumber: docNumEl.value,
-        date: dateEl.value,
-        client: clientEl.value || '-',
-        address: addressEl.value || '-',
-        phone: phoneEl.value || '-',
-        type: typeEl.value || '-',
-        desc: descEl.value || '-',
-        officer: officerEl.value || '-'
-      };
-
-      // create PDF
-      const { jsPDF } = window.jspdf;
-      const pdf = new jsPDF({unit:'pt', format:'a4'});
-
-      // header
-      pdf.setFontSize(18);
-      pdf.setTextColor(26,35,126);
-      pdf.text('TEMPORARY GUARANTEE LEGALITY', 40, 60);
-      pdf.setFontSize(11);
-      pdf.setTextColor(50,50,50);
-      pdf.text('Secure Legal Assistance • Document Verification System', 40, 78);
-      pdf.setLineWidth(0.5);
-      pdf.line(40,88,555,88);
-
-      // QR (generate again and add)
-      try{
-        const qrData = await QRCode.toDataURL(`https://verify.example.com/doc/${encodeURIComponent(data.documentNumber)}`, {width:300});
-        pdf.addImage(qrData, 'PNG', 420, 40, 120, 120);
-      } catch(e){ console.warn('QR generation failed', e) }
-
-      // content fields
-      let y = 120;
-      const add = (label, value) => {
-        pdf.setFontSize(11);
-        pdf.setTextColor(30,30,30);
-        pdf.text(`${label}:`, 40, y);
-        pdf.setFontSize(11);
-        pdf.text(String(value), 170, y);
-        y += 20;
-      };
-
-      add('Document Number', data.documentNumber);
-      add('Date', data.date);
-      add('Client Name', data.client);
-      add('Address', data.address);
-      add('Phone', data.phone);
-      add('Document Type', data.type);
-      add('Description', data.desc);
-      add('Officer', data.officer);
-
-      // footer
-      pdf.setFontSize(10);
-      pdf.setTextColor(110,110,110);
-      pdf.text('Verified by TGL Digital Compliance System', 40, 760);
-      // save
-      pdf.save(`${data.documentNumber}.pdf`);
-    });
-
-    // init page
-    init();
-
-  })();
+    pdf.save("Legal-Document.pdf");
+}
 </script>
 
 </body>

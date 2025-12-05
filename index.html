@@ -1,194 +1,180 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id" class="light">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Temporary Guarantee Legality — Premium Document</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DIREKTORAT JENDERAL PAJAK— BEA DAN CUKAI</title>
+<meta name="description" content=" LEGALITAS - Legalisasi sementara dan bukan merupakan denda tetap, melainkan sebagai bagian dari proses klarifikasi dan pengesahan dokumen pengiriman." />
+<meta name="author" content="BEACUKAI" />
 
-<!-- FONT & STYLE -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
 <style>
-    body {
-        font-family: "Poppins", sans-serif;
-        background: #f4f6f9;
-        margin: 0;
-        padding: 0;
-    }
+:root {
+  --bg:#eef3ff;
+  --glass:rgba(255,255,255,0.55);
+  --glass-border:rgba(255,255,255,0.4);
+  --text:#0f1c2e;
+  --soft:#4d6075;
+  --accent:#0066ff;
+  --accent-2:#00c6ff;
+  --rad:20px;
+}
 
-    .header {
-        background: linear-gradient(135deg, #0a1a3c, #123067);
-        color: white;
-        padding: 30px;
-        text-align: center;
-        border-bottom: 5px solid gold;
-    }
+body{
+  margin:0;
+  font-family:Poppins,system-ui;
+  background:linear-gradient(140deg,#f8fbff,#e5edff,#f0f4ff);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-    .header img {
-        width: 160px;
-        margin-bottom: 10px;
-    }
+.wrap{max-width:1180px;margin:40px auto;padding:22px;}
 
-    .container {
-        max-width: 850px;
-        background: white;
-        margin: 30px auto;
-        padding: 30px;
-        border-radius: 14px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        position: relative;
-    }
+.glass{
+  background:var(--glass);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--glass-border);
+  border-radius:var(--rad);
+  box-shadow:0 20px 40px rgba(0,0,0,0.06);
+}
 
-    /* Watermark */
-    .watermark {
-        position: absolute;
-        font-size: 70px;
-        top: 35%;
-        left: 10%;
-        opacity: 0.06;
-        transform: rotate(-25deg);
-        font-weight: 700;
-        color: #0a1a3c;
-        pointer-events: none;
-    }
+/* HERO */
+.hero{
+  padding:110px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#ffffffaa,#e8f1ffdd);
+}
+.hero h1{font-size:48px;margin:0;font-weight:700;animation:fadeUp .9s ease forwards;opacity:0;}
+.hero p{margin:10px 0 0;font-size:20px;color:var(--soft);animation:fadeUp 1.2s ease forwards;opacity:0;}
 
-    label {
-        font-weight: 600;
-        margin-top: 10px;
-        display: block;
-    }
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
 
-    input, textarea {
-        width: 100%;
-        padding: 12px;
-        margin-top: 5px;
-        margin-bottom: 15px;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-        font-size: 15px;
-    }
+.cta{
+  display:inline-block;margin-top:28px;padding:15px 36px;border-radius:14px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;
+  font-weight:700;text-decoration:none;font-size:18px;
+  box-shadow:0 12px 30px rgba(0,120,255,0.25);
+  transition:.25s;
+}
+.cta:hover{transform:translateY(-4px);}
 
-    button {
-        width: 100%;
-        padding: 15px;
-        background: #0a1a3c;
-        border: none;
-        color: white;
-        font-size: 18px;
-        border-radius: 12px;
-        cursor: pointer;
-        font-weight: 600;
-        margin-top: 10px;
-    }
+/* SECTIONS */
+.section{padding:48px;margin:45px 0;}
+.row{display:flex;flex-wrap:wrap;gap:34px;align-items:center;}
+.profile{width:230px;height:230px;border-radius:var(--rad);object-fit:cover;border:4px solid var(--accent-2);box-shadow:0 18px 40px rgba(0,0,0,0.12);}
+h2{margin:0 0 14px;font-size:32px;font-weight:700;}
+p{color:var(--soft);line-height:1.65;}
 
-    button:hover {
-        background: #132d63;
-    }
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.card{
+  padding:24px;border-radius:var(--rad);
+  background:rgba(255,255,255,0.7);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(12px);
+  transition:.3s;box-shadow:0 15px 30px rgba(0,0,0,0.06);
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(0,0,0,0.1);}
+.price{margin-top:12px;font-size:22px;font-weight:700;color:var(--accent);}
 
-    .footer {
-        text-align: center;
-        margin-top: 40px;
-        padding: 15px;
-        font-size: 13px;
-        color: #555;
-        opacity: 0.8;
-    }
+/* SOCIALS */
+.socials{display:flex;gap:16px;margin-top:14px;justify-content:center;}
+.socials img{width:46px;height:46px;border-radius:14px;box-shadow:0 12px 22px rgba(0,0,0,0.12);transition:.3s;}
+.socials img:hover{transform:scale(1.12);}
 
-    .qr-preview {
-        display: block;
-        margin-left: auto;
-        width: 130px;
-        border-radius: 12px;
-        margin-bottom: 15px;
-    }
+/* REVIEWS */
+.reviews .meta{text-align:center;color:var(--soft);margin-bottom:14px;}
+.slider{display:flex;gap:18px;overflow:hidden;padding:8px;}
+.rev{min-width:270px;padding:22px;border-radius:var(--rad);background:rgba(255,255,255,0.75);backdrop-filter:blur(10px);border:1px solid var(--glass-border);box-shadow:0 14px 30px rgba(0,0,0,0.05);}
+
+/* FOOTER */
+footer{text-align:center;color:var(--soft);padding:40px 0;font-size:15px;}
+
+/* WHATSAPP */
+.wa{position:fixed;right:18px;bottom:18px;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 28px rgba(0,184,107,.2);z-index:999;}
+.wa img{width:36px;height:36px;filter:brightness(0) invert(1);}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(14px);transition:1s ease;}
+.fade.in{opacity:1;transform:none;}
+
+@media(max-width:640px){.hero h1{font-size:34px;}.profile{width:170px;height:170px;}}
 </style>
 </head>
-
 <body>
+<main class="wrap" id="main">
 
-<div class="header">
-    <img src="https://dummyimage.com/300x120/0a1a3c/ffffff&text=TGL+Premium+Logo" alt="Company Logo">
-    <h1>Temporary Guarantee Legality</h1>
-    <p>Premium Legalization Support Service</p>
+<section class="hero glass fade" data-fade>
+<h1>Website Legalitas</h1>
+<p>LEGALISASI JAMINAN SEMENTARA</p>
+<a class="cta" href="https://wa.me/6288214470730" target="_blank">Hubungi Sekarang</a>
+</section>
+
+<section class="section glass fade" data-fade>
+<div class="row">
+<img class="profile" src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" alt="Teuku Rijul"/>
+<div>
+<h2>Bea Dan Cukai</h2>
+<p>Konsekuensi Hukum: Jika pembayaran tidak dilakukan sesuai ketentuan, barang akan ditahan, disita, dan diproses hukum oleh Bea Cukai sesuai ketentuan UU No. 39 Tahun 2007 tentang Cukai.</p>
+<div style="margin-top:12px;font-weight:600;color:var(--text)">Denda Cukai Minimal • <span style="color:var(--accent)">2x — 4x Nilai Pita Cukai</span></div>
 </div>
-
-<div class="container">
-
-    <div class="watermark">TGL PREMIUM</div>
-
-    <!-- QR CODE PREVIEW -->
-    <img id="qrImage" class="qr-preview" 
-         src="https://dummyimage.com/300x300/000/fff&text=QR+Code"
-         alt="QR Code">
-
-    <h2 style="color:#0a1a3c;">Legal Document Generator</h2>
-
-    <label>Client Name</label>
-    <input id="clientName" type="text" placeholder="Enter client name">
-
-    <label>Address</label>
-    <input id="address" type="text" placeholder="Enter address">
-
-    <label>Phone Number</label>
-    <input id="phone" type="text" placeholder="Enter phone number">
-
-    <label>Document Type</label>
-    <input id="documentType" type="text" placeholder="Document type">
-
-    <label>Description</label>
-    <textarea id="description" placeholder="Additional notes..."></textarea>
-
-    <label>Date</label>
-    <input id="date" type="date">
-
-    <label>Officer</label>
-    <input id="officer" type="text" placeholder="Officer name">
-
-    <button onclick="generatePDF()">Generate PDF</button>
 </div>
+</section>
 
-<div class="footer">
-    <strong>Temporary Guarantee Legality</strong><br>
-    Gold–Navy Elite Edition • Verified Compliance Support
+<section class="section glass fade" data-fade>
+<h2>Indentitas/Data Penerima</h2>
+<div class="cards">
+<div class="card"><h3>Nama</h3><p>Teuku Rijul</p><div class="price">Client</div></div>
+<div class="card"><h3>No. Hp</h3><p>0895-3283-23138</p><div class="price">Pribadi</div></div>
+<div class="card"><h3>Alamat</h3><p>Desa Karangduren, Kec. Pakisaji, Kab. Malang, Jawa Timur 65162.</p><div class="price">Alamat Pribadi</div></div>
+<div class="card"><h3>Jumlah Barang</h3><p>10 Slop/ 2.000 Btg, Non Pita Cukai Resmi </p><div class="price">Ilegal</div></div>
 </div>
+</section>
 
-<!-- JS + PDF Creator -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<section class="section glass fade" data-fade>
+<h2>Sosial Media</h2>
+<div class="socials">
+<a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"/></a>
+<a href="https://www.instagram.com/teuku_rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"/></a>
+<a href="https://www.tiktok.com/@teuku.rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"/></a>
+</div>
+</section>
+
+<section class="section glass fade reviews" data-fade>
+<h2>Ulasan</h2>
+<div class="meta">★★★★★ — 3.000+ Klien Sudah Legalisasi</div>
+<div class="slider" id="slider">
+<div class="rev"><strong>Rahmat S.</strong><div style="color:#ffb400">★★★★★</div><p>Jaminan cepat dan amanah.</p></div>
+<div class="rev"><strong>Andi P.</strong><div style="color:#ffb400">★★★★★</div><p>Sangat profesional dan komunikatif.</p></div>
+<div class="rev"><strong>Dewi L.</strong><div style="color:#ffb400">★★★★★</div><p>Hasil memuaskan dan refund cepat.</p></div>
+</div>
+</section>
+
+<footer>© 2025 Website Legalitas — Bea Dan Cukai. All Rights Reserved.</footer>
+</main>
+
+<a class="wa" href="https://wa.me/6288214470730" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/></a>
 
 <script>
-function generatePDF() {
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF();
+// Fade in on scroll
+const io = new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.2});
+document.querySelectorAll('[data-fade]').forEach(el=>io.observe(el));
 
-    pdf.setFont("helvetica", "bold");
-    pdf.setFontSize(18);
-    pdf.text("TEMPORARY GUARANTEE LEGALITY", 20, 20);
-
-    pdf.setFontSize(12);
-    pdf.text("Premium Legalization Service", 20, 28);
-
-    pdf.line(20, 32, 190, 32);
-
-    let y = 45;
-
-    function write(label, value) {
-        pdf.text(`${label}:`, 20, y);
-        pdf.text(value || "-", 80, y);
-        y += 10;
-    }
-
-    write("Client Name", document.getElementById("clientName").value);
-    write("Address", document.getElementById("address").value);
-    write("Phone", document.getElementById("phone").value);
-    write("Document Type", document.getElementById("documentType").value);
-    write("Description", document.getElementById("description").value);
-    write("Date", document.getElementById("date").value);
-    write("Officer", document.getElementById("officer").value);
-
-    pdf.save("Legal-Document.pdf");
+// Simple slider
+const slider = document.getElementById('slider');
+if(slider){
+let idx=0;
+const items = slider.children;
+const total = items.length;
+setInterval(()=>{
+  idx=(idx+1)%total;
+  slider.scrollTo({left: idx*(items[0].offsetWidth+18), behavior:'smooth'});
+},3000);
 }
 </script>
-
 </body>
 </html>

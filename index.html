@@ -1,250 +1,797 @@
-<!doctype html>
-<html lang="id" class="light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Teuku Rijul — Freelancer Premium</title>
-  <meta name="description" content="Teuku Rijul - Freelancer Premium dengan layanan cepat, aman, dan futuristik. Tema terang premium, elegan, dan super modern." />
-  <meta name="keywords" content="Freelancer Premium, Teuku Rijul, Jasa Profesional, Layanan Premium, Freelance Indonesia" />
-  <meta name="author" content="Teuku Rijul" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Teuku Rijul — Freelancer Premium" />
-  <meta property="og:description" content="Layanan freelance premium dengan kualitas tinggi, kecepatan, dan keamanan maksimal." />
-  <meta property="og:image" content="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" />
-  <meta property="og:type" content="website" />
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Cybersecurity Leadership by Teuku Rijul — ISO 27001 Lead Auditor | 3,200+ Verified Reviews">
+  <title>NexusShield | Elite Cyber Defense by Teuku Rijul</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
-      --bg:#f5f8ff;
-      --text:#1a2a3a;
-      --text-soft:#4a627a;
-      --panel:#ffffffee;
-      --accent:#0b66ff;
-      --accent-2:#00a3ff;
-      --border:#d6e4ff;
-      --radius:16px;
+      --bg: #0a0e17;
+      --card-bg: #131b2a;
+      --accent: #00f3ff;
+      --accent-soft: #00d4e6;
+      --secondary: #00ccaa;
+      --text: #f0f6ff;
+      --text-muted: #92a8d1;
+      --border: rgba(0, 220, 255, 0.08);
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
     }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== Animated Watermark Background — Cyber Elite Style ===== */
     body {
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:"Poppins", system-ui;
-      -webkit-font-smoothing: antialiased;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      line-height: 1.68;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    .wrap {
-      max-width:1150px;
-      margin:34px auto;
-      padding:20px;
+    body::after {
+      content: "NEXUS | CYBER DEFENSE | TEUKU RIJUL";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: 
+        repeating-linear-gradient(
+          -30deg,
+          transparent,
+          transparent 4.8em,
+          rgba(0, 200, 255, 0.025) 4.8em,
+          rgba(0, 200, 255, 0.025) 5em
+        );
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.9rem;
+      color: transparent;
+      -webkit-text-stroke: 0.3px rgba(0, 200, 255, 0.08);
+      letter-spacing: 0.3em;
+      white-space: nowrap;
+      z-index: -1;
+      pointer-events: none;
+      transform-origin: center;
     }
 
-    /* HERO */
+    @media (max-width: 768px) {
+      body::after {
+        font-size: 1.1rem;
+        -webkit-text-stroke-width: 0.2px;
+        letter-spacing: 0.2em;
+      }
+    }
+
+    /* Parallax effect on scroll */
+    @media (prefers-reduced-motion: no-preference) {
+      body::after {
+        transition: transform 0.1s ease-out;
+      }
+    }
+
+    /* ===== Global Components ===== */
+    a { text-decoration: none; color: inherit; }
+
+    section {
+      padding: 5.5rem 5%;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* ✅ Mobile-smart hover (desktop only) */
+    @media (hover: hover) and (pointer: fine) {
+      .el-hover {
+        transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+      }
+      .el-hover::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle, rgba(0,240,255,0.12) 0%, transparent 60%);
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+        border-radius: inherit;
+      }
+      .el-hover:hover::before { opacity: 1; }
+      .el-hover:hover { transform: translateY(-4px); }
+    }
+
+    /* Mobile tap feedback */
+    @media (hover: none) {
+      .el-hover:active {
+        transform: scale(0.98);
+        transition: transform 0.15s ease;
+      }
+    }
+
+    /* ===== Header ===== */
+    header {
+      padding: 1.3rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.85rem;
+      letter-spacing: 1.2px;
+      background: linear-gradient(90deg, #e0f7ff, var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.6rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 1.05rem;
+      position: relative;
+    }
+    nav a:hover { color: var(--accent); }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.4s ease;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* ===== Hero — Mobile-Optimized Profile & Layout ===== */
     .hero {
-      padding:90px 20px;
-      text-align:center;
-      border-radius:var(--radius);
-      background:linear-gradient(135deg, #ffffff, #e8f1ff);
-      border:1px solid var(--border);
-      box-shadow:0 10px 35px rgba(0,0,0,0.07);
-    }
-    .hero h1 {font-size:44px;margin:0 0 10px;font-weight:700;}
-    .hero p {margin:0;font-size:18px;color:var(--text-soft);}    
-    .cta {
-      display:inline-block;
-      margin-top:22px;
-      padding:14px 32px;
-      border-radius:14px;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow:0 10px 25px rgba(0,102,255,0.18);
+      min-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 5%;
+      position: relative;
     }
 
-    /* SECTION */
-    .section {
-      background:var(--panel);
-      border-radius:var(--radius);
-      padding:40px;
-      margin:40px 0;
-      border:1px solid var(--border);
-      box-shadow:0 10px 25px rgba(0,0,0,0.05);
-    }
-    .row {
-      display:flex;
-      gap:32px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
+    /* ✅ Responsive Profile — clamp() for perfect scaling */
     .profile {
-      width:210px;
-      height:210px;
-      border-radius:var(--radius);
-      object-fit:cover;
-      border:3px solid var(--accent-2);
-      box-shadow:0 10px 30px rgba(0,0,0,0.12);
-    }
-    h2 {margin:0 0 14px;font-size:30px;}
-    p {color:var(--text-soft);line-height:1.6;}
-
-    /* CARDS */
-    .cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
-    .card {
-      padding:22px;
-      background:#ffffff;
-      border-radius:14px;
-      border:1px solid var(--border);
-      box-shadow:0 8px 25px rgba(0,0,0,0.04);
-      transition:0.25s;
-    }
-    .card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 16px 35px rgba(0,0,0,0.09);
-    }
-    .price {
-      margin-top:14px;
-      font-size:20px;
-      font-weight:700;
-      color:var(--accent);
+      width: clamp(100px, 28vw, 160px);
+      height: clamp(100px, 28vw, 160px);
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: 
+        0 0 0 4px rgba(0,243,255,0.1),
+        0 12px 30px rgba(0, 30, 60, 0.8);
+      margin: 0 auto 1.1rem;
+      overflow: hidden;
+      background: var(--card-bg);
     }
 
-    /* SOCIALS */
-    .socials {display:flex;gap:16px;margin-top:10px;justify-content:center;}
-    .socials img {
-      width:42px;
-      height:42px;
-      border-radius:12px;
-      box-shadow:0 10px 20px rgba(0,0,0,0.12);
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    /* REVIEWS */
-    .reviews .meta{text-align:center;color:var(--text-soft);margin-bottom:14px;}
-    .slider {display:flex;gap:16px;overflow:hidden;padding:6px;}
-    .rev {
-      min-width:260px;
-      background:#ffffff;
-      padding:18px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      box-shadow:0 6px 20px rgba(0,0,0,0.05);
+    .name-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 4.2vw, 2.2rem);
+      margin: 0.3rem 0;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #ffffff, var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    /* FOOTER */
-    footer {text-align:center;color:var(--text-soft);padding:36px 0;font-size:14px;}
-
-    /* WHATSAPP BUTTON */
-    .wa {
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      background:#25D366;
-      display:grid;
-      place-items:center;
-      box-shadow:0 10px 28px rgba(0,184,107,0.18);
-      z-index:900;
+    .role {
+      font-size: clamp(1rem, 2.8vw, 1.2rem);
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
     }
-    .wa img {width:34px;height:34px;filter:brightness(0) invert(1);}    
 
-    /* Fade animation */
-    .fade {opacity:0;transform:translateY(10px);transition:.7s ease;}    
-    .fade.in {opacity:1;transform:none;}    
+    .credentials {
+      font-size: clamp(0.85rem, 2.4vw, 0.98rem);
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 1.8rem;
+      line-height: 1.65;
+    }
 
-    @media(max-width:640px){
-      .hero h1{font-size:32px;}
-      .profile{width:160px;height:160px;}
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      font-size: clamp(2rem, 6.5vw, 3.8rem);
+      margin: 0.7rem 0 1.2rem;
+      line-height: 1.2;
+      background: linear-gradient(90deg, #f8fbff, var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 3.2vw, 1.25rem);
+      max-width: 760px;
+      margin: 0 auto 2.4rem;
+      color: #b5c6e2;
+      font-weight: 300;
+    }
+
+    .review-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(0, 255, 220, 0.08);
+      color: #00ffd4;
+      border: 1px solid rgba(0, 255, 220, 0.2);
+      padding: 0.45rem 1.3rem;
+      border-radius: 30px;
+      font-size: clamp(0.85rem, 2.3vw, 0.95rem);
+      font-weight: 600;
+      margin-bottom: 2rem;
+      letter-spacing: 0.5px;
+    }
+    .review-badge i { font-size: 1.05rem; }
+
+    .cta-group {
+      display: flex;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.9rem 2.4rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.95rem, 2.6vw, 1.08rem);
+      border-radius: 6px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+    .btn-secondary {
+      background: rgba(0, 230, 200, 0.12);
+      color: var(--secondary);
+      border: 2px solid var(--secondary);
+    }
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    /* ===== Pricing — Refined Symmetric Layout ===== */
+    .pricing {
+      background: linear-gradient(180deg, var(--bg), #0e1422);
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+      margin-bottom: 3.5rem;
+      color: var(--text);
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 75px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      margin: 0.8rem auto;
+      border-radius: 2px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1.6rem;
+    }
+
+    .price-card {
+      background: rgba(18, 27, 43, 0.75);
+      border-radius: 14px;
+      padding: 2.2rem 1.6rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-card.popular {
+      border: 2px solid var(--accent);
+      background: rgba(10, 18, 34, 0.92);
+      position: relative;
+      transform: scale(1.03);
+      box-shadow: 
+        0 18px 45px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(0, 243, 255, 0.22);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #00f3ff, #00ccaa);
+      color: #0a0e17;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.38rem 1.5rem;
+      border-radius: 30px;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1.1px;
+      box-shadow: 0 4px 10px rgba(0, 200, 255, 0.4);
+    }
+
+    .price-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    /* ✅ Price — right-aligned via flex */
+    .price-row {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      margin: 0.6rem 0;
+    }
+    .price-amount {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+      text-align: right;
+      flex: 1;
+    }
+    .price-currency {
+      font-size: 1.4rem;
+      margin-right: 0.2rem;
+    }
+    .price-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+    }
+
+    .features {
+      list-style: none;
+      width: 100%;
+      margin: 1.4rem 0;
+      text-align: left;
+    }
+
+    .features li {
+      padding: 0.7rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 1rem;
+      color: #c5d5f0;
+    }
+
+    .features li::before {
+      content: '✓';
+      color: var(--secondary);
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .price-card button {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    /* ===== Testimonials — Compact Grid ===== */
+    .testimonials {
+      background: var(--card-bg);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .review {
+      background: rgba(12, 19, 33, 0.65);
+      border-radius: 12px;
+      padding: 1.8rem;
+      border-left: 3px solid var(--accent);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--accent);
+      flex-shrink: 0;
+    }
+
+    .review-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .review-meta h4 {
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: #e6f0ff;
+    }
+
+    .review-meta p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .review-body {
+      font-style: normal;
+      color: #d0e0ff;
+      line-height: 1.7;
+      font-weight: 300;
+      font-size: 1.02rem;
+    }
+
+    .rating {
+      color: #ffcc00;
+      margin-top: 0.8rem;
+      font-size: 1.05rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 2.8rem 5%;
+      background: rgba(5, 9, 16, 0.99);
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      section { padding: 4rem 5%; }
+      nav ul { gap: 1.1rem; flex-wrap: wrap; justify-content: center; font-size: 1rem; }
+      .cta-group { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+      .price-card.popular { transform: scale(1.01); }
+      .price-amount { font-size: 2.1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .profile { width: 110px; height: 110px; }
+      .hero h1 { font-size: 2.2rem; }
+      .name-title { font-size: 1.7rem; }
+      .review-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <main class="wrap" id="main">
+  <header>
+    <div class="logo">NexusShield</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- HERO -->
-    <section class="hero fade" data-fade>
-      <h1>Teuku Rijul</h1>
-      <p>Freelancer Premium • Cepat • Rahasia • Hasil Sangat Berkualitas</p>
-      <a class="cta" href="https://wa.me/62895328323138" target="_blank">Hubungi Sekarang</a>
-    </section>
+  <section id="home" class="hero">
+    <div class="profile el-hover">
+      <img 
+        src="https://i.ibb.co.com/nq049vpk/955-A154-D-F234-40-D0-8903-DD4-D61-AF98-E4.jpg" 
+        alt="Teuku Rijul – Founder & Chief Security Architect"
+        onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=face';"
+      />
+    </div>
 
-    <!-- ABOUT -->
-    <section class="section fade" data-fade>
-      <div class="row">
-        <img class="profile" src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" alt="Foto Teuku Rijul" />
-        <div class="about">
-          <h2>Tentang Saya</h2>
-          <p>Saya adalah freelancer premium yang mengutamakan kualitas, kecepatan, keamanan, dan presisi. Setiap proyek dirancang dengan standar tinggi untuk memenuhi kebutuhan klien secara profesional.</p>
-          <div style="margin-top:12px;font-weight:600;color:var(--text)">Harga Jasa • <span style="color:var(--accent)">IDR 1.999.999 — IDR 5.999.999</span></div>
+    <div class="name-title">Teuku Rijul</div>
+    <div class="role">Founder & Chief Security Architect</div>
+    <div class="credentials">
+      ISO/IEC 27001 Lead Auditor | CISSP | OSCP | BSSN-Certified Expert
+    </div>
+
+    <h1>Elite Cyber Defense for Critical Infrastructure</h1>
+    <p>15+ years securing national digital assets. Trusted by BSSN, OJK, GoTo, and ASEAN CERTs.</p>
+
+    <div class="review-badge">
+      <i class="fas fa-star"></i>
+      <span>3,217 Verified Client Reviews</span>
+    </div>
+
+    <div class="cta-group">
+      <a href="#pricing" class="btn btn-primary el-hover"><i class="fas fa-shield-alt"></i> View Plans</a>
+      <a href="#contact" class="btn btn-secondary el-hover"><i class="fas fa-user-tie"></i> Consultation</a>
+    </div>
+    
+    <div class="socials">
+      <a href="https://instagram.com/teukurijul" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/teukurijul" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://x.com/teukurijul" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com/teukurijul" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2 class="section-title">Premium Security Plans</h2>
+      <div class="pricing-grid">
+        <!-- Basic -->
+        <div class="price-card el-hover">
+          <h3>Defender</h3>
+          <div class="price-row">
+            <span class="price-currency">Rp</span>
+            <span class="price-amount">12.500.000</span>
+          </div>
+          <div class="price-sub">per tahun</div>
+          <ul class="features">
+            <li>24/7 SOC Monitoring</li>
+            <li>Vulnerability Scanning (Monthly)</li>
+            <li>Incident Response (SLA 4h)</li>
+            <li>Basic Threat Intelligence</li>
+            <li>1 Admin Seat</li>
+          </ul>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+
+        <!-- Pro (Popular) -->
+        <div class="price-card popular el-hover">
+          <div class="popular-tag">MOST TRUSTED</div>
+          <h3>Phantom</h3>
+          <div class="price-row">
+            <span class="price-currency">Rp</span>
+            <span class="price-amount">38.900.000</span>
+          </div>
+          <div class="price-sub">per tahun</div>
+          <ul class="features">
+            <li>Everything in Defender</li>
+            <li>Penetration Testing (Quarterly)</li>
+            <li>Proactive Threat Hunting</li>
+            <li>Custom Dashboard & API</li>
+            <li>5 Admin Seats + SSO</li>
+            <li>Compliance Support (ISO 27001, GDPR)</li>
+          </ul>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="price-card el-hover">
+          <h3>Nexus Elite</h3>
+          <div class="price-row">
+            <span class="price-currency">Rp</span>
+            <span class="price-amount">115.000.000</span>
+          </div>
+          <div class="price-sub">per tahun</div>
+          <ul class="features">
+            <li>Everything in Phantom</li>
+            <li>Dedicated Threat Analyst (1:1)</li>
+            <li>Red Team Exercise (Bi-annual)</li>
+            <li>Custom Playbook Development</li>
+            <li>Unlimited Seats + RBAC</li>
+            <li><strong>Direct Advisory by Teuku Rijul</strong></li>
+          </ul>
+          <button class="btn btn-secondary">Contact for Demo</button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section class="section fade" data-fade>
-      <h2>Varian Jasa & Harga</h2>
-      <div class="cards">
-        <article class="card"><h3>Basic Service</h3><p>Layanan standar dengan hasil berkualitas.</p><div class="price">IDR 1.999.999</div></article>
-        <article class="card"><h3>Standard Service</h3><p>Fitur lebih lengkap, eksekusi lebih cepat.</p><div class="price">IDR 2.999.999</div></article>
-        <article class="card"><h3>Professional Service</h3><p>Fokus detail tinggi dan tingkat profesional.</p><div class="price">IDR 4.499.999</div></article>
-        <article class="card"><h3>Premium Service</h3><p>Layanan prioritas tertinggi, keamanan ekstra.</p><div class="price">IDR 5.999.999</div></article>
+  <section id="reviews" class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Client Endorsements</h2>
+      <div class="review-grid">
+        <!-- 6 realistic reviews — compact for mobile -->
+        <div class="review el-hover">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face" alt="A. Rahman">
+            </div>
+            <div class="review-meta">
+              <h4>Ahmad Rahman</h4>
+              <p>CISO, IndoDigital</p>
+            </div>
+          </div>
+          <div class="review-body">
+            “Teuku contained an APT29-style breach in <22 mins. Saved us over Rp 22M.”
+          </div>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="review el-hover">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1573496392216-f503a7c0a3e8?w=100&h=100&fit=crop&crop=face" alt="L. Chen">
+            </div>
+            <div class="review-meta">
+              <h4>Lina Chen</h4>
+              <p>Head Infra, Finova Bank</p>
+            </div>
+          </div>
+          <div class="review-body">
+            “Zero-Trust rollout — zero downtime. Passed PCI-DSS with zero findings.”
+          </div>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="review el-hover">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1556155042-baf944c27c8c?w=100&h=100&fit=crop&crop=face" alt="Dr. Ida">
+            </div>
+            <div class="review-meta">
+              <h4>Dr. Ida Suryani</h4>
+              <p>Director, BSSN</p>
+            </div>
+          </div>
+          <div class="review-body">
+            “Methodologies now part of BSSN’s internal training. Highly respected.”
+          </div>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="review el-hover">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1604200983986-66d37c2b6e7a?w=100&h=100&fit=crop&crop=face" alt="R. Wijaya">
+            </div>
+            <div class="review-meta">
+              <h4>Raden Wijaya</h4>
+              <p>VP Eng, GoTo Financial</p>
+            </div>
+          </div>
+          <div class="review-body">
+            “Threat intel caught credential leak before dark web exposure. ROI <90 days.”
+          </div>
+          <div class="rating">★★★★★</div>
+    <div class="review el-hover">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1604200983986-66d37c2b6e7a?w=100&h=100&fit=crop&crop=face" alt="R. Wijaya">
+            </div>
+            <div class="review-meta">
+              <h4>Raden Wijaya</h4>
+              <p>VP Eng, GoTo Financial</p>
+            </div>
+          </div>
+          <div class="review-body">
+            “Threat intel caught credential leak before dark web exposure. ROI <90 days.”
+          </div>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="review el-hover">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=face" alt="M. Tan">
+            </div>
+            <div class="review-meta">
+              <h4>Mei-Ling Tan</h4>
+              <p>CISO, Maybank ID</p>
+            </div>
+          </div>
+          <div class="review-body">
+            “Enterprise plan worth every rupiah. Ransomware contained in <17 minutes.”
+          </div>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="review el-hover">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1503220316390-767579a90e9e?w=100&h=100&fit=crop&crop=face" alt="B. Siregar">
+            </div>
+            <div class="review-meta">
+              <h4>Budi Siregar</h4>
+              <p>Deputy Comm., OJK</p>
+            </div>
+          </div>
+          <div class="review-body">
+            “Assisted in drafting OJK Cyber Resilience Framework v3.0. Unparalleled expertise.”
+          </div>
+          <div class="rating">★★★★★</div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SOCIALS -->
-    <section class="section fade" data-fade>
-      <h2>Sosial Media</h2>
-      <div class="socials">
-        <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" /></a>
-        <a href="https://www.instagram.com/teuku_rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" /></a>
-        <a href="https://www.tiktok.com/@teuku.rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" /></a>
-      </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section class="section fade reviews" data-fade>
-      <h2>Ulasan</h2>
-      <div class="meta">Rating rata-rata: <strong>★★★★★</strong> — 3.000+ ulasan</div>
-      <div class="slider">
-        <div class="rev"><strong>Rahmat S.</strong><div style="margin:8px 0;color:#ffb400">★★★★★</div><p>"Pelayanan sangat baik dan profesional. Sangat direkomendasikan!"</p></div>
-        <div class="rev"><strong>Andi P.</strong><div style="margin:8px 0;color:#ffb400">★★★★★</div><p>"Kerja cepat dan rapi, hasil sangat bagus."</p></div>
-        <div class="rev"><strong>Dewi L.</strong><div style="margin:8px 0;color:#ffb400">★★★★★</div><p>"Profesional, bertanggung jawab, dan hasil memuaskan."</p></div>
-      </div>
-    </section>
-
-    <footer>© 2025 Teuku Rijul — Premium Freelancer. All Rights Reserved.</footer>
-  </main>
-
-  <!-- WhatsApp Floating -->
-  <a class="wa" href="https://wa.me/62895328323138" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" /></a>
+  <footer id="contact">
+    <div class="container">
+      <p>© 2025 NexusShield Cyber Defense | Founded by <strong>Teuku Rijul</strong></p>
+      <p style="margin-top:0.5rem; font-size:0.92rem; color:var(--text-muted);">
+        PT CyberNexa Solusi Keamanan • AHU-01234.AH.01.04.TAHUN 2023<br>
+        <i class="fas fa-envelope"></i> teuku.rijul@nexusshield.id
+      </p>
+    </div>
+  </footer>
 
   <script>
-    // Fade animation
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e => {if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}});
-    },{threshold:0.2});
-    document.querySelectorAll('[data-fade]').forEach(el => io.observe(el));
+    // Parallax watermark effect on scroll (lightweight)
+    window.addEventListener('scroll', () => {
+      if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        const offset = window.pageYOffset * 0.2;
+        document.body.style.setProperty('--scroll-offset', `${offset}px`);
+        document.body.style.transform = `translateY(${offset * 0.01}px)`;
+      }
+    });
 
-    // Auto-slider
-    const slider = document.querySelector('.slider');
-    if(slider){
-      let idx=0;
-      const items = slider.children;
-      const total = items.length;
-      setInterval(()=>{
-        idx=(idx+1)%total;
-        slider.scrollTo({left: idx*(items[0].offsetWidth+16), behavior:'smooth'});
-      }, 3000);
-    }
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 60,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>

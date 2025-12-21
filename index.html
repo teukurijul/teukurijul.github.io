@@ -6,36 +6,22 @@
   <meta name="description" content="Cybersecurity Leadership by Teuku Rijul — ISO 27001 Lead Auditor">
   <title>NexusShield | Elite Cyber Defense by Teuku Rijul</title>
   
-  <!-- Fonts: Minimal & Premium -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <style>
     :root {
       --bg: #0a0e17;
       --card-bg: #131b2a;
       --accent: #00e0ff;
-      --accent-soft: #00d4e6;
       --secondary: #e6c229;
       --text: #f0f6ff;
       --text-muted: #92a8d1;
       --border: rgba(0, 224, 255, 0.08);
       --transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       --glow: 0 0 15px rgba(0, 224, 255, 0.5);
-      --hover-glow: 0 0 25px rgba(0, 224, 255, 0.7);
-      --pulse: 0 0 30px rgba(0, 224, 255, 0.3);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       background-color: var(--bg);
       color: var(--text);
@@ -44,15 +30,12 @@
       overflow-x: hidden;
       position: relative;
     }
-
-    /* === SPIDER-MAN CYBER BACKGROUND (WATERMARK) === */
     #spider-bg {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       z-index: -2;
       pointer-events: none;
     }
-
     header {
       padding: 1rem 5%;
       display: flex;
@@ -65,7 +48,6 @@
       backdrop-filter: blur(8px);
       z-index: 100;
     }
-
     .logo {
       font-family: 'Orbitron', sans-serif;
       font-weight: 800;
@@ -76,13 +58,11 @@
       background-clip: text;
       color: transparent;
     }
-
     nav ul {
       display: flex;
       list-style: none;
       gap: 1.7rem;
     }
-
     nav a {
       color: var(--text-muted);
       font-weight: 600;
@@ -93,9 +73,7 @@
       padding: 0.4rem 0;
       text-transform: uppercase;
     }
-
     nav a:hover { color: var(--accent); }
-
     nav a::after {
       content: '';
       position: absolute;
@@ -106,13 +84,11 @@
       background: var(--accent);
       transition: width 0.4s ease;
     }
-
     nav a:hover::after { width: 100%; }
 
     section { padding: 5.5rem 5%; }
     .container { max-width: 1180px; margin: 0 auto; }
 
-    /* === HERO SECTION (Revised to match image) === */
     .hero {
       min-height: 95vh;
       display: flex;
@@ -132,7 +108,6 @@
       height: 200px;
       animation: pulseGlow 3s infinite alternate;
     }
-
     @keyframes pulseGlow {
       from { box-shadow: 0 0 0 0 rgba(0, 224, 255, 0.3); }
       to { box-shadow: 0 0 0 10px rgba(0, 224, 255, 0.5); }
@@ -148,31 +123,23 @@
       position: relative;
       z-index: 2;
     }
-
     .profile {
       width: 96%;
       height: 96%;
       border-radius: 50%;
       overflow: hidden;
       background: var(--card-bg);
-      box-shadow:
-        0 0 0 3px var(--accent),
-        0 12px 30px rgba(0, 30, 60, 0.8);
+      box-shadow: 0 0 0 3px var(--accent), 0 12px 30px rgba(0, 30, 60, 0.8);
       border: 2px solid rgba(0, 224, 255, 0.3);
       transition: var(--transition);
-      position: relative;
     }
-
     .profile img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-
-    .profile:hover img {
-      transform: scale(1.08);
-    }
+    .profile:hover img { transform: scale(1.08); }
 
     .verified-badge {
       position: absolute;
@@ -188,13 +155,7 @@
       justify-content: center;
       font-size: 1.2rem;
       box-shadow: var(--glow);
-      animation: bounce 1s infinite;
       z-index: 3;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
     }
 
     .name-title {
@@ -202,12 +163,51 @@
       font-size: 2.5rem;
       margin: 0.3rem 0;
       letter-spacing: 0.8px;
+      position: relative;
+      color: transparent;
+      font-weight: 700;
+      animation: cyberPulse 2s infinite;
+    }
+    @keyframes cyberPulse {
+      0% { filter: hue-rotate(0deg); }
+      50% { filter: hue-rotate(180deg); }
+      100% { filter: hue-rotate(0deg); }
+    }
+    .name-title::before {
+      content: 'TEUKU RIJUL';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: linear-gradient(90deg, #ffffff, var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      font-weight: 700;
-      text-shadow: 0 0 5px rgba(0, 224, 255, 0.5);
+      animation: glitch 2s infinite;
+    }
+    @keyframes glitch {
+      0%, 100% { clip-path: inset(0 0 0 0); }
+      10% { clip-path: inset(0 0 10% 0); }
+      20% { clip-path: inset(10% 0 0 0); }
+      30% { clip-path: inset(0 0 0 10%); }
+      40% { clip-path: inset(0 10% 0 0); }
+      50% { clip-path: inset(0 0 0 0); }
+      60% { clip-path: inset(0 0 10% 0); }
+      70% { clip-path: inset(10% 0 0 0); }
+      80% { clip-path: inset(0 0 0 10%); }
+      90% { clip-path: inset(0 10% 0 0); }
+    }
+    .name-title::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #000000, transparent);
+      mix-blend-mode: multiply;
+      opacity: 0.3;
     }
 
     .role {
@@ -217,14 +217,12 @@
       margin-bottom: 0.5rem;
       letter-spacing: 0.5px;
     }
-
     .credentials {
       font-size: 0.98rem;
       color: var(--text-muted);
       max-width: 650px;
       margin: 0 auto 1.8rem;
       line-height: 1.65;
-      font-weight: 500;
     }
 
     .hero h1 {
@@ -238,29 +236,12 @@
       background-clip: text;
       color: transparent;
       letter-spacing: -0.5px;
-      text-shadow: 0 0 10px rgba(0, 224, 255, 0.3);
-      animation: fadeInUp 1s ease-out;
     }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .hero p {
       font-size: 1.1rem;
       max-width: 750px;
       margin: 0 auto 2.2rem;
       color: #b5c6e2;
-      font-weight: 400;
-      line-height: 1.68;
-      animation: fadeInUp 1s ease-out 0.2s both;
     }
 
     .cta-group {
@@ -268,9 +249,7 @@
       gap: 1.2rem;
       justify-content: center;
       margin-bottom: 1.5rem;
-      animation: fadeInUp 1s ease-out 0.4s both;
     }
-
     .btn {
       padding: 1rem 2.5rem;
       font-family: 'Orbitron', sans-serif;
@@ -288,7 +267,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .btn:before {
       content: '';
       position: absolute;
@@ -299,35 +277,16 @@
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
       transition: 0.5s;
     }
-
-    .btn:hover:before {
-      left: 0;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: var(--hover-glow);
-    }
+    .btn:hover:before { left: 0; }
+    .btn-primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .btn-secondary { background: transparent; color: var(--accent); border-color: var(--accent); }
+    .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--glow); }
 
     .socials {
       display: flex;
       gap: 1.5rem;
       margin-top: 1.4rem;
-      animation: fadeInUp 1s ease-out 0.6s both;
     }
-
     .socials a {
       display: flex;
       align-items: center;
@@ -341,7 +300,6 @@
       border: 1px solid rgba(255,255,255,0.07);
       transition: var(--transition);
     }
-
     .socials a:hover {
       color: var(--accent);
       background: rgba(0, 224, 255, 0.1);
@@ -350,7 +308,6 @@
       box-shadow: var(--glow);
     }
 
-    /* === NEXUS OVERVIEW SECTION === */
     .nexus-overview {
       background: rgba(18, 28, 45, 0.8);
       border-radius: 16px;
@@ -362,9 +319,7 @@
       gap: 2rem;
       border: 1px solid var(--border);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      animation: fadeInUp 1s ease-out 0.8s both;
     }
-
     .nexus-box, .services-box {
       padding: 1.5rem;
       border-radius: 12px;
@@ -372,49 +327,22 @@
       border: 1px solid var(--border);
       transition: var(--transition);
     }
-
-    .nexus-box:hover,
-    .services-box:hover {
+    .nexus-box:hover, .services-box:hover {
       transform: translateY(-3px);
       border-color: var(--accent);
-      box-shadow: var(--hover-glow);
+      box-shadow: var(--glow);
     }
-
-    .nexus-box h3,
-    .services-box h3 {
+    .nexus-box h3, .services-box h3 {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.3rem;
       color: var(--accent);
       margin-bottom: 1rem;
       letter-spacing: 1px;
     }
+    .services-box ul { list-style: none; padding-left: 0; margin-top: 0.8rem; }
+    .services-box li { padding: 0.4rem 0; color: var(--text); font-size: 0.95rem; }
+    .services-box li::before { content: '• '; color: var(--accent); font-weight: bold; }
 
-    .nexus-box p,
-    .services-box p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .services-box ul {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 0.8rem;
-    }
-
-    .services-box li {
-      padding: 0.4rem 0;
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-
-    .services-box li::before {
-      content: '• ';
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* === PRICING SECTION (Revised to match image) === */
     .section-title {
       text-align: center;
       font-family: 'Orbitron', sans-serif;
@@ -423,9 +351,7 @@
       color: var(--text);
       position: relative;
       font-weight: 700;
-      animation: fadeInUp 1s ease-out 1s both;
     }
-
     .section-title::after {
       content: '';
       display: block;
@@ -435,15 +361,12 @@
       margin: 0.8rem auto;
       border-radius: 2px;
     }
-
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       margin-top: 1.6rem;
-      animation: fadeInUp 1s ease-out 1.2s both;
     }
-
     .price-card {
       background: rgba(18, 28, 45, 0.8);
       border-radius: 16px;
@@ -456,23 +379,17 @@
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-
     .price-card:hover {
       transform: translateY(-5px);
       border-color: var(--accent);
       box-shadow: 0 10px 30px rgba(0, 224, 255, 0.2);
     }
-
     .price-card.popular {
       border: 2px solid var(--accent);
       background: rgba(8, 16, 32, 0.95);
-      position: relative;
       transform: scale(1.03);
-      box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.6),
-        0 0 30px rgba(0, 224, 255, 0.22);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 224, 255, 0.22);
     }
-
     .popular-tag {
       position: absolute;
       top: -13px;
@@ -488,39 +405,10 @@
       letter-spacing: 1.2px;
       box-shadow: 0 4px 10px rgba(0, 200, 255, 0.4);
     }
-
-    .price-card h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.45rem;
-      margin-bottom: 0.6rem;
-      color: var(--text);
-    }
-
-    .price-amount {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: -0.5px;
-    }
-
-    .price-currency {
-      font-size: 1.3rem;
-      margin-right: 0.2rem;
-    }
-
-    .price-sub {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-bottom: 1.3rem;
-    }
-
-    .features {
-      list-style: none;
-      margin: 1.4rem 0;
-      text-align: left;
-    }
-
+    .price-card h3 { font-family: 'Orbitron', sans-serif; font-size: 1.45rem; margin-bottom: 0.6rem; color: var(--text); }
+    .price-amount { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--accent); letter-spacing: -0.5px; }
+    .price-sub { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1.3rem; }
+    .features { list-style: none; margin: 1.4rem 0; text-align: left; }
     .features li {
       padding: 0.7rem 0;
       display: flex;
@@ -529,7 +417,6 @@
       font-size: 0.98rem;
       color: #c5d5f0;
     }
-
     .features li::before {
       content: '✓';
       color: var(--secondary);
@@ -538,19 +425,16 @@
       margin-top: 0.2rem;
     }
 
-    /* === CONTACT SECTION === */
     #contact {
       background: var(--bg);
       padding: 5.5rem 5%;
       text-align: center;
     }
-
     #contact p {
       color: var(--text-muted);
       max-width: 600px;
       margin: 1rem auto;
     }
-
     .contact-info {
       font-size: 1.1rem;
       margin-top: 1rem;
@@ -561,51 +445,62 @@
 
     footer {
       text-align: center;
-      padding: 2.8rem 5%;
+      padding: 0;
       background: rgba(5, 9, 16, 0.99);
-      border-top: 1px solid var(--border);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
     }
-    /* === NEW ISO 27001 BADGE (Placed in Footer) === */
+
     .iso-footer {
-      position: relative;
-      margin-top: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 1rem;
-      padding: 1rem 0;
+      padding: 1.2rem 0;
       background: rgba(5, 9, 16, 0.8);
       border-top: 1px solid var(--border);
     }
-
     .iso-footer img {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
-      animation: pulse 2s infinite;
     }
-
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 224, 255, 0.3); }
-      50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 224, 255, 0.5); }
-      100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 224, 255, 0.3); }
-    }
-
     .iso-footer .text {
       font-size: 0.9rem;
       color: var(--text-muted);
-      text-align: center;
+      max-width: 300px;
     }
+    .iso-footer .text strong { color: var(--accent); font-weight: 600; }
 
-    .iso-footer .text strong {
+    .tools-footer {
+      padding: 1.5rem 0;
+      background: rgba(3, 6, 12, 0.95);
+      border-top: 1px solid var(--border);
+    }
+    .tools-footer h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
       color: var(--accent);
-      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .tools-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+    .tool-icon {
+      width: 50px;
+      height: 50px;
+      opacity: 0.6;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .tool-icon:hover {
+      opacity: 1;
+      transform: scale(1.2);
     }
 
-    /* === MODAL POPUP === */
     .modal {
       display: none;
       position: fixed;
@@ -616,7 +511,6 @@
       align-items: center;
       backdrop-filter: blur(10px);
     }
-
     .modal-content {
       background: rgba(12, 18, 32, 0.95);
       border: 1px solid var(--accent);
@@ -628,103 +522,35 @@
       animation: modalIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     }
-
     @keyframes modalIn {
       from { opacity: 0; transform: scale(0.95) translateY(20px); }
       to { opacity: 1; transform: scale(1) translateY(0); }
     }
-
-    .modal h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.8rem;
-      margin-bottom: 14px;
-      color: var(--accent);
-    }
-
-    .modal .price-display {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
-      color: var(--accent);
-      margin: 0.6rem 0 1rem;
-    }
-
-    .modal p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.65;
-      margin-bottom: 16px;
-    }
-
-    .modal ul {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 20px;
-    }
-
-    .modal ul li {
-      padding: 7px 0;
-      color: var(--text);
-      font-size: 1rem;
-    }
-
-    .modal ul li::before {
-      content: '• ';
-      color: var(--secondary);
-      font-weight: bold;
-    }
-
+    .modal h2 { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; margin-bottom: 14px; color: var(--accent); }
+    .modal .price-display { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; color: var(--accent); margin: 0.6rem 0 1rem; }
+    .modal p, .modal ul { color: var(--text-muted); font-size: 1rem; margin-bottom: 16px; line-height: 1.65; }
+    .modal ul { padding-left: 0; list-style: none; }
+    .modal ul li { padding: 6px 0; color: var(--text); }
+    .modal ul li::before { content: '• '; color: var(--secondary); font-weight: bold; }
     .close {
       position: absolute;
       top: 16px; right: 16px;
       color: var(--text-muted);
       font-size: 1.4rem;
       cursor: pointer;
-      transition: color 0.2s;
     }
-
     .close:hover { color: var(--accent); }
+    .modal .btn { width: 100%; justify-content: center; }
 
-    .modal .btn {
-      width: 100%;
-      justify-content: center;
-    }
-
-    /* === RESPONSIVE DESIGN === */
     @media (max-width: 768px) {
-      section { padding: 4.5rem 5%; }
-      nav ul { gap: 1.2rem; font-size: 0.9rem; }
-      .cta-group { flex-direction: column; }
-      .btn { width: 100%; justify-content: center; }
-      .price-card.popular { transform: scale(1.01); }
-      .hero h1 { font-size: 2.4rem; }
-      .nexus-overview {
-        grid-template-columns: 1fr;
-        padding: 1.5rem;
-      }
-      .iso-footer img {
-        width: 100px;
-        height: 100px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .profile-container { width: 140px; height: 140px; }
-      .hero h1 { font-size: 2.2rem; }
-      .name-title { font-size: 1.9rem; }
-      .section-title { font-size: 2rem; }
-      .price-card {
-        padding: 1.8rem 1.2rem;
-      }
-      .price-amount { font-size: 1.8rem; }
-      .iso-footer {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
+      .iso-footer { flex-direction: column; gap: 0.8rem; }
+      .iso-footer img { width: 80px; height: 80px; }
+      .tools-grid { gap: 0.8rem; }
+      .tool-icon { width: 40px; height: 40px; }
     }
   </style>
 </head>
 <body>
-  <!-- Spider-Man Cyber Background -->
   <canvas id="spider-bg"></canvas>
 
   <header>
@@ -743,37 +569,26 @@
       <div class="profile-container">
         <div class="profile-frame">
           <div class="profile">
-            <img
-              src="https://i.ibb.co.com/pvVsNzyL/IMG-20251221-234651-431.jpg"
-              alt="Teuku Rijul – Founder & Chief Security Architect"
-              onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=400&fit=crop&crop=face';"
-            />
+            <img src="https://i.ibb.co.com/pvVsNzyL/IMG-20251221-234651-431.jpg" alt="Teuku Rijul – Founder & Chief Security Architect" onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=400&fit=crop&crop=face';" />
           </div>
         </div>
         <div class="verified-badge"><i class="fas fa-check"></i></div>
       </div>
       <div class="name-title">TEUKU RIJUL</div>
       <div class="role">CYBER ARCHITECT</div>
-      <div class="credentials">
-        ISO/IEC 27001 Lead Auditor | CISSP | OSCP | BSSN-Certified Expert
-      </div>
-
+      <div class="credentials">ISO/IEC 27001 Lead Auditor | CISSP | OSCP | BSSN-Certified Expert</div>
       <h1>ELITE CYBER DEFENSE FOR NATIONAL CRITICAL INFRASTRUCTURE</h1>
       <p>15+ years securing Indonesia’s digital sovereignty. Trusted by government, finance, and ASEAN CERTs.</p>
-
       <div class="cta-group">
         <a href="#pricing" class="btn btn-primary"><i class="fas fa-shield-alt"></i> VIEW SERVICES</a>
         <a href="#contact" class="btn btn-secondary"><i class="fas fa-user-tie"></i> CONTACT DIRECTLY</a>
       </div>
-
       <div class="socials">
         <a href="https://instagram.com/teukurijul" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://linkedin.com/in/teukurijul" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://x.com/teukurijul" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://github.com/teukurijul" target="_blank"><i class="fab fa-github"></i></a>
       </div>
-
-      <!-- Nexus Overview Box -->
       <div class="nexus-overview">
         <div class="nexus-box">
           <h3>NEXUS</h3>
@@ -799,22 +614,20 @@
             <h3>DEFENDER</h3>
             <div class="price-amount">Rp 12.500.000</div>
             <div class="price-sub">per year</div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">Foundational cyber resilience for SMEs.</p>
+            <p style="font-size:0.9rem;color:var(--text-muted);margin-top:1rem;">Foundational cyber resilience for SMEs.</p>
           </div>
-
           <div class="price-card popular" onclick="openModal('Phantom')">
             <div class="popular-tag">MOST TRUSTED</div>
             <h3>PHANTOM</h3>
             <div class="price-amount">Rp 38.900.000</div>
             <div class="price-sub">per year</div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">Advanced protection for finance & government.</p>
+            <p style="font-size:0.9rem;color:var(--text-muted);margin-top:1rem;">Advanced protection for finance & government.</p>
           </div>
-
           <div class="price-card" onclick="openModal('Nexus Elite')">
             <h3>NEXUS ELITE</h3>
             <div class="price-amount">Rp 115.000.000</div>
             <div class="price-sub">per year</div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">Executive-grade defense with direct access.</p>
+            <p style="font-size:0.9rem;color:var(--text-muted);margin-top:1rem;">Executive-grade defense with direct access.</p>
           </div>
         </div>
       </div>
@@ -823,9 +636,7 @@
     <section id="contact" class="contact">
       <div class="container">
         <h2 class="section-title">GET IN TOUCH</h2>
-        <p style="color:#92a8d1;max-width:600px;margin:1rem auto;">
-          For partnerships, projects, or more information, please contact us:
-        </p>
+        <p style="color:var(--text-muted);max-width:600px;margin:1rem auto;">For partnerships, projects, or more information, please contact us:</p>
         <div class="contact-info">
           <p><i class="fas fa-envelope"></i> consult@nexusshield.io</p>
           <p><i class="fas fa-phone"></i> +62 895-3283-2313-8</p>
@@ -834,22 +645,35 @@
     </section>
   </main>
 
-  <footer>
-    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; align-items: center; font-size: 0.9rem; color: var(--text-muted);">
+    <footer>
+    <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;padding:1.2rem 0;font-size:0.9rem;color:var(--text-muted);">
       <span>©2025 NexusShield</span>
       <span>—</span>
-      <span>Cyber Security Defense Architecture by <strong style="color: var(--accent);">TEUKU RIJUL</strong></span>
+      <span>Cyber Security by <strong style="color:var(--accent);">TEUKU RIJUL</strong></span>
     </div>
-    <!-- New ISO Footer Section -->
     <div class="iso-footer">
       <img src="https://i.ibb.co.com/QjzyYpHf/IMG-20251222-011130-549.jpg" alt="ISO 27001 Certified" />
-      <div class="text">
-        Certified under <strong>ISO/IEC 27001</strong> Information Security Management System.
+      <div class="text">Certified under <strong>ISO/IEC 27001</strong> Information Security Management System.</div>
+    </div>
+    <div class="tools-footer">
+      <h4>PROFESSIONAL TOOLKIT</h4>
+      <div class="tools-grid">
+        <!-- Metasploit -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Metasploit_Logo.svg" class="tool-icon" alt="Metasploit" />
+        <!-- Nmap -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Nmap_logo.svg" class="tool-icon" alt="Nmap" />
+        <!-- Burp Suite -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Burp_Suite_Logo.svg" class="tool-icon" alt="Burp Suite" />
+        <!-- Wireshark -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Wireshark_icon.svg" class="tool-icon" alt="Wireshark" />
+        <!-- John the Ripper -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/John_The_Ripper_Logo.svg" class="tool-icon" alt="John the Ripper" />
+        <!-- Hashcat -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Hashcat_logo.svg" class="tool-icon" alt="Hashcat" />
       </div>
     </div>
   </footer>
 
-  <!-- Modal -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -861,63 +685,30 @@
     </div>
   </div>
 
-  <!-- Scripts -->
   <script>
-    // === SPIDER-MAN BACKGROUND ===
     (function() {
       const canvas = document.getElementById('spider-bg');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-
-      class Spider {
-        constructor() { this.reset(); this.size = 3 + Math.random() * 2; }
-        reset() {
-          this.angle = Math.random() * Math.PI * 2;
-          this.radius = 40 + Math.random() * 120;
-          this.center = { x: canvas.width / 2, y: canvas.height / 2 };
-          this.speed = 0.002 + Math.random() * 0.002;
-          this.offset = Math.random() * Math.PI * 2;
-        }
-        update() {
-          const time = Date.now() * this.speed;
-          this.angle += 0.008;
-          const r = this.radius + Math.sin(time + this.offset) * 12;
-          this.x = this.center.x + Math.cos(this.angle) * r;
-          this.y = this.center.y + Math.sin(this.angle) * r;
-        }
-        draw() {
-          ctx.fillStyle = 'rgba(230, 194, 41, 0.9)';
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-
+      class Spider { constructor() { this.reset(); this.size = 3 + Math.random() * 2; } reset() { this.angle = Math.random() * Math.PI * 2; this.radius = 40 + Math.random() * 120; this.center = { x: canvas.width / 2, y: canvas.height / 2 }; this.speed = 0.002 + Math.random() * 0.002; this.offset = Math.random() * Math.PI * 2; } update() { const time = Date.now() * this.speed; this.angle += 0.008; const r = this.radius + Math.sin(time + this.offset) * 12; this.x = this.center.x + Math.cos(this.angle) * r; this.y = this.center.y + Math.sin(this.angle) * r; } draw() { ctx.fillStyle = 'rgba(230, 194, 41, 0.9)'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); } }
       const spiders = [new Spider(), new Spider(), new Spider()];
       const arms = 18;
-
       function drawWeb() {
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
         const time = Date.now() * 0.0008;
         const radius = Math.min(canvas.width, canvas.height) * 0.9;
-
         ctx.strokeStyle = 'rgba(0, 224, 255, 0.07)';
         ctx.lineWidth = 1;
-
         for (let i = 0; i < arms; i++) {
           const angle = (i / arms) * Math.PI * 2 + time * 0.2;
           ctx.beginPath();
           ctx.moveTo(centerX, centerY);
-          ctx.lineTo(
-            centerX + Math.cos(angle) * radius,
-            centerY + Math.sin(angle) * radius
-          );
+          ctx.lineTo(centerX + Math.cos(angle) * radius, centerY + Math.sin(angle) * radius);
           ctx.stroke();
         }
-
         for (let r = 1; r <= 6; r++) {
           const ringRadius = (r / 6) * radius + Math.sin(time * 3 + r) * 10;
           ctx.beginPath();
@@ -925,7 +716,6 @@
           ctx.stroke();
         }
       }
-
       function animate() {
         ctx.fillStyle = 'rgba(10, 14, 23, 0.7)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -933,67 +723,37 @@
         spiders.forEach(s => { s.update(); s.draw(); });
         requestAnimationFrame(animate);
       }
-
-      window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      });
-
+      window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
       animate();
     })();
 
-    // === MODAL FUNCTIONALITY ===
     function openModal(planName) {
       const modal = document.getElementById('modal');
       const title = document.getElementById('modal-title');
       const price = document.getElementById('modal-price');
       const desc = document.getElementById('modal-desc');
       const features = document.getElementById('modal-features');
-
-      // Reset content
       features.innerHTML = '';
-
       switch(planName) {
         case 'Defender':
           title.textContent = 'Defender Package';
           price.textContent = 'Rp 12.500.000';
           desc.textContent = 'Foundational cyber resilience for SMEs.';
-          features.innerHTML = `
-            <li>24/7 SOC Monitoring</li>
-            <li>Vulnerability Scanning (Monthly)</li>
-            <li>Incident Response (SLA 4h)</li>
-            <li>Basic Threat Intelligence</li>
-            <li>1 Admin Seat</li>
-          `;
+          features.innerHTML = `<li>24/7 SOC Monitoring</li><li>Vulnerability Scanning (Monthly)</li><li>Incident Response (SLA 4h)</li><li>Basic Threat Intelligence</li><li>1 Admin Seat</li>`;
           break;
         case 'Phantom':
           title.textContent = 'Phantom Package';
           price.textContent = 'Rp 38.900.000';
           desc.textContent = 'Advanced protection for finance & government.';
-          features.innerHTML = `
-            <li>Everything in Defender</li>
-            <li>Penetration Testing (Quarterly)</li>
-            <li>Proactive Threat Hunting</li>
-            <li>Custom Dashboard & API</li>
-            <li>5 Admin Seats + SSO</li>
-            <li>Compliance Support (ISO 27001, GDPR)</li>
-          `;
+          features.innerHTML = `<li>Everything in Defender</li><li>Penetration Testing (Quarterly)</li><li>Proactive Threat Hunting</li><li>Custom Dashboard & API</li><li>5 Admin Seats + SSO</li><li>Compliance Support (ISO 27001, GDPR)</li>`;
           break;
         case 'Nexus Elite':
           title.textContent = 'Nexus Elite Package';
           price.textContent = 'Rp 115.000.000';
           desc.textContent = 'Executive-grade defense with direct access.';
-          features.innerHTML = `
-            <li>Everything in Phantom</li>
-            <li>Dedicated Threat Analyst (1:1)</li>
-            <li>Red Team Exercise (Bi-annual)</li>
-            <li>Custom Playbook Development</li>
-            <li>Unlimited Seats + RBAC</li>
-            <li><strong>Direct Advisory by Teuku Rijul</strong></li>
-          `;
+          features.innerHTML = `<li>Everything in Phantom</li><li>Dedicated Threat Analyst (1:1)</li><li>Red Team Exercise (Bi-annual)</li><li>Custom Playbook Development</li><li>Unlimited Seats + RBAC</li><li><strong>Direct Advisory by Teuku Rijul</strong></li>`;
           break;
       }
-
       modal.style.display = 'flex';
     }
 
@@ -1001,12 +761,9 @@
       document.getElementById('modal').style.display = 'none';
     }
 
-    // Close modal when clicking outside
     window.onclick = function(event) {
       const modal = document.getElementById('modal');
-      if (event.target == modal) {
-        closeModal();
-      }
+      if (event.target == modal) closeModal();
     }
   </script>
 </body>

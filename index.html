@@ -45,7 +45,7 @@
       position: relative;
     }
 
-    /* === SPIDER-MAN CYBER BACKGROUND === */
+    /* === SPIDER-MAN CYBER BACKGROUND (WATERMARK) === */
     #spider-bg {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -54,7 +54,7 @@
     }
 
     header {
-      padding: 1.2rem 5%;
+      padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -112,7 +112,7 @@
     section { padding: 5.5rem 5%; }
     .container { max-width: 1180px; margin: 0 auto; }
 
-    /* === HERO SECTION (Revised for Elite Hacker Vibe) === */
+    /* === HERO SECTION (Revised to match image) === */
     .hero {
       min-height: 95vh;
       display: flex;
@@ -174,27 +174,27 @@
       transform: scale(1.08);
     }
 
-    .cyber-pulse {
+    .verified-badge {
       position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 230px;
-      height: 230px;
+      top: 10px;
+      right: -10px;
+      background: var(--accent);
+      color: var(--bg);
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      box-shadow: 0 0 0 0 rgba(0, 224, 255, 0.5);
-      animation: cyberPulse 4s infinite, cyberRotate 30s linear infinite;
-      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: var(--glow);
+      animation: bounce 1s infinite;
+      z-index: 3;
     }
 
-    @keyframes cyberPulse {
-      0% { box-shadow: 0 0 0 0 rgba(0, 224, 255, 0.5); }
-      70% { box-shadow: 0 0 0 24px rgba(0, 224, 255, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 224, 255, 0); }
-    }
-
-    @keyframes cyberRotate {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to { transform: translate(-50%, -50%) rotate(360deg); }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
 
     .name-title {
@@ -207,30 +207,7 @@
       background-clip: text;
       color: transparent;
       font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
       text-shadow: 0 0 5px rgba(0, 224, 255, 0.5);
-    }
-
-    .name-title .verified-badge {
-      background: var(--accent);
-      color: var(--bg);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      box-shadow: var(--glow);
-      animation: bounce 1s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
     }
 
     .role {
@@ -346,7 +323,7 @@
 
     .socials {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       margin-top: 1.4rem;
       animation: fadeInUp 1s ease-out 0.6s both;
     }
@@ -355,12 +332,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: rgba(20, 30, 50, 0.4);
       color: var(--text-muted);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       border: 1px solid rgba(255,255,255,0.07);
       transition: var(--transition);
     }
@@ -388,7 +365,7 @@
       animation: fadeInUp 1s ease-out 0.8s both;
     }
 
-    .nexus-box, .services-box, .contact-box {
+    .nexus-box, .services-box {
       padding: 1.5rem;
       border-radius: 12px;
       background: rgba(20, 30, 50, 0.3);
@@ -397,16 +374,14 @@
     }
 
     .nexus-box:hover,
-    .services-box:hover,
-    .contact-box:hover {
+    .services-box:hover {
       transform: translateY(-3px);
       border-color: var(--accent);
       box-shadow: var(--hover-glow);
     }
 
     .nexus-box h3,
-    .services-box h3,
-    .contact-box h3 {
+    .services-box h3 {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.3rem;
       color: var(--accent);
@@ -415,8 +390,7 @@
     }
 
     .nexus-box p,
-    .services-box p,
-    .contact-box p {
+    .services-box p {
       font-size: 0.95rem;
       color: var(--text-muted);
       line-height: 1.6;
@@ -440,19 +414,7 @@
       font-weight: bold;
     }
 
-    .contact-box .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin: 0.5rem 0;
-      font-size: 0.95rem;
-    }
-
-    .contact-box .contact-item i {
-      color: var(--accent);
-    }
-
-    /* === PRICING SECTION (Revised) === */
+    /* === PRICING SECTION (Revised to match image) === */
     .section-title {
       text-align: center;
       font-family: 'Orbitron', sans-serif;
@@ -576,6 +538,56 @@
       margin-top: 0.2rem;
     }
 
+    /* === CONTACT SECTION === */
+    #contact {
+      background: var(--bg);
+      padding: 5.5rem 5%;
+      text-align: center;
+    }
+
+    #contact p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    .contact-info {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.8rem 5%;
+      background: rgba(5, 9, 16, 0.99);
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+ /* === ISO 27001 BADGE === */
+    .iso-badge {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: url('https://i.ibb.co.com/60BnDBVx/1766129105877.jpg') no-repeat center center;
+      background-size: contain;
+      box-shadow: 0 0 30px rgba(0, 224, 255, 0.3);
+      animation: pulse 2s infinite;
+      z-index: 10;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 224, 255, 0.3); }
+      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 224, 255, 0.5); }
+      100% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 224, 255, 0.3); }
+    }
+
     /* === MODAL POPUP === */
     .modal {
       display: none;
@@ -660,57 +672,6 @@
       justify-content: center;
     }
 
-    /* === CONTACT SECTION === */
-    #contact {
-      background: var(--bg);
-      padding: 5.5rem 5%;
-      text-align: center;
-    }
-
-    #contact p {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 1rem auto;
-    }
-
-    .contact-info {
-      font-size: 1.1rem;
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2.8rem 5%;
-      background: rgba(5, 9, 16, 0.99);
-      border-top: 1px solid var(--border);
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    /* === ISO 27001 BADGE === */
-    .iso-badge {
-      position: absolute;
-      bottom: 2rem;
-      right: 2rem;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/ISO_27001_Certificate.svg/1200px-ISO_27001_Certificate.svg.png') no-repeat center center;
-      background-size: contain;
-      box-shadow: 0 0 30px rgba(0, 224, 255, 0.3);
-      animation: pulse 2s infinite;
-      z-index: 10;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 224, 255, 0.3); }
-      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 224, 255, 0.5); }
-      100% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 224, 255, 0.3); }
-    }
-
     /* === RESPONSIVE DESIGN === */
     @media (max-width: 768px) {
       section { padding: 4.5rem 5%; }
@@ -761,21 +722,18 @@
   <main>
     <section id="home" class="hero">
       <div class="profile-container">
-        <div class="cyber-pulse"></div>
         <div class="profile-frame">
           <div class="profile">
             <img
-              src="https://i.ibb.co.com/nq049vpk/955-A154-D-F234-40-D0-8903-DD4-D61-AF98-E4.jpg"
+              src="https://i.ibb.co.com/pvVsNzyL/IMG-20251221-234651-431.jpg"
               alt="Teuku Rijul – Founder & Chief Security Architect"
               onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=400&fit=crop&crop=face';"
             />
           </div>
         </div>
+        <div class="verified-badge"><i class="fas fa-check"></i></div>
       </div>
-      <div class="name-title">
-        TEUKU RIJUL
-        <span class="verified-badge"><i class="fas fa-check"></i></span>
-      </div>
+      <div class="name-title">TEUKU RIJUL</div>
       <div class="role">CYBER ARCHITECT</div>
       <div class="credentials">
         ISO/IEC 27001 Lead Auditor | CISSP | OSCP | BSSN-Certified Expert
@@ -810,17 +768,6 @@
             <li>ISO 27001 Implementation</li>
             <li>Red Team Exercises</li>
           </ul>
-        </div>
-        <div class="contact-box">
-          <h3>CONTACT</h3>
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>consult@nexusshield.io</span>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span>+62 895-3283-2313-8</span>
-          </div>
         </div>
       </div>
 
@@ -872,7 +819,11 @@
   </main>
 
   <footer>
-    ©2025 NexusShield — Cyber Security Defense Architecture by Teuku Rijul.
+    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; align-items: center; font-size: 0.9rem; color: var(--text-muted);">
+      <span>©2025 NexusShield</span>
+      <span>—</span>
+      <span>Cyber Security Defense Architecture by <strong style="color: var(--accent);">TEUKU RIJUL</strong></span>
+    </div>
   </footer>
 
   <!-- Modal -->

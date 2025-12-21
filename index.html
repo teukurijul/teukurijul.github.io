@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Teuku Rijul — ISO/IEC 27001 Lead Auditor | Elite Cyber Defense Architect">
-  <meta name="author" content="Teuku Rijul">
-  <title>NexusShield | Cyber Defense Architecture</title>
-
-  <link rel="icon" href="image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0e17'/><path d='M50,10 L90,35 L75,85 L25,85 L10,35 Z' fill='none' stroke='%2300e0ff' stroke-width='3'/><circle cx='50' cy='50' r='18' fill='none' stroke='%23ff2a6d' stroke-width='1.5'/></svg>">
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Cybersecurity Leadership by Teuku Rijul — ISO 27001 Lead Auditor">
+  <title>NexusShield | Elite Cyber Defense by Teuku Rijul</title>
+  
+  <!-- Fonts: Minimal & Premium -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     :root {
       --bg: #0a0e17;
+      --card-bg: #131b2a;
       --accent: #00e0ff;
-      --pink: #ff2a6d;
-      --text: #e6f0ff;
-      --text-muted: #a0b8d8;
-      --card: rgba(18, 30, 50, 0.7);
+      --accent-soft: #00d4e6;
+      --secondary: #e6c229;
+      --text: #f0f6ff;
+      --text-muted: #92a8d1;
+      --border: rgba(0, 224, 255, 0.08);
+      --transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     * {
@@ -33,15 +34,16 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif; /* Minimal & clean */
       background-color: var(--bg);
       color: var(--text);
+      font-family: 'Inter', sans-serif; /* Lebih minimal */
       line-height: 1.65;
       overflow-x: hidden;
       position: relative;
     }
 
-    #spider-canvas {
+    /* === SPIDER-MAN CYBER BACKGROUND === */
+    #spider-bg {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       z-index: -2;
@@ -49,24 +51,24 @@
     }
 
     header {
-      padding: 1rem 5%;
+      padding: 1.2rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(10, 14, 23, 0.92);
-      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
+      background: rgba(10, 14, 23, 0.95);
+      backdrop-filter: blur(8px);
       z-index: 100;
-      border-bottom: 1px solid rgba(0, 224, 255, 0.1);
     }
 
     .logo {
       font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      font-size: 1.4rem; /* Lebih kecil */
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, var(--text), var(--accent));
+      font-weight: 800;
+      font-size: 1.7rem;
+      letter-spacing: 1.5px;
+      background: linear-gradient(90deg, #e0f7ff, var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -75,18 +77,18 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 1.6rem;
+      gap: 1.7rem;
     }
 
     nav a {
       color: var(--text-muted);
-      text-decoration: none;
+      font-weight: 600;
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.9rem; /* Lebih kecil */
-      font-weight: 500;
+      font-size: 0.95rem;
       letter-spacing: 1px;
       position: relative;
-      padding: 0.35rem 0;
+      padding: 0.4rem 0;
+      text-transform: uppercase;
     }
 
     nav a:hover { color: var(--accent); }
@@ -99,17 +101,30 @@
       width: 0;
       height: 2px;
       background: var(--accent);
-      transition: width 0.3s ease;
+      transition: width 0.4s ease;
     }
 
     nav a:hover::after { width: 100%; }
 
     section { padding: 5.5rem 5%; }
-    .container { max-width: 1100px; margin: 0 auto; }
+    .container { max-width: 1180px; margin: 0 auto; }
 
-    .hero { text-align: center; padding: 6rem 5% 5rem; }
+    .hero {
+      min-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3.5rem 5%;
+    }
 
-    .profile-container { position: relative; margin: 0 auto 1.8rem; width: 150px; height: 150px; }
+    .profile-container {
+      position: relative;
+      margin: 0 auto 1.2rem;
+      width: 160px;
+      height: 160px;
+    }
 
     .profile-frame {
       width: 100%;
@@ -127,7 +142,10 @@
       height: 94%;
       border-radius: 50%;
       overflow: hidden;
-      box-shadow: 0 0 0 3px var(--accent), 0 8px 24px rgba(0, 224, 255, 0.3);
+      background: var(--card-bg);
+      box-shadow:
+        0 0 0 3px var(--accent),
+        0 12px 30px rgba(0, 30, 60, 0.8);
     }
 
     .profile img {
@@ -136,12 +154,13 @@
       object-fit: cover;
     }
 
+    /* Cyber Pulse Animation */
     .cyber-pulse {
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 170px;
-      height: 170px;
+      width: 190px;
+      height: 190px;
       border-radius: 50%;
       box-shadow: 0 0 0 0 rgba(0, 224, 255, 0.5);
       animation: cyberPulse 4s infinite, cyberRotate 30s linear infinite;
@@ -150,7 +169,7 @@
 
     @keyframes cyberPulse {
       0% { box-shadow: 0 0 0 0 rgba(0, 224, 255, 0.5); }
-      70% { box-shadow: 0 0 0 22px rgba(0, 224, 255, 0); }
+      70% { box-shadow: 0 0 0 24px rgba(0, 224, 255, 0); }
       100% { box-shadow: 0 0 0 0 rgba(0, 224, 255, 0); }
     }
 
@@ -159,203 +178,237 @@
       to { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
-    /* === MINIMAL FONT SIZES === */
     .name-title {
       font-family: 'Orbitron', sans-serif;
-      font-weight: 800;
-      font-size: 2.2rem; /* Lebih kecil */
-      margin: 0.4rem 0 0.25rem;
-      letter-spacing: 1.5px;
-      background: linear-gradient(90deg, var(--text), var(--accent));
+      font-size: 2.3rem;
+      margin: 0.3rem 0;
+      letter-spacing: 0.8px;
+      background: linear-gradient(90deg, #ffffff, var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      font-weight: 700;
     }
 
     .role {
-      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      color: var(--secondary);
       font-weight: 600;
-      font-size: 1.15rem; /* Lebih kecil */
-      color: var(--pink);
-      margin-bottom: 0.6rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      margin-bottom: 0.5rem;
     }
 
     .credentials {
+      font-size: 0.98rem;
       color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      font-size: 0.98rem; /* Lebih kecil */
-      line-height: 1.6;
-      letter-spacing: 0.3px;
-      min-height: 1.6em;
+      max-width: 650px;
+      margin: 0 auto 1.8rem;
+      line-height: 1.65;
     }
 
-    /* Glitch tetap ada tapi ukuran lebih kecil */
-    .glitch {
-      position: relative;
-      display: inline-block;
+    .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-weight: 800;
-      font-size: 2.6rem; /* Lebih kecil */
-      line-height: 1.2;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      max-width: 800px;
-      margin: 1rem auto 1.6rem;
-      color: var(--text);
+      font-weight: 700;
+      font-size: 3.2rem;
+      margin: 0.7rem 0 1.2rem;
+      line-height: 1.15;
+      background: linear-gradient(90deg, #f8fbff, var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
     }
-
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .glitch::before {
-      left: 2px;
-      text-shadow: -2px 0 var(--pink);
-      clip: rect(44px, 450px, 56px, 0);
-      animation: glitch-anim 5s infinite linear alternate-reverse;
-    }
-
-    .glitch::after {
-      left: -2px;
-      text-shadow: -2px 0 var(--accent);
-      clip: rect(44px, 450px, 56px, 0);
-      animation: glitch-anim2 5s infinite linear alternate-reverse;
-    }
-
-    /* Animasi glitch (sama) */
-    @keyframes glitch-anim { /* ... */ }
-    @keyframes glitch-anim2 { /* ... */ }
 
     .hero p {
-      color: var(--text-muted);
-      max-width: 700px;
-      margin: 0 auto 2.4rem;
-      font-size: 1.05rem; /* Lebih kecil */
-      line-height: 1.65;
+      font-size: 1.08rem;
+      max-width: 750px;
+      margin: 0 auto 2.2rem;
+      color: #b5c6e2;
+      font-weight: 400;
+      line-height: 1.68;
     }
 
     .cta-group {
       display: flex;
       gap: 1.2rem;
       justify-content: center;
-      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
     }
 
     .btn {
-      padding: 0.9rem 2.2rem;
+      padding: 0.95rem 2.3rem;
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem; /* Lebih kecil */
-      letter-spacing: 1.2px;
+      font-size: 0.98rem;
       border-radius: 8px;
-      text-decoration: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
+      transition: var(--transition);
+      border: 2px solid;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 224, 255, 0.4);
+      background: transparent;
+      color: var(--accent);
+      border-color: var(--accent);
     }
 
     .btn-secondary {
       background: transparent;
-      color: var(--accent);
-      border: 2px solid var(--accent);
+      color: var(--secondary);
+      border-color: var(--secondary);
     }
 
-    .btn-secondary:hover {
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 224, 255, 0.3);
+    }
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(20, 30, 50, 0.4);
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .socials a:hover {
+      color: var(--accent);
       background: rgba(0, 224, 255, 0.1);
+      border-color: var(--accent);
       transform: translateY(-3px);
     }
 
     .section-title {
       text-align: center;
       font-family: 'Orbitron', sans-serif;
-      font-weight: 800;
-      font-size: 2.1rem; /* Lebih kecil */
-      margin: 0 0 3.5rem;
-      color: var(--accent);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    /* === SERVICES === */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.2rem;
+      font-size: 2.4rem;
+      margin-bottom: 3.5rem;
+      color: var(--text);
+      position: relative;
+      font-weight: 700;
     }
 
-    .service-card {
-      background: var(--card);
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 75px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      margin: 0.8rem auto;
+      border-radius: 2px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1.6rem;
+    }
+
+    .price-card {
+      background: rgba(18, 28, 45, 0.8);
       border-radius: 16px;
-      padding: 2.2rem 1.8rem;
-      border: 1px solid rgba(0, 224, 255, 0.15);
-      transition: all 0.35s ease;
+      padding: 2.3rem 1.8rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: var(--transition);
       cursor: pointer;
     }
 
-    .service-card:hover {
-      transform: translateY(-6px);
+    .price-card:hover {
+      transform: translateY(-5px);
       border-color: var(--accent);
       box-shadow: 0 10px 30px rgba(0, 224, 255, 0.2);
     }
 
-    .service-card h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: var(--text);
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .price-card.popular {
+      border: 2px solid var(--accent);
+      background: rgba(8, 16, 32, 0.95);
+      position: relative;
+      transform: scale(1.03);
+      box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(0, 224, 255, 0.22);
     }
 
-    .price-display {
+    .popular-tag {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+      color: var(--bg);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.4rem 1.6rem;
+      border-radius: 30px;
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 800;
+      letter-spacing: 1.2px;
+      box-shadow: 0 4px 10px rgba(0, 200, 255, 0.4);
+    }
+
+    .price-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.45rem;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    .price-amount {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
       color: var(--accent);
-      margin: 0.8rem 0 0.4rem;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.5px;
+    }
+
+    .price-currency {
+      font-size: 1.3rem;
+      margin-right: 0.2rem;
+    }
+
+    .price-sub {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
     }
 
     .features {
       list-style: none;
-      margin: 1.3rem 0;
-      font-size: 0.95rem;
+      margin: 1.4rem 0;
+      text-align: left;
     }
 
     .features li {
-      padding: 0.6rem 0;
-      color: var(--text-muted);
-      position: relative;
-      padding-left: 1.2rem;
+      padding: 0.7rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 0.98rem;
+      color: #c5d5f0;
     }
 
     .features li::before {
       content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--pink);
+      color: var(--secondary);
       font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
     }
 
     /* === MODAL POPUP === */
@@ -389,38 +442,39 @@
     .modal h2 {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.8rem;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       color: var(--accent);
-      letter-spacing: 1px;
     }
 
     .modal .price-display {
+      font-family: 'Orbitron', sans-serif;
       font-size: 2.2rem;
-      margin: 0.6rem 0 1.2rem;
+      color: var(--accent);
+      margin: 0.6rem 0 1rem;
     }
 
     .modal p {
       color: var(--text-muted);
       font-size: 1rem;
       line-height: 1.65;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .modal ul {
       list-style: none;
       padding-left: 0;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .modal ul li {
-      padding: 8px 0;
+      padding: 7px 0;
       color: var(--text);
       font-size: 1rem;
     }
 
     .modal ul li::before {
       content: '• ';
-      color: var(--pink);
+      color: var(--secondary);
       font-weight: bold;
     }
 
@@ -428,7 +482,7 @@
       position: absolute;
       top: 16px; right: 16px;
       color: var(--text-muted);
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       cursor: pointer;
     }
 
@@ -439,105 +493,61 @@
       justify-content: center;
     }
 
-    /* Footer & lainnya (diperkecil) */
     #contact {
-      background: rgba(13, 18, 28, 0.6);
-      padding: 5rem 5% 4.5rem;
-    }
-
-    footer {
-      background: rgba(8, 12, 22, 0.95);
-      padding: 3rem 5% 2.2rem;
-      border-top: 1px solid rgba(0, 224, 255, 0.12);
-    }
-
-    .footer-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-
-    .footer-col h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 1.1rem;
-      color: var(--accent);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .footer-col p, .footer-col a {
-      color: var(--text-muted);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      text-decoration: none;
-      line-height: 1.65;
-      transition: color 0.2s ease;
-    }
-
-    .cyber-signature {
-      margin-top: 2.2rem;
-      padding-top: 1.8rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--bg);
+      padding: 5.5rem 5%;
       text-align: center;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--text-muted);
-      font-size: 1rem;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
     }
 
-    .signature-name {
-      color: var(--accent);
-      font-weight: 800;
-      letter-spacing: 1.8px;
+    #contact p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 1rem auto;
     }
 
-    .copyright {
-      margin-top: 0.8rem;
+    .contact-info {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+footer {
+      text-align: center;
+      padding: 2.8rem 5%;
+      background: rgba(5, 9, 16, 0.99);
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
       color: var(--text-muted);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.92rem;
     }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .name-title { font-size: 1.9rem; }
-      .section-title { font-size: 1.8rem; }
+      section { padding: 4.5rem 5%; }
+      nav ul { gap: 1.2rem; font-size: 0.9rem; }
       .cta-group { flex-direction: column; }
       .btn { width: 100%; justify-content: center; }
+      .price-card.popular { transform: scale(1.01); }
+      .hero h1 { font-size: 2.4rem; }
     }
 
-    /* Glitch animation keys (disingkat untuk ruang) */
-    @keyframes glitch-anim {
-      0%,100% { clip: rect(40px,9999px,60px,0); }
-      20% { clip: rect(20px,9999px,80px,0); }
-      40% { clip: rect(60px,9999px,30px,0); }
-      60% { clip: rect(10px,9999px,90px,0); }
-      80% { clip: rect(70px,9999px,20px,0); }
-    }
-    @keyframes glitch-anim2 {
-      0%,100% { clip: rect(50px,9999px,50px,0); }
-      20% { clip: rect(30px,9999px,70px,0); }
-      40% { clip: rect(80px,9999px,40px,0); }
-      60% { clip: rect(10px,9999px,90px,0); }
-      80% { clip: rect(60px,9999px,30px,0); }
+    @media (max-width: 480px) {
+      .profile-container { width: 130px; height: 130px; }
+      .hero h1 { font-size: 2.2rem; }
+      .name-title { font-size: 1.9rem; }
     }
   </style>
 </head>
 <body>
-  <canvas id="spider-canvas"></canvas>
+  <!-- Spider-Man Cyber Background -->
+  <canvas id="spider-bg"></canvas>
 
   <header>
-    <div class="logo">NEXUS</div>
-    <nav aria-label="Navigation">
+    <div class="logo">NexusShield</div>
+    <nav>
       <ul>
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -549,102 +559,103 @@
         <div class="profile-frame">
           <div class="profile">
             <img
-              src="https://i.ibb.co/nq049vpk/955-A154-D-F234-40-D0-8903-DD4-D61-AF98-E4.jpg"
-              alt="Teuku Rijul — Cyber Architect"
-              onerror="this.style.display='none';"
-              loading="lazy"
+              src="https://i.ibb.co.com/nq049vpk/955-A154-D-F234-40-D0-8903-DD4-D61-AF98-E4.jpg"
+              alt="Teuku Rijul – Founder & Chief Security Architect"
+              onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=face';"
             />
           </div>
         </div>
       </div>
+      <div class="name-title">Teuku Rijul</div>
+      <div class="role">Founder & Chief Security Architect</div>
+      <div class="credentials">
+        ISO/IEC 27001 Lead Auditor | CISSP | OSCP | BSSN-Certified Expert
+      </div>
 
-      <h2 class="name-title">TEUKU RIJUL</h2>
-      <div class="role">CYBER ARCHITECT</div>
-      <div class="credentials" id="typewriter"></div>
-
-      <h1 class="glitch" data-text="ELITE CYBER DEFENSE FOR NATIONAL CRITICAL INFRASTRUCTURE">
-        ELITE CYBER DEFENSE FOR NATIONAL CRITICAL INFRASTRUCTURE
-      </h1>
-
-      <p>15+ years securing Indonesia’s digital sovereignty. Trusted by government, finance, and ASEAN CERTs.</p>
+      <h1>Elite Cyber Security Defense for Critical Infrastructure</h1>
+      <p>15+ years securing national digital assets. Trusted by BSSN, OJK, GoTo, and ASEAN CERTs.</p>
 
       <div class="cta-group">
-        <a href="#services" class="btn btn-primary">VIEW SERVICES</a>
-        <a href="mailto:consult@nexusshield.io" class="btn btn-secondary">CONTACT DIRECTLY</a>
+        <a href="#pricing" class="btn btn-primary"><i class="fas fa-shield-alt"></i> View Plans</a>
+        <a href="#contact" class="btn btn-secondary"><i class="fas fa-user-tie"></i> Consultation</a>
+      </div>
+
+      <div class="socials">
+        <a href="https://instagram.com/teukurijul" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/teukurijul" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/teukurijul" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/teukurijul" target="_blank"><i class="fab fa-github"></i></a>
       </div>
     </section>
 
-    <!-- Services with Popup -->
-    <section id="services">
+    <section id="pricing" class="pricing">
       <div class="container">
-        <h2 class="section-title">PROFESSIONAL SECURITY SERVICES</h2>
-        <div class="services-grid">
-          <div class="service-card" onclick="openModal('Defender')">
-            <h3>DEFENDER</h3>
-            <div class="price-display">Rp 12.500.000</div>
-            <div style="color:var(--text-muted); margin-bottom: 1.2rem; font-size:0.9rem;">per year</div>
-            <p>Foundational cyber resilience for SMEs.</p>
+        <h2 class="section-title">Premium Security Plans</h2>
+        <div class="pricing-grid">
+          <div class="price-card" onclick="openModal('Defender')">
+            <h3>Defender</h3>
+            <div class="price-amount">Rp 12.500.000</div>
+            <div class="price-sub">per tahun</div>
+            <ul class="features">
+              <li>24/7 SOC Monitoring</li>
+              <li>Vulnerability Scanning (Monthly)</li>
+              <li>Incident Response (SLA 4h)</li>
+              <li>Basic Threat Intelligence</li>
+              <li>1 Admin Seat</li>
+            </ul>
           </div>
 
-          <div class="service-card" onclick="openModal('Phantom')">
-            <h3>PHANTOM</h3>
-            <div class="price-display">Rp 38.900.000</div>
-            <div style="color:var(--text-muted); margin-bottom: 1.2rem; font-size:0.9rem;">per year</div>
-            <p>Advanced protection for finance & government.</p>
+          <div class="price-card popular" onclick="openModal('Phantom')">
+            <div class="popular-tag">MOST TRUSTED</div>
+            <h3>Phantom</h3>
+            <div class="price-amount">Rp 38.900.000</div>
+            <div class="price-sub">per tahun</div>
+            <ul class="features">
+              <li>Everything in Defender</li>
+              <li>Penetration Testing (Quarterly)</li>
+              <li>Proactive Threat Hunting</li>
+              <li>Custom Dashboard & API</li>
+              <li>5 Admin Seats + SSO</li>
+              <li>Compliance Support (ISO 27001, GDPR)</li>
+            </ul>
           </div>
 
-          <div class="service-card" onclick="openModal('Nexus Elite')">
-            <h3>NEXUS ELITE</h3>
-            <div class="price-display">Rp 115.000.000</div>
-            <div style="color:var(--text-muted); margin-bottom: 1.2rem; font-size:0.9rem;">per year</div>
-            <p>Executive-grade defense with direct access.</p>
+          <div class="price-card" onclick="openModal('Nexus Elite')">
+            <h3>Nexus Elite</h3>
+            <div class="price-amount">Rp 115.000.000</div>
+            <div class="price-sub">per tahun</div>
+            <ul class="features">
+              <li>Everything in Phantom</li>
+              <li>Dedicated Threat Analyst (1:1)</li>
+              <li>Red Team Exercise (Bi-annual)</li>
+              <li>Custom Playbook Development</li>
+              <li>Unlimited Seats + RBAC</li>
+              <li><strong>Direct Advisory by Teuku Rijul</strong></li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact">
       <div class="container">
-        <h2 class="section-title">GET IN TOUCH</h2>
-        <div style="text-align:center; max-width:600px; margin:0 auto;">
-          <p style="color:var(--text-muted); font-size:1.1rem; margin:0.8rem 0;">
-            <i class="fas fa-envelope" style="margin-right:8px;"></i> consult@nexusshield.io
-          </p>
-          <p style="color:var(--text-muted); font-size:1.1rem; margin:0.8rem 0;">
-            <i class="fas fa-phone" style="margin-right:8px;"></i> +62 895-3283-23138
-          </p>
+        <h2 class="section-title">Get in Touch</h2>
+        <p style="color:#92a8d1;max-width:600px;margin:1rem auto;">
+          Untuk Kerjasama, Project, atau informasi lebih lanjut, silakan hubungi:
+        </p>
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i> consult@nexusshield.io</p>
+          <p><i class="fas fa-phone"></i> +62 895-3283-2313-8</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-content">
-      <div class="footer-col">
-        <h3>NEXUS</h3>
-        <p>Elite cyber defense architecture for national critical infrastructure and enterprise clients.</p>
-      </div>
-      <div class="footer-col">
-        <h3>SERVICES</h3>
-        <p>• Threat Intelligence</p>
-        <p>• Penetration Testing</p>
-        <p>• ISO 27001 Implementation</p>
-        <p>• Red Team Exercises</p>
-      </div>
-      <div class="footer-col">
-        <h3>CONTACT</h3>
-        <p><i class="fas fa-envelope" style="margin-right:6px;"></i> consult@nexusshield.io</p>
-        <p><i class="fas fa-phone" style="margin-right:6px;"></i> +62 895-3283-23138</p>
-      </div>
-    </div>
-
-    <div class="cyber-signature">
-      <div>Architected with precision by <span class="signature-name">TEUKU RIJUL</span></div>
-      <div class="copyright">&copy; 2025 NexusShield — Cyber Defense Architecture</div>
-    </div>
+    ©2025 NexusShield — Cyber Security Defense Architecture by Teuku Rijul.
   </footer>
 
-  <!-- Service Modal -->
+  <!-- Modal -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -658,57 +669,102 @@
 
   <!-- Scripts -->
   <script>
-    // Spider background (sama)
+    // === SPIDER-MAN BACKGROUND ===
     (function() {
-      const canvas = document.getElementById('spider-canvas');
+      const canvas = document.getElementById('spider-bg');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
-      let animationFrame;
-      function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-      resize(); window.addEventListener('resize', resize);
-      class Spider { /* ... */ }
-      const spiders = [new Spider(), new Spider(), new Spider()];
-      const arms = 18;
-      function drawWeb() { /* ... */ }
-      function animate() { /* ... */ }
-      animate();
-      window.addEventListener('beforeunload', () => { if (animationFrame) cancelAnimationFrame(animationFrame); });
-    })();
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
 
-    // Typewriter
-    document.addEventListener('DOMContentLoaded', () => {
-      const text = "ISO/IEC 27001 Lead Auditor | CISSP | OSCP | BSSN-Certified Expert";
-      const typewriter = document.getElementById('typewriter');
-      let i = 0;
-      const speed = 60;
-      function type() {
-        if (i < text.length) {
-          typewriter.textContent += text.charAt(i);
-          i++;
-          setTimeout(type, speed);
+      class Spider {
+        constructor() { this.reset(); this.size = 3 + Math.random() * 2; }
+        reset() {
+          this.angle = Math.random() * Math.PI * 2;
+          this.radius = 40 + Math.random() * 120;
+          this.center = { x: canvas.width / 2, y: canvas.height / 2 };
+          this.speed = 0.002 + Math.random() * 0.002;
+          this.offset = Math.random() * Math.PI * 2;
+        }
+        update() {
+          const time = Date.now() * this.speed;
+          this.angle += 0.008;
+          const r = this.radius + Math.sin(time + this.offset) * 12;
+          this.x = this.center.x + Math.cos(this.angle) * r;
+          this.y = this.center.y + Math.sin(this.angle) * r;
+        }
+        draw() {
+          ctx.fillStyle = 'rgba(230, 194, 41, 0.9)';
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
         }
       }
-      setTimeout(type, 500);
-    });
+
+      const spiders = [new Spider(), new Spider(), new Spider()];
+      const arms = 18;
+
+      function drawWeb() {
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const time = Date.now() * 0.0008;
+        const radius = Math.min(canvas.width, canvas.height) * 0.9;
+
+        ctx.strokeStyle = 'rgba(0, 224, 255, 0.07)';
+        ctx.lineWidth = 1;
+
+        for (let i = 0; i < arms; i++) {
+          const angle = (i / arms) * Math.PI * 2 + time * 0.2;
+          ctx.beginPath();
+          ctx.moveTo(centerX, centerY);
+          ctx.lineTo(
+            centerX + Math.cos(angle) * radius,
+            centerY + Math.sin(angle) * radius
+          );
+          ctx.stroke();
+        }
+
+        for (let r = 1; r <= 6; r++) {
+          const ringRadius = (r / 6) * radius + Math.sin(time * 3 + r) * 10;
+          ctx.beginPath();
+          ctx.arc(centerX, centerY, ringRadius, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
+
+      function animate() {
+        ctx.fillStyle = 'rgba(10, 14, 23, 0.7)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        drawWeb();
+        spiders.forEach(s => { s.update(); s.draw(); });
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    })();
 
     // Modal Logic
     const serviceData = {
       "Defender": {
         title: "DEFENDER",
         price: "Rp 12.500.000",
-        desc: "Ideal for SMEs needing foundational cyber resilience with 24/7 monitoring.",
+        desc: "Foundational cyber resilience for SMEs with 24/7 monitoring.",
         features: ["24/7 SOC Monitoring", "Monthly Vulnerability Scanning", "Incident Response (SLA 4h)", "Basic Threat Intelligence", "1 Admin Seat"]
       },
       "Phantom": {
         title: "PHANTOM",
         price: "Rp 38.900.000",
-        desc: "Trusted by financial institutions and government partners for advanced protection.",
+        desc: "Advanced protection for finance & government entities.",
         features: ["Everything in Defender", "Quarterly Penetration Testing", "Proactive Threat Hunting", "Custom Dashboard & API", "5 Admin Seats + SSO", "Compliance Support (ISO 27001, GDPR)"]
       },
       "Nexus Elite": {
         title: "NEXUS ELITE",
         price: "Rp 115.000.000",
-        desc: "Executive-grade defense with direct access to Teuku Rijul for critical infrastructure.",
+        desc: "Executive-grade defense with direct access to Teuku Rijul.",
         features: ["Everything in Phantom", "Dedicated Threat Analyst (1:1)", "Bi-annual Red Team Exercise", "Custom Playbook Development", "Unlimited Seats + RBAC", "Direct Advisory by Teuku Rijul"]
       }
     };

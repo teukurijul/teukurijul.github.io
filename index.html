@@ -567,25 +567,42 @@
       font-size: 0.95rem;
       color: var(--text-muted);
     }
- /* === ISO 27001 BADGE === */
-    .iso-badge {
-      position: absolute;
-      bottom: 2rem;
-      right: 2rem;
-      width: 180px;
-      height: 180px;
+    /* === NEW ISO 27001 BADGE (Placed in Footer) === */
+    .iso-footer {
+      position: relative;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      background: rgba(5, 9, 16, 0.8);
+      border-top: 1px solid var(--border);
+    }
+
+    .iso-footer img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      background: url('https://i.ibb.co.com/60BnDBVx/1766129105877.jpg') no-repeat center center;
-      background-size: contain;
-      box-shadow: 0 0 30px rgba(0, 224, 255, 0.3);
+      box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
       animation: pulse 2s infinite;
-      z-index: 10;
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 224, 255, 0.3); }
-      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 224, 255, 0.5); }
-      100% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 224, 255, 0.3); }
+      0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 224, 255, 0.3); }
+      50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 224, 255, 0.5); }
+      100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 224, 255, 0.3); }
+    }
+
+    .iso-footer .text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .iso-footer .text strong {
+      color: var(--accent);
+      font-weight: 600;
     }
 
     /* === MODAL POPUP === */
@@ -684,11 +701,9 @@
         grid-template-columns: 1fr;
         padding: 1.5rem;
       }
-      .iso-badge {
-        width: 140px;
-        height: 140px;
-        bottom: 1rem;
-        right: 1rem;
+      .iso-footer img {
+        width: 100px;
+        height: 100px;
       }
     }
 
@@ -701,6 +716,10 @@
         padding: 1.8rem 1.2rem;
       }
       .price-amount { font-size: 1.8rem; }
+      .iso-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -770,9 +789,6 @@
           </ul>
         </div>
       </div>
-
-      <!-- ISO 27001 Badge -->
-      <div class="iso-badge"></div>
     </section>
 
     <section id="pricing" class="pricing">
@@ -823,6 +839,13 @@
       <span>©2025 NexusShield</span>
       <span>—</span>
       <span>Cyber Security Defense Architecture by <strong style="color: var(--accent);">TEUKU RIJUL</strong></span>
+    </div>
+    <!-- New ISO Footer Section -->
+    <div class="iso-footer">
+      <img src="https://i.ibb.co.com/QjzyYpHf/IMG-20251222-011130-549.jpg" alt="ISO 27001 Certified" />
+      <div class="text">
+        Certified under <strong>ISO/IEC 27001</strong> Information Security Management System.
+      </div>
     </div>
   </footer>
 

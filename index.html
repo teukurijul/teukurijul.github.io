@@ -1,8 +1,8 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NexusShield - Elite Cyber Defense Architecture</title>
     <style>
         :root {
@@ -40,31 +40,31 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
-            background: radial-gradient(circle at 20% 30%, rgba(10, 10, 15, 0.8) 0%, rgba(13, 13, 21, 0.8) 100%);
+            background: radial-gradient(
+                circle at 20% 30%,
+                rgba(10, 10, 15, 0.8) 0%,
+                rgba(13, 13, 21, 0.8) 100%
+            );
         }
 
-        /* Background Video Watermark */
-        .bg-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.08;
-            pointer-events: none;
-        }
-
-        /* Watermark Pattern */
+        /* Background elements */
+        .bg-video,
         .watermark-pattern {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
             z-index: -1;
+            pointer-events: none;
+        }
+
+        .bg-video {
+            object-fit: cover;
+            opacity: 0.08;
+        }
+
+        .watermark-pattern {
             background: repeating-linear-gradient(
                 45deg,
                 transparent,
@@ -74,6 +74,7 @@
             );
         }
 
+        /* Header & Navigation */
         header {
             display: flex;
             justify-content: space-between;
@@ -161,17 +162,15 @@
             width: 100%;
         }
 
+        /* Hero Section */
         .hero {
             text-align: center;
             padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 0.8)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk1IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGY3ZmYiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwYzhkOSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI2NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+') repeat;
         }
 
         .profile-container {
@@ -190,7 +189,6 @@
             box-shadow: 0 0 20px var(--primary-color);
             animation: pulse 2s infinite alternate;
             transition: transform 0.3s ease;
-            position: relative;
         }
 
         .profile-pic::before {
@@ -201,13 +199,19 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-green));
+            background: linear-gradient(
+                45deg,
+                var(--neon-blue),
+                var(--neon-purple),
+                var(--neon-pink),
+                var(--neon-green)
+            );
             z-index: -1;
             animation: gradientShift 4s ease infinite;
             opacity: 0.3;
         }
 
-      @keyframes gradientShift {
+        @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -386,7 +390,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            position: relative;
         }
 
         .btn-primary {
@@ -431,7 +434,6 @@
             justify-content: center;
             transition: all 0.3s ease;
             cursor: pointer;
-            position: relative;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
@@ -459,6 +461,7 @@
             transform: scale(1.5);
         }
 
+        /* Info Section */
         .info-section {
             padding: 4rem 2rem;
             background: rgba(13, 13, 21, 0.5);
@@ -485,7 +488,6 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
         }
 
         .info-card::before {
@@ -583,6 +585,7 @@
             border-radius: 2px;
         }
 
+        /* Tools Section */
         .tools-section {
             padding: 4rem 2rem;
             margin: 2rem auto;
@@ -713,6 +716,7 @@
             letter-spacing: 1px;
         }
 
+        /* Pricing Section */
         .pricing-section {
             padding: 4rem 2rem;
             margin: 2rem auto;
@@ -730,37 +734,7 @@
             background: var(--card-bg);
             padding: 2rem;
             border-radius: 10px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
-        }
-
-        .pricing-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.1);
-        }
-
-        .pricing-card.popular {
+                 .pricing-card.popular {
             border: 2px solid var(--primary-color);
             box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
         }
@@ -836,13 +810,13 @@
             display: block;
             filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
             transition: transform 0.3s ease;
-            position: relative;
         }
 
         .iso-badge:hover {
             transform: scale(1.05);
         }
 
+        /* Contact Section */
         .contact-section {
             padding: 4rem 2rem;
             text-align: center;
@@ -879,41 +853,7 @@
             line-height: 1.5;
         }
 
-        .contact-email {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin: 1.5rem 0;
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-email::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-            transition: width 0.5s ease;
-        }
-
-        .contact-email:hover::before {
-            width: 100%;
-        }
-
-        .contact-email:hover {
-            background: rgba(0, 247, 255, 0.1);
-            transform: translateX(5px);
-        }
-
+        .contact-email,
         .contact-phone {
             display: flex;
             align-items: center;
@@ -929,6 +869,7 @@
             overflow: hidden;
         }
 
+        .contact-email::before,
         .contact-phone::before {
             content: '';
             position: absolute;
@@ -940,13 +881,193 @@
             transition: width 0.5s ease;
         }
 
+        .contact-email:hover::before,
         .contact-phone:hover::before {
             width: 100%;
         }
 
+        .contact-email:hover,
         .contact-phone:hover {
             background: rgba(0, 247, 255, 0.1);
-            trans
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(10, 10, 15, 0.9);
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .footer-text span:nth-child(3) {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+        }
+
+        @keyframes pulse {
+            from {
+                box-shadow: 0 0 20px var(--primary-color);
+            }
+            to {
+                box-shadow: 0 0 30px var(--primary-color), 0 0 40px var(--primary-color);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="watermark-pattern"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">NexusShield</div>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="profile-container">
+            <div class="profile-pic">
+                <img src="https://i.ibb.co/pvVsNzyL/IMG-20251221-234651-431.jpg" alt="Profile Image" />
+            </div>
+        </div>
+        <h1 class="name">TEUKU RIJUL</h1>
+        <div class="title">Elite Cyber Defense Architect</div>
+        <p class="certifications">OSCP • CEH • CISSP • CompTIA Security+</p>
+        <h2 class="headline">NexusShield — Next-Gen Cyber Defense Architecture</h2>
+        <p class="subhead">
+            Advanced threat detection, penetration testing, and zero-trust security frameworks engineered for enterprise resilience.
+        </p>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary">Get Secured Now</a>
+            <a href="#services" class="btn btn-secondary">Explore Services</a>
+        </div>
+        <div class="social-icons">
+            <div class="social-icon">X</div>
+            <div class="social-icon">in</div>
+            <div class="social-icon">GH</div>
+            <div class="social-icon">YT</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="info-section" id="services">
+        <h2 class="services-title">Core Services</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Red Team Ops</h3>
+                <p>Full-spectrum offensive security simulations to expose hidden vulnerabilities before adversaries do.</p>
+            </div>
+            <div class="info-card">
+                <h3>Zero Trust Architecture</h3>
+                <p>Micro-segmentation, identity-based access control, and continuous validation for modern networks.</p>
+            </div>
+            <div class="info-card">
+                <h3>Threat Intelligence</h3>
+                <p>Real-time global threat feeds, IOCs, and proactive hunting to neutralize APTs and ransomware.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section" id="tools">
+        <h2 class="tools-title">Elite Arsenal</h2>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon metasploit">M</div>
+                <div class="tool-name">Metasploit</div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon nmap">N</div>
+                <div class="tool-name">Nmap</div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon burp">B</div>
+                <div class="tool-name">Burp Suite</div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon wireshark">W</div>
+                <div class="tool-name">Wireshark</div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon john">J</div>
+                <div class="tool-name">John</div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon hashcat">H</div>
+                <div class="tool-name">Hashcat</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <h2 class="services-title">Defense Tiers</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Shield Basic</h3>
+                <div class="price">$199 <span class="price-period">/month</span></div>
+                <p>Vulnerability scanning + monthly report</p>
+            </div>
+            <div class="pricing-card popular">
+                <div class="popular-badge">Popular</div>
+                <h3>Nexus Pro</h3>
+                <div class="price">$499 <span class="price-period">/month</span></div>
+                <p>24/7 monitoring, pentest, threat response</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Fortress Elite</h3>
+                <div class="price">$1,299 <span class="price-period">/month</span></div>
+                <p>Dedicated SOC, zero-trust deployment, APT hunting</p>
+            </div>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/ISO_27001_Logo.svg/200px-ISO_27001_Logo.svg.png" alt="ISO 27001 Certified" class="iso-badge" />
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="contact-title">Secure Your Perimeter</h2>
+        <p class="contact-info">Reach out for a confidential consultation or incident response activation.</p>
+        <div class="contact-email">
+            <span>contact@nexusshield.security</span>
+        </div>
+        <div class="contact-phone">
+            <span>+1 (555) 123-4567</span>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-text">
@@ -962,99 +1083,18 @@
         </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-    <!-- JavaScript for scroll animations -->
+    <!-- Smooth Scroll JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create a simple animated background if video fails to load
-            const bgVideo = document.querySelector('.bg-video');
-            if (bgVideo) {
-                bgVideo.onerror = function() {
-                    this.style.display = 'none';
-                    document.body.style.background = 'radial-gradient(circle, #0a0a0f 0%, #0d0d15 100%)';
-                    
-                    // Add subtle CSS animation as fallback
-                    document.body.style.backgroundSize = '200% 200%';
-                    document.body.style.animation = 'bgShift 10s ease infinite';
-                    
-                    const style = document.createElement('style');
-                    style.textContent = `
-                        @keyframes bgShift {
-                            0% { background-position: 0% 50%; }
-                            50% { background-position: 100% 50%; }
-                            100% { background-position: 0% 50%; }
-                        }
-                    `;
-                    document.head.appendChild(style);
-                };
-            }
-
-            // Scroll animation for elements
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            // Observe all elements with fade-in class
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Add hover effects to cards
-            document.querySelectorAll('.info-card, .pricing-card, .tool-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                    this.style.boxShadow = '0 10px 25px rgba(0, 247, 255, 0.1)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
-                });
-            });
-
-            // Add interactive elements to buttons
-            document.querySelectorAll('.btn').forEach(button => {
-                button.addEventListener('mousedown', function() {
-                    this.style.transform = 'scale(0.98)';
-                });
-                
-                button.addEventListener('mouseup', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-
-            // Add interactive elements to social icons
-            document.querySelectorAll('.social-icon').forEach(icon => {
-                icon.addEventListener('mousedown', function() {
-                    this.style.transform = 'scale(0.95)';
-                });
-                
-                icon.addEventListener('mouseup', function() {
-                    this.style.transform = 'scale(1.1)';
-                });
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusShield - Elite Cyber Defense</title>
+    <title>NexusShield - Elite Cyber Defense Architecture</title>
     <style>
         :root {
             --primary-color: #00f7ff;
@@ -15,6 +15,15 @@
             --border-color: #1a1a2e;
             --hover-glow: rgba(0, 247, 255, 0.3);
             --gold-gradient: linear-gradient(135deg, #ffd700, #ffbf00);
+            --red-accent: #ff6b6b;
+            --green-accent: #4ecdc4;
+            --orange-accent: #ffbe76;
+            --blue-accent: #bbdefb;
+            --purple-accent: #ce93d8;
+            --neon-blue: #00f7ff;
+            --neon-pink: #ff00ff;
+            --neon-purple: #9c27b0;
+            --neon-green: #00ff00;
         }
 
         * {
@@ -22,6 +31,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -30,6 +40,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            background: radial-gradient(circle at 20% 30%, rgba(10, 10, 15, 0.8) 0%, rgba(13, 13, 21, 0.8) 100%);
         }
 
         /* Background Video Watermark */
@@ -73,6 +84,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
@@ -81,6 +94,32 @@
             color: var(--primary-color);
             text-shadow: 0 0 10px var(--primary-color);
             letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-color);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover::after {
+            transform: scaleX(1);
         }
 
         nav ul {
@@ -97,11 +136,14 @@
             letter-spacing: 1px;
             position: relative;
             transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
         }
 
         nav a:hover {
             color: var(--primary-color);
             text-shadow: 0 0 5px var(--primary-color);
+            background: rgba(0, 247, 255, 0.1);
         }
 
         nav a::after {
@@ -121,14 +163,25 @@
 
         .hero {
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             position: relative;
             overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 0.8)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk1IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGY3ZmYiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwYzhkOSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI2NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+') repeat;
+        }
+
+        .profile-container {
+            position: relative;
+            margin-bottom: 2rem;
         }
 
         .profile-pic {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             border: 3px solid var(--primary-color);
             margin: 0 auto 1.5rem;
@@ -136,6 +189,28 @@
             overflow: hidden;
             box-shadow: 0 0 20px var(--primary-color);
             animation: pulse 2s infinite alternate;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .profile-pic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-green));
+            z-index: -1;
+            animation: gradientShift 4s ease infinite;
+            opacity: 0.3;
+        }
+
+      @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .profile-pic::after {
@@ -153,36 +228,101 @@
             justify-content: center;
             font-weight: bold;
             box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+            z-index: 10;
+            animation: checkPulse 2s infinite;
+        }
+
+        @keyframes checkPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-pic:hover img {
+            transform: scale(1.05);
         }
 
         .name {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: var(--primary-color);
             text-shadow: 0 0 15px var(--primary-color);
             margin-bottom: 0.5rem;
             letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .name::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .name:hover {
+            text-shadow: 0 0 25px var(--primary-color);
         }
 
         .title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #ffd700;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
             letter-spacing: 2px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: #ffd700;
+            border-radius: 2px;
         }
 
         .certifications {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .certifications::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: var(--border-color);
         }
 
         .headline {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             color: var(--primary-color);
             text-shadow: 0 0 20px var(--primary-color);
@@ -190,10 +330,34 @@
             max-width: 900px;
             line-height: 1.2;
             letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .headline::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+            animation: headlineGlow 2s infinite alternate;
+        }
+
+        @keyframes headlineGlow {
+            0% { box-shadow: 0 0 10px var(--primary-color); }
+            100% { box-shadow: 0 0 20px var(--primary-color); }
+        }
+
+        .headline:hover {
+            text-shadow: 0 0 30px var(--primary-color);
         }
 
         .subhead {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
             max-width: 800px;
             margin: 0 auto 2rem;
@@ -219,6 +383,10 @@
             position: relative;
             overflow: hidden;
             border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
         }
 
         .btn-primary {
@@ -254,8 +422,8 @@
         }
 
         .social-icon {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             display: flex;
@@ -263,6 +431,8 @@
             justify-content: center;
             transition: all 0.3s ease;
             cursor: pointer;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         .social-icon:hover {
@@ -272,13 +442,31 @@
             box-shadow: 0 0 15px var(--primary-color);
         }
 
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .social-icon:hover::before {
+            opacity: 0.2;
+            transform: scale(1.5);
+        }
+
         .info-section {
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             background: rgba(13, 13, 21, 0.5);
             margin: 2rem auto;
             max-width: 1200px;
             border-radius: 15px;
             border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .info-grid {
@@ -293,7 +481,28 @@
             padding: 2rem;
             border-radius: 10px;
             border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .info-card:hover::before {
+            transform: scaleX(1);
         }
 
         .info-card:hover {
@@ -307,6 +516,18 @@
             font-size: 1.3rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            position: relative;
+        }
+
+        .info-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
         .info-card p {
@@ -323,6 +544,12 @@
             margin-bottom: 0.5rem;
             position: relative;
             padding-left: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .services-list li:hover {
+            padding-left: 2rem;
+            color: var(--primary-color);
         }
 
         .services-list li::before {
@@ -330,10 +557,11 @@
             position: absolute;
             left: 0;
             color: var(--primary-color);
+            transition: all 0.3s ease;
         }
 
         .services-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             text-align: center;
             margin: 3rem auto 2rem;
@@ -355,8 +583,138 @@
             border-radius: 2px;
         }
 
+        .tools-section {
+            padding: 4rem 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .tools-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .tools-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .tool-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.1);
+        }
+
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .tool-icon.metasploit {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--red-accent);
+        }
+
+        .tool-icon.nmap {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--green-accent);
+        }
+
+        .tool-icon.burp {
+            background: rgba(255, 190, 118, 0.2);
+            color: var(--orange-accent);
+        }
+
+        .tool-icon.wireshark {
+            background: rgba(165, 214, 167, 0.2);
+            color: var(--green-accent);
+        }
+
+        .tool-icon.john {
+            background: rgba(187, 222, 251, 0.2);
+            color: var(--blue-accent);
+        }
+
+        .tool-icon.hashcat {
+            background: rgba(206, 147, 216, 0.2);
+            color: var(--purple-accent);
+        }
+
+        .tool-card:hover .tool-icon {
+            transform: scale(1.1);
+        }
+
+        .tool-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .pricing-section {
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             margin: 2rem auto;
             max-width: 1200px;
         }
@@ -376,6 +734,25 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .pricing-card:hover::before {
+            transform: scaleX(1);
         }
 
         .pricing-card:hover {
@@ -401,6 +778,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            z-index: 10;
+            animation: badgePulse 2s infinite;
+        }
+
+        @keyframes badgePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .pricing-card h3 {
@@ -408,6 +793,18 @@
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            position: relative;
+        }
+
+        .pricing-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
         .price {
@@ -416,6 +813,7 @@
             color: var(--primary-color);
             margin: 1rem 0;
             text-shadow: 0 0 10px var(--primary-color);
+            transition: all 0.3s ease;
         }
 
         .price-period {
@@ -428,6 +826,7 @@
         .pricing-card p {
             color: var(--text-muted);
             margin-top: 1rem;
+            line-height: 1.5;
         }
 
         .iso-badge {
@@ -436,17 +835,23 @@
             margin: 2rem auto 0;
             display: block;
             filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .iso-badge:hover {
+            transform: scale(1.05);
         }
 
         .contact-section {
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
             margin: 2rem auto;
             max-width: 800px;
         }
 
         .contact-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 2rem;
             color: var(--text-light);
@@ -471,6 +876,7 @@
             margin: 2rem 0;
             font-size: 1rem;
             color: var(--text-muted);
+            line-height: 1.5;
         }
 
         .contact-email {
@@ -481,6 +887,31 @@
             margin: 1.5rem 0;
             font-size: 1.1rem;
             color: var(--primary-color);
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-email::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            transition: width 0.5s ease;
+        }
+
+        .contact-email:hover::before {
+            width: 100%;
+        }
+
+        .contact-email:hover {
+            background: rgba(0, 247, 255, 0.1);
+            transform: translateX(5px);
         }
 
         .contact-phone {
@@ -491,235 +922,31 @@
             margin: 1.5rem 0;
             font-size: 1.1rem;
             color: var(--primary-color);
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
         }
 
-        footer {
-            background: rgba(10, 10, 15, 0.8);
-            padding: 1.5rem 2rem;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            margin-top: 2rem;
+        .contact-phone::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            transition: width 0.5s ease;
         }
 
-        .footer-text {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
+        .contact-phone:hover::before {
+            width: 100%;
         }
 
-        .footer-text span {
-            color: var(--primary-color);
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 20px var(--primary-color);
-            }
-            100% {
-                box-shadow: 0 0 30px var(--primary-color);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 1.5rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-            }
-
-            .name {
-                font-size: 2rem;
-            }
-
-            .headline {
-                font-size: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .info-section {
-                padding: 2rem 1rem;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-title,
-            .contact-title {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .profile-pic {
-                width: 140px;
-                height: 140px;
-            }
-
-            .name {
-                font-size: 1.5rem;
-            }
-
-            .headline {
-                font-size: 1.5rem;
-            }
-
-            .price {
-                font-size: 2rem;
-            }
-
-            .iso-badge {
-                width: 150px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Background Video Watermark -->
-    <video autoplay muted loop class="bg-video">
-        <source src="data:video/mp4;base64,AAAAHGZ0eXBtcDQyAAAAAGlzb21tcDQyAAAABGxhdmY5LjEzLjEwMAAAAYFtaW5mAAAAHGRpbmZvAAAAAAAAAAEAAQAAAEgAAMr/AABtZGF0YQAAAAAAAAA=" type="video/mp4">
-    </video>
-
-    <!-- Watermark Pattern -->
-    <div class="watermark-pattern"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="logo">NexusShield</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="profile-pic">
-            <img src="https://i.ibb.co.com/QjzyYpHf/IMG-20251222-011130-549.jpg" alt="TEUKU RIJUL" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <h1 class="name">TEUKU RIJUL</h1>
-        <div class="title">Cyber Architect</div>
-        <div class="certifications">ISO/IEC 27001 Lead Auditor | CISSP | OSCP | BSSN-Certified Expert</div>
-        <h2 class="headline">Elite Cyber Defense for National Critical Infrastructure</h2>
-        <p class="subhead">15+ years securing Indonesia's digital sovereignty. Trusted by government, finance, and ASEAN CERTs.</p>
-        <div class="cta-buttons">
-            <button class="btn btn-primary"><i class="fas fa-eye"></i> View Services</button>
-            <button class="btn btn-secondary"><i class="fas fa-user"></i> Contact Directly</button>
-        </div>
-        <div class="social-icons">
-            <div class="social-icon"><i class="fab fa-instagram"></i></div>
-            <div class="social-icon"><i class="fab fa-linkedin-in"></i></div>
-            <div class="social-icon"><i class="fab fa-twitter"></i></div>
-            <div class="social-icon"><i class="fab fa-github"></i></div>
-        </div>
-    </section>
-
-    <!-- Info Section -->
-    <section class="info-section">
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>Nexus</h3>
-                <p>Elite cyber defense architecture for national critical infrastructure and enterprise clients.</p>
-            </div>
-            <div class="info-card">
-                <h3>Services</h3>
-                <ul class="services-list">
-                    <li>Threat Intelligence</li>
-                    <li>Penetration Testing</li>
-                    <li>ISO 27001 Implementation</li>
-                    <li>Red Team Exercises</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools Section -->
-    <section class="tools-section" style="padding: 3rem 2rem; text-align: center;">
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px;">Professional Security Tools</h2>
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
-            <!-- Metasploit -->
-            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ff6b6b; font-weight: bold; transition: all 0.3s ease;">
-                MSF
-            </div>
-            <!-- Nmap -->
-            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #4ecdc4; font-weight: bold; transition: all 0.3s ease;">
-                NMP
-            </div>
-            <!-- Burp Suite -->
-            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffbe76; font-weight: bold; transition: all 0.3s ease;">
-                BURP
-            </div>
-            <!-- Wireshark -->
-            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #a5d6a7; font-weight: bold; transition: all 0.3s ease;">
-                WSH
-            </div>
-            <!-- John the Ripper -->
-            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #bbdefb; font-weight: bold; transition: all 0.3s ease;">
-                JTR
-            </div>
-            <!-- Hashcat -->
-            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ce93d8; font-weight: bold; transition: all 0.3s ease;">
-                HCT
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="pricing-section">
-        <h2 class="services-title">Professional Security Services</h2>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Defender</h3>
-                <div class="price">Rp 12.500.000</div>
-                <span class="price-period">per year</span>
-                <p>Foundational cyber resilience for SMEs.</p>
-            </div>
-            <div class="pricing-card popular">
-                <div class="popular-badge">Most Trusted</div>
-                <h3>Phantom</h3>
-                <div class="price">Rp 38.900.000</div>
-                <span class="price-period">per year</span>
-                <p>Advanced protection for finance & government.</p>
-            </div>
-            <div class="pricing-card">
-                <h3>Nexus Elite</h3>
-                <div class="price">Rp 115.000.000</div>
-                <span class="price-period">per year</span>
-                <p>Executive-grade defense with direct access.</p>
-            </div>
-        </div>
-        <img src="https://i.ibb.co.com/QjzyYpHf/IMG-20251222-011130-549.jpg" alt="ISO 27001 Certified" class="iso-badge">
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <h2 class="contact-title">Get In Touch</h2>
-        <div class="contact-info">
-            For partnerships, projects, or more information, please contact us:
-        </div>
-        <div class="contact-email">
-            <i class="far fa-envelope"></i>
-            consult@nexussheild.io
-        </div>
-        <div class="contact-phone">
-            <i class="fas fa-phone"></i>
-            +62 895-3283-2313-8
-        </div>
-    </section>
-
+        .contact-phone:hover {
+            background: rgba(0, 247, 255, 0.1);
+            trans
     <!-- Footer -->
     <footer>
         <div class="footer-text">
@@ -727,12 +954,18 @@
             <span>—</span>
             <span>Cyber Security Defense Architecture by <span>TEUKU RIJUL</span></span>
         </div>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+            <a href="#" class="footer-link">Cookie Policy</a>
+            <a href="#" class="footer-link">Sitemap</a>
+        </div>
     </footer>
 
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <!-- Simple JavaScript to handle video background -->
+    <!-- JavaScript for scroll animations -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Create a simple animated background if video fails to load
@@ -757,6 +990,72 @@
                     document.head.appendChild(style);
                 };
             }
+
+            // Scroll animation for elements
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe all elements with fade-in class
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Add hover effects to cards
+            document.querySelectorAll('.info-card, .pricing-card, .tool-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 25px rgba(0, 247, 255, 0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+                });
+            });
+
+            // Add interactive elements to buttons
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('mousedown', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                button.addEventListener('mouseup', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Add interactive elements to social icons
+            document.querySelectorAll('.social-icon').forEach(icon => {
+                icon.addEventListener('mousedown', function() {
+                    this.style.transform = 'scale(0.95)';
+                });
+                
+                icon.addEventListener('mouseup', function() {
+                    this.style.transform = 'scale(1.1)';
+                });
+            });
         });
     </script>
 </body>

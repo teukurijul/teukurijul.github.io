@@ -1,1102 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NexusShield - Elite Cyber Defense Architecture</title>
-    <style>
-        :root {
-            --primary-color: #00f7ff;
-            --secondary-color: #00c8d9;
-            --dark-bg: #0a0a0f;
-            --card-bg: #0d0d15;
-            --text-light: #ffffff;
-            --text-muted: #8a8a9a;
-            --border-color: #1a1a2e;
-            --hover-glow: rgba(0, 247, 255, 0.3);
-            --gold-gradient: linear-gradient(135deg, #ffd700, #ffbf00);
-            --red-accent: #ff6b6b;
-            --green-accent: #4ecdc4;
-            --orange-accent: #ffbe76;
-            --blue-accent: #bbdefb;
-            --purple-accent: #ce93d8;
-            --neon-blue: #00f7ff;
-            --neon-pink: #ff00ff;
-            --neon-purple: #9c27b0;
-            --neon-green: #00ff00;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-            background: radial-gradient(
-                circle at 20% 30%,
-                rgba(10, 10, 15, 0.8) 0%,
-                rgba(13, 13, 21, 0.8) 100%
-            );
-        }
-
-        /* Background elements */
-        .bg-video,
-        .watermark-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .bg-video {
-            object-fit: cover;
-            opacity: 0.08;
-        }
-
-        .watermark-pattern {
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(0, 247, 255, 0.05) 10px,
-                rgba(0, 247, 255, 0.05) 20px
-            );
-        }
-
-        /* Header & Navigation */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-            background-color: rgba(10, 10, 15, 0.8);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-shadow: 0 0 10px var(--primary-color);
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            text-shadow: 0 0 15px var(--primary-color);
-        }
-
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary-color);
-            border-radius: 2px;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover::after {
-            transform: scaleX(1);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-            text-shadow: 0 0 5px var(--primary-color);
-            background: rgba(0, 247, 255, 0.1);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 4rem 2rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-container {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 3px solid var(--primary-color);
-            margin: 0 auto 1.5rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 20px var(--primary-color);
-            animation: pulse 2s infinite alternate;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-pic::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(
-                45deg,
-                var(--neon-blue),
-                var(--neon-purple),
-                var(--neon-pink),
-                var(--neon-green)
-            );
-            z-index: -1;
-            animation: gradientShift 4s ease infinite;
-            opacity: 0.3;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .profile-pic::after {
-            content: '✓';
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: var(--primary-color);
-            color: #0a0a0f;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
-            z-index: 10;
-            animation: checkPulse 2s infinite;
-        }
-
-        @keyframes checkPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        .profile-pic img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            transition: transform 0.5s ease;
-        }
-
-        .profile-pic:hover img {
-            transform: scale(1.05);
-        }
-
-        .name {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-shadow: 0 0 15px var(--primary-color);
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .name::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .name:hover {
-            text-shadow: 0 0 25px var(--primary-color);
-        }
-
-        .title {
-            font-size: 1.3rem;
-            color: #ffd700;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            position: relative;
-        }
-
-        .title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 2px;
-            background: #ffd700;
-            border-radius: 2px;
-        }
-
-        .certifications {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.5;
-            position: relative;
-        }
-
-        .certifications::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 1px;
-            background: var(--border-color);
-        }
-
-        .headline {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-shadow: 0 0 20px var(--primary-color);
-            margin: 2rem auto;
-            max-width: 900px;
-            line-height: 1.2;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .headline::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-            animation: headlineGlow 2s infinite alternate;
-        }
-
-        @keyframes headlineGlow {
-            0% { box-shadow: 0 0 10px var(--primary-color); }
-            100% { box-shadow: 0 0 20px var(--primary-color); }
-        }
-
-        .headline:hover {
-            text-shadow: 0 0 30px var(--primary-color);
-        }
-
-        .subhead {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            line-height: 1.5;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid transparent;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: #0a0a0f;
-            box-shadow: 0 0 15px var(--primary-color);
-        }
-
-        .btn-primary:hover {
-            background: #00e0ee;
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px #00e0ee;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 0 15px var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 247, 255, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px var(--primary-color);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .social-icon:hover {
-            background: var(--primary-color);
-            color: #0a0a0f;
-            transform: scale(1.1);
-            box-shadow: 0 0 15px var(--primary-color);
-        }
-
-        .social-icon::before {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-
-        .social-icon:hover::before {
-            opacity: 0.2;
-            transform: scale(1.5);
-        }
-
-        /* Info Section */
-        .info-section {
-            padding: 4rem 2rem;
-            background: rgba(13, 13, 21, 0.5);
-            margin: 2rem auto;
-            max-width: 1200px;
-            border-radius: 15px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .info-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
-        }
-
-        .info-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.1);
-        }
-
-        .info-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-        }
-
-        .info-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 30px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .info-card p {
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        .services-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .services-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .services-list li:hover {
-            padding-left: 2rem;
-            color: var(--primary-color);
-        }
-
-        .services-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .services-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-align: center;
-            margin: 3rem auto 2rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-        }
-
-        .services-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        /* Tools Section */
-        .tools-section {
-            padding: 4rem 2rem;
-            margin: 2rem auto;
-            max-width: 1200px;
-        }
-
-        .tools-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-        }
-
-        .tools-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .tool-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
-        }
-
-        .tool-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.1);
-        }
-
-        .tool-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .tool-icon.metasploit {
-            background: rgba(255, 107, 107, 0.2);
-            color: var(--red-accent);
-        }
-
-        .tool-icon.nmap {
-            background: rgba(78, 205, 196, 0.2);
-            color: var(--green-accent);
-        }
-
-        .tool-icon.burp {
-            background: rgba(255, 190, 118, 0.2);
-            color: var(--orange-accent);
-        }
-
-        .tool-icon.wireshark {
-            background: rgba(165, 214, 167, 0.2);
-            color: var(--green-accent);
-        }
-
-        .tool-icon.john {
-            background: rgba(187, 222, 251, 0.2);
-            color: var(--blue-accent);
-        }
-
-        .tool-icon.hashcat {
-            background: rgba(206, 147, 216, 0.2);
-            color: var(--purple-accent);
-        }
-
-        .tool-card:hover .tool-icon {
-            transform: scale(1.1);
-        }
-
-        .tool-name {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Pricing Section */
-        .pricing-section {
-            padding: 4rem 2rem;
-            margin: 2rem auto;
-            max-width: 1200px;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .pricing-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-                 .pricing-card.popular {
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: var(--gold-gradient);
-            color: #0a0a0f;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-            z-index: 10;
-            animation: badgePulse 2s infinite;
-        }
-
-        @keyframes badgePulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-        }
-
-        .pricing-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 30px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin: 1rem 0;
-            text-shadow: 0 0 10px var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .price-period {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-card p {
-            color: var(--text-muted);
-            margin-top: 1rem;
-            line-height: 1.5;
-        }
-
-        .iso-badge {
-            width: 200px;
-            height: auto;
-            margin: 2rem auto 0;
-            display: block;
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
-            transition: transform 0.3s ease;
-        }
-
-        .iso-badge:hover {
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 4rem 2rem;
-            text-align: center;
-            margin: 2rem auto;
-            max-width: 800px;
-        }
-
-        .contact-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-        }
-
-        .contact-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .contact-info {
-            margin: 2rem 0;
-            font-size: 1rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        .contact-email,
-        .contact-phone {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin: 1.5rem 0;
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-email::before,
-        .contact-phone::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-            transition: width 0.5s ease;
-        }
-
-        .contact-email:hover::before,
-        .contact-phone:hover::before {
-            width: 100%;
-        }
-
-        .contact-email:hover,
-        .contact-phone:hover {
-            background: rgba(0, 247, 255, 0.1);
-            transform: translateX(5px);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(10, 10, 15, 0.9);
-            border-top: 1px solid var(--border-color);
-            margin-top: 3rem;
-        }
-
-        .footer-text {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .footer-text span:nth-child(3) {
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-link {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--primary-color);
-        }
-
-        @keyframes pulse {
-            from {
-                box-shadow: 0 0 20px var(--primary-color);
-            }
-            to {
-                box-shadow: 0 0 30px var(--primary-color), 0 0 40px var(--primary-color);
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusShield | Elite Cyber Defense</title>
+  <style>
+    :root {
+      --primary: #ff2d55; /* Spider-Man red */
+      --secondary: #00f7ff; /* Cyber neon */
+      --dark: #0a0a0f;
+      --card: #0d0d15;
+      --text: #fff;
+      --muted: #aaa;
+      --border: #222;
+      --web: rgba(255, 45, 85, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--dark);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Spider-Web Animated Background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(10,10,15,0.9) 0%, rgba(13,13,21,0.95) 100%),
+        repeating-conic-gradient(
+          var(--web) 0deg 2deg,
+          transparent 2deg 10deg
+        );
+      background-size: 60px 60px, 120px 120px;
+      opacity: 0.92;
+      z-index: -1;
+      animation: webMove 25s linear infinite;
+    }
+
+    @keyframes webMove {
+      0% { transform: rotate(0deg) translateX(0); }
+      100% { transform: rotate(0.5deg) translateX(-1px); }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,15,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--primary);
+      text-shadow: 0 0 8px rgba(255,45,85,0.6);
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+      background: rgba(0,247,255,0.08);
+    }
+
+    section {
+      padding: 2.8rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      margin: 0 auto 1.2rem;
+      overflow: hidden;
+      box-shadow: 0 0 16px rgba(255,45,85,0.4);
+      position: relative;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .name {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0.4rem 0;
+      text-shadow: 0 0 12px rgba(255,45,85,0.5);
+    }
+
+    .title {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      letter-spacing: 1px;
+    }
+
+    .certifications {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .headline {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin: 1.2rem auto;
+      max-width: 800px;
+      line-height: 1.2;
+      text-shadow: 0 0 15px rgba(0,247,255,0.6);
+    }
+
+    .subhead {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0.8rem auto 1.6rem;
+      font-size: 1.05rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.4rem 0;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 12px rgba(255,45,85,0.4);
+    }
+
+    .btn-primary:hover {
+      background: #e01b42;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255,45,85,0.6);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--secondary);
+      border: 1.5px solid var(--secondary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0,247,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 2rem auto 1.8rem;
+      position: relative;
+      color: var(--text);
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.6rem;
+      margin-top: 1.2rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.6rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3), 0 0 12px rgba(255,45,85,0.15);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tools-grid {
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .tool {
+      text-align: center;
+      padding: 1.2rem 0.5rem;
+    }
+
+    .tool-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 0.6rem;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .tool-icon.metasploit { background: rgba(255,107,107,0.15); color: #ff6b6b; }
+    .tool-icon.nmap { background: rgba(78,205,196,0.15); color: #4ecdc4; }
+    .tool-icon.burp { background: rgba(255,190,118,0.15); color: #ffbe76; }
+    .tool-icon.wireshark { background: rgba(165,214,167,0.15); color: #a5d6a7; }
+    .tool-icon.john { background: rgba(187,222,251,0.15); color: #bbdefb; }
+    .tool-icon.hashcat { background: rgba(206,147,216,0.15); color: #ce93d8; }
+
+    .price-card {
+      text-align: center;
+      padding: 1.8rem 1.2rem;
+    }
+
+    .price {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin: 0.8rem 0;
+    }
+
+    .price-period {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .popular-badge {
+      background: linear-gradient(135deg, #ffd700, #ffbf00);
+      color: #0a0a0f;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.8rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(255,215,0,0.4);
+    }
+
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--secondary);
+      margin: 0.8rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .contact-item:hover {
+      background: rgba(0,247,255,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.8rem 2rem;
+      background: rgba(10,10,15,0.95);
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 2.5rem;
+    }
+
+    .footer-links {
+      margin-top: 0.8rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 0.8rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .headline { font-size: 2.2rem; }
+      .name { font-size: 2rem; }
+      .profile-pic { width: 140px; height: 140px; }
+      nav ul { gap: 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Background -->
-    <div class="watermark-pattern"></div>
+  <header>
+    <div class="logo">NexusShield</div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">NexusShield</div>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#tools">Tools</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <section class="hero">
+    <div class="profile-pic">
+      <img src="https://i.ibb.co/pvVsNzyL/IMG-20251221-234651-431.jpg" alt="TEUKU RIJUL">
+    </div>
+    <h1 class="name">TEUKU RIJUL</h1>
+    <div class="title">Elite Cyber Defense Architect</div>
+    <p class="certifications">OSCP • CEH • CISSP • CompTIA Security+</p>
+    <h2 class="headline">NexusShield — Next-Gen Cyber Defense</h2>
+    <p class="subhead">Advanced threat detection, penetration testing, and zero-trust security frameworks engineered for enterprise resilience.</p>
+    <div class="cta-buttons">
+      <a href="#contact" class="btn btn-primary">Get Secured Now</a>
+      <a href="#services" class="btn btn-secondary">Explore Services</a>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="profile-container">
-            <div class="profile-pic">
-                <img src="https://i.ibb.co/pvVsNzyL/IMG-20251221-234651-431.jpg" alt="Profile Image" />
-            </div>
-        </div>
-        <h1 class="name">TEUKU RIJUL</h1>
-        <div class="title">Elite Cyber Defense Architect</div>
-        <p class="certifications">OSCP • CEH • CISSP • CompTIA Security+</p>
-        <h2 class="headline">NexusShield — Next-Gen Cyber Defense Architecture</h2>
-        <p class="subhead">
-            Advanced threat detection, penetration testing, and zero-trust security frameworks engineered for enterprise resilience.
-        </p>
-        <div class="cta-buttons">
-            <a href="#contact" class="btn btn-primary">Get Secured Now</a>
-            <a href="#services" class="btn btn-secondary">Explore Services</a>
-        </div>
-        <div class="social-icons">
-            <div class="social-icon">X</div>
-            <div class="social-icon">in</div>
-            <div class="social-icon">GH</div>
-            <div class="social-icon">YT</div>
-        </div>
-    </section>
+  <section id="services">
+    <h2 class="section-title">Core Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Red Team Ops</h3>
+        <p>Full-spectrum offensive security simulations to expose hidden vulnerabilities before adversaries do.</p>
+      </div>
+      <div class="card">
+        <h3>Zero Trust Architecture</h3>
+        <p>Micro-segmentation, identity-based access control, and continuous validation for modern networks.</p>
+      </div>
+      <div class="card">
+        <h3>Threat Intelligence</h3>
+        <p>Real-time global threat feeds, IOCs, and proactive hunting to neutralize APTs and ransomware.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section class="info-section" id="services">
-        <h2 class="services-title">Core Services</h2>
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>Red Team Ops</h3>
-                <p>Full-spectrum offensive security simulations to expose hidden vulnerabilities before adversaries do.</p>
-            </div>
-            <div class="info-card">
-                <h3>Zero Trust Architecture</h3>
-                <p>Micro-segmentation, identity-based access control, and continuous validation for modern networks.</p>
-            </div>
-            <div class="info-card">
-                <h3>Threat Intelligence</h3>
-                <p>Real-time global threat feeds, IOCs, and proactive hunting to neutralize APTs and ransomware.</p>
-            </div>
-        </div>
-    </section>
+  <section id="tools" class="tools-section">
+    <h2 class="section-title">Elite Arsenal</h2>
+    <div class="grid tools-grid">
+      <div class="tool"><div class="tool-icon metasploit">M</div><div>Metasploit</div></div>
+      <div class="tool"><div class="tool-icon nmap">N</div><div>Nmap</div></div>
+      <div class="tool"><div class="tool-icon burp">B</div><div>Burp Suite</div></div>
+      <div class="tool"><div class="tool-icon wireshark">W</div><div>Wireshark</div></div>
+      <div class="tool"><div class="tool-icon john">J</div><div>John</div></div>
+      <div class="tool"><div class="tool-icon hashcat">H</div><div>Hashcat</div></div>
+    </div>
+  </section>
 
-    <!-- Tools Section -->
-    <section class="tools-section" id="tools">
-        <h2 class="tools-title">Elite Arsenal</h2>
-        <div class="tools-grid">
-            <div class="tool-card">
-                <div class="tool-icon metasploit">M</div>
-                <div class="tool-name">Metasploit</div>
-            </div>
-            <div class="tool-card">
-                <div class="tool-icon nmap">N</div>
-                <div class="tool-name">Nmap</div>
-            </div>
-            <div class="tool-card">
-                <div class="tool-icon burp">B</div>
-                <div class="tool-name">Burp Suite</div>
-            </div>
-            <div class="tool-card">
-                <div class="tool-icon wireshark">W</div>
-                <div class="tool-name">Wireshark</div>
-            </div>
-            <div class="tool-card">
-                <div class="tool-icon john">J</div>
-                <div class="tool-name">John</div>
-            </div>
-            <div class="tool-card">
-                <div class="tool-icon hashcat">H</div>
-                <div class="tool-name">Hashcat</div>
-            </div>
-        </div>
-    </section>
+  <section id="pricing" class="pricing-section">
+    <h2 class="section-title">Defense Tiers</h2>
+    <div class="grid">
+      <div class="card price-card">
+        <h3>Shield Basic</h3>
+        <div class="price">$199 <span class="price-period">/month</span></div>
+        <p>Vulnerability scanning + monthly report</p>
+      </div>
+      <div class="card price-card">
+        <div class="popular-badge">Popular</div>
+        <h3>Nexus Pro</h3>
+        <div class="price">$499 <span class="price-period">/month</span></div>
+        <p>24/7 monitoring, pentest, threat response</p>
+      </div>
+      <div class="card price-card">
+        <h3>Fortress Elite</h3>
+        <div class="price">$1,299 <span class="price-period">/month</span></div>
+        <p>Dedicated SOC, zero-trust deployment, APT hunting</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing-section" id="pricing">
-        <h2 class="services-title">Defense Tiers</h2>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Shield Basic</h3>
-                <div class="price">$199 <span class="price-period">/month</span></div>
-                <p>Vulnerability scanning + monthly report</p>
-            </div>
-            <div class="pricing-card popular">
-                <div class="popular-badge">Popular</div>
-                <h3>Nexus Pro</h3>
-                <div class="price">$499 <span class="price-period">/month</span></div>
-                <p>24/7 monitoring, pentest, threat response</p>
-            </div>
-            <div class="pricing-card">
-                <h3>Fortress Elite</h3>
-                <div class="price">$1,299 <span class="price-period">/month</span></div>
-                <p>Dedicated SOC, zero-trust deployment, APT hunting</p>
-            </div>
-        </div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/ISO_27001_Logo.svg/200px-ISO_27001_Logo.svg.png" alt="ISO 27001 Certified" class="iso-badge" />
-    </section>
+  <section id="contact" class="contact-section">
+    <h2 class="section-title">Secure Your Perimeter</h2>
+    <p>Reach out for a confidential consultation or incident response activation.</p>
+    <div class="contact-item">✉️ contact@nexusshield.security</div>
+    <div class="contact-item">📞 +1 (555) 123-4567</div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <h2 class="contact-title">Secure Your Perimeter</h2>
-        <p class="contact-info">Reach out for a confidential consultation or incident response activation.</p>
-        <div class="contact-email">
-            <span>contact@nexusshield.security</span>
-        </div>
-        <div class="contact-phone">
-            <span>+1 (555) 123-4567</span>
-        </div>
-    </section>
+  <footer>
+    <div>©2025 NexusShield — Cyber Security Defense Architecture by <strong>TEUKU RIJUL</strong></div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-text">
-            <span>©2025 NexusShield</span>
-            <span>—</span>
-            <span>Cyber Security Defense Architecture by <span>TEUKU RIJUL</span></span>
-        </div>
-        <div class="footer-links">
-            <a href="#" class="footer-link">Privacy Policy</a>
-            <a href="#" class="footer-link">Terms of Service</a>
-            <a href="#" class="footer-link">Cookie Policy</a>
-            <a href="#" class="footer-link">Sitemap</a>
-        </div>
-    </footer>
-
-    <!-- Smooth Scroll JS -->
-    <script>
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+  <script>
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>

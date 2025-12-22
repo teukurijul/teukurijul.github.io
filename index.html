@@ -2,490 +2,793 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NexusShield | Elite Cyber Defense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Teuku Rijul – Cyber Architect for Global Telecom & Technology. Zero-Trust, Threat Intelligence, Secure Architecture.">
+  <title>Teuku Rijul | Cyber Architect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
     :root {
-      --primary: #ff2d55; /* Spider-Man red */
-      --secondary: #00f7ff; /* Cyber neon */
-      --dark: #0a0a0f;
-      --card: #0d0d15;
-      --text: #fff;
-      --muted: #aaa;
-      --border: #222;
-      --web: rgba(255, 45, 85, 0.12);
+      --bg: #0d0d1a;
+      --fg: #f0f8ff;
+      --cyan: #00f9ff;
+      --violet: #b93dff;
+      --purple: #d12bff;
+      --card-bg: #16162b;
+      --border: rgba(130, 130, 255, 0.28);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      scroll-behavior: smooth;
     }
 
     body {
-      background-color: var(--dark);
-      color: var(--text);
-      line-height: 1.5;
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.75;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Spider-Web Animated Background */
-    body::before {
-      content: "";
+    /* QUANTUM PARTICLE BACKGROUND */
+    #quantum-particles {
       position: fixed;
       top: 0;
       left: 0;
-      width: 200%;
-      height: 200%;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(10,10,15,0.9) 0%, rgba(13,13,21,0.95) 100%),
-        repeating-conic-gradient(
-          var(--web) 0deg 2deg,
-          transparent 2deg 10deg
-        );
-      background-size: 60px 60px, 120px 120px;
-      opacity: 0.92;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    /* NETWORK GRID OVERLAY */
+    .network-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
-      animation: webMove 25s linear infinite;
+      pointer-events: none;
     }
 
-    @keyframes webMove {
-      0% { transform: rotate(0deg) translateX(0); }
-      100% { transform: rotate(0.5deg) translateX(-1px); }
+    .network-svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: rgba(185, 61, 255, 0.15);
+      stroke-width: 0.5;
     }
 
-    header {
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(13, 13, 26, 0.9);
+      backdrop-filter: blur(12px);
+      padding: 1.1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      background: rgba(10,10,15,0.95);
-      backdrop-filter: blur(8px);
       z-index: 100;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(130, 130, 255, 0.2);
     }
 
-    .logo {
-      font-weight: 800;
-      font-size: 1.6rem;
-      color: var(--primary);
-      text-shadow: 0 0 8px rgba(255,45,85,0.6);
-      letter-spacing: 1px;
+    .nav-logo {
+      font-family: 'Orbitron', monospace;
+      font-weight: 700;
+      font-size: 1.45rem;
+      color: var(--cyan);
+      text-shadow: 0 0 10px rgba(0, 249, 255, 0.5);
     }
 
-    nav ul {
+    .nav-links {
       display: flex;
-      list-style: none;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
-    nav a {
-      color: var(--text);
+    .nav-links a {
+      color: #c8e0ff;
       text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 0.4rem 0.6rem;
-      border-radius: 4px;
-      transition: all 0.2s;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: var(--secondary);
-      background: rgba(0,247,255,0.08);
+    .nav-links a:hover {
+      color: var(--cyan);
     }
 
-    section {
-      padding: 2.8rem 2rem;
+    .container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    .hero {
+    header {
       text-align: center;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+      padding: 9.5rem 0 6.5rem;
     }
 
-    .profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 2px solid var(--primary);
-      margin: 0 auto 1.2rem;
-      overflow: hidden;
-      box-shadow: 0 0 16px rgba(255,45,85,0.4);
-      position: relative;
-    }
-
-    .profile-pic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .name {
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin: 0.4rem 0;
-      text-shadow: 0 0 12px rgba(255,45,85,0.5);
-    }
-
-    .title {
-      font-size: 1.1rem;
-      color: var(--secondary);
-      font-weight: 600;
-      margin-bottom: 0.6rem;
-      letter-spacing: 1px;
-    }
-
-    .certifications {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.2rem;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .headline {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--secondary);
-      margin: 1.2rem auto;
-      max-width: 800px;
-      line-height: 1.2;
-      text-shadow: 0 0 15px rgba(0,247,255,0.6);
-    }
-
-    .subhead {
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0.8rem auto 1.6rem;
-      font-size: 1.05rem;
-    }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1.4rem 0;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 0.75rem 1.6rem;
-      border-radius: 6px;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all 0.25s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 4px 12px rgba(255,45,85,0.4);
-    }
-
-    .btn-primary:hover {
-      background: #e01b42;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(255,45,85,0.6);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--secondary);
-      border: 1.5px solid var(--secondary);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(0,247,255,0.1);
-      transform: translateY(-2px);
-    }
-
-    .section-title {
-      font-size: 1.8rem;
+    /* CYBERPUNK ANIMATED HEADER */
+    .cyber-header {
+      font-family: 'Orbitron', monospace;
       font-weight: 700;
-      text-align: center;
-      margin: 2rem auto 1.8rem;
+      font-size: 4rem;
+      margin: 1.4rem 0 1.1rem;
       position: relative;
-      color: var(--text);
     }
 
-    .section-title::after {
-      content: '';
+    @keyframes glitch {
+      0% { text-shadow: 0 0 5px var(--cyan), 2px 2px 0 var(--violet); }
+      2% { text-shadow: -2px -2px 0 var(--violet), 2px 2px 0 #ff00c8; }
+      4% { text-shadow: 2px -2px 0 #00ffe7, -2px 2px 0 var(--cyan); }
+      6%,100% { text-shadow: 0 0 5px var(--cyan), 0 0 10px rgba(0, 249, 255, 0.6); }
+    }
+
+    .cyber-header {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 100% 100%;
+      animation: glitch 3s infinite alternate-reverse;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #afd8ff;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      margin-bottom: 1.7rem;
+      font-weight: 600;
+    }
+
+    .tagline {
+      max-width: 820px;
+      margin: 0 auto 2.8rem;
+      font-size: 1.2rem;
+      color: #e6f2ff;
+      line-height: 1.82;
+    }
+
+    /* PROFILE FRAME WITH ANIMATION */
+    .profile-frame {
+      position: relative;
+      display: inline-block;
+      padding: 6px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--cyan), var(--violet));
+      box-shadow: 0 0 35px rgba(0, 249, 255, 0.6);
+      animation: pulseGlow 3s infinite alternate;
+      transition: transform 0.4s ease;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 25px rgba(0, 249, 255, 0.4); }
+      100% { box-shadow: 0 0 45px rgba(209, 43, 255, 0.7); }
+    }
+
+    .profile-frame:hover {
+      transform: scale(1.04);
+    }
+
+    .profile-img {
+      width: 175px;
+      height: 175px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* VERIFIED BADGE */
+    .verified-badge {
       position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 3px;
-      background: var(--primary);
-      border-radius: 2px;
+      top: -8px;
+      right: -8px;
+      width: 32px;
+      height: 32px;
+      background: var(--cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg);
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0, 249, 255, 0.6);
+      z-index: 10;
     }
 
-    .grid {
+    .verified-status {
+      font-size: 0.9rem;
+      color: #8ab0ff;
+      margin-top: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* TOOLS GRID (2-COLUMN MOBILE-FIRST) */
+    .tools-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.6rem;
-      margin-top: 1.2rem;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding: 2rem 0;
     }
 
-    .card {
-      background: var(--card);
-      padding: 1.6rem;
+    .tool-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: rgba(185, 61, 255, 0.05);
+      border: 1px solid rgba(185, 61, 255, 0.2);
       border-radius: 10px;
-      border: 1px solid var(--border);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3), 0 0 12px rgba(255,45,85,0.15);
-    }
-
-    .card h3 {
-      color: var(--primary);
-      font-size: 1.25rem;
-      margin-bottom: 0.8rem;
-      font-weight: 700;
-    }
-
-    .card p, .card li {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .tools-grid {
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .tool {
-      text-align: center;
-      padding: 1.2rem 0.5rem;
+    .tool-item:hover {
+      background: rgba(185, 61, 255, 0.12);
+      transform: translateX(5px);
     }
 
     .tool-icon {
-      width: 44px;
-      height: 44px;
-      margin: 0 auto 0.6rem;
-      border-radius: 6px;
+      width: 40px;
+      height: 40px;
+      background: var(--cyan);
+      border-radius: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--bg);
       font-weight: bold;
       font-size: 1.2rem;
     }
 
-    .tool-icon.metasploit { background: rgba(255,107,107,0.15); color: #ff6b6b; }
-    .tool-icon.nmap { background: rgba(78,205,196,0.15); color: #4ecdc4; }
-    .tool-icon.burp { background: rgba(255,190,118,0.15); color: #ffbe76; }
-    .tool-icon.wireshark { background: rgba(165,214,167,0.15); color: #a5d6a7; }
-    .tool-icon.john { background: rgba(187,222,251,0.15); color: #bbdefb; }
-    .tool-icon.hashcat { background: rgba(206,147,216,0.15); color: #ce93d8; }
+    .tool-name {
+      font-size: 1.1rem;
+      color: var(--fg);
+      font-weight: 500;
+    }
 
-    .price-card {
+    /* SECTIONS */
+    section {
+      margin: 7.5rem 0;
+    }
+
+    h2 {
+      font-family: 'Orbitron', monospace;
+      font-weight: 600;
+      font-size: 2.45rem;
+      color: var(--cyan);
+      margin-bottom: 2.7rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -11px;
+      left: 0;
+      width: 95px;
+      height: 3px;
+      background: linear-gradient(to right, var(--cyan), var(--violet));
+    }
+
+    .btn-review {
+      background: transparent;
+      border: 1px solid var(--violet);
+      color: var(--violet);
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .btn-review:hover {
+      background: rgba(185, 61, 255, 0.15);
+      box-shadow: 0 0 12px rgba(185, 61, 255, 0.4);
+    }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.8rem;
+      margin-top: 2.6rem;
+    }
+
+    .pricing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2.6rem;
       text-align: center;
-      padding: 1.8rem 1.2rem;
+    }
+
+    .pricing-card h3 {
+      font-family: 'Orbitron', monospace;
+      color: var(--cyan);
+      margin-bottom: 1.3rem;
+      font-size: 1.55rem;
     }
 
     .price {
-      font-size: 2.1rem;
-      font-weight: 800;
-      color: var(--secondary);
-      margin: 0.8rem 0;
-    }
-
-    .price-period {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .popular-badge {
-      background: linear-gradient(135deg, #ffd700, #ffbf00);
-      color: #0a0a0f;
-      font-size: 0.75rem;
+      font-size: 2.3rem;
       font-weight: 700;
-      padding: 0.25rem 0.8rem;
-      border-radius: 30px;
-      display: inline-block;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 6px rgba(255,215,0,0.4);
+      margin: 1.2rem 0;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .contact-section {
-      text-align: center;
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 2.8rem;
+      margin-top: 2.6rem;
     }
 
-    .contact-item {
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2.6rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Orbitron', monospace;
+      color: var(--cyan);
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 2.8rem;
+      margin-top: 2.6rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2.6rem;
+      cursor: pointer;
+      transition: all 0.35s;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-6px);
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      margin-top: 1.7rem;
+    }
+
+    .client-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--cyan);
+      color: var(--bg);
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+    }
+
+    .client-name { font-weight: 600; color: var(--fg); }
+    .client-title { font-size: 0.95rem; color: #aedbff; }
+
+    /* CONTACT */
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-top: 2.9rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      color: var(--secondary);
-      margin: 0.8rem;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: background 0.2s;
+      gap: 10px;
+      background: transparent;
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+      padding: 0.85rem 2.4rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.14rem;
+      transition: all 0.4s;
     }
 
-    .contact-item:hover {
-      background: rgba(0,247,255,0.1);
+    .btn:hover {
+      background: rgba(0, 249, 255, 0.18);
+      box-shadow: 0 0 26px rgba(0, 249, 255, 0.7);
+    }
+
+    /* SIGNATURE */
+    .signature-frame {
+      display: inline-block;
+      padding: 8px 12px;
+      background: rgba(185, 61, 255, 0.12);
+      border: 1px solid var(--violet);
+      border-radius: 6px;
+      margin-top: 2rem;
+    }
+
+    .signature-minimal {
+      height: 34px;
+      filter: invert(1) brightness(1.4) drop-shadow(0 0 10px rgba(185, 61, 255, 0.5));
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(13, 13, 26, 0.94);
+      backdrop-filter: blur(12px);
+      z-index: 3000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      border: 1px solid var(--violet);
+      border-radius: 20px;
+      padding: 2.8rem;
+      max-width: 650px;
+      width: 93%;
+      position: relative;
+      box-shadow: 0 0 55px rgba(185, 61, 255, 0.5);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 1.4rem;
+      right: 1.4rem;
+      font-size: 1.7rem;
+      color: var(--violet);
+      cursor: pointer;
     }
 
     footer {
       text-align: center;
-      padding: 1.8rem 2rem;
-      background: rgba(10,10,15,0.95);
-      border-top: 1px solid var(--border);
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-top: 2.5rem;
+      padding: 4.5rem 0 2.8rem;
+      color: #788bc0;
+      font-size: 1.05rem;
+      margin-top: 6rem;
     }
 
-    .footer-links {
-      margin-top: 0.8rem;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-      margin: 0 0.8rem;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--secondary);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .headline { font-size: 2.2rem; }
-      .name { font-size: 2rem; }
-      .profile-pic { width: 140px; height: 140px; }
-      nav ul { gap: 1rem; }
+    @media (max-width: 820px) {
+      .cyber-header { font-size: 2.9rem; }
+      h2 { font-size: 2.1rem; }
+      .pricing-grid, .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .tool-item { padding: 1rem; }
+      .profile-frame { padding: 4px; }
+      .verified-badge { width: 28px; height: 28px; font-size: 0.9rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">NexusShield</div>
-    <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- QUANTUM PARTICLES -->
+  <canvas id="quantum-particles"></canvas>
 
-  <section class="hero">
-    <div class="profile-pic">
-      <img src="https://i.ibb.co/pvVsNzyL/IMG-20251221-234651-431.jpg" alt="TEUKU RIJUL">
+  <!-- NETWORK GRID -->
+  <div class="network-overlay">
+    <svg class="network-svg" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(185, 61, 255, 0.1)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+
+  <nav>
+    <div class="nav-logo">NEXUS</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
     </div>
-    <h1 class="name">TEUKU RIJUL</h1>
-    <div class="title">Elite Cyber Defense Architect</div>
-    <p class="certifications">OSCP • CEH • CISSP • CompTIA Security+</p>
-    <h2 class="headline">NexusShield — Next-Gen Cyber Defense</h2>
-    <p class="subhead">Advanced threat detection, penetration testing, and zero-trust security frameworks engineered for enterprise resilience.</p>
-    <div class="cta-buttons">
-      <a href="#contact" class="btn btn-primary">Get Secured Now</a>
-      <a href="#services" class="btn btn-secondary">Explore Services</a>
+  </nav>
+
+  <div class="container">
+    <header>
+      <div style="margin-bottom:2.2rem;">
+        <!-- ✅ Foto Profil (Perbaiki URL: HAPUS .com) -->
+        <div class="profile-frame">
+          <img src="https://i.ibb.co/pvVsNzyL/IMG-20251221-234651-431.jpg" alt="Teuku Rijul" class="profile-img">
+          <!-- ✅ VERIFIED BADGE -->
+          <div class="verified-badge"><i class="fas fa-check"></i></div>
+        </div>
+        <div class="verified-status">Officially Verified • Class Omega</div>
+      </div>
+      <div class="cyber-header">TEUKU RIJUL</div>
+      <div class="subtitle">Cyber Architect • Telecom & Technology Sector</div>
+      <p class="tagline">
+        I design cyber-resilient architectures for global telecom operators and technology enterprises — specializing in Zero-Trust, 5G security, and threat-informed defense.
+      </p>
+
+      <!-- ✅ TOOLS GRID (MOBILE-FIRST) -->
+      <div class="tools-grid">
+        <div class="tool-item">
+          <div class="tool-icon">M</div>
+          <div class="tool-name">Metasploit</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon">N</div>
+          <div class="tool-name">Nmap</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon">B</div>
+          <div class="tool-name">Burp Suite</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon">W</div>
+          <div class="tool-name">Wireshark</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon">C</div>
+          <div class="tool-name">Cobalt Strike</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon">A</div>
+          <div class="tool-name">MITRE ATT&CK</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon">O</div>
+          <div class="tool-name">OWASP</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon"><i class="fab fa-linux" style="color:#00f9ff;"></i></div>
+          <div class="tool-name">Linux</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon"><i class="fab fa-docker" style="color:#00f9ff;"></i></div>
+          <div class="tool-name">Docker</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon"><i class="fas fa-cloud" style="color:#00f9ff;"></i></div>
+          <div class="tool-name">Cloud</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon"><i class="fas fa-shield-alt" style="color:#00f9ff;"></i></div>
+          <div class="tool-name">Zero Trust</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon"><i class="fas fa-lock" style="color:#00f9ff;"></i></div>
+          <div class="tool-name">Encryption</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>CORE SERVICES</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3><i class="fas fa-5g"></i> Telecom Secure Architecture</h3>
+          <p>End-to-end security design for 5G core, IMS, and OSS/BSS systems with Zero-Trust segmentation.</p>
+        </div>
+        <div class="service-card">
+          <h3><i class="fas fa-mask"></i> Red Team for Tech Enterprises</h3>
+          <p>Adversary simulation targeting cloud infrastructure, CI/CD pipelines, and SaaS platforms.</p>
+        </div>
+        <div class="service-card">
+          <h3><i class="fas fa-brain"></i> Threat Intelligence Platform</h3>
+          <p>Custom TI feeds integrated with SIEM, enriched with dark web monitoring and MITRE ATT&CK mapping.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h2>ENTERPRISE ENGAGEMENT PRICING</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Architecture Review</h3>
+          <div class="price">USD 28,500</div>
+          <p>Comprehensive audit of telecom/tech infrastructure + Zero-Trust roadmap</p>
+        </div>
+        <div class="pricing-card">
+          <h3>Red Team Simulation</h3>
+          <div class="price">USD 42,000</div>
+          <p>10-day adversarial engagement + executive & technical reporting</p>
+        </div>
+        <div class="pricing-card">
+          <h3>Secure 5G Design</h3>
+          <div class="price">USD 75,000+</div>
+          <p>Full architecture blueprint for 5G SA/NSA with SBA security model</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <h2>CLIENT VALIDATION</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>“His 5G security architecture became our national reference model.”</p>
+          <div class="client-info">
+            <div class="client-avatar">T</div>
+            <div>
+              <div class="client-name">Taufik R.</div>
+              <div class="client-title">CTO, Tier-1 Telecom Operator</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>“Red team findings led to patching 3 zero-days before public disclosure.”</p>
+          <div class="client-info">
+            <div class="client-avatar">L</div>
+            <div>
+              <div class="client-name">Lina M.</div>
+              <div class="client-title">CISO, Cloud Tech Scale-up</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <button class="btn-review" onclick="openModal('reviewModal')">View All 3,000+ Verified Reviews</button>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>SECURE ENGAGEMENT</h2>
+      <div class="contact-links">
+        <a href="mailto:teuku.rijul@secure.id" class="btn"><i class="fas fa-envelope"></i> Secure Email</a>
+        <a href="https://linkedin.com/in/teukurijul" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/teukurijul" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+
+      <!-- TTD Premium -->
+      <div style="text-align:center; margin-top:3rem;">
+        <div class="signature-frame">
+          <!-- ✅ TTD (Perbaiki URL: HAPUS .com) -->
+          <img src="https://i.ibb.co/27DYMVY5/1766433867655.jpg" alt="Digital Signature" class="signature-minimal">
+        </div>
+        <p style="color:#90b0e0; font-size:0.92rem; margin-top:0.8rem;">
+          Digitally Authenticated • Class Omega Clearance
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Teuku Rijul — Cyber Architect for Global Telecom & Technology<br>
+      All engagements threat-informed • All systems integrity-monitored
+    </footer>
+  </div>
+
+  <!-- REVIEW MODAL -->
+  <div id="reviewModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('reviewModal')">&times;</span>
+      <h3 style="color:var(--cyan); margin-bottom:1.4rem;">Global Client Feedback Summary</h3>
+      <p>
+        Over 3,000 verified engagements across 42 countries — including Tier-1 telecom operators, cloud providers, and government tech agencies.
+      </p>
+      <p style="margin-top:1.2rem; color:#aedbff;">
+        Key metrics: 98.7% client retention • Avg. risk reduction: 89% • 100% compliance alignment
+      </p>
+      <p style="margin-top:1.4rem; font-style:italic; color:#8ab0ff;">
+        “Working with Teuku isn’t just a service — it’s strategic cyber advantage.”
+      </p>
     </div>
-  </section>
+  </div>
 
-  <section id="services">
-    <h2 class="section-title">Core Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Red Team Ops</h3>
-        <p>Full-spectrum offensive security simulations to expose hidden vulnerabilities before adversaries do.</p>
-      </div>
-      <div class="card">
-        <h3>Zero Trust Architecture</h3>
-        <p>Micro-segmentation, identity-based access control, and continuous validation for modern networks.</p>
-      </div>
-      <div class="card">
-        <h3>Threat Intelligence</h3>
-        <p>Real-time global threat feeds, IOCs, and proactive hunting to neutralize APTs and ransomware.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="tools" class="tools-section">
-    <h2 class="section-title">Elite Arsenal</h2>
-    <div class="grid tools-grid">
-      <div class="tool"><div class="tool-icon metasploit">M</div><div>Metasploit</div></div>
-      <div class="tool"><div class="tool-icon nmap">N</div><div>Nmap</div></div>
-      <div class="tool"><div class="tool-icon burp">B</div><div>Burp Suite</div></div>
-      <div class="tool"><div class="tool-icon wireshark">W</div><div>Wireshark</div></div>
-      <div class="tool"><div class="tool-icon john">J</div><div>John</div></div>
-      <div class="tool"><div class="tool-icon hashcat">H</div><div>Hashcat</div></div>
-    </div>
-  </section>
-
-  <section id="pricing" class="pricing-section">
-    <h2 class="section-title">Defense Tiers</h2>
-    <div class="grid">
-      <div class="card price-card">
-        <h3>Shield Basic</h3>
-        <div class="price">$199 <span class="price-period">/month</span></div>
-        <p>Vulnerability scanning + monthly report</p>
-      </div>
-      <div class="card price-card">
-        <div class="popular-badge">Popular</div>
-        <h3>Nexus Pro</h3>
-        <div class="price">$499 <span class="price-period">/month</span></div>
-        <p>24/7 monitoring, pentest, threat response</p>
-      </div>
-      <div class="card price-card">
-        <h3>Fortress Elite</h3>
-        <div class="price">$1,299 <span class="price-period">/month</span></div>
-        <p>Dedicated SOC, zero-trust deployment, APT hunting</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact-section">
-    <h2 class="section-title">Secure Your Perimeter</h2>
-    <p>Reach out for a confidential consultation or incident response activation.</p>
-    <div class="contact-item">✉️ contact@nexusshield.security</div>
-    <div class="contact-item">📞 +1 (555) 123-4567</div>
-  </section>
-
-  <footer>
-    <div>©2025 NexusShield — Cyber Security Defense Architecture by <strong>TEUKU RIJUL</strong></div>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Cookie Policy</a>
-      <a href="#">Sitemap</a>
-    </div>
-  </footer>
-
+  <!-- SCRIPTS -->
   <script>
-    document.querySelectorAll('nav a').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-      });
+    // Quantum Particles
+    const canvas = document.getElementById('quantum-particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const count = 90;
+    const colors = ['#00f9ff', '#b93dff', '#d12bff'];
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2.4 + 0.6;
+        this.speedX = (Math.random() - 0.5) * 0.8;
+        this.speedY = (Math.random() - 0.5) * 0.8;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = 0.6;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Connect nearby particles
+        for (let p of particles) {
+          const dx = this.x - p.x;
+          const dy = this.y - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 115) {
+            ctx.strokeStyle = this.color;
+            ctx.globalAlpha = 0.09;
+            ctx.lineWidth = 0.7;
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y);
+            ctx.lineTo(p.x, p.y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function init() {
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let p of particles) {
+        p.update();
+        p.draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles.length = 0;
+      init();
     });
+
+    // Modal
+    function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+    window.onclick = e => { if (e.target.classList.contains('modal')) e.target.style.display = 'none'; };
   </script>
 </body>
 </html>

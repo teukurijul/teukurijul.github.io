@@ -208,7 +208,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* TOOLS GRID (2-COLUMN MOBILE-FIRST) */
+    /* TOOLS GRID */
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -236,12 +236,11 @@
     .tool-icon {
       width: 40px;
       height: 40px;
-      background: var(--cyan);
       border-radius: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--bg);
+      color: #fff;
       font-weight: bold;
       font-size: 1.2rem;
     }
@@ -250,6 +249,37 @@
       font-size: 1.1rem;
       color: var(--fg);
       font-weight: 500;
+    }
+
+    /* INTELLIGENCE GRID */
+    .intelligence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2.4rem;
+    }
+
+    .intel-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .intel-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-4px);
+    }
+
+    .intel-card h3 {
+      font-family: 'Orbitron', monospace;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
     }
 
     /* SECTIONS */
@@ -437,8 +467,9 @@
     }
 
     .signature-minimal {
-      height: 34px;
-      filter: invert(1) brightness(1.4) drop-shadow(0 0 10px rgba(185, 61, 255, 0.5));
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
     }
 
     /* MODAL */
@@ -487,13 +518,14 @@
     @media (max-width: 820px) {
       .cyber-header { font-size: 2.9rem; }
       h2 { font-size: 2.1rem; }
-      .pricing-grid, .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .pricing-grid, .services-grid, .testimonials-grid, .intelligence-grid { grid-template-columns: 1fr; }
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       .tools-grid { grid-template-columns: 1fr; }
       .tool-item { padding: 1rem; }
       .profile-frame { padding: 4px; }
       .verified-badge { width: 28px; height: 28px; font-size: 0.9rem; }
+      .signature-minimal { max-width: 80%; height: auto; }
     }
   </style>
 </head>
@@ -518,6 +550,7 @@
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
+      <a href="#intelligence">Intelligence</a>
       <a href="#testimonials">Reviews</a>
       <a href="#contact">Contact</a>
     </div>
@@ -526,10 +559,9 @@
   <div class="container">
     <header>
       <div style="margin-bottom:2.2rem;">
-        <!-- ✅ Foto Profil (Perbaiki URL: HAPUS .com) -->
         <div class="profile-frame">
-          <img src="https://i.ibb.co/pvVsNzyL/IMG-20251221-234651-431.jpg" alt="Teuku Rijul" class="profile-img">
-          <!-- ✅ VERIFIED BADGE -->
+          <!-- ✅ FOTO PROFIL RESMI -->
+          <img src="https://i.ibb.co/FbZfcwVD/IMG-20251221-234651-431.jpg" alt="Teuku Rijul" class="profile-img">
           <div class="verified-badge"><i class="fas fa-check"></i></div>
         </div>
         <div class="verified-status">Officially Verified • Class Omega</div>
@@ -540,54 +572,54 @@
         I design cyber-resilient architectures for global telecom operators and technology enterprises — specializing in Zero-Trust, 5G security, and threat-informed defense.
       </p>
 
-      <!-- ✅ TOOLS GRID (MOBILE-FIRST) -->
+      <!-- ✅ TOOLS GRID DIPERBAIKI: SEMUA IKON TAMPIL -->
       <div class="tools-grid">
         <div class="tool-item">
-          <div class="tool-icon">M</div>
+          <div class="tool-icon" style="background:#e02626;">M</div>
           <div class="tool-name">Metasploit</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon">N</div>
+          <div class="tool-icon" style="background:#222222;color:#00ff00;">N</div>
           <div class="tool-name">Nmap</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon">B</div>
+          <div class="tool-icon" style="background:#ff6600;">B</div>
           <div class="tool-name">Burp Suite</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon">W</div>
+          <div class="tool-icon" style="background:#1483d8;">W</div>
           <div class="tool-name">Wireshark</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon">C</div>
+          <div class="tool-icon" style="background:#551a8b;color:#fff;">C</div>
           <div class="tool-name">Cobalt Strike</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon">A</div>
+          <div class="tool-icon" style="background:#000;color:#00ff9d;">A</div>
           <div class="tool-name">MITRE ATT&CK</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon">O</div>
+          <div class="tool-icon" style="background:#55cc55;">O</div>
           <div class="tool-name">OWASP</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon"><i class="fab fa-linux" style="color:#00f9ff;"></i></div>
+          <div class="tool-icon" style="background:#000;color:#fff;">L</div>
           <div class="tool-name">Linux</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon"><i class="fab fa-docker" style="color:#00f9ff;"></i></div>
+          <div class="tool-icon" style="background:#2496ED;color:#fff;">D</div>
           <div class="tool-name">Docker</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon"><i class="fas fa-cloud" style="color:#00f9ff;"></i></div>
-          <div class="tool-name">Cloud</div>
+          <div class="tool-icon" style="background:#FF9900;color:#fff;">A</div>
+          <div class="tool-name">AWS</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon"><i class="fas fa-shield-alt" style="color:#00f9ff;"></i></div>
+          <div class="tool-icon" style="background:#0080FF;color:#fff;">Z</div>
           <div class="tool-name">Zero Trust</div>
         </div>
         <div class="tool-item">
-          <div class="tool-icon"><i class="fas fa-lock" style="color:#00f9ff;"></i></div>
+          <div class="tool-icon" style="background:#34C759;color:#fff;">E</div>
           <div class="tool-name">Encryption</div>
         </div>
       </div>
@@ -634,6 +666,29 @@
       </div>
     </section>
 
+    <!-- REAL-TIME INTELLIGENCE -->
+    <section id="intelligence">
+      <h2>REAL-TIME CYBER INTELLIGENCE</h2>
+      <div class="intelligence-grid">
+        <div class="intel-card">
+          <h3><i class="fab fa-github"></i> GitHub Activity</h3>
+          <p id="github-stats">Loading...</p>
+        </div>
+        <div class="intel-card">
+          <h3><i class="fab fa-linkedin"></i> Professional Status</h3>
+          <p id="linkedin-status">LinkedIn: Verified • Cyber Architect</p>
+        </div>
+        <div class="intel-card">
+          <h3><i class="fas fa-virus"></i> Threat Landscape</h3>
+          <p id="virustotal-stats">Global threats monitored: ~1.2M/day (Demo)</p>
+        </div>
+        <div class="intel-card">
+          <h3><i class="fas fa-shield-alt"></i> MITRE ATT&CK</h3>
+          <p id="mitre-stats">Tactics: 14 • Techniques: 200+ • Updated Weekly</p>
+        </div>
+      </div>
+    </section>
+
     <!-- TESTIMONIALS -->
     <section id="testimonials">
       <h2>CLIENT VALIDATION</h2>
@@ -673,11 +728,10 @@
         <a href="https://github.com/teukurijul" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
       </div>
 
-      <!-- TTD Premium -->
       <div style="text-align:center; margin-top:3rem;">
         <div class="signature-frame">
-          <!-- ✅ TTD (Perbaiki URL: HAPUS .com) -->
-          <img src="https://i.ibb.co/27DYMVY5/1766433867655.jpg" alt="Digital Signature" class="signature-minimal">
+          <!-- ✅ TTD RESMI -->
+          <img src="https://i.ibb.co/bpLKmNN/1766444636903.jpg" alt="Digital Signature" class="signature-minimal">
         </div>
         <p style="color:#90b0e0; font-size:0.92rem; margin-top:0.8rem;">
           Digitally Authenticated • Class Omega Clearance
@@ -715,11 +769,9 @@
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
     const particles = [];
     const count = 90;
     const colors = ['#00f9ff', '#b93dff', '#d12bff'];
-
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -741,13 +793,9 @@
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
-
-        // Connect nearby particles
         for (let p of particles) {
-          const dx = this.x - p.x;
-          const dy = this.y - p.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 115) {
+          const dx = this.x - p.x, dy = this.y - p.y, d = Math.sqrt(dx*dx+dy*dy);
+          if (d < 115) {
             ctx.strokeStyle = this.color;
             ctx.globalAlpha = 0.09;
             ctx.lineWidth = 0.7;
@@ -759,36 +807,45 @@
         }
       }
     }
-
-    function init() {
-      for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
-      }
-    }
-
+    for (let i=0; i<count; i++) particles.push(new Particle());
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let p of particles) {
-        p.update();
-        p.draw();
-      }
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
       requestAnimationFrame(animate);
     }
-
-    init();
     animate();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      particles.length = 0;
-      init();
+    window.addEventListener('resize',()=>{
+      canvas.width=innerWidth;canvas.height=innerHeight;particles.length=0;
+      for(let i=0;i<count;i++)particles.push(new Particle());
     });
 
     // Modal
-    function openModal(id) { document.getElementById(id).style.display = 'flex'; }
-    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-    window.onclick = e => { if (e.target.classList.contains('modal')) e.target.style.display = 'none'; };
+    function openModal(id){document.getElementById(id).style.display='flex';}
+    function closeModal(id){document.getElementById(id).style.display='none';}
+    window.onclick=e=>{if(e.target.classList.contains('modal'))e.target.style.display='none';};
+
+    // Real-Time Intelligence
+    async function fetchGitHubIntelligence() {
+      try {
+        const user = await (await fetch('https://api.github.com/users/teukurijul')).json();
+        const repos = await (await fetch('https://api.github.com/users/teukurijul/repos?per_page=100')).json();
+        const langs = [...new Set(repos.map(r=>r.language).filter(Boolean))].slice(0,3).join(', ');
+        document.getElementById('github-stats').innerHTML = `Repos: ${user.public_repos} • Languages: ${langs || 'N/A'}`;
+      } catch (e) {
+        document.getElementById('github-stats').textContent = "GitHub: Data unavailable";
+      }
+    }
+    function fetchMitreIntelligence() {
+      document.getElementById('mitre-stats').textContent = "Tactics: 14 • Techniques: 200+ • Updated Weekly";
+    }
+    function fetchVirusTotalIntelligence() {
+      document.getElementById('virustotal-stats').textContent = "Global threats monitored: ~1.2M/day (Demo)";
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      fetchGitHubIntelligence();
+      fetchMitreIntelligence();
+      fetchVirusTotalIntelligence();
+    });
   </script>
 </body>
 </html>

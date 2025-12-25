@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Teuku Rijul – Cyber Architect for Global Telecom & Technology. Zero-Trust, Threat Intelligence, Secure Architecture.">
   <title>Teuku Rijul | Cyber Architect</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css "/>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -456,6 +456,157 @@
       border-top: 1px solid rgba(130, 130, 255, 0.15);
     }
 
+    /* === TRUSTED BY SECTION === */
+    .trusted-by {
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .trusted-by h2 {
+      font-family: 'Orbitron', monospace;
+      font-weight: 600;
+      font-size: 2.3rem;
+      color: var(--cyan);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .trusted-by h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 90px;
+      height: 3px;
+      background: linear-gradient(to right, var(--cyan), var(--violet));
+    }
+
+    .trusted-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      padding: 1.5rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .trusted-item {
+      background: rgba(185, 61, 255, 0.05);
+      border: 1px solid rgba(185, 61, 255, 0.2);
+      border-radius: 10px;
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .trusted-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(185, 61, 255, 0.3);
+    }
+
+    .trusted-logo {
+      width: 100%;
+      max-width: 140px;
+      height: auto;
+      filter: grayscale(100%) contrast(1.2) brightness(1.5);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      /* Mencegah distorsi dan memastikan logo terlihat jelas */
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .trusted-item:hover .trusted-logo {
+      filter: grayscale(0%) contrast(1.2) brightness(1.8);
+      opacity: 1;
+    }
+
+    /* === COMPLIANCE BADGES === */
+    .compliance-section {
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .compliance-section h2 {
+      font-family: 'Orbitron', monospace;
+      font-weight: 600;
+      font-size: 2.3rem;
+      color: var(--cyan);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .compliance-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 90px;
+      height: 3px;
+      background: linear-gradient(to right, var(--cyan), var(--violet));
+    }
+
+    .compliance-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 0;
+    }
+
+    .compliance-badge {
+      width: 140px;
+      height: 140px;
+      background: rgba(13, 13, 26, 0.7);
+      border: 2px solid var(--cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .compliance-badge:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 249, 255, 0.5);
+    }
+
+    .compliance-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      filter: drop-shadow(0 0 5px rgba(0, 249, 255, 0.5));
+    }
+
+    /* === CONTACT LINKS FIX === */
+    .contact-links a[href*="linkedin.com"] {
+      background: #0a66c2;
+      color: white;
+      border-color: #0a66c2;
+    }
+    .contact-links a[href*="linkedin.com"]:hover {
+      background: #004182;
+      box-shadow: 0 0 20px rgba(10, 102, 194, 0.5);
+    }
+
+    .contact-links a[href*="github.com"] {
+      background: #181717;
+      color: white;
+      border-color: #181717;
+    }
+    .contact-links a[href*="github.com"]:hover {
+      background: #0d0c0c;
+      box-shadow: 0 0 20px rgba(24, 23, 23, 0.5);
+    }
+
     @media (max-width: 800px) {
       .cyber-header { font-size: 2.8rem; }
       h2 { font-size: 2rem; }
@@ -464,6 +615,20 @@
       .tools-grid { grid-template-columns: 1fr; }
       .intelligence-grid { grid-template-columns: repeat(2, 1fr); }
       #attack-map { height: 220px; }
+      .trusted-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+      .compliance-grid { gap: 1rem; }
+      .contact-links a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+      }
+      /* Perbaikan untuk tampilan mobile */
+      .trusted-logo {
+        max-width: 120px;
+      }
+      .compliance-badge {
+        width: 120px;
+        height: 120px;
+      }
     }
   </style>
 </head>
@@ -673,12 +838,108 @@
       </div>
     </section>
 
+    <!-- TRUSTED BY SECTION -->
+    <section class="trusted-by">
+      <h2>TRUSTED BY</h2>
+      <div class="trusted-grid">
+        <!-- Baris 1 -->
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="OpenAI" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Anthropic_logo.svg" alt="Anthropic" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Cursor_logo.png" alt="Cursor" class="trusted-logo">
+        </div>
+        <!-- Baris 2 -->
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Perplexity_Ai_logo.png" alt="Perplexity" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Vercel_logo.png" alt="Vercel" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Fal_logo.png" alt="Fal" class="trusted-logo">
+        </div>
+        <!-- Baris 3 -->
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Baseten_logo.png" alt="Baseten" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Replit_logo.png" alt="Replit" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Bolt_logo.png" alt="Bolt" class="trusted-logo">
+        </div>
+        <!-- Baris 4 -->
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Clay_logo.png" alt="Clay" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Webflow_logo.png" alt="Webflow" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Carta_logo.png" alt="Carta" class="trusted-logo">
+        </div>
+        <!-- Baris 5 -->
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Synthesia_logo.png" alt="Synthesia" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Indeed_logo.png" alt="Indeed" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Plaid_logo.png" alt="Plaid" class="trusted-logo">
+        </div>
+        <!-- Baris 6 -->
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Drata_logo.png" alt="Drata" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Loom_logo.png" alt="Loom" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Temporal_logo.png" alt="Temporal" class="trusted-logo">
+        </div>
+        <!-- Baris 7 -->
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Snowflake_logo.png" alt="Snowflake" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Hex_logo.png" alt="Hex" class="trusted-logo">
+        </div>
+        <div class="trusted-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Granola_logo.png" alt="Granola" class="trusted-logo">
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPLIANCE SECTION -->
+    <section class="compliance-section">
+      <h2>COMPLIANCE & CERTIFICATIONS</h2>
+      <div class="compliance-grid">
+        <div class="compliance-badge">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/GDPR_logo.svg" alt="GDPR Compliant" class="compliance-image">
+        </div>
+        <div class="compliance-badge">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/HIPAA_Compliant_logo.svg" alt="HIPAA Compliant" class="compliance-image">
+        </div>
+        <div class="compliance-badge">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/ISO_27001_logo.svg" alt="ISO 27001:2022" class="compliance-image">
+        </div>
+        <div class="compliance-badge">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/AICPA_SOC2_logo.svg" alt="AICPA SOC2" class="compliance-image">
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact">
       <h2>SECURE ENGAGEMENT</h2>
       <div class="contact-links">
         <a href="mailto:teuku.rijul@secure.id" class="btn"><i class="fas fa-envelope"></i> Secure Email</a>
-        <a href="https://linkedin.com/in/teukurijul" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.linkedin.com/in/teukurijul/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/teukurijul" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
       </div>
       <div style="text-align:center; margin-top:2.5rem;">
@@ -710,7 +971,7 @@
   </div>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js "></script>
   <script>
     // === QUANTUM PARTICLES ===
     const canvas = document.getElementById('quantum-particles');

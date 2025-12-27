@@ -1,674 +1,688 @@
-import React from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code, GraduationCap, Briefcase, Award, ChevronDown } from 'lucide-react';
-import { motion } from 'framer-motion';
-
-const App = () => {
-  // Data pribadi Teuku Rijul
-  const personalInfo = {
-    name: "Teuku Rijul",
-    title: "Software Engineer",
-    email: "teukurijul@gmail.com",
-    location: "Banda Aceh, Indonesia",
-    bio: "Software engineer yang bersemangat dengan pengalaman lebih dari 5 tahun dalam pengembangan aplikasi web dan sistem terdistribusi. Mengkhususkan diri dalam React, Node.js, dan arsitektur cloud. Berkomitmen untuk menulis kode yang bersih, dapat dipelihara, dan membimbing developer junior."
-  };
-
-  const education = [
-    {
-      degree: "Sarjana Teknik Informatika",
-      institution: "Universitas Syiah Kuala",
-      period: "2015 - 2019",
-      details: "IPK: 3.75/4.00 • Aktif di UKM Teknologi Informasi • Lulusan Terbaik Fakultas"
-    },
-    {
-      degree: "SMA Negeri 1 Banda Aceh",
-      institution: "SMA Negeri 1 Banda Aceh",
-      period: "2012 - 2015",
-      details: "Jurusan IPA • Ketua OSIS • Juara Olimpiade Komputer Tingkat Provinsi"
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teuku Rijul - Software Engineer</title>
+  <meta name="description" content="Portofolio pribadi Teuku Rijul - Software Engineer dari Banda Aceh">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      scroll-behavior: smooth;
     }
-  ];
-
-  const experience = [
-    {
-      company: "PT. Teknologi Digital Indonesia",
-      position: "Software Engineer Senior",
-      period: "2021 - Sekarang",
-      location: "Jakarta, Indonesia (Remote)",
-      responsibilities: [
-        "Memimpin tim 4 engineer dalam pengembangan aplikasi berbasis microservices menggunakan Node.js dan Kubernetes",
-        "Meningkatkan performa API hingga 45% melalui optimasi caching dan query database",
-        "Mengimplementasikan pipeline CI/CD dengan GitHub Actions, mengurangi waktu deployment hingga 55%",
-        "Membimbing developer junior melalui code review dan sesi pair programming"
-      ]
-    },
-    {
-      company: "Startup Aceh Digital",
-      position: "Software Engineer",
-      period: "2019 - 2021",
-      location: "Banda Aceh, Indonesia",
-      responsibilities: [
-        "Mengembangkan dan memelihara aplikasi dashboard berbasis React yang digunakan oleh 20K+ pengguna bulanan",
-        "Mengintegrasikan API RESTful dengan database PostgreSQL, menangani 1M+ request harian",
-        "Berkolaborasi dengan tim UX untuk implementasi desain responsif di berbagai perangkat",
-        "Memperkenalkan framework pengujian Jest, meningkatkan coverage pengujian dari 25% menjadi 80%"
-      ]
-    },
-    {
-      company: "Magang di Dinas Kominfo Aceh",
-      position: "Pengembang Web",
-      period: "2018 - 2019",
-      location: "Banda Aceh, Indonesia",
-      responsibilities: [
-        "Berpartisipasi dalam pengembangan sistem informasi pemerintah daerah menggunakan stack MERN",
-        "Membangun sistem notifikasi real-time menggunakan WebSockets dan Redis",
-        "Mengikuti proses pengembangan agile dengan sprint 2 minggu dan daily standup"
-      ]
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-  ];
-
-  const projects = [
-    {
-      title: "Sistem Manajemen Sekolah Aceh",
-      description: "Platform komprehensif untuk manajemen sekolah di wilayah Aceh, mencakup absensi, nilai, dan komunikasi orang tua.",
-      technologies: ["React", "TypeScript", "Express", "PostgreSQL", "TailwindCSS"],
-      features: [
-        "Modul absensi digital terintegrasi dengan QR code",
-        "Dashboard analitik untuk pemantauan kinerja siswa",
-        "Notifikasi real-time untuk orang tua dan guru",
-        "Dukungan multi-bahasa (Bahasa Indonesia dan Bahasa Aceh)"
-      ],
-      link: "#"
-    },
-    {
-      title: "Aplikasi Pariwisata Aceh",
-      description: "Aplikasi mobile dan web untuk mempromosikan destinasi wisata di Aceh kepada wisatawan domestik dan internasional.",
-      technologies: ["React Native", "Firebase", "Google Maps API", "Node.js"],
-      features: [
-        "Peta interaktif dengan lokasi wisata dan rute terbaik",
-        "Rekomendasi destinasi berdasarkan preferensi pengguna",
-        "Booking tiket dan akomodasi terintegrasi",
-        "Fitur augmented reality untuk situs bersejarah"
-      ],
-      link: "#"
-    },
-    {
-      title: "Sistem Monitoring Bencana Alam",
-      description: "Sistem pemantauan bencana alam khusus untuk wilayah rawan bencana di Aceh dan Sumatera Utara.",
-      technologies: ["Vue.js", "Socket.IO", "Python", "TensorFlow.js", "MQTT"],
-      features: [
-        "Deteksi dini gempa bumi berbasis data sensor real-time",
-        "Peringatan dini tsunami dengan integrasi data BMKG",
-        "Visualisasi peta risiko bencana yang dinamis",
-        "Sistem komunikasi darurat terenkripsi"
-      ],
-      link: "#"
+    
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
     }
-  ];
-
-  const skills = {
-    bahasa: ["JavaScript", "TypeScript", "Python", "Java", "PHP"],
-    framework: ["React", "Node.js", "Express", "Vue.js", "Laravel"],
-    tools: ["Git", "Docker", "Kubernetes", "AWS", "Linux", "Webpack"],
-    database: ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
-  };
-
-  const certifications = [
-    {
-      title: "AWS Certified Developer - Associate",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      link: "#"
-    },
-    {
-      title: "Google Professional Cloud Developer",
-      issuer: "Google Cloud",
-      date: "2022",
-      link: "#"
-    },
-    {
-      title: "Microsoft Certified: Azure Developer Associate",
-      issuer: "Microsoft",
-      date: "2021",
-      link: "#"
+    
+    .card-hover {
+      transition: all 0.3s ease;
     }
-  ];
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
+    
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: linear-gradient(to right, #4f46e5, #7c3aed);
+      border-radius: 2px;
+    }
+    
+    .bounce-arrow {
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
       }
     }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 }
+    
+    .skill-badge {
+      transition: all 0.2s ease;
     }
-  };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 text-slate-800">
-      {/* Header/Navigation */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-slate-200">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-xl font-bold text-indigo-700"
-          >
-            {personalInfo.name}
-          </motion.div>
-          <nav className="hidden md:flex space-x-8">
-            {['Tentang', 'Pendidikan', 'Pengalaman', 'Proyek', 'Keterampilan', 'Kontak'].map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '')}`}
-                className="text-slate-600 hover:text-indigo-600 font-medium transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item}
-              </motion.a>
-            ))}
-          </nav>
-          <div className="flex space-x-4">
-            <motion.a 
-              href="#" 
-              className="text-slate-600 hover:text-indigo-600"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Github size={20} />
-            </motion.a>
-            <motion.a 
-              href="#" 
-              className="text-slate-600 hover:text-indigo-600"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Linkedin size={20} />
-            </motion.a>
-            <motion.a 
-              href="#" 
-              className="text-slate-600 hover:text-indigo-600"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail size={20} />
-            </motion.a>
-          </div>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo-500 opacity-5 transform -skew-x-12"></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-6"
-            >
-              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center mb-6">
-                <Code size={48} className="text-white" />
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-slate-800">
-                {personalInfo.name}
-              </h1>
-              <h2 className="text-xl md:text-2xl text-indigo-600 font-medium mb-6">
-                {personalInfo.title}
-              </h2>
-              <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                {personalInfo.bio}
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row justify-center gap-4"
-            >
-              <motion.a
-                href="#kontak"
-                className="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Hubungi Saya
-              </motion.a>
-              <motion.a
-                href="#proyek"
-                className="px-8 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-slate-50 transition-colors shadow border border-slate-200"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Lihat Portofolio
-              </motion.a>
-            </motion.div>
-          </div>
-        </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <motion.a
-            href="#tentang"
-            className="inline-flex flex-col items-center text-slate-500 hover:text-indigo-600"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-          >
-            <span className="mb-2 text-sm">Gulir ke Bawah</span>
-            <ChevronDown size={24} />
-          </motion.a>
-        </div>
-      </section>
-
-      {/* Tentang Section */}
-      <section id="tentang" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2 
-              variants={itemVariants}
-              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
-            >
-              <GraduationCap className="text-indigo-600" />
-              Tentang Saya
-            </motion.h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <motion.div variants={itemVariants}>
-                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 h-full">
-                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Filosofi Pribadi</h3>
-                  <p className="text-slate-600 mb-4">
-                    Saya percaya dalam menulis kode yang tidak hanya berfungsi tetapi juga elegan dan mudah dipelihara. 
-                    Pendekatan saya menggabungkan keunggulan teknis dengan desain yang berpusat pada pengguna untuk 
-                    menciptakan solusi yang benar-benar memecahkan masalah.
-                  </p>
-                  <p className="text-slate-600">
-                    Selain coding, saya bersemangat dalam berbagi pengetahuan, berkontribusi pada proyek open-source, 
-                    dan terus belajar tentang teknologi yang sedang berkembang.
-                  </p>
-                </div>
-              </motion.div>
-              
-              <motion.div variants={itemVariants} className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                    <Mail className="text-indigo-600" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-800">Email</h4>
-                    <p className="text-slate-600">{personalInfo.email}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                    <Briefcase className="text-indigo-600" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-800">Lokasi</h4>
-                    <p className="text-slate-600">{personalInfo.location}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                    <Code className="text-indigo-600" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-800">Spesialisasi</h4>
-                    <p className="text-slate-600">Pengembangan Full-stack, Arsitektur Cloud, DevOps</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Pendidikan Section */}
-      <section id="pendidikan" className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2 
-              variants={itemVariants}
-              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
-            >
-              <GraduationCap className="text-indigo-600" />
-              Pendidikan
-            </motion.h2>
-            
-            <div className="space-y-8">
-              {education.map((edu, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-xl font-bold text-slate-800">{edu.degree}</h3>
-                    <span className="text-indigo-600 font-medium">{edu.period}</span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-slate-700 mb-2">{edu.institution}</h4>
-                  <p className="text-slate-600">{edu.details}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Pengalaman Section */}
-      <section id="pengalaman" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="max-w-5xl mx-auto"
-          >
-            <motion.h2 
-              variants={itemVariants}
-              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
-            >
-              <Briefcase className="text-indigo-600" />
-              Pengalaman Kerja
-            </motion.h2>
-            
-            <div className="space-y-8">
-              {experience.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-gradient-to-r from-white to-slate-50 rounded-2xl p-6 shadow-sm border border-slate-200"
-                >
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-800">{exp.position}</h3>
-                      <h4 className="text-lg text-indigo-600 font-semibold">{exp.company}</h4>
-                    </div>
-                    <div className="mt-2 md:mt-0 text-right">
-                      <span className="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
-                        {exp.period}
-                      </span>
-                      <div className="text-slate-500 text-sm mt-1">{exp.location}</div>
-                    </div>
-                  </div>
-                  
-                  <ul className="space-y-2 mt-4">
-                    {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="text-indigo-500 mr-2">•</span>
-                        <span className="text-slate-600">{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Proyek Section */}
-      <section id="proyek" className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="max-w-6xl mx-auto"
-          >
-            <motion.h2 
-              variants={itemVariants}
-              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
-            >
-              <Code className="text-indigo-600" />
-              Proyek Unggulan
-            </motion.h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ y: -10 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200"
-                >
-                  <div className="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
-                    <div className="bg-white/20 p-4 rounded-full">
-                      <Code size={48} className="text-white" />
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-800 mb-2">{project.title}</h3>
-                    <p className="text-slate-600 mb-4">{project.description}</p>
-                    
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-slate-800 mb-2">Teknologi</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, idx) => (
-                          <span 
-                            key={idx} 
-                            className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-slate-800 mb-2">Fitur</h4>
-                      <ul className="space-y-1 text-slate-600">
-                        {project.features.slice(0, 2).map((feature, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <span className="text-indigo-500 mr-2">✓</span>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                        {project.features.length > 2 && (
-                          <li className="text-sm text-slate-500">
-                            + {project.features.length - 2} fitur lainnya
-                          </li>
-                        )}
-                      </ul>
-                    </div>
-                    
-                    <motion.a
-                      href={project.link}
-                      className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800"
-                      whileHover={{ x: 5 }}
-                    >
-                      Lihat Proyek <ExternalLink size={16} className="ml-1" />
-                    </motion.a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Keterampilan Section */}
-      <section id="keterampilan" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="max-w-5xl mx-auto"
-          >
-            <motion.h2 
-              variants={itemVariants}
-              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800"
-            >
-              Keterampilan Teknis
-            </motion.h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {Object.entries(skills).map(([category, items], index) => (
-                <motion.div
-                  key={category}
-                  variants={itemVariants}
-                  className="bg-slate-50 rounded-2xl p-6"
-                >
-                  <h3 className="text-lg font-semibold text-slate-800 mb-4 capitalize">
-                    {category === 'bahasa' ? 'Bahasa Pemrograman' : 
-                     category === 'framework' ? 'Framework & Library' : 
-                     category === 'tools' ? 'Tools & Platform' : 'Database'}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {items.map((skill, idx) => (
-                      <span 
-                        key={idx} 
-                        className="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Sertifikasi Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2 
-              variants={itemVariants}
-              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
-            >
-              <Award className="text-indigo-600" />
-              Sertifikasi
-            </motion.h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 text-center"
-                >
-                  <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Award className="text-indigo-600" size={28} />
-                  </div>
-                  <h3 className="font-bold text-slate-800 mb-2">{cert.title}</h3>
-                  <p className="text-slate-600 text-sm mb-2">{cert.issuer}</p>
-                  <p className="text-indigo-600 font-medium">{cert.date}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Kontak Section */}
-      <section id="kontak" className="py-20 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <motion.h2 
-              variants={itemVariants}
-              className="text-3xl md:text-4xl font-bold mb-6"
-            >
-              Mari Berkolaborasi
-            </motion.h2>
-            <motion.p 
-              variants={itemVariants}
-              className="text-indigo-100 text-lg mb-12 max-w-2xl mx-auto"
-            >
-              Saya sedang terbuka untuk peluang dan kolaborasi baru. 
-              Jangan ragu untuk menghubungi saya jika Anda memiliki proyek menarik atau hanya ingin berkenalan!
-            </motion.p>
-            
-            <motion.div 
-              variants={itemVariants}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto"
-            >
-              <div className="space-y-6">
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <motion.a
-                    href={`mailto:${personalInfo.email}`}
-                    className="px-6 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Mail size={20} />
-                    Kirim Email
-                  </motion.a>
-                  <motion.a
-                    href="#"
-                    className="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Linkedin size={20} />
-                    LinkedIn
-                  </motion.a>
-                </div>
-                
-                <div className="pt-6 border-t border-white/20">
-                  <p className="text-indigo-100">
-                    Anda juga dapat menemukan saya di{" "}
-                    <a href="#" className="text-white hover:underline font-medium">GitHub</a>
-                    {" "}dan{" "}
-                    <a href="#" className="text-white hover:underline font-medium">Twitter</a>
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>© {new Date().getFullYear()} {personalInfo.name}. Hak Cipta Dilindungi.</p>
-          <p className="mt-2 text-sm">Teuku_Rijul</p>
-        </div>
-      </footer>
+    
+    .skill-badge:hover {
+      transform: scale(1.05);
+      background-color: #e0e7ff;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 text-slate-800">
+  <!-- Header/Navigation -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-slate-200">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-xl font-bold text-indigo-700" id="name-header">Teuku Rijul</div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#tentang" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Tentang</a>
+        <a href="#pendidikan" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Pendidikan</a>
+        <a href="#pengalaman" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Pengalaman</a>
+        <a href="#proyek" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Proyek</a>
+        <a href="#keterampilan" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Keterampilan</a>
+        <a href="#kontak" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Kontak</a>
+      </nav>
+      <div class="flex space-x-4">
+        <a href="https://github.com/teukurijul" class="text-slate-600 hover:text-indigo-600">
+          <i data-lucide="github" class="w-5 h-5"></i>
+        </a>
+        <a href="https://linkedin.com/in/teukurijul" class="text-slate-600 hover:text-indigo-600">
+          <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+        <a href="mailto:teukurijul@example.com" class="text-slate-600 hover:text-indigo-600">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+        </a>
+      </div>
     </div>
-  );
-};
+  </header>
 
-export default App;
+  <!-- Hero Section -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-indigo-500 opacity-5 transform -skew-x-12"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="mb-6 fade-in" id="hero-content">
+          <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center mb-6">
+            <i data-lucide="code" class="text-white w-12 h-12"></i>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-4 text-slate-800">Teuku Rijul</h1>
+          <h2 class="text-xl md:text-2xl text-indigo-600 font-medium mb-6">Software Engineer</h2>
+          <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+            Software engineer yang bersemangat dengan pengalaman lebih dari 5 tahun dalam pengembangan aplikasi web dan sistem terdistribusi. Mengkhususkan diri dalam React, Node.js, dan arsitektur cloud. Berkomitmen untuk menulis kode yang bersih, dapat dipelihara, dan membimbing developer junior.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in" id="hero-buttons">
+          <a href="#kontak" class="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl">
+            Hubungi Saya
+          </a>
+          <a href="#proyek" class="px-8 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-slate-50 transition-colors shadow border border-slate-200">
+            Lihat Portofolio
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <a href="#tentang" class="inline-flex flex-col items-center text-slate-500 hover:text-indigo-600 bounce-arrow">
+        <span class="mb-2 text-sm">Gulir ke Bawah</span>
+        <i data-lucide="chevron-down" class="w-6 h-6"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Tentang Section -->
+  <section id="tentang" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
+          <i data-lucide="graduation-cap" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
+          Tentang Saya
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in" id="about-left">
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 h-full">
+              <h3 class="text-xl font-semibold text-slate-800 mb-4">Filosofi Pribadi</h3>
+              <p class="text-slate-600 mb-4">
+                Saya percaya dalam menulis kode yang tidak hanya berfungsi tetapi juga elegan dan mudah dipelihara. 
+                Pendekatan saya menggabungkan keunggulan teknis dengan desain yang berpusat pada pengguna untuk 
+                menciptakan solusi yang benar-benar memecahkan masalah.
+              </p>
+              <p class="text-slate-600">
+                Selain coding, saya bersemangat dalam berbagi pengetahuan, berkontribusi pada proyek open-source, 
+                dan terus belajar tentang teknologi yang sedang berkembang.
+              </p>
+            </div>
+          </div>
+          
+          <div class="space-y-6 fade-in" id="about-right">
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                <i data-lucide="mail" class="text-indigo-600 w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-800">Email</h4>
+                <p class="text-slate-600">teukurijul@example.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                <i data-lucide="briefcase" class="text-indigo-600 w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-800">Lokasi</h4>
+                <p class="text-slate-600">Banda Aceh, Indonesia</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                <i data-lucide="code" class="text-indigo-600 w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-800">Spesialisasi</h4>
+                <p class="text-slate-600">Pengembangan Full-stack, Arsitektur Cloud, DevOps</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pendidikan Section -->
+  <section id="pendidikan" class="py-20 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
+          <i data-lucide="graduation-cap" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
+          Pendidikan
+        </h2>
+        
+        <div class="space-y-8">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="edu-1">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="text-xl font-bold text-slate-800">Sarjana Teknik Informatika</h3>
+              <span class="text-indigo-600 font-medium">2015 - 2019</span>
+            </div>
+            <h4 class="text-lg font-semibold text-slate-700 mb-2">Universitas Syiah Kuala</h4>
+            <p class="text-slate-600">IPK: 3.75/4.00 • Aktif di UKM Teknologi Informasi • Lulusan Terbaik Fakultas</p>
+          </div>
+          
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="edu-2">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="text-xl font-bold text-slate-800">SMA Negeri 1 Banda Aceh</h3>
+              <span class="text-indigo-600 font-medium">2012 - 2015</span>
+            </div>
+            <h4 class="text-lg font-semibold text-slate-700 mb-2">SMA Negeri 1 Banda Aceh</h4>
+            <p class="text-slate-600">Jurusan IPA • Ketua OSIS • Juara Olimpiade Komputer Tingkat Provinsi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pengalaman Section -->
+  <section id="pengalaman" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
+          <i data-lucide="briefcase" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
+          Pengalaman Kerja
+        </h2>
+        
+        <div class="space-y-8">
+          <div class="bg-gradient-to-r from-white to-slate-50 rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="exp-1">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-800">Software Engineer Senior</h3>
+                <h4 class="text-lg text-indigo-600 font-semibold">PT. Teknologi Digital Indonesia</h4>
+              </div>
+              <div class="mt-2 md:mt-0 text-right">
+                <span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+                  2021 - Sekarang
+                </span>
+                <div class="text-slate-500 text-sm mt-1">Jakarta, Indonesia (Remote)</div>
+              </div>
+            </div>
+            
+            <ul class="space-y-2 mt-4">
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Memimpin tim 4 engineer dalam pengembangan aplikasi berbasis microservices menggunakan Node.js dan Kubernetes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Meningkatkan performa API hingga 45% melalui optimasi caching dan query database</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Mengimplementasikan pipeline CI/CD dengan GitHub Actions, mengurangi waktu deployment hingga 55%</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Membimbing developer junior melalui code review dan sesi pair programming</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gradient-to-r from-white to-slate-50 rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="exp-2">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-800">Software Engineer</h3>
+                <h4 class="text-lg text-indigo-600 font-semibold">Startup Aceh Digital</h4>
+              </div>
+              <div class="mt-2 md:mt-0 text-right">
+                <span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+                  2019 - 2021
+                </span>
+                <div class="text-slate-500 text-sm mt-1">Banda Aceh, Indonesia</div>
+              </div>
+            </div>
+            
+            <ul class="space-y-2 mt-4">
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Mengembangkan dan memelihara aplikasi dashboard berbasis React yang digunakan oleh 20K+ pengguna bulanan</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Mengintegrasikan API RESTful dengan database PostgreSQL, menangani 1M+ request harian</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Berkolaborasi dengan tim UX untuk implementasi desain responsif di berbagai perangkat</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Memperkenalkan framework pengujian Jest, meningkatkan coverage pengujian dari 25% menjadi 80%</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gradient-to-r from-white to-slate-50 rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="exp-3">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-800">Pengembang Web</h3>
+                <h4 class="text-lg text-indigo-600 font-semibold">Magang di Dinas Kominfo Aceh</h4>
+              </div>
+              <div class="mt-2 md:mt-0 text-right">
+                <span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+                  2018 - 2019
+                </span>
+                <div class="text-slate-500 text-sm mt-1">Banda Aceh, Indonesia</div>
+              </div>
+            </div>
+            
+            <ul class="space-y-2 mt-4">
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Berpartisipasi dalam pengembangan sistem informasi pemerintah daerah menggunakan stack MERN</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Membangun sistem notifikasi real-time menggunakan WebSockets dan Redis</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-500 mr-2">•</span>
+                <span class="text-slate-600">Mengikuti proses pengembangan agile dengan sprint 2 minggu dan daily standup</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyek Section -->
+  <section id="proyek" class="py-20 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
+          <i data-lucide="code" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
+          Proyek Unggulan
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 card-hover fade-in" id="proj-1">
+            <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+              <div class="bg-white/20 p-4 rounded-full">
+                <i data-lucide="code" class="text-white w-12 h-12"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-800 mb-2">Sistem Manajemen Sekolah Aceh</h3>
+              <p class="text-slate-600 mb-4">Platform komprehensif untuk manajemen sekolah di wilayah Aceh, mencakup absensi, nilai, dan komunikasi orang tua.</p>
+              
+              <div class="mb-4">
+                <h4 class="font-semibold text-slate-800 mb-2">Teknologi</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">React</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">TypeScript</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Express</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">PostgreSQL</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">TailwindCSS</span>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <h4 class="font-semibold text-slate-800 mb-2">Fitur</h4>
+                <ul class="space-y-1 text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-indigo-500 mr-2">✓</span>
+                    <span>Modul absensi digital terintegrasi dengan QR code</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-indigo-500 mr-2">✓</span>
+                    <span>Dashboard analitik untuk pemantauan kinerja siswa</span>
+                  </li>
+                  <li class="text-sm text-slate-500">+ 2 fitur lainnya</li>
+                </ul>
+              </div>
+              
+              <a href="#" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">
+                Lihat Proyek <i data-lucide="external-link" class="ml-1 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 card-hover fade-in" id="proj-2">
+            <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+              <div class="bg-white/20 p-4 rounded-full">
+                <i data-lucide="code" class="text-white w-12 h-12"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-800 mb-2">Aplikasi Pariwisata Aceh</h3>
+              <p class="text-slate-600 mb-4">Aplikasi mobile dan web untuk mempromosikan destinasi wisata di Aceh kepada wisatawan domestik dan internasional.</p>
+              
+              <div class="mb-4">
+                <h4 class="font-semibold text-slate-800 mb-2">Teknologi</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">React Native</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Firebase</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Google Maps API</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Node.js</span>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <h4 class="font-semibold text-slate-800 mb-2">Fitur</h4>
+                <ul class="space-y-1 text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-indigo-500 mr-2">✓</span>
+                    <span>Peta interaktif dengan lokasi wisata dan rute terbaik</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-indigo-500 mr-2">✓</span>
+                    <span>Rekomendasi destinasi berdasarkan preferensi pengguna</span>
+                  </li>
+                  <li class="text-sm text-slate-500">+ 2 fitur lainnya</li>
+                </ul>
+              </div>
+              
+              <a href="#" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">
+                Lihat Proyek <i data-lucide="external-link" class="ml-1 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 card-hover fade-in" id="proj-3">
+            <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+              <div class="bg-white/20 p-4 rounded-full">
+                <i data-lucide="code" class="text-white w-12 h-12"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-800 mb-2">Sistem Monitoring Bencana Alam</h3>
+              <p class="text-slate-600 mb-4">Sistem pemantauan bencana alam khusus untuk wilayah rawan bencana di Aceh dan Sumatera Utara.</p>
+              
+              <div class="mb-4">
+                <h4 class="font-semibold text-slate-800 mb-2">Teknologi</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Vue.js</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Socket.IO</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Python</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">TensorFlow.js</span>
+                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">MQTT</span>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <h4 class="font-semibold text-slate-800 mb-2">Fitur</h4>
+                <ul class="space-y-1 text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-indigo-500 mr-2">✓</span>
+                    <span>Deteksi dini gempa bumi berbasis data sensor real-time</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-indigo-500 mr-2">✓</span>
+                    <span>Peringatan dini tsunami dengan integrasi data BMKG</span>
+                  </li>
+                  <li class="text-sm text-slate-500">+ 2 fitur lainnya</li>
+                </ul>
+              </div>
+              
+              <a href="#" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">
+                Lihat Proyek <i data-lucide="external-link" class="ml-1 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keterampilan Section -->
+  <section id="keterampilan" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
+          Keterampilan Teknis
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-slate-50 rounded-2xl p-6 fade-in" id="skill-1">
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Bahasa Pemrograman</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">JavaScript</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">TypeScript</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Python</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Java</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">PHP</span>
+            </div>
+          </div>
+          
+          <div class="bg-slate-50 rounded-2xl p-6 fade-in" id="skill-2">
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Framework & Library</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">React</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Node.js</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Express</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Vue.js</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Laravel</span>
+            </div>
+          </div>
+          
+          <div class="bg-slate-50 rounded-2xl p-6 fade-in" id="skill-3">
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Tools & Platform</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Git</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Docker</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Kubernetes</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">AWS</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Linux</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Webpack</span>
+            </div>
+          </div>
+          
+          <div class="bg-slate-50 rounded-2xl p-6 fade-in" id="skill-4">
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Database</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">PostgreSQL</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">MySQL</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">MongoDB</span>
+              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Redis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sertifikasi Section -->
+  <section class="py-20 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
+          <i data-lucide="award" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
+          Sertifikasi
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 text-center fade-in" id="cert-1">
+            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="award" class="text-indigo-600 w-7 h-7"></i>
+            </div>
+            <h3 class="font-bold text-slate-800 mb-2">AWS Certified Developer - Associate</h3>
+            <p class="text-slate-600 text-sm mb-2">Amazon Web Services</p>
+            <p class="text-indigo-600 font-medium">2023</p>
+          </div>
+          
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 text-center fade-in" id="cert-2">
+            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="award" class="text-indigo-600 w-7 h-7"></i>
+            </div>
+            <h3 class="font-bold text-slate-800 mb-2">Google Professional Cloud Developer</h3>
+            <p class="text-slate-600 text-sm mb-2">Google Cloud</p>
+            <p class="text-indigo-600 font-medium">2022</p>
+          </div>
+          
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 text-center fade-in" id="cert-3">
+            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="award" class="text-indigo-600 w-7 h-7"></i>
+            </div>
+            <h3 class="font-bold text-slate-800 mb-2">Microsoft Certified: Azure Developer Associate</h3>
+            <p class="text-slate-600 text-sm mb-2">Microsoft</p>
+            <p class="text-indigo-600 font-medium">2021</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak Section -->
+  <section id="kontak" class="py-20 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Mari Berkolaborasi</h2>
+        <p class="text-indigo-100 text-lg mb-12 max-w-2xl mx-auto">
+          Saya sedang terbuka untuk peluang dan kolaborasi baru. 
+          Jangan ragu untuk menghubungi saya jika Anda memiliki proyek menarik atau hanya ingin berkenalan!
+        </p>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+          <div class="space-y-6">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="mailto:teukurijul@example.com" class="px-6 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                Kirim Email
+              </a>
+              <a href="https://linkedin.com/in/teukurijul" class="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                LinkedIn
+              </a>
+            </div>
+            
+            <div class="pt-6 border-t border-white/20">
+              <p class="text-indigo-100">
+                Anda juga dapat menemukan saya di 
+                <a href="https://github.com/teukurijul" class="text-white hover:underline font-medium ml-1">GitHub</a>
+                dan 
+                <a href="#" class="text-white hover:underline font-medium ml-1">Twitter</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>© <span id="current-year">2025</span> Teuku Rijul. Hak Cipta Dilindungi.</p>
+      <p class="mt-2 text-sm">Dirancang dan dibangun dengan ❤️ menggunakan HTML, CSS, dan JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for animations and icons -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Simple scroll animation
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fade in elements on scroll
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+          }
+        });
+      }, observerOptions);
+      
+      // Observe all fade-in elements
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Mobile navigation toggle (if needed for mobile menu)
+      // Since we're using simple nav, no toggle needed for this version
+    });
+  </script>
+</body>
+</html>

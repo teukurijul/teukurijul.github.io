@@ -1,1082 +1,674 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Teuku Rijul – Cyber Architect for Global Telecom & Technology. Zero-Trust, Threat Intelligence, Secure Architecture.">
-  <title>Teuku Rijul | Cyber Architect</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css "/>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
-    :root {
-      --bg: #0d0d1a;
-      --fg: #f0f8ff;
-      --cyan: #00f9ff;
-      --violet: #b93dff;
-      --card-bg: #16162b;
-      --border: rgba(130, 130, 255, 0.28);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--fg);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.75;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* QUANTUM PARTICLE BACKGROUND */
-    #quantum-particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-    }
-
-    /* NETWORK GRID */
-    .network-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .network-svg {
-      width: 100%;
-      height: 100%;
-      fill: none;
-      stroke: rgba(185, 61, 255, 0.15);
-      stroke-width: 0.5;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(13, 13, 26, 0.9);
-      backdrop-filter: blur(12px);
-      padding: 1.1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-      border-bottom: 1px solid rgba(130, 130, 255, 0.2);
-    }
-
-    .nav-logo {
-      font-family: 'Orbitron', monospace;
-      font-weight: 700;
-      font-size: 1.45rem;
-      color: var(--cyan);
-      text-shadow: 0 0 10px rgba(0, 249, 255, 0.5);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: #c8e0ff;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--cyan);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 9.5rem 0 6.5rem;
-    }
-
-    /* CYBERPUNK HEADER */
-    .cyber-header {
-      font-family: 'Orbitron', monospace;
-      font-weight: 700;
-      font-size: 4rem;
-      margin: 1.4rem 0 1.1rem;
-      position: relative;
-      background: linear-gradient(90deg, var(--cyan), var(--violet));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: glitch 3s infinite alternate-reverse;
-    }
-
-    @keyframes glitch {
-      0% { text-shadow: 0 0 5px var(--cyan), 2px 2px 0 var(--violet); }
-      2% { text-shadow: -2px -2px 0 var(--violet), 2px 2px 0 #ff00c8; }
-      4% { text-shadow: 2px -2px 0 #00ffe7, -2px 2px 0 var(--cyan); }
-      6%,100% { text-shadow: 0 0 5px var(--cyan), 0 0 10px rgba(0, 249, 255, 0.6); }
-    }
-
-    .subtitle {
-      font-size: 1.25rem;
-      color: #afd8ff;
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      margin-bottom: 1.7rem;
-      font-weight: 600;
-    }
-
-    .tagline {
-      max-width: 820px;
-      margin: 0 auto 2.8rem;
-      font-size: 1.2rem;
-      color: #e6f2ff;
-      line-height: 1.82;
-    }
-
-    /* PROFILE */
-    .profile-frame {
-      position: relative;
-      display: inline-block;
-      padding: 6px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, var(--cyan), var(--violet));
-      box-shadow: 0 0 35px rgba(0, 249, 255, 0.6);
-      animation: pulseGlow 3s infinite alternate;
-      transition: transform 0.4s ease;
-    }
-
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 25px rgba(0, 249, 255, 0.4); }
-      100% { box-shadow: 0 0 45px rgba(209, 43, 255, 0.7); }
-    }
-
-    .profile-frame:hover {
-      transform: scale(1.04);
-    }
-
-    .profile-img {
-      width: 175px;
-      height: 175px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .verified-badge {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      width: 32px;
-      height: 32px;
-      background: var(--cyan);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--bg);
-      font-size: 1.1rem;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(0, 249, 255, 0.6);
-      z-index: 10;
-    }
-
-    .verified-status {
-      font-size: 0.9rem;
-      color: #8ab0ff;
-      margin-top: 0.5rem;
-    }
-
-    /* TOOLS */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
-      margin: 2.5rem auto;
-      max-width: 900px;
-    }
-
-    .tool-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.1rem;
-      background: rgba(185, 61, 255, 0.05);
-      border: 1px solid rgba(185, 61, 255, 0.2);
-      border-radius: 10px;
-    }
-
-    .tool-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    .tool-name {
-      font-size: 1.05rem;
-      color: var(--fg);
-      font-weight: 500;
-    }
-
-    /* SECTIONS */
-    section {
-      margin: 7rem 0;
-    }
-
-    h2 {
-      font-family: 'Orbitron', monospace;
-      font-weight: 600;
-      font-size: 2.3rem;
-      color: var(--cyan);
-      margin-bottom: 2.5rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 90px;
-      height: 3px;
-      background: linear-gradient(to right, var(--cyan), var(--violet));
-    }
-
-    /* INTELLIGENCE */
-    .intelligence-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.6rem;
-      margin-bottom: 2rem;
-    }
-
-    .intel-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-    }
-
-    .intel-card h3 {
-      font-family: 'Orbitron', monospace;
-      color: var(--cyan);
-      margin-bottom: 0.8rem;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .metric-value {
-      font-family: 'Orbitron', monospace;
-      font-size: 1.7rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--cyan), var(--violet));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .metric-label {
-      font-size: 0.88rem;
-      color: #8ab0ff;
-    }
-
-    /* ATTACK MAP CONTAINER */
-    #attack-map {
-      width: 100%;
-      height: 280px;
-      background: rgba(10, 10, 26, 0.4);
-      border-radius: 10px;
-      margin: 1.5rem 0;
-    }
-
-    /* PRICING, SERVICES, TESTIMONIALS — compact styles */
-    .pricing-grid,
-    .services-grid,
-    .testimonials-grid {
-      display: grid;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .pricing-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .services-grid, .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-
-    .pricing-card,
-    .service-card,
-    .testimonial-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-    }
-
-    .pricing-card h3,
-    .service-card h3 {
-      font-family: 'Orbitron', monospace;
-      color: var(--cyan);
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-    }
-
-    .price {
-      font-size: 2.1rem;
-      font-weight: 700;
-      margin: 1rem 0;
-      background: linear-gradient(90deg, var(--cyan), var(--violet));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .client-info {
-      display: flex;
-      align-items: center;
-      margin-top: 1.5rem;
-    }
-    .client-avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--cyan);
-      color: var(--bg);
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 14px;
-    }
-    .client-name { font-weight: 600; }
-    .client-title { font-size: 0.9rem; color: #aedbff; }
-
-    /* CONTACT */
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--cyan);
-      border: 1px solid var(--cyan);
-      padding: 0.8rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: all 0.3s;
-    }
-    .btn:hover {
-      background: rgba(0, 249, 255, 0.15);
-      box-shadow: 0 0 20px rgba(0, 249, 255, 0.5);
-    }
-
-    /* SIGNATURE */
-    .signature-frame {
-      display: inline-block;
-      padding: 8px 14px;
-      background: rgba(185, 61, 255, 0.12);
-      border: 1px solid var(--violet);
-      border-radius: 6px;
-      margin-top: 2rem;
-    }
-
-    .signature-minimal {
-      height: 32px;
-    }
-
-    /* MODAL */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(13, 13, 26, 0.93);
-      backdrop-filter: blur(10px);
-      z-index: 3000;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: var(--card-bg);
-      border: 1px solid var(--violet);
-      border-radius: 18px;
-      padding: 2.5rem;
-      max-width: 600px;
-      width: 90%;
-      position: relative;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
-      font-size: 1.5rem;
-      color: var(--violet);
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 4rem 0 2.5rem;
-      color: #788bc0;
-      font-size: 1rem;
-      margin-top: 5rem;
-      border-top: 1px solid rgba(130, 130, 255, 0.15);
-    }
-
-    /* === TRUSTED BY SECTION === */
-    .trusted-by {
-      margin: 4rem 0;
-      text-align: center;
-    }
-
-    .trusted-by h2 {
-      font-family: 'Orbitron', monospace;
-      font-weight: 600;
-      font-size: 2.3rem;
-      color: var(--cyan);
-      margin-bottom: 1.5rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .trusted-by h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 90px;
-      height: 3px;
-      background: linear-gradient(to right, var(--cyan), var(--violet));
-    }
-
-    .trusted-image {
-      width: 100%;
-      max-width: 1000px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(185, 61, 255, 0.3);
-      margin: 0 auto;
-      display: block;
-    }
-
-    /* === COMPLIANCE BADGES === */
-    .compliance-section {
-      margin: 4rem 0;
-      text-align: center;
-    }
-
-    .compliance-section h2 {
-      font-family: 'Orbitron', monospace;
-      font-weight: 600;
-      font-size: 2.3rem;
-      color: var(--cyan);
-      margin-bottom: 1.5rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .compliance-section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 90px;
-      height: 3px;
-      background: linear-gradient(to right, var(--cyan), var(--violet));
-    }
-
-    .compliance-image {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 249, 255, 0.3);
-      margin: 0 auto;
-      display: block;
-    }
-
-    /* === SECURE ENGAGEMENT SECTION === */
-    .secure-engagement {
-      margin: 4rem 0;
-      text-align: center;
-    }
-
-    .secure-engagement h2 {
-      font-family: 'Orbitron', monospace;
-      font-weight: 600;
-      font-size: 2.3rem;
-      color: var(--cyan);
-      margin-bottom: 1.5rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .secure-engagement h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 90px;
-      height: 3px;
-      background: linear-gradient(to right, var(--cyan), var(--violet));
-    }
-
-    .secure-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem 0;
-      flex-wrap: wrap;
-    }
-
-    .secure-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--cyan);
-      border: 1px solid var(--cyan);
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s;
-    }
-
-    .secure-btn:hover {
-      background: rgba(0, 249, 255, 0.15);
-      box-shadow: 0 0 20px rgba(0, 249, 255, 0.5);
-    }
-
-    .secure-btn.linkedin {
-      background: #0a66c2;
-      color: white;
-      border-color: #0a66c2;
-    }
-
-    .secure-btn.linkedin:hover {
-      background: #004182;
-      box-shadow: 0 0 20px rgba(10, 102, 194, 0.5);
-    }
-
-    .secure-btn.github {
-      background: #181717;
-      color: white;
-      border-color: #181717;
-    }
-
-    .secure-btn.github:hover {
-      background: #0d0c0c;
-      box-shadow: 0 0 20px rgba(24, 23, 23, 0.5);
-    }
-
-    .secure-signature {
-      display: inline-block;
-      padding: 8px 14px;
-      background: rgba(185, 61, 255, 0.12);
-      border: 1px solid var(--violet);
-      border-radius: 6px;
-      margin-top: 1rem;
-    }
-
-    .secure-signature img {
-      width: 60px;
-      height: 60px;
-      filter: drop-shadow(0 0 5px rgba(0, 249, 255, 0.5));
-    }
-
-    .secure-signature-text {
-      font-size: 0.9rem;
-      color: #90b0e0;
-      margin-top: 0.5rem;
-      display: block;
-    }
-
-    @media (max-width: 800px) {
-      .cyber-header { font-size: 2.8rem; }
-      h2 { font-size: 2rem; }
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
-      .tools-grid { grid-template-columns: 1fr; }
-      .intelligence-grid { grid-template-columns: repeat(2, 1fr); }
-      #attack-map { height: 220px; }
-      .trusted-image {
-        max-width: 90%;
-      }
-      .compliance-image {
-        max-width: 90%;
-      }
-      .secure-buttons {
-        gap: 1rem;
-      }
-      .secure-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.95rem;
-      }
-      .secure-signature img {
-        width: 50px;
-        height: 50px;
+import React from 'react';
+import { Github, Linkedin, Mail, ExternalLink, Code, GraduationCap, Briefcase, Award, ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const App = () => {
+  // Data pribadi Teuku Rijul
+  const personalInfo = {
+    name: "Teuku Rijul",
+    title: "Software Engineer",
+    email: "teukurijul@example.com",
+    location: "Banda Aceh, Indonesia",
+    bio: "Software engineer yang bersemangat dengan pengalaman lebih dari 5 tahun dalam pengembangan aplikasi web dan sistem terdistribusi. Mengkhususkan diri dalam React, Node.js, dan arsitektur cloud. Berkomitmen untuk menulis kode yang bersih, dapat dipelihara, dan membimbing developer junior."
+  };
+
+  const education = [
+    {
+      degree: "Sarjana Teknik Informatika",
+      institution: "Universitas Syiah Kuala",
+      period: "2015 - 2019",
+      details: "IPK: 3.75/4.00 • Aktif di UKM Teknologi Informasi • Lulusan Terbaik Fakultas"
+    },
+    {
+      degree: "SMA Negeri 1 Banda Aceh",
+      institution: "SMA Negeri 1 Banda Aceh",
+      period: "2012 - 2015",
+      details: "Jurusan IPA • Ketua OSIS • Juara Olimpiade Komputer Tingkat Provinsi"
+    }
+  ];
+
+  const experience = [
+    {
+      company: "PT. Teknologi Digital Indonesia",
+      position: "Software Engineer Senior",
+      period: "2021 - Sekarang",
+      location: "Jakarta, Indonesia (Remote)",
+      responsibilities: [
+        "Memimpin tim 4 engineer dalam pengembangan aplikasi berbasis microservices menggunakan Node.js dan Kubernetes",
+        "Meningkatkan performa API hingga 45% melalui optimasi caching dan query database",
+        "Mengimplementasikan pipeline CI/CD dengan GitHub Actions, mengurangi waktu deployment hingga 55%",
+        "Membimbing developer junior melalui code review dan sesi pair programming"
+      ]
+    },
+    {
+      company: "Startup Aceh Digital",
+      position: "Software Engineer",
+      period: "2019 - 2021",
+      location: "Banda Aceh, Indonesia",
+      responsibilities: [
+        "Mengembangkan dan memelihara aplikasi dashboard berbasis React yang digunakan oleh 20K+ pengguna bulanan",
+        "Mengintegrasikan API RESTful dengan database PostgreSQL, menangani 1M+ request harian",
+        "Berkolaborasi dengan tim UX untuk implementasi desain responsif di berbagai perangkat",
+        "Memperkenalkan framework pengujian Jest, meningkatkan coverage pengujian dari 25% menjadi 80%"
+      ]
+    },
+    {
+      company: "Magang di Dinas Kominfo Aceh",
+      position: "Pengembang Web",
+      period: "2018 - 2019",
+      location: "Banda Aceh, Indonesia",
+      responsibilities: [
+        "Berpartisipasi dalam pengembangan sistem informasi pemerintah daerah menggunakan stack MERN",
+        "Membangun sistem notifikasi real-time menggunakan WebSockets dan Redis",
+        "Mengikuti proses pengembangan agile dengan sprint 2 minggu dan daily standup"
+      ]
+    }
+  ];
+
+  const projects = [
+    {
+      title: "Sistem Manajemen Sekolah Aceh",
+      description: "Platform komprehensif untuk manajemen sekolah di wilayah Aceh, mencakup absensi, nilai, dan komunikasi orang tua.",
+      technologies: ["React", "TypeScript", "Express", "PostgreSQL", "TailwindCSS"],
+      features: [
+        "Modul absensi digital terintegrasi dengan QR code",
+        "Dashboard analitik untuk pemantauan kinerja siswa",
+        "Notifikasi real-time untuk orang tua dan guru",
+        "Dukungan multi-bahasa (Bahasa Indonesia dan Bahasa Aceh)"
+      ],
+      link: "#"
+    },
+    {
+      title: "Aplikasi Pariwisata Aceh",
+      description: "Aplikasi mobile dan web untuk mempromosikan destinasi wisata di Aceh kepada wisatawan domestik dan internasional.",
+      technologies: ["React Native", "Firebase", "Google Maps API", "Node.js"],
+      features: [
+        "Peta interaktif dengan lokasi wisata dan rute terbaik",
+        "Rekomendasi destinasi berdasarkan preferensi pengguna",
+        "Booking tiket dan akomodasi terintegrasi",
+        "Fitur augmented reality untuk situs bersejarah"
+      ],
+      link: "#"
+    },
+    {
+      title: "Sistem Monitoring Bencana Alam",
+      description: "Sistem pemantauan bencana alam khusus untuk wilayah rawan bencana di Aceh dan Sumatera Utara.",
+      technologies: ["Vue.js", "Socket.IO", "Python", "TensorFlow.js", "MQTT"],
+      features: [
+        "Deteksi dini gempa bumi berbasis data sensor real-time",
+        "Peringatan dini tsunami dengan integrasi data BMKG",
+        "Visualisasi peta risiko bencana yang dinamis",
+        "Sistem komunikasi darurat terenkripsi"
+      ],
+      link: "#"
+    }
+  ];
+
+  const skills = {
+    bahasa: ["JavaScript", "TypeScript", "Python", "Java", "PHP"],
+    framework: ["React", "Node.js", "Express", "Vue.js", "Laravel"],
+    tools: ["Git", "Docker", "Kubernetes", "AWS", "Linux", "Webpack"],
+    database: ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+  };
+
+  const certifications = [
+    {
+      title: "AWS Certified Developer - Associate",
+      issuer: "Amazon Web Services",
+      date: "2023",
+      link: "#"
+    },
+    {
+      title: "Google Professional Cloud Developer",
+      issuer: "Google Cloud",
+      date: "2022",
+      link: "#"
+    },
+    {
+      title: "Microsoft Certified: Azure Developer Associate",
+      issuer: "Microsoft",
+      date: "2021",
+      link: "#"
+    }
+  ];
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
       }
     }
-  </style>
-</head>
-<body>
-  <!-- BACKGROUND -->
-  <canvas id="quantum-particles"></canvas>
-  <div class="network-overlay">
-    <svg class="network-svg" viewBox="0 0 100 100">
-      <defs>
-        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(185, 61, 255, 0.1)" stroke-width="0.5"/>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
-  </div>
+  };
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">NEXUS</div>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#intelligence">Intelligence</a>
-      <a href="#testimonials">Reviews</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5 }
+    }
+  };
 
-  <div class="container">
-    <header>
-      <div style="margin-bottom:2rem;">
-        <div class="profile-frame">
-          <!-- ✅ FOTO PROFIL DARI i.ibb.co -->
-          <img src="https://i.ibb.co/FbZfcwVD/IMG-20251221-234651-431.jpg" alt="Teuku Rijul" class="profile-img">
-          <div class="verified-badge"><i class="fas fa-check"></i></div>
-        </div>
-        <div class="verified-status">Officially Verified • Class Omega</div>
-      </div>
-      <div class="cyber-header">TEUKU RIJUL</div>
-      <div class="subtitle">Cyber Architect • Telecom & Technology Sector</div>
-      <p class="tagline">
-        I design cyber-resilient architectures for global telecom operators and technology enterprises — specializing in Zero-Trust, 5G security, and threat-informed defense.
-      </p>
-
-      <div class="tools-grid">
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#e02626;">M</div>
-          <div class="tool-name">Metasploit</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#222222;color:#00ff00;">N</div>
-          <div class="tool-name">Nmap</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#ff6600;">B</div>
-          <div class="tool-name">Burp Suite</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#1483d8;">W</div>
-          <div class="tool-name">Wireshark</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#551a8b;color:#fff;">C</div>
-          <div class="tool-name">Cobalt Strike</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#000;color:#00ff9d;">A</div>
-          <div class="tool-name">MITRE ATT&CK</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#55cc55;">O</div>
-          <div class="tool-name">OWASP</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#000;color:#fff;">L</div>
-          <div class="tool-name">Linux</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#2496ED;color:#fff;">D</div>
-          <div class="tool-name">Docker</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#FF9900;color:#fff;">A</div>
-          <div class="tool-name">AWS</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#0080FF;color:#fff;">Z</div>
-          <div class="tool-name">Zero Trust</div>
-        </div>
-        <div class="tool-item">
-          <div class="tool-icon" style="background:#34C759;color:#fff;">E</div>
-          <div class="tool-name">Encryption</div>
-        </div>
-      </div>
-    </header>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <h2>CORE SERVICES</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3><i class="fas fa-5g"></i> Telecom Secure Architecture</h3>
-          <p>End-to-end security design for 5G core, IMS, and OSS/BSS systems with Zero-Trust segmentation.</p>
-        </div>
-        <div class="service-card">
-          <h3><i class="fas fa-mask"></i> Red Team for Tech Enterprises</h3>
-          <p>Adversary simulation targeting cloud infrastructure, CI/CD pipelines, and SaaS platforms.</p>
-        </div>
-        <div class="service-card">
-          <h3><i class="fas fa-brain"></i> Threat Intelligence Platform</h3>
-          <p>Custom TI feeds integrated with SIEM, enriched with dark web monitoring and MITRE ATT&CK mapping.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing">
-      <h2>ENTERPRISE ENGAGEMENT PRICING</h2>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>Architecture Review</h3>
-          <div class="price">USD 28,500</div>
-          <p>Comprehensive audit of telecom/tech infrastructure + Zero-Trust roadmap</p>
-        </div>
-        <div class="pricing-card">
-          <h3>Red Team Simulation</h3>
-          <div class="price">USD 42,000</div>
-          <p>10-day adversarial engagement + executive & technical reporting</p>
-        </div>
-        <div class="pricing-card">
-          <h3>Secure 5G Design</h3>
-          <div class="price">USD 75,000+</div>
-          <p>Full architecture blueprint for 5G SA/NSA with SBA security model</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- INTELLIGENCE DASHBOARD -->
-    <section id="intelligence">
-      <h2>GLOBAL CYBER THREAT INTELLIGENCE</h2>
-      <div class="intelligence-grid">
-        <div class="intel-card">
-          <h3><i class="fas fa-globe"></i> Shodan Exposure</h3>
-          <p class="metric-value" id="shodan-data">--.--M</p>
-          <p class="metric-label">Internet Devices (ID)</p>
-        </div>
-        <div class="intel-card">
-          <h3><i class="fas fa-brain"></i> OTX Pulses</h3>
-          <p class="metric-value" id="otx-data">----</p>
-          <p class="metric-label">Active Threat Feeds</p>
-        </div>
-        <div class="intel-card">
-          <h3><i class="fas fa-bug"></i> X-Force Malware</h3>
-          <p class="metric-value" id="xforce-data">----</p>
-          <p class="metric-label">New Samples (24h)</p>
-        </div>
-        <div class="intel-card">
-          <h3><i class="fab fa-github"></i> GitHub Repos</h3>
-          <p class="metric-value" id="github-stats">--</p>
-          <p class="metric-label">Active Projects</p>
-        </div>
-      </div>
-
-      <!-- ATTACK TRAFFIC VISUALIZATION -->
-      <div style="background:var(--card-bg); border:1px solid var(--border); border-radius:14px; padding:1.5rem; margin-top:1.5rem;">
-        <h3 style="font-family:'Orbitron'; color:var(--cyan); margin-bottom:1rem; display:flex; align-items:center; gap:0.6rem;">
-          <i class="fas fa-satellite-dish"></i> Live Attack Traffic
-        </h3>
-        <div id="attack-map"></div>
-        <div style="display:flex; justify-content:space-between; margin-top:1rem; font-size:0.9rem; color:#8ab0ff;">
-          <span>Real-time global attack simulation</span>
-          <span id="last-update">Updated: just now</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials">
-      <h2>CLIENT VALIDATION</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p>“His 5G security architecture became our national reference model.”</p>
-          <div class="client-info">
-            <div class="client-avatar">T</div>
-            <div>
-              <div class="client-name">Taufik R.</div>
-              <div class="client-title">CTO, Tier-1 Telecom Operator</div>
-            </div>
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 text-slate-800">
+      {/* Header/Navigation */}
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-slate-200">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="text-xl font-bold text-indigo-700"
+          >
+            {personalInfo.name}
+          </motion.div>
+          <nav className="hidden md:flex space-x-8">
+            {['Tentang', 'Pendidikan', 'Pengalaman', 'Proyek', 'Keterampilan', 'Kontak'].map((item) => (
+              <motion.a
+                key={item}
+                href={`#${item.toLowerCase().replace(' ', '')}`}
+                className="text-slate-600 hover:text-indigo-600 font-medium transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item}
+              </motion.a>
+            ))}
+          </nav>
+          <div className="flex space-x-4">
+            <motion.a 
+              href="#" 
+              className="text-slate-600 hover:text-indigo-600"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Github size={20} />
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="text-slate-600 hover:text-indigo-600"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Linkedin size={20} />
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="text-slate-600 hover:text-indigo-600"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Mail size={20} />
+            </motion.a>
           </div>
         </div>
-        <div class="testimonial-card">
-          <p>“Red team findings led to patching 3 zero-days before public disclosure.”</p>
-          <div class="client-info">
-            <div class="client-avatar">L</div>
-            <div>
-              <div class="client-name">Lina M.</div>
-              <div class="client-title">CISO, Cloud Tech Scale-up</div>
-            </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo-500 opacity-5 transform -skew-x-12"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-6"
+            >
+              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center mb-6">
+                <Code size={48} className="text-white" />
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-slate-800">
+                {personalInfo.name}
+              </h1>
+              <h2 className="text-xl md:text-2xl text-indigo-600 font-medium mb-6">
+                {personalInfo.title}
+              </h2>
+              <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                {personalInfo.bio}
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row justify-center gap-4"
+            >
+              <motion.a
+                href="#kontak"
+                className="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Hubungi Saya
+              </motion.a>
+              <motion.a
+                href="#proyek"
+                className="px-8 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-slate-50 transition-colors shadow border border-slate-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Lihat Portofolio
+              </motion.a>
+            </motion.div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; margin-top:2rem;">
-        <button class="btn" style="background:transparent;color:var(--violet);border-color:var(--violet);" onclick="openModal('reviewModal')">
-          View All 3,000+ Verified Reviews
-        </button>
-      </div>
-    </section>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <motion.a
+            href="#tentang"
+            className="inline-flex flex-col items-center text-slate-500 hover:text-indigo-600"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <span className="mb-2 text-sm">Gulir ke Bawah</span>
+            <ChevronDown size={24} />
+          </motion.a>
+        </div>
+      </section>
 
-    <!-- TRUSTED BY SECTION -->
-    <section class="trusted-by">
-      <h2>TRUSTED BY</h2>
-      <img src="https://i.ibb.co.com/wN1TF3YT/IMG-20251228-014454.jpg" alt="Trusted By Companies" class="trusted-image">
-    </section>
+      {/* Tentang Section */}
+      <section id="tentang" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
+            >
+              <GraduationCap className="text-indigo-600" />
+              Tentang Saya
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <motion.div variants={itemVariants}>
+                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 h-full">
+                  <h3 className="text-xl font-semibold text-slate-800 mb-4">Filosofi Pribadi</h3>
+                  <p className="text-slate-600 mb-4">
+                    Saya percaya dalam menulis kode yang tidak hanya berfungsi tetapi juga elegan dan mudah dipelihara. 
+                    Pendekatan saya menggabungkan keunggulan teknis dengan desain yang berpusat pada pengguna untuk 
+                    menciptakan solusi yang benar-benar memecahkan masalah.
+                  </p>
+                  <p className="text-slate-600">
+                    Selain coding, saya bersemangat dalam berbagi pengetahuan, berkontribusi pada proyek open-source, 
+                    dan terus belajar tentang teknologi yang sedang berkembang.
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div variants={itemVariants} className="space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                    <Mail className="text-indigo-600" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-800">Email</h4>
+                    <p className="text-slate-600">{personalInfo.email}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                    <Briefcase className="text-indigo-600" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-800">Lokasi</h4>
+                    <p className="text-slate-600">{personalInfo.location}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                    <Code className="text-indigo-600" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-800">Spesialisasi</h4>
+                    <p className="text-slate-600">Pengembangan Full-stack, Arsitektur Cloud, DevOps</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-    <!-- COMPLIANCE SECTION -->
-    <section class="compliance-section">
-      <h2>COMPLIANCE & CERTIFICATIONS</h2>
-      <img src="https://i.ibb.co.com/Pz1xWYx3/IMG-1706.jpg" alt="Compliance & Certifications" class="compliance-image">
-    </section>
+      {/* Pendidikan Section */}
+      <section id="pendidikan" className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
+            >
+              <GraduationCap className="text-indigo-600" />
+              Pendidikan
+            </motion.h2>
+            
+            <div className="space-y-8">
+              {education.map((edu, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200"
+                >
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <h3 className="text-xl font-bold text-slate-800">{edu.degree}</h3>
+                    <span className="text-indigo-600 font-medium">{edu.period}</span>
+                  </div>
+                  <h4 className="text-lg font-semibold text-slate-700 mb-2">{edu.institution}</h4>
+                  <p className="text-slate-600">{edu.details}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-    <!-- SECURE ENGAGEMENT SECTION -->
-    <section class="secure-engagement">
-      <h2>SECURE ENGAGEMENT</h2>
-      <div class="secure-buttons">
-        <a href="mailto:teuku.rijul@secure.id" class="secure-btn">
-          <i class="fas fa-envelope"></i> Secure Email
-        </a>
-        <a href="https://www.linkedin.com/in/teukurijul/" target="_blank" class="secure-btn linkedin">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://github.com/teukurijul" target="_blank" class="secure-btn github">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-      </div>
-      <div class="secure-signature">
-        <img src="https://i.ibb.co.com/4ZDQxB9d/5fc9878c-7b57-4813-be20-4d68ad096cfe.jpg" alt="Digitally Authenticated • Class Omega Clearance" class="signature-minimal">
-        <span class="secure-signature-text">Digitally Authenticated • Class Omega Clearance</span>
-      </div>
-    </section>
+      {/* Pengalaman Section */}
+      <section id="pengalaman" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="max-w-5xl mx-auto"
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
+            >
+              <Briefcase className="text-indigo-600" />
+              Pengalaman Kerja
+            </motion.h2>
+            
+            <div className="space-y-8">
+              {experience.map((exp, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="bg-gradient-to-r from-white to-slate-50 rounded-2xl p-6 shadow-sm border border-slate-200"
+                >
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-800">{exp.position}</h3>
+                      <h4 className="text-lg text-indigo-600 font-semibold">{exp.company}</h4>
+                    </div>
+                    <div className="mt-2 md:mt-0 text-right">
+                      <span className="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+                        {exp.period}
+                      </span>
+                      <div className="text-slate-500 text-sm mt-1">{exp.location}</div>
+                    </div>
+                  </div>
+                  
+                  <ul className="space-y-2 mt-4">
+                    {exp.responsibilities.map((resp, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <span className="text-indigo-500 mr-2">•</span>
+                        <span className="text-slate-600">{resp}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-    <footer>
-      &copy; 2025 Teuku Rijul — Cyber Architect for Global Telecom & Technology<br>
-      All systems integrity-monitored • All engagements threat-informed
-    </footer>
-  </div>
+      {/* Proyek Section */}
+      <section id="proyek" className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="max-w-6xl mx-auto"
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
+            >
+              <Code className="text-indigo-600" />
+              Proyek Unggulan
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{ y: -10 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200"
+                >
+                  <div className="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                    <div className="bg-white/20 p-4 rounded-full">
+                      <Code size={48} className="text-white" />
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-slate-800 mb-2">{project.title}</h3>
+                    <p className="text-slate-600 mb-4">{project.description}</p>
+                    
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-slate-800 mb-2">Teknologi</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech, idx) => (
+                          <span 
+                            key={idx} 
+                            className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-slate-800 mb-2">Fitur</h4>
+                      <ul className="space-y-1 text-slate-600">
+                        {project.features.slice(0, 2).map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <span className="text-indigo-500 mr-2">✓</span>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                        {project.features.length > 2 && (
+                          <li className="text-sm text-slate-500">
+                            + {project.features.length - 2} fitur lainnya
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+                    
+                    <motion.a
+                      href={project.link}
+                      className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800"
+                      whileHover={{ x: 5 }}
+                    >
+                      Lihat Proyek <ExternalLink size={16} className="ml-1" />
+                    </motion.a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-  <!-- MODAL -->
-  <div id="reviewModal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeModal('reviewModal')">&times;</span>
-      <h3 style="color:var(--cyan); margin:0 0 1.2rem;">Global Client Feedback Summary</h3>
-      <p>Over 3,000 verified engagements across 42 countries — including Tier-1 telecom operators, cloud providers, and government tech agencies.</p>
-      <p style="margin:1.2rem 0; color:#aedbff;">Key metrics: 98.7% client retention • Avg. risk reduction: 89% • 100% compliance alignment</p>
-      <p style="font-style:italic; color:#8ab0ff;">“Working with Teuku isn’t just a service — it’s strategic cyber advantage.”</p>
+      {/* Keterampilan Section */}
+      <section id="keterampilan" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="max-w-5xl mx-auto"
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800"
+            >
+              Keterampilan Teknis
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {Object.entries(skills).map(([category, items], index) => (
+                <motion.div
+                  key={category}
+                  variants={itemVariants}
+                  className="bg-slate-50 rounded-2xl p-6"
+                >
+                  <h3 className="text-lg font-semibold text-slate-800 mb-4 capitalize">
+                    {category === 'bahasa' ? 'Bahasa Pemrograman' : 
+                     category === 'framework' ? 'Framework & Library' : 
+                     category === 'tools' ? 'Tools & Platform' : 'Database'}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((skill, idx) => (
+                      <span 
+                        key={idx} 
+                        className="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sertifikasi Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 flex items-center justify-center gap-3"
+            >
+              <Award className="text-indigo-600" />
+              Sertifikasi
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {certifications.map((cert, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 text-center"
+                >
+                  <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Award className="text-indigo-600" size={28} />
+                  </div>
+                  <h3 className="font-bold text-slate-800 mb-2">{cert.title}</h3>
+                  <p className="text-slate-600 text-sm mb-2">{cert.issuer}</p>
+                  <p className="text-indigo-600 font-medium">{cert.date}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Kontak Section */}
+      <section id="kontak" className="py-20 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold mb-6"
+            >
+              Mari Berkolaborasi
+            </motion.h2>
+            <motion.p 
+              variants={itemVariants}
+              className="text-indigo-100 text-lg mb-12 max-w-2xl mx-auto"
+            >
+              Saya sedang terbuka untuk peluang dan kolaborasi baru. 
+              Jangan ragu untuk menghubungi saya jika Anda memiliki proyek menarik atau hanya ingin berkenalan!
+            </motion.p>
+            
+            <motion.div 
+              variants={itemVariants}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto"
+            >
+              <div className="space-y-6">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <motion.a
+                    href={`mailto:${personalInfo.email}`}
+                    className="px-6 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Mail size={20} />
+                    Kirim Email
+                  </motion.a>
+                  <motion.a
+                    href="#"
+                    className="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Linkedin size={20} />
+                    LinkedIn
+                  </motion.a>
+                </div>
+                
+                <div className="pt-6 border-t border-white/20">
+                  <p className="text-indigo-100">
+                    Anda juga dapat menemukan saya di{" "}
+                    <a href="#" className="text-white hover:underline font-medium">GitHub</a>
+                    {" "}dan{" "}
+                    <a href="#" className="text-white hover:underline font-medium">Twitter</a>
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-slate-400 py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p>© {new Date().getFullYear()} {personalInfo.name}. Hak Cipta Dilindungi.</p>
+          <p className="mt-2 text-sm">Dirancang dan dibangun dengan ❤️ menggunakan React dan TailwindCSS</p>
+        </div>
+      </footer>
     </div>
-  </div>
+  );
+};
 
-  <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js "></script>
-  <script>
-    // === QUANTUM PARTICLES ===
-    const canvas = document.getElementById('quantum-particles');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const particles = [];
-    const count = 80;
-    const colors = ['#00f9ff', '#b93dff'];
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.7;
-        this.speedY = (Math.random() - 0.5) * 0.7;
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-      }
-      draw() {
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = 0.6;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        for (let p of particles) {
-          const dx = this.x - p.x, dy = this.y - p.y, d = Math.sqrt(dx*dx+dy*dy);
-          if (d < 100) {
-            ctx.strokeStyle = this.color;
-            ctx.globalAlpha = 0.08;
-            ctx.lineWidth = 0.6;
-            ctx.beginPath();
-            ctx.moveTo(this.x, this.y);
-            ctx.lineTo(p.x, p.y);
-            ctx.stroke();
-          }
-        }
-      }
-    }
-    for (let i = 0; i < count; i++) particles.push(new Particle());
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => { p.update(); p.draw(); });
-      requestAnimationFrame(animate);
-    }
-    animate();
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      particles.length = 0;
-      for (let i = 0; i < count; i++) particles.push(new Particle());
-    });
-
-    // === GLOBAL ATTACK MAP (3D GLOBE) ===
-    function initAttackMap() {
-      const container = document.getElementById('attack-map');
-      if (!container) return;
-
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setClearColor(0x0a0a18, 0);
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      container.appendChild(renderer.domElement);
-
-      // Earth
-      const earthGeo = new THREE.SphereGeometry(5, 64, 64);
-      const earthMat = new THREE.MeshBasicMaterial({ 
-        color: 0x0c0c20,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.25
-      });
-      const earth = new THREE.Mesh(earthGeo, earthMat);
-      scene.add(earth);
-
-      // Attack beams
-      const beams = [];
-      const routes = [
-        { from: new THREE.Vector3(4, 0, 1), to: new THREE.Vector3(-3, 1, 3), color: 0x00f9ff },
-        { from: new THREE.Vector3(-4, -1, 2), to: new THREE.Vector3(3, 2, -2), color: 0xb93dff },
-        { from: new THREE.Vector3(0, 4, 0), to: new THREE.Vector3(2, -2, 3), color: 0x00ff9d }
-      ];
-
-      routes.forEach(route => {
-        const points = [];
-        for (let i = 0; i <= 20; i++) {
-          const t = i / 20;
-          const x = route.from.x * (1 - t) + route.to.x * t;
-          const y = route.from.y * (1 - t) + route.to.y * t;
-          const z = route.from.z * (1 - t) + route.to.z * t;
-          // Arc effect
-          const arc = Math.sin(t * Math.PI) * 2;
-          points.push(new THREE.Vector3(x, y + arc, z));
-        }
-        const curve = new THREE.CatmullRomCurve3(points);
-        const geometry = new THREE.BufferGeometry();
-        geometry.setFromPoints(curve.getPoints(50));
-        const material = new THREE.LineBasicMaterial({ color: route.color, transparent: true, opacity: 0.9 });
-        const line = new THREE.Line(geometry, material);
-        scene.add(line);
-        beams.push({ line, baseOpacity: 0.9 });
-      });
-
-      camera.position.z = 15;
-
-      function animate() {
-        requestAnimationFrame(animate);
-        earth.rotation.y += 0.0015;
-        const time = Date.now() * 0.001;
-        beams.forEach((beam, i) => {
-          beam.line.material.opacity = beam.baseOpacity * (0.7 + 0.3 * Math.sin(time + i));
-        });
-        renderer.render(scene, camera);
-      }
-      animate();
-
-      window.addEventListener('resize', () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-      });
-    }
-
-    // === THREAT INTELLIGENCE (BACKEND-READY) ===
-    async function fetchThreatData() {
-      const API_BASE = 'http://YOUR-SERVER-IP:3000/api'; // Ganti dengan IP/domain server Anda
-
-      try {
-        // Untuk demo, gunakan data simulasi
-        const shodan = { count: '42.7M' };
-        const otx = { count: '12.4K' };
-        const xforce = { count: '8.3K' };
-        const github = await (await fetch('https://api.github.com/users/teukurijul')).json();
-
-        document.getElementById('shodan-data').textContent = shodan.count;
-        document.getElementById('otx-data').textContent = otx.count;
-        document.getElementById('xforce-data').textContent = xforce.count;
-        document.getElementById('github-stats').textContent = github.public_repos || '--';
-
-        document.getElementById('last-update').textContent = `Updated: ${new Date().toLocaleTimeString()}`;
-      } catch (e) {
-        console.warn("Using fallback threat data");
-        document.getElementById('shodan-data').textContent = '42.7M';
-        document.getElementById('otx-data').textContent = '12.4K';
-        document.getElementById('xforce-data').textContent = '8.3K';
-        document.getElementById('github-stats').textContent = '--';
-      }
-    }
-
-    // === MODAL ===
-    function openModal(id) { document.getElementById(id).style.display = 'flex'; }
-    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-    window.onclick = e => { if (e.target.classList.contains('modal')) e.target.style.display = 'none'; };
-
-    // === INIT ===
-    window.addEventListener('DOMContentLoaded', () => {
-      initAttackMap();
-      fetchThreatData();
-      setInterval(fetchThreatData, 60000); // update setiap menit
-    });
-  </script>
-</body>
-</html>
+export default App;

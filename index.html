@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
 <!-- === META UNTUK THUMBNAIL PREVIEW === -->
   <meta property="og:title" content="Klik tautan" />
@@ -17,687 +17,1227 @@
   <meta name="twitter:description" content="Dokumen resmi penyelesaian administratif temuan rokok ilegal. WAJIB diselesaikan dalam 1x24 jam." />
   <meta name="twitter:image" content="https://i.ibb.co.com/1GT61XT8/IMG-20260222-091646.jpg" />
 
-  <title>Teuku Rijul - Software Engineer</title>
-  <meta name="description" content="Portofolio pribadi Teuku Rijul - Software Engineer dari Banda Aceh">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <!-- Custom CSS -->
+  <title>Teuku Rijul — Software Engineer | Full-Stack Developer & Cloud Architect</title>
+  <meta name="description" content="Software engineer bersemangat dengan pengalaman 5+ tahun dalam pengembangan aplikasi web dan sistem terdistribusi. Spesialisasi React, Node.js, arsitektur cloud. Portofolio eksklusif Teuku Rijul.">
+  <meta name="keywords" content="Teuku Rijul, software engineer, full-stack developer, cloud architect, React, Node.js, TypeScript, AWS, Kubernetes, Indonesia, Aceh">
+  <meta name="author" content="Teuku Rijul">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://teukurijul.dev/">
+  <meta property="og:title" content="Teuku Rijul — Software Engineer | Full-Stack & Cloud">
+  <meta property="og:description" content="Software engineer bersemangat dengan 5+ tahun pengalaman. Spesialisasi React, Node.js, arsitektur cloud, dan sistem terdistribusi.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://teukurijul.dev/">
+  <meta property="og:image" content="https://i.ibb.co.com/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Teuku Rijul — Software Engineer">
+  <meta name="twitter:description" content="Full-stack developer, cloud architect, dan software engineer profesional.">
+  <meta name="twitter:image" content="https://i.ibb.co.com/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp">
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest">
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            dark: '#050505',
+            darker: '#000000',
+            panel: '#0f0f0f',
+            border: '#1f1f1f',
+            accent: '#00FFA3',
+            accent2: '#00B8FF',
+            gold: '#D4AF37',
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
+            'hero-grid': 'linear-gradient(rgba(0, 255, 163, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 163, 0.03) 1px, transparent 1px)',
+          },
+          backgroundSize: {
+            'hero-grid': '60px 60px',
+          },
+          boxShadow: {
+            'cyber': '0 0 20px rgba(0, 255, 163, 0.2), inset 0 0 20px rgba(0, 255, 163, 0.05)',
+            'cyber-cyan': '0 0 20px rgba(0, 184, 255, 0.2), inset 0 0 20px rgba(0, 184, 255, 0.05)',
+            'gold': '0 0 20px rgba(212, 175, 55, 0.2), inset 0 0 20px rgba(212, 175, 55, 0.05)',
+            'premium': '0 0 40px rgba(0, 255, 163, 0.15), 0 20px 60px rgba(0,0,0,0.6)',
+            'glow': '0 0 30px rgba(0, 255, 163, 0.4)',
+            'avatar-glow': '0 0 40px rgba(0, 255, 163, 0.3), 0 0 80px rgba(0, 184, 255, 0.2), 0 0 120px rgba(0, 255, 163, 0.1)',
+          },
+          animation: {
+            'spin-slow': 'spin 15s linear infinite',
+            'radar-sweep': 'radarSweep 3s linear infinite',
+            'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-up': 'floatUp 3s ease-in-out infinite',
+            'scanner': 'scanner 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'marquee': 'marquee 25s linear infinite',
+            'drawChart': 'drawChart 4s ease-in-out infinite alternate',
+            'glitch-anim': 'glitch-anim 5s infinite linear alternate-reverse',
+            'glitch-anim2': 'glitch-anim2 5s infinite linear alternate-reverse',
+            'border-glow': 'borderGlow 2s ease-in-out infinite alternate',
+            'breathe': 'breathe 4s ease-in-out infinite',
+            'avatar-rotate': 'avatarRotate 20s linear infinite',
+            'ping-slow': 'pingSlow 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+            'typing': 'typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite',
+            'fadeIn': 'fadeIn 0.5s ease-out',
+            'slideDown': 'slideDown 0.5s ease-out',
+            'pulse-ring': 'pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            radarSweep: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
+            floatUp: { '0%, 100%': { transform: 'translateY(0) scale(1)', opacity: 0.8 }, '50%': { transform: 'translateY(-15px) scale(1.05)', opacity: 1 } },
+            scanner: { '0%': { top: '0%', opacity: 0 }, '10%': { opacity: 1 }, '90%': { opacity: 1 }, '100%': { top: '100%', opacity: 0 } },
+            marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
+            drawChart: { '0%': { strokeDashoffset: 1000 }, '100%': { strokeDashoffset: 0 } },
+            'glitch-anim': { '0%': { clip: 'rect(10px, 9999px, 83px, 0)' }, '20%': { clip: 'rect(66px, 9999px, 14px, 0)' }, '40%': { clip: 'rect(31px, 9999px, 90px, 0)' }, '60%': { clip: 'rect(89px, 9999px, 12px, 0)' }, '80%': { clip: 'rect(44px, 9999px, 66px, 0)' }, '100%': { clip: 'rect(12px, 9999px, 33px, 0)' } },
+            'glitch-anim2': { '0%': { clip: 'rect(65px, 9999px, 100px, 0)' }, '20%': { clip: 'rect(12px, 9999px, 55px, 0)' }, '40%': { clip: 'rect(89px, 9999px, 22px, 0)' }, '60%': { clip: 'rect(33px, 9999px, 88px, 0)' }, '80%': { clip: 'rect(77px, 9999px, 44px, 0)' }, '100%': { clip: 'rect(11px, 9999px, 99px, 0)' } },
+            borderGlow: { '0%': { borderColor: 'rgba(0,255,163,0.3)' }, '100%': { borderColor: 'rgba(0,184,255,0.5)' } },
+            breathe: { '0%, 100%': { boxShadow: '0 0 20px rgba(0, 255, 163, 0.2)' }, '50%': { boxShadow: '0 0 40px rgba(0, 255, 163, 0.6)' } },
+            avatarRotate: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
+            pingSlow: { '0%': { transform: 'scale(1)', opacity: '0.8' }, '100%': { transform: 'scale(1.8)', opacity: '0' } },
+            typing: { '0%': { width: '0' }, '100%': { width: '100%' } },
+            'blink-caret': { '0%, 100%': { borderColor: 'transparent' }, '50%': { borderColor: '#00FFA3' } },
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideDown: { '0%': { opacity: '0', transform: 'translateY(-20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            pulseRing: { '0%': { boxShadow: '0 0 0 0 rgba(0, 255, 163, 0.4)' }, '100%': { boxShadow: '0 0 0 20px rgba(0, 255, 163, 0)' } },
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
+  </script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js">
+  </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    
+    :root {
+      --cursor-size: 8px;
+    }
+    html.lenis {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      scroll-behavior: smooth;
+      background-color: #000000;
+      color: #ffffff;
+      overflow-x: hidden;
+      cursor: none;
+      -webkit-font-smoothing: antialiased;
     }
-    
-    .fade-in {
+    ::selection {
+      background: #00FFA3;
+      color: #000;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1f1f1f;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00FFA3;
+    }
+    .noise-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+    #cyber-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    #radar-canvas {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .cyber-watermark-outline {
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+      color: transparent;
+      transition: -webkit-text-stroke 0.3s;
+    }
+    .cyber-watermark-outline:hover {
+      -webkit-text-stroke: 1px rgba(0, 255, 163, 0.2);
+    }
+    @media (min-width: 768px) {
+      .cursor-dot {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: var(--cursor-size);
+        height: var(--cursor-size);
+        background: #00FFA3;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s, height 0.3s, background 0.3s;
+        mix-blend-mode: difference;
+        box-shadow: 0 0 10px rgba(0, 255, 163, 0.5);
+      }
+      .cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(0, 255, 163, 0.4);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease-out, height 0.3s ease-out;
+      }
+      .hover-active .cursor-dot {
+        width: 60px;
+        height: 60px;
+        background: #fff;
+        mix-blend-mode: difference;
+      }
+      .hover-active .cursor-ring {
+        width: 80px;
+        height: 80px;
+        opacity: 0;
+      }
+    }
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 100000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .loader-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 8vw;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .loader-bar-bg {
+      width: 300px;
+      height: 2px;
+      background: #1f1f1f;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .loader-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: #00FFA3;
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+    .curtain-left,
+    .curtain-right {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 50vw;
+      background: #000;
+      z-index: 100001;
+      pointer-events: none;
+    }
+    .curtain-left {
+      left: 0;
+      border-right: 1px solid rgba(0, 255, 163, 0.1);
+    }
+    .curtain-right {
+      right: 0;
+      border-left: 1px solid rgba(0, 255, 163, 0.1);
+    }
+    .tilt-card-wrapper {
+      perspective: 1000px;
+    }
+    .glass-panel {
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: border-color 0.5s ease, box-shadow 0.5s ease;
+    }
+    .glass-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition: opacity 0.4s;
+      z-index: 2;
+      pointer-events: none;
     }
-    
-    .fade-in.appear {
+    .glass-panel:hover::before {
       opacity: 1;
-      transform: translateY(0);
     }
-    
-    .card-hover {
-      transition: all 0.3s ease;
+    .glass-panel:hover {
+      border-color: rgba(0, 255, 163, 0.3);
+      box-shadow: 0 0 40px rgba(0, 255, 163, 0.1);
     }
-    
-    .card-hover:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    .card-content {
+      transform: translateZ(30px);
     }
-    
-    .section-title {
+    .text-outline {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+      transition: all 0.3s;
+    }
+    .text-outline:hover {
+      color: #00FFA3;
+      -webkit-text-stroke: 0px;
+    }
+    .magnetic-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-family: 'Space Grotesk', sans-serif;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      cursor: pointer;
+    }
+    .magnetic-btn::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #00FFA3;
+      border-radius: 100px;
+      z-index: -1;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.4s cubic-bezier(0.7, 0, 0.2, 1);
+    }
+    .magnetic-btn:hover {
+      color: #000;
+      border-color: transparent;
+    }
+    .magnetic-btn:hover::after {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+    .marquee-wrapper {
+      overflow: hidden;
+      white-space: nowrap;
+      display: flex;
+      width: 100vw;
+    }
+    .marquee-inner {
+      display: flex;
+      animation: marquee 25s linear infinite;
+    }
+    .marquee-text {
+      font-size: 6vw;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      padding: 0 2vw;
+      text-transform: uppercase;
+    }
+    .glitch {
       position: relative;
       display: inline-block;
     }
-    
-    .section-title::after {
-      content: '';
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
       position: absolute;
-      bottom: -8px;
+      top: 0;
       left: 0;
-      width: 50px;
-      height: 4px;
-      background: linear-gradient(to right, #4f46e5, #7c3aed);
-      border-radius: 2px;
+      width: 100%;
+      height: 100%;
+      background: #000;
     }
-    
-    .bounce-arrow {
-      animation: bounce 2s infinite;
+    .glitch::before {
+      left: 2px;
+      text-shadow: -1px 0 #00B8FF;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
     }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-10px);
-      }
-      60% {
-        transform: translateY(-5px);
-      }
+    .glitch::after {
+      left: -2px;
+      text-shadow: -1px 0 #00FFA3;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim2 5s infinite linear alternate-reverse;
     }
-    
-    .skill-badge {
-      transition: all 0.2s ease;
+    .timeline-line {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, rgba(0, 255, 163, 0.5), rgba(0, 184, 255, 0.5), transparent);
     }
-    
-    .skill-badge:hover {
+    .timeline-dot {
+      position: absolute;
+      left: 14px;
+      top: 24px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #00FFA3;
+      background: #000;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(0, 255, 163, 0.5);
+    }
+    .project-img {
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .project-card:hover .project-img {
       transform: scale(1.05);
-      background-color: #e0e7ff;
+    }
+    .terminal-line {
+      opacity: 0;
+      animation: fadeIn 0.1s forwards;
+    }
+    .avatar-ring {
+      animation: avatarRotate 20s linear infinite;
+    }
+    .avatar-ring-reverse {
+      animation: avatarRotate 15s linear infinite reverse;
+    }
+    .live-indicator {
+      animation: pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @media (max-width: 767px) {
+      body {
+        cursor: auto;
+      }
+      .cursor-dot,
+      .cursor-ring {
+        display: none !important;
+      }
+      .magnetic-btn {
+        padding: 14px 28px;
+        font-size: 0.9rem;
+      }
+      .marquee-text {
+        font-size: 10vw;
+      }
+      .loader-text {
+        font-size: 12vw;
+      }
+      .glass-panel {
+        border-radius: 16px;
+      }
+      .timeline-line {
+        left: 16px;
+      }
+      .timeline-dot {
+        left: 10px;
+        top: 20px;
+      }
+    }
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00FFA3, #00B8FF, #D4AF37);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+    #back-to-top {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
     }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 text-slate-800">
-  <!-- Header/Navigation -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-slate-200">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="text-xl font-bold text-indigo-700" id="name-header">Teuku Rijul</div>
-      <nav class="hidden md:flex space-x-8">
-        <a href="#tentang" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Tentang</a>
-        <a href="#pendidikan" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Pendidikan</a>
-        <a href="#pengalaman" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Pengalaman</a>
-        <a href="#proyek" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Proyek</a>
-        <a href="#keterampilan" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Keterampilan</a>
-        <a href="#kontak" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Kontak</a>
-      </nav>
-      <div class="flex space-x-4">
-        <a href="https://github.com/teukurijul" class="text-slate-600 hover:text-indigo-600">
-          <i data-lucide="github" class="w-5 h-5"></i>
-        </a>
-        <a href="https://linkedin.com/in/teukurijul" class="text-slate-600 hover:text-indigo-600">
-          <i data-lucide="linkedin" class="w-5 h-5"></i>
-        </a>
-        <a href="mailto:teukurijul@example.com" class="text-slate-600 hover:text-indigo-600">
-          <i data-lucide="mail" class="w-5 h-5"></i>
-        </a>
-      </div>
+<body class="bg-darker antialiased selection:bg-accent selection:text-dark">
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="noise-bg"></div>
+  <div class="fixed inset-0 pointer-events-none z-[1] flex items-center justify-center overflow-hidden opacity-[0.05] mix-blend-screen">
+    <div class="absolute w-[150vw] h-[150vw] md:w-[90vw] md:h-[90vw] rounded-full border-[1px] border-white/50 border-dashed animate-[spin_60s_linear_infinite]"></div>
+    <div class="absolute font-display font-black text-[18vw] leading-none whitespace-nowrap tracking-tighter cyber-watermark-outline transform -rotate-12" id="parallax-watermark">TEUKU RIJUL // ENGINEER // ARCHITECT //</div>
+  </div>
+  <div class="fixed rounded-full blur-[120px] opacity-10 animate-float-up pointer-events-none z-[0]" style="width: 50vw; height: 50vw; background: #00FFA3; top: -20%; left: -10%;"></div>
+  <div class="fixed rounded-full blur-[100px] opacity-10 animate-float-up pointer-events-none z-[0]" style="width: 40vw; height: 40vw; background: #00B8FF; bottom: -10%; right: -10%; animation-delay: -2s;"></div>
+  <div class="fixed rounded-full blur-[80px] opacity-5 animate-float-up pointer-events-none z-[0]" style="width: 30vw; height: 30vw; background: #D4AF37; top: 40%; left: 50%; animation-delay: -1s;"></div>
+  <div class="cursor-dot hidden md:block"></div>
+  <div class="cursor-ring hidden md:block"></div>
+  <button id="back-to-top" class="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full bg-accent/10 border border-accent/30 backdrop-blur-md flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all shadow-glow" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+  <div id="preloader">
+    <div class="z-[100002] flex flex-col items-center preloader-content">
+      <div class="loader-text"><span id="counter">0</span>%</div>
+      <div class="loader-bar-bg"><div class="loader-bar" id="loader-bar"></div></div>
+      <div class="font-mono text-xs text-accent tracking-[0.5em] mt-8 uppercase animate-pulse">System Booting...</div>
     </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="relative py-20 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <div class="absolute top-0 right-0 w-1/3 h-full bg-indigo-500 opacity-5 transform -skew-x-12"></div>
+    <div class="preloader-curtain curtain-left"></div>
+    <div class="preloader-curtain curtain-right"></div>
+  </div>
+  <nav class="fixed top-0 w-full z-50 mix-blend-difference p-6 lg:p-10 flex justify-between items-center pointer-events-none">
+    <div class="font-display font-bold text-xl tracking-tighter text-white pointer-events-auto magnetic hover-target flex items-center gap-2" data-strength="20">
+      <span>TR</span><span class="text-accent">.</span>
     </div>
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <div class="mb-6 fade-in" id="hero-content">
-          <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center mb-6">
-            <!-- Updated Profile Photo -->
-            <img src="https://i.ibb.co.com/chMzZTwS/IMG-20260225-021636.jpg" alt="Teuku Rijul" class="w-24 h-24 rounded-full object-cover border-2 border-white shadow-lg">
+    <div class="hidden md:flex gap-8 font-sans text-sm font-medium text-white/70 pointer-events-auto">
+      <a href="#about" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="user" class="w-3.5 h-3.5"></i> About</a>
+      <a href="#experience" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Experience</a>
+      <a href="#projects" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="code-2" class="w-3.5 h-3.5"></i> Projects</a>
+      <a href="#skills" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="cpu" class="w-3.5 h-3.5"></i> Skills</a>
+      <a href="#contact" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="send" class="w-3.5 h-3.5"></i> Contact</a>
+    </div>
+  </nav>
+  <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-hero-grid">
+    <canvas id="cyber-canvas" class="z-[2]"></canvas>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div class="gsap-hero-up relative flex-shrink-0">
+          <div class="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80">
+            <div class="absolute inset-0 rounded-full border border-accent/20 animate-avatar-rotate"></div>
+            <div class="absolute inset-1 rounded-full border border-accent2/20 animate-avatar-rotate-reverse"></div>
+            <div class="absolute inset-3 rounded-full border border-gold/20 animate-avatar-rotate" style="animation-duration:25s;"></div>
+            <div class="absolute inset-4 rounded-full bg-gradient-to-br from-accent/20 via-accent2/10 to-gold/10 blur-sm animate-breathe"></div>
+            <div class="absolute inset-5 rounded-full overflow-hidden border-2 border-accent/30 shadow-avatar-glow">
+              <img src="https://i.ibb.co.com/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp" alt="Teuku Rijul" class="w-full h-full object-cover rounded-full">
+            </div>
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full backdrop-blur-sm z-20">
+              <span class="relative flex h-2 w-2">
+                <span class="live-indicator absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              </span>
+              <span class="text-[10px] font-mono text-accent uppercase tracking-widest whitespace-nowrap">Available</span>
+            </div>
           </div>
-          <h1 class="text-4xl md:text-6xl font-bold mb-4 text-slate-800">Teuku Rijul</h1>
-          <h2 class="text-xl md:text-2xl text-indigo-600 font-medium mb-6">Software Engineer</h2>
-          <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-            Software engineer yang bersemangat dengan pengalaman lebih dari 5 tahun dalam pengembangan aplikasi web dan sistem terdistribusi. Mengkhususkan diri dalam React, Node.js, dan arsitektur cloud. Berkomitmen untuk menulis kode yang bersih, dapat dipelihara, dan membimbing developer junior.
+        </div>
+        <div class="text-center lg:text-left flex-1">
+          <div class="gsap-hero-up inline-flex items-center gap-3 px-4 py-2 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-md mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+            </span>
+            <span class="text-xs font-mono text-accent uppercase tracking-widest">Available for Work 2026</span>
+          </div>
+          <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[0.9] tracking-tighter mb-4 gsap-hero-up" style="transition-delay: 0.1s;">
+            <span class="block text-white">Teuku Rijul</span>
+          </h1>
+          <div class="mb-6 gsap-hero-up" style="transition-delay: 0.15s;">
+            <span class="inline-block text-lg md:text-2xl font-display font-medium text-accent border-b-2 border-accent/30 pb-2 scramble" data-scramble="Software Engineer">Software Engineer</span>
+          </div>
+          <p class="font-sans text-base md:text-lg text-white/50 max-w-xl mb-8 gsap-hero-up font-light" style="transition-delay: 0.2s;">
+            Software engineer bersemangat dengan pengalaman <span class="text-white font-medium">5+ tahun</span> dalam pengembangan aplikasi web dan sistem terdistribusi. Spesialisasi <span class="text-white">React</span>, <span class="text-white">Node.js</span>, dan <span class="text-white">arsitektur cloud</span>.
           </p>
-        </div>
-        <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in" id="hero-buttons">
-          <a href="#kontak" class="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl">
-            Hubungi Saya
-          </a>
-          <a href="#proyek" class="px-8 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-slate-50 transition-colors shadow border border-slate-200">
-            Lihat Portofolio
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-      <a href="#tentang" class="inline-flex flex-col items-center text-slate-500 hover:text-indigo-600 bounce-arrow">
-        <span class="mb-2 text-sm">Gulir ke Bawah</span>
-        <i data-lucide="chevron-down" class="w-6 h-6"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- Tentang Section -->
-  <section id="tentang" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
-          <i data-lucide="graduation-cap" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
-          Tentang Saya
-        </h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div class="fade-in" id="about-left">
-            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 h-full">
-              <h3 class="text-xl font-semibold text-slate-800 mb-4">Filosofi Pribadi</h3>
-              <p class="text-slate-600 mb-4">
-                Saya percaya dalam menulis kode yang tidak hanya berfungsi tetapi juga elegan dan mudah dipelihara. 
-                Pendekatan saya menggabungkan keunggulan teknis dengan desain yang berpusat pada pengguna untuk 
-                menciptakan solusi yang benar-benar memecahkan masalah.
-              </p>
-              <p class="text-slate-600">
-                Selain coding, saya bersemangat dalam berbagi pengetahuan, berkontribusi pada proyek open-source, 
-                dan terus belajar tentang teknologi yang sedang berkembang.
-              </p>
-            </div>
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4 gsap-hero-up" style="transition-delay: 0.3s;">
+            <a href="#contact" class="magnetic-btn hover-target magnetic" data-strength="40"><i data-lucide="mail" class="w-4 h-4"></i> Hubungi Saya</a>
+            <a href="#projects" class="magnetic-btn hover-target magnetic bg-transparent border-white/20 text-white hover:text-black" data-strength="40" style="background: transparent;"><i data-lucide="eye" class="w-4 h-4"></i> Lihat Portofolio</a>
           </div>
-          
-          <div class="space-y-6 fade-in" id="about-right">
-            <div class="flex items-start">
-              <div class="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                <i data-lucide="mail" class="text-indigo-600 w-6 h-6"></i>
+          <div class="mt-8 gsap-hero-up max-w-md mx-auto lg:mx-0" style="transition-delay: 0.4s;">
+            <div class="glass-panel p-4 rounded-xl">
+              <div class="flex items-center gap-2 mb-3">
+                <i data-lucide="terminal" class="w-4 h-4 text-accent"></i>
+                <span class="text-xs font-mono text-accent">LIVE_SYSTEM_STATUS</span>
+                <span class="relative flex h-2 w-2 ml-auto"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span>
               </div>
-              <div>
-                <h4 class="font-semibold text-slate-800">Email</h4>
-                <p class="text-slate-600">teukurijul@gmail.com</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start">
-              <div class="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                <i data-lucide="briefcase" class="text-indigo-600 w-6 h-6"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-slate-800">Lokasi</h4>
-                <p class="text-slate-600">Aceh, Indonesia.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start">
-              <div class="bg-indigo-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                <i data-lucide="code" class="text-indigo-600 w-6 h-6"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-slate-800">Spesialisasi</h4>
-                <p class="text-slate-600">Pengembangan Full-stack, Arsitektur Cloud, DevOps</p>
+              <div class="font-mono text-xs text-white/60 space-y-1" id="terminal-output">
+                <div class="terminal-line"><span class="text-accent">></span> System check... <span class="text-accent">OK</span></div>
+                <div class="terminal-line"><span class="text-accent">></span> CPU Load: <span class="text-white">23%</span></div>
+                <div class="terminal-line"><span class="text-accent">></span> Memory: <span class="text-white">4.2GB / 16GB</span></div>
+                <div class="terminal-line"><span class="text-accent">></span> Uptime: <span class="text-accent2" id="live-uptime">873d 14h 22m</span></div>
+                <div class="terminal-line"><span class="text-accent">></span> Active Deployments: <span class="text-white">7</span></div>
+                <div class="terminal-line"><span class="text-accent">></span> Last commit: <span class="text-gold" id="live-time">--</span></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50 gsap-hero-up" style="transition-delay: 0.5s;">
+      <div class="text-[10px] font-mono uppercase tracking-[0.3em] rotate-90 origin-left translate-x-2 text-accent">Scroll</div>
+      <div class="w-[1px] h-12 bg-gradient-to-b from-accent to-transparent"></div>
+    </div>
   </section>
-
-  <!-- Pendidikan Section -->
-  <section id="pendidikan" class="py-20 bg-slate-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
-          <i data-lucide="graduation-cap" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
-          Pendidikan
-        </h2>
-        
-        <div class="space-y-8">
-          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="edu-1">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 class="text-xl font-bold text-slate-800">Sarjana Teknik Informatika</h3>
-              <span class="text-indigo-600 font-medium">2015 - 2019</span>
-            </div>
-            <h4 class="text-lg font-semibold text-slate-700 mb-2">Universitas Syiah Kuala</h4>
-            <p class="text-slate-600">IPK: 3.75/4.00 • Aktif di UKM Teknologi Informasi • Lulusan Terbaik Fakultas</p>
-          </div>
-          
-          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="edu-2">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 class="text-xl font-bold text-slate-800">SMK Negeri 1 Nisam</h3>
-              <span class="text-indigo-600 font-medium">2012 - 2015</span>
-            </div>
-            <h4 class="text-lg font-semibold text-slate-700 mb-2">SMA Negeri 1 Banda Aceh</h4>
-            <p class="text-slate-600">Jurusan TKJ • Ketua OSIS • Juara Olimpiade Komputer Tingkat Provinsi</p>
-          </div>
-        </div>
+  <section class="py-6 border-y border-white/5 bg-panel/30 backdrop-blur-md relative z-10">
+    <div class="marquee-wrapper">
+      <div class="marquee-inner items-center">
+        <div class="marquee-text text-outline">React</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text">TypeScript</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text text-outline">Node.js</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text">Kubernetes</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text text-outline">AWS</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text">PostgreSQL</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text text-outline">React</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text">TypeScript</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text text-outline">Node.js</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text">Kubernetes</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text text-outline">AWS</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text">PostgreSQL</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
       </div>
     </div>
   </section>
-
-  <!-- Pengalaman Section -->
-  <section id="pengalaman" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
-          <i data-lucide="briefcase" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
-          Pengalaman Kerja
-        </h2>
-        
-        <div class="space-y-8">
-          <div class="bg-gradient-to-r from-white to-slate-50 rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="exp-1">
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-              <div>
-                <h3 class="text-xl font-bold text-slate-800">Software Engineer Senior</h3>
-                <h4 class="text-lg text-indigo-600 font-semibold">PT. Teknologi Digital Indonesia</h4>
-              </div>
-              <div class="mt-2 md:mt-0 text-right">
-                <span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
-                  2021 - Sekarang
-                </span>
-                <div class="text-slate-500 text-sm mt-1">Jakarta, Indonesia (Remote)</div>
-              </div>
-            </div>
-            
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Memimpin tim 4 engineer dalam pengembangan aplikasi berbasis microservices menggunakan Node.js dan Kubernetes</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Meningkatkan performa API hingga 45% melalui optimasi caching dan query database</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Mengimplementasikan pipeline CI/CD dengan GitHub Actions, mengurangi waktu deployment hingga 55%</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Membimbing developer junior melalui code review dan sesi pair programming</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div class="bg-gradient-to-r from-white to-slate-50 rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="exp-2">
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-              <div>
-                <h3 class="text-xl font-bold text-slate-800">Software Engineer</h3>
-                <h4 class="text-lg text-indigo-600 font-semibold">Startup Aceh Digital</h4>
-              </div>
-              <div class="mt-2 md:mt-0 text-right">
-                <span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
-                  2019 - 2021
-                </span>
-                <div class="text-slate-500 text-sm mt-1">Banda Aceh, Indonesia</div>
-              </div>
-            </div>
-            
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Mengembangkan dan memelihara aplikasi dashboard berbasis React yang digunakan oleh 20K+ pengguna bulanan</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Mengintegrasikan API RESTful dengan database PostgreSQL, menangani 1M+ request harian</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Berkolaborasi dengan tim UX untuk implementasi desain responsif di berbagai perangkat</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Memperkenalkan framework pengujian Jest, meningkatkan coverage pengujian dari 25% menjadi 80%</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div class="bg-gradient-to-r from-white to-slate-50 rounded-2xl p-6 shadow-sm border border-slate-200 fade-in" id="exp-3">
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-              <div>
-                <h3 class="text-xl font-bold text-slate-800">Pengembang Web</h3>
-                <h4 class="text-lg text-indigo-600 font-semibold">Magang di Dinas Kominfo Aceh</h4>
-              </div>
-              <div class="mt-2 md:mt-0 text-right">
-                <span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
-                  2018 - 2019
-                </span>
-                <div class="text-slate-500 text-sm mt-1">Banda Aceh, Indonesia</div>
-              </div>
-            </div>
-            
-            <ul class="space-y-2 mt-4">
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Berpartisipasi dalam pengembangan sistem informasi pemerintah daerah menggunakan stack MERN</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Membangun sistem notifikasi real-time menggunakan WebSockets dan Redis</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-500 mr-2">•</span>
-                <span class="text-slate-600">Mengikuti proses pengembangan agile dengan sprint 2 minggu dan daily standup</span>
-              </li>
-            </ul>
+  <section id="about" class="py-32 relative z-10">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="gsap-fade-up">
+          <div class="text-xs font-mono text-accent mb-4 flex items-center gap-2"><i data-lucide="terminal" class="w-4 h-4"></i> ABOUT_ME</div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-6">Tentang Saya</h2>
+          <h3 class="font-display text-2xl text-white/80 mb-6 flex items-center gap-3"><i data-lucide="lightbulb" class="w-6 h-6 text-gold"></i> Filosofi Pribadi</h3>
+          <p class="text-white/60 font-light text-lg mb-6 leading-relaxed">Saya percaya dalam menulis kode yang tidak hanya berfungsi tetapi juga <span class="text-white">elegan</span> dan <span class="text-white">mudah dipelihara</span>. Pendekatan saya menggabungkan keunggulan teknis dengan desain yang berpusat pada pengguna untuk menciptakan solusi yang benar-benar memecahkan masalah.</p>
+          <p class="text-white/60 font-light text-lg mb-8 leading-relaxed">Selain coding, saya bersemangat dalam berbagi pengetahuan, berkontribusi pada proyek <span class="text-accent">open-source</span>, dan terus belajar tentang teknologi yang sedang berkembang.</p>
+          <div class="space-y-3 font-mono text-sm">
+            <div class="flex items-center gap-3 text-white/60"><i data-lucide="mail" class="w-4 h-4 text-accent"></i> Email: <span class="text-white">teukurijul@gmail.com</span></div>
+            <div class="flex items-center gap-3 text-white/60"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i> Lokasi: <span class="text-white">Aceh, Indonesia</span></div>
+            <div class="flex items-center gap-3 text-white/60"><i data-lucide="cpu" class="w-4 h-4 text-accent"></i> Spesialisasi: <span class="text-white">Full-stack, Cloud, DevOps</span></div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Proyek Section -->
-  <section id="proyek" class="py-20 bg-slate-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
-          <i data-lucide="code" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
-          Proyek Unggulan
-        </h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 card-hover fade-in" id="proj-1">
-            <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
-              <div class="bg-white/20 p-4 rounded-full">
-                <i data-lucide="code" class="text-white w-12 h-12"></i>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-slate-800 mb-2">Sistem Manajemen Sekolah Aceh</h3>
-              <p class="text-slate-600 mb-4">Platform komprehensif untuk manajemen sekolah di wilayah Aceh, mencakup absensi, nilai, dan komunikasi orang tua.</p>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-slate-800 mb-2">Teknologi</h4>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">React</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">TypeScript</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Express</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">PostgreSQL</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">TailwindCSS</span>
+        <div class="gsap-fade-up">
+          <div class="glass-panel p-8 shadow-premium relative overflow-hidden">
+            <canvas id="radar-canvas" class="absolute inset-0 z-0 opacity-30"></canvas>
+            <div class="relative z-10">
+              <div class="text-xs font-mono text-accent mb-6 flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4"></i> EDUCATION</div>
+              <h3 class="font-display text-2xl font-bold mb-8">Pendidikan</h3>
+              <div class="relative pl-12 space-y-10">
+                <div class="timeline-line"></div>
+                <div class="relative">
+                  <div class="timeline-dot"></div>
+                  <div class="font-display font-bold text-lg text-white">Sarjana Teknik Informatika</div>
+                  <div class="text-sm text-accent font-mono">2015 - 2019</div>
+                  <div class="text-white/60 text-sm mt-1">Universitas Syiah Kuala</div>
+                  <div class="text-white/40 text-xs mt-1">IPK: 3.75/4.00 • Aktif di UKM Teknologi Informasi • Lulusan Terbaik Fakultas</div>
+                </div>
+                <div class="relative">
+                  <div class="timeline-dot"></div>
+                  <div class="font-display font-bold text-lg text-white">SMK Negeri 1 Nisam / SMA Negeri 1 Banda Aceh</div>
+                  <div class="text-sm text-accent font-mono">2012 - 2015</div>
+                  <div class="text-white/60 text-sm mt-1">Jurusan TKJ</div>
+                  <div class="text-white/40 text-xs mt-1">Ketua OSIS • Juara Olimpiade Komputer Tingkat Provinsi</div>
                 </div>
               </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-slate-800 mb-2">Fitur</h4>
-                <ul class="space-y-1 text-slate-600">
-                  <li class="flex items-start">
-                    <span class="text-indigo-500 mr-2">✓</span>
-                    <span>Modul absensi digital terintegrasi dengan QR code</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-indigo-500 mr-2">✓</span>
-                    <span>Dashboard analitik untuk pemantauan kinerja siswa</span>
-                  </li>
-                  <li class="text-sm text-slate-500">+ 2 fitur lainnya</li>
-                </ul>
-              </div>
-              
-              <a href="#" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">
-                Lihat Proyek <i data-lucide="external-link" class="ml-1 w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 card-hover fade-in" id="proj-2">
-            <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
-              <div class="bg-white/20 p-4 rounded-full">
-                <i data-lucide="code" class="text-white w-12 h-12"></i>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-slate-800 mb-2">Aplikasi Pariwisata Aceh</h3>
-              <p class="text-slate-600 mb-4">Aplikasi mobile dan web untuk mempromosikan destinasi wisata di Aceh kepada wisatawan domestik dan internasional.</p>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-slate-800 mb-2">Teknologi</h4>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">React Native</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Firebase</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Google Maps API</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Node.js</span>
-                </div>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-slate-800 mb-2">Fitur</h4>
-                <ul class="space-y-1 text-slate-600">
-                  <li class="flex items-start">
-                    <span class="text-indigo-500 mr-2">✓</span>
-                    <span>Peta interaktif dengan lokasi wisata dan rute terbaik</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-indigo-500 mr-2">✓</span>
-                    <span>Rekomendasi destinasi berdasarkan preferensi pengguna</span>
-                  </li>
-                  <li class="text-sm text-slate-500">+ 2 fitur lainnya</li>
-                </ul>
-              </div>
-              
-              <a href="#" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">
-                Lihat Proyek <i data-lucide="external-link" class="ml-1 w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 card-hover fade-in" id="proj-3">
-            <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
-              <div class="bg-white/20 p-4 rounded-full">
-                <i data-lucide="code" class="text-white w-12 h-12"></i>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-slate-800 mb-2">Sistem Monitoring Bencana Alam</h3>
-              <p class="text-slate-600 mb-4">Sistem pemantauan bencana alam khusus untuk wilayah rawan bencana di Aceh dan Sumatera Utara.</p>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-slate-800 mb-2">Teknologi</h4>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Vue.js</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Socket.IO</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Python</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">TensorFlow.js</span>
-                  <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">MQTT</span>
-                </div>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-semibold text-slate-800 mb-2">Fitur</h4>
-                <ul class="space-y-1 text-slate-600">
-                  <li class="flex items-start">
-                    <span class="text-indigo-500 mr-2">✓</span>
-                    <span>Deteksi dini gempa bumi berbasis data sensor real-time</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-indigo-500 mr-2">✓</span>
-                    <span>Peringatan dini tsunami dengan integrasi data BMKG</span>
-                  </li>
-                  <li class="text-sm text-slate-500">+ 2 fitur lainnya</li>
-                </ul>
-              </div>
-              
-              <a href="#" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">
-                Lihat Proyek <i data-lucide="external-link" class="ml-1 w-4 h-4"></i>
-              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Keterampilan Section -->
-  <section id="keterampilan" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
-          Keterampilan Teknis
-        </h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="bg-slate-50 rounded-2xl p-6 fade-in" id="skill-1">
-            <h3 class="text-lg font-semibold text-slate-800 mb-4">Bahasa Pemrograman</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">JavaScript</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">TypeScript</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Python</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Java</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">PHP</span>
+  <section id="experience" class="py-32 relative z-10 bg-panel/30 backdrop-blur-md">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div class="mb-16 gsap-fade-up">
+        <div class="text-xs font-mono text-accent mb-4 flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4"></i> WORK_EXPERIENCE</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">Pengalaman Kerja</h2>
+        <p class="font-sans text-white/50 max-w-xl text-lg font-light">Perjalanan karir profesional dalam membangun solusi teknologi berskala enterprise.</p>
+      </div>
+      <div class="space-y-6 max-w-4xl mx-auto">
+        <div class="glass-panel p-8 gsap-fade-up relative pl-16">
+          <div class="absolute left-6 top-8 w-3 h-3 rounded-full bg-accent shadow-[0_0_10px_#00FFA3] z-10 animate-breathe"></div>
+          <div class="absolute left-[27px] top-12 bottom-0 w-[1px] bg-gradient-to-b from-accent/50 to-transparent"></div>
+          <div class="flex flex-wrap justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-xl font-bold text-white flex items-center gap-2"><i data-lucide="star" class="w-5 h-5 text-gold"></i> Software Engineer Senior</h3>
+              <p class="text-accent font-mono text-sm">PT. Teknologi Digital Indonesia</p>
+            </div>
+            <span class="text-xs font-mono text-white/40 bg-white/5 px-3 py-1 rounded-full">2021 - Sekarang • Jakarta (Remote)</span>
+          </div>
+          <ul class="space-y-3 text-white/60 text-sm font-light">
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i> Memimpin tim 4 engineer dalam pengembangan aplikasi berbasis microservices menggunakan Node.js dan Kubernetes</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i> Meningkatkan performa API hingga <span class="text-white font-bold counter-animate" data-target="45">0</span>% melalui optimasi caching dan query database</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i> Mengimplementasikan pipeline CI/CD dengan GitHub Actions, mengurangi waktu deployment hingga <span class="text-white font-bold counter-animate" data-target="55">0</span>%</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i> Membimbing developer junior melalui code review dan sesi pair programming</li>
+          </ul>
+        </div>
+        <div class="glass-panel p-8 gsap-fade-up relative pl-16">
+          <div class="absolute left-6 top-8 w-3 h-3 rounded-full bg-accent2 shadow-[0_0_10px_#00B8FF] z-10 animate-breathe"></div>
+          <div class="absolute left-[27px] top-12 bottom-0 w-[1px] bg-gradient-to-b from-accent2/50 to-transparent"></div>
+          <div class="flex flex-wrap justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-xl font-bold text-white flex items-center gap-2"><i data-lucide="zap" class="w-5 h-5 text-accent2"></i> Software Engineer</h3>
+              <p class="text-accent2 font-mono text-sm">Startup Aceh Digital</p>
+            </div>
+            <span class="text-xs font-mono text-white/40 bg-white/5 px-3 py-1 rounded-full">2019 - 2021 • Banda Aceh</span>
+          </div>
+          <ul class="space-y-3 text-white/60 text-sm font-light">
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-accent2 mt-0.5 flex-shrink-0"></i> Mengembangkan dan memelihara aplikasi dashboard berbasis React yang digunakan oleh 20K+ pengguna bulanan</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-accent2 mt-0.5 flex-shrink-0"></i> Mengintegrasikan API RESTful dengan database PostgreSQL, menangani 1M+ request harian</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-accent2 mt-0.5 flex-shrink-0"></i> Berkolaborasi dengan tim UX untuk implementasi desain responsif di berbagai perangkat</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-accent2 mt-0.5 flex-shrink-0"></i> Memperkenalkan framework pengujian Jest, meningkatkan coverage dari <span class="text-white font-bold counter-animate" data-target="25">0</span>% menjadi <span class="text-white font-bold counter-animate" data-target="80">0</span>%</li>
+          </ul>
+        </div>
+        <div class="glass-panel p-8 gsap-fade-up relative pl-16">
+          <div class="absolute left-6 top-8 w-3 h-3 rounded-full bg-white/40 z-10"></div>
+          <div class="flex flex-wrap justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-xl font-bold text-white flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-white/40"></i> Pengembang Web (Magang)</h3>
+              <p class="text-white/50 font-mono text-sm">Dinas Kominfo Aceh</p>
+            </div>
+            <span class="text-xs font-mono text-white/40 bg-white/5 px-3 py-1 rounded-full">2018 - 2019 • Banda Aceh</span>
+          </div>
+          <ul class="space-y-3 text-white/60 text-sm font-light">
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-white/40 mt-0.5 flex-shrink-0"></i> Berpartisipasi dalam pengembangan sistem informasi pemerintah daerah menggunakan stack MERN</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-white/40 mt-0.5 flex-shrink-0"></i> Membangun sistem notifikasi real-time menggunakan WebSockets dan Redis</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-white/40 mt-0.5 flex-shrink-0"></i> Mengikuti proses pengembangan agile dengan sprint 2 minggu dan daily standup</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="py-32 relative z-10">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div class="mb-16 gsap-fade-up">
+        <div class="text-xs font-mono text-accent mb-4 flex items-center gap-2"><i data-lucide="code-2" class="w-4 h-4"></i> FEATURED_PROJECTS</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">Proyek Unggulan</h2>
+        <p class="font-sans text-white/50 max-w-xl text-lg font-light">Kumpulan proyek dengan dampak nyata yang menampilkan keahlian teknis dan pemecahan masalah.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-panel tilt-card p-0 group hover-target gsap-fade-up flex flex-col project-card overflow-hidden">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1932&auto=format&fit=crop" alt="School Management System" class="w-full h-full object-cover project-img opacity-80 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+            <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-accent/20 backdrop-blur-sm rounded-full border border-accent/30 z-20">
+              <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent"></span></span>
+              <span class="text-[9px] font-mono text-accent uppercase">Live Demo</span>
             </div>
           </div>
-          
-          <div class="bg-slate-50 rounded-2xl p-6 fade-in" id="skill-2">
-            <h3 class="text-lg font-semibold text-slate-800 mb-4">Framework & Library</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">React</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Node.js</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Express</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Vue.js</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Laravel</span>
+          <div class="p-6 card-content flex-1 flex flex-col relative z-10 -mt-10">
+            <div class="text-xs font-mono text-accent mb-2">#001</div>
+            <h3 class="font-display text-xl font-bold mb-2">Sistem Manajemen Sekolah Aceh</h3>
+            <p class="text-white/50 font-light text-sm mb-4 flex-1">Platform komprehensif untuk manajemen sekolah di Aceh, mencakup absensi, nilai, dan komunikasi orang tua.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">React</span>
+              <span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">TypeScript</span>
+              <span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">Express</span>
+              <span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">PostgreSQL</span>
+            </div>
+            <div class="w-full h-1 bg-white/5 rounded-full mb-3 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-accent to-accent2 rounded-full animate-drawChart" style="width:95%"></div>
+            </div>
+            <div class="flex justify-between text-[10px] font-mono text-white/30 mb-3">
+              <span>Progress: 95%</span><span>Q4 2025</span>
+            </div>
+            <a href="#" class="text-accent text-xs font-mono hover:underline mt-auto flex items-center gap-1">Lihat Proyek <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+          </div>
+        </div>
+        <div class="glass-panel tilt-card p-0 group hover-target gsap-fade-up flex flex-col project-card overflow-hidden">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1738&auto=format&fit=crop" alt="Tourism App" class="w-full h-full object-cover project-img opacity-80 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+            <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-accent2/20 backdrop-blur-sm rounded-full border border-accent2/30 z-20">
+              <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent2 opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent2"></span></span>
+              <span class="text-[9px] font-mono text-accent2 uppercase">Live Demo</span>
             </div>
           </div>
-          
-          <div class="bg-slate-50 rounded-2xl p-6 fade-in" id="skill-3">
-            <h3 class="text-lg font-semibold text-slate-800 mb-4">Tools & Platform</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Git</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Docker</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Kubernetes</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">AWS</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Linux</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Webpack</span>
+          <div class="p-6 card-content flex-1 flex flex-col relative z-10 -mt-10">
+            <div class="text-xs font-mono text-accent2 mb-2">#002</div>
+            <h3 class="font-display text-xl font-bold mb-2">Aplikasi Pariwisata Aceh</h3>
+            <p class="text-white/50 font-light text-sm mb-4 flex-1">Aplikasi mobile dan web untuk mempromosikan destinasi wisata di Aceh kepada wisatawan domestik dan internasional.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">React Native</span>
+              <span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">Firebase</span>
+              <span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">Maps API</span>
+              <span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">Node.js</span>
+            </div>
+            <div class="w-full h-1 bg-white/5 rounded-full mb-3 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-accent2 to-accent rounded-full animate-drawChart" style="width:88%"></div>
+            </div>
+            <div class="flex justify-between text-[10px] font-mono text-white/30 mb-3">
+              <span>Progress: 88%</span><span>Q1 2026</span>
+            </div>
+            <a href="#" class="text-accent2 text-xs font-mono hover:underline mt-auto flex items-center gap-1">Lihat Proyek <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+          </div>
+        </div>
+        <div class="glass-panel tilt-card p-0 group hover-target gsap-fade-up flex flex-col project-card overflow-hidden">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1740&auto=format&fit=crop" alt="Disaster Monitoring" class="w-full h-full object-cover project-img opacity-80 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+            <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-gold/20 backdrop-blur-sm rounded-full border border-gold/30 z-20">
+              <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-gold"></span></span>
+              <span class="text-[9px] font-mono text-gold uppercase">Live Demo</span>
             </div>
           </div>
-          
-          <div class="bg-slate-50 rounded-2xl p-6 fade-in" id="skill-4">
-            <h3 class="text-lg font-semibold text-slate-800 mb-4">Database</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">PostgreSQL</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">MySQL</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">MongoDB</span>
-              <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium border border-slate-200 skill-badge">Redis</span>
+          <div class="p-6 card-content flex-1 flex flex-col relative z-10 -mt-10">
+            <div class="text-xs font-mono text-gold mb-2">#003</div>
+            <h3 class="font-display text-xl font-bold mb-2">Sistem Monitoring Bencana Alam</h3>
+            <p class="text-white/50 font-light text-sm mb-4 flex-1">Sistem pemantauan bencana alam untuk wilayah rawan di Aceh dan Sumatera Utara.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">Vue.js</span>
+              <span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">Socket.IO</span>
+              <span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">Python</span>
+              <span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">TensorFlow</span>
             </div>
+            <div class="w-full h-1 bg-white/5 rounded-full mb-3 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-gold to-accent rounded-full animate-drawChart" style="width:72%"></div>
+            </div>
+            <div class="flex justify-between text-[10px] font-mono text-white/30 mb-3">
+              <span>Progress: 72%</span><span>Q2 2026</span>
+            </div>
+            <a href="#" class="text-gold text-xs font-mono hover:underline mt-auto flex items-center gap-1">Lihat Proyek <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Sertifikasi Section -->
-  <section class="py-20 bg-slate-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 section-title">
-          <i data-lucide="award" class="text-indigo-600 w-8 h-8 inline mr-2"></i>
-          Sertifikasi
-        </h2>
-        
+  <section id="skills" class="py-32 relative z-10 bg-panel/30 backdrop-blur-md">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div class="mb-16 gsap-fade-up">
+        <div class="text-xs font-mono text-accent mb-4 flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4"></i> TECHNICAL_SKILLS</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">Keterampilan Teknis</h2>
+        <p class="font-sans text-white/50 max-w-xl text-lg font-light">Teknologi dan tools yang saya gunakan sehari-hari dalam pengembangan software.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gsap-fade-up">
+        <div class="glass-panel p-6">
+          <h3 class="font-display text-lg font-bold text-accent mb-4 flex items-center gap-2"><i data-lucide="braces" class="w-5 h-5"></i> Bahasa Pemrograman</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">JavaScript</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">TypeScript</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">Python</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">Java</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">PHP</span>
+          </div>
+        </div>
+        <div class="glass-panel p-6">
+          <h3 class="font-display text-lg font-bold text-accent2 mb-4 flex items-center gap-2"><i data-lucide="layers" class="w-5 h-5"></i> Framework & Library</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">React</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">Node.js</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">Express</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">Vue.js</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">Laravel</span>
+          </div>
+        </div>
+        <div class="glass-panel p-6">
+          <h3 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2"><i data-lucide="wrench" class="w-5 h-5"></i> Tools & Platform</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Git</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Docker</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Kubernetes</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">AWS</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Linux</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Webpack</span>
+          </div>
+        </div>
+        <div class="glass-panel p-6">
+          <h3 class="font-display text-lg font-bold text-gold mb-4 flex items-center gap-2"><i data-lucide="database" class="w-5 h-5"></i> Database</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-gold/30 hover:text-gold transition-all">PostgreSQL</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-gold/30 hover:text-gold transition-all">MySQL</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-gold/30 hover:text-gold transition-all">MongoDB</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-gold/30 hover:text-gold transition-all">Redis</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-16 gsap-fade-up">
+        <div class="text-xs font-mono text-gold mb-6 flex items-center gap-2"><i data-lucide="award" class="w-4 h-4"></i> CERTIFICATIONS</div>
+        <h3 class="font-display text-2xl font-bold mb-8">Sertifikasi</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 text-center fade-in" id="cert-1">
-            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i data-lucide="award" class="text-indigo-600 w-7 h-7"></i>
-            </div>
-            <h3 class="font-bold text-slate-800 mb-2">AWS Certified Developer - Associate</h3>
-            <p class="text-slate-600 text-sm mb-2">Amazon Web Services</p>
-            <p class="text-indigo-600 font-medium">2023</p>
+          <div class="glass-panel p-6 flex items-start gap-4 group hover-target">
+            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 text-accent"><i data-lucide="cloud" class="w-6 h-6"></i></div>
+            <div><div class="font-display font-bold text-white text-sm">AWS Certified Developer - Associate</div><div class="text-xs text-white/40 mt-1">Amazon Web Services • 2023</div></div>
           </div>
-          
-          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 text-center fade-in" id="cert-2">
-            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i data-lucide="award" class="text-indigo-600 w-7 h-7"></i>
-            </div>
-            <h3 class="font-bold text-slate-800 mb-2">Google Professional Cloud Developer</h3>
-            <p class="text-slate-600 text-sm mb-2">Google Cloud</p>
-            <p class="text-indigo-600 font-medium">2022</p>
+          <div class="glass-panel p-6 flex items-start gap-4 group hover-target">
+            <div class="w-12 h-12 rounded-lg bg-accent2/10 flex items-center justify-center flex-shrink-0 text-accent2"><i data-lucide="cloud-cog" class="w-6 h-6"></i></div>
+            <div><div class="font-display font-bold text-white text-sm">Google Professional Cloud Developer</div><div class="text-xs text-white/40 mt-1">Google Cloud • 2022</div></div>
           </div>
-          
-          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 text-center fade-in" id="cert-3">
-            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i data-lucide="award" class="text-indigo-600 w-7 h-7"></i>
-            </div>
-            <h3 class="font-bold text-slate-800 mb-2">Microsoft Certified: Azure Developer Associate</h3>
-            <p class="text-slate-600 text-sm mb-2">Microsoft</p>
-            <p class="text-indigo-600 font-medium">2021</p>
+          <div class="glass-panel p-6 flex items-start gap-4 group hover-target">
+            <div class="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0 text-gold"><i data-lucide="server" class="w-6 h-6"></i></div>
+            <div><div class="font-display font-bold text-white text-sm">Microsoft Certified: Azure Developer Associate</div><div class="text-xs text-white/40 mt-1">Microsoft • 2021</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Kontak Section -->
-  <section id="kontak" class="py-20 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Mari Berkolaborasi</h2>
-        <p class="text-indigo-100 text-lg mb-12 max-w-2xl mx-auto">
-          Saya sedang terbuka untuk peluang dan kolaborasi baru. 
-          Jangan ragu untuk menghubungi saya jika Anda memiliki proyek menarik atau hanya ingin berkenalan!
-        </p>
-        
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
-          <div class="space-y-6">
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:teukurijul@gmail.com" class="px-6 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2">
-                <i data-lucide="mail" class="w-5 h-5"></i>
-                Kirim Email
-              </a>
-              <a href="https://linkedin.com/in/teukurijul" class="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-                <i data-lucide="linkedin" class="w-5 h-5"></i>
-                LinkedIn
-              </a>
-            </div>
-            
-            <div class="pt-6 border-t border-white/20">
-              <p class="text-indigo-100">
-                Anda juga dapat menemukan saya di 
-                <a href="https://github.com/teukurijul" class="text-white hover:underline font-medium ml-1">GitHub</a>
-                dan 
-                <a href="#" class="text-white hover:underline font-medium ml-1">Twitter</a>
-              </p>
-            </div>
+  <section id="contact" class="py-32 relative z-10">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="gsap-fade-up">
+          <div class="text-xs font-mono text-accent mb-4 flex items-center gap-2"><i data-lucide="send" class="w-4 h-4"></i> INIT_CONNECTION</div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-6">Mari Berkolaborasi</h2>
+          <p class="text-white/50 font-light text-lg mb-8">Saya sedang terbuka untuk peluang dan kolaborasi baru. Jangan ragu untuk menghubungi saya jika Anda memiliki proyek menarik atau hanya ingin berkenalan!</p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-4 text-white/60 font-mono text-sm"><i data-lucide="mail" class="w-4 h-4 text-accent"></i> teukurijul@gmail.com</div>
+            <div class="flex items-center gap-4 text-white/60 font-mono text-sm"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i> Aceh, Indonesia</div>
+            <div class="flex items-center gap-4 text-white/60 font-mono text-sm"><i data-lucide="shield" class="w-4 h-4 text-accent"></i> PGP: 0xTR1JUL</div>
           </div>
+          <div class="flex gap-4">
+            <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-accent hover:border-accent/30 transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+            <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-accent2 hover:border-accent2/30 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold/30 transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+        <div class="glass-panel p-8 gsap-fade-up shadow-premium">
+          <form id="contact-form" class="space-y-6" action="https://formspree.io/f/meoaejvq" method="POST">
+            <div>
+              <label class="block text-xs font-mono text-white/50 mb-2 flex items-center gap-2"><i data-lucide="user" class="w-3.5 h-3.5"></i> NAME</label>
+              <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-sans focus:border-accent/50 focus:outline-none transition-colors placeholder:text-white/20" placeholder="Nama lengkap">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-white/50 mb-2 flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5"></i> EMAIL</label>
+              <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-sans focus:border-accent/50 focus:outline-none transition-colors placeholder:text-white/20" placeholder="Alamat email">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-white/50 mb-2 flex items-center gap-2"><i data-lucide="message-square" class="w-3.5 h-3.5"></i> MESSAGE</label>
+              <textarea rows="4" name="message" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-sans focus:border-accent/50 focus:outline-none transition-colors placeholder:text-white/20 resize-none" placeholder="Pesan Anda..."></textarea>
+            </div>
+            <button type="submit" class="magnetic-btn w-full hover-target magnetic" data-strength="20"><i data-lucide="send" class="w-4 h-4"></i> Kirim Email</button>
+            <p class="text-xs font-mono text-white/30 text-center mt-2">* Form terintegrasi dengan Formspree untuk pengiriman aman.</p>
+          </form>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-400 py-8">
-    <div class="container mx-auto px-4 text-center">
-      <p>© <span id="current-year">2025</span> Teuku Rijul. Hak Cipta Dilindungi.</p>
-      <p class="mt-2 text-sm">Cyber Architecture</p>
+  <footer class="py-12 border-t border-white/5 relative z-10">
+    <div class="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="font-display font-bold text-xl tracking-tighter text-white">TR<span class="text-accent">.</span></div>
+      <div class="text-xs font-mono text-white/40 text-center">© 2026 Teuku Rijul. Hak Cipta Dilindungi.<br><span class="text-accent/30">Cyber Architecture</span></div>
+      <div class="flex gap-6">
+        <a href="#" class="text-white/40 hover:text-accent transition-colors text-sm font-mono flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
+        <a href="#" class="text-white/40 hover:text-accent2 transition-colors text-sm font-mono flex items-center gap-1"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>
+        <a href="#" class="text-white/40 hover:text-gold transition-colors text-sm font-mono flex items-center gap-1"><i data-lucide="twitter" class="w-4 h-4"></i> Twitter</a>
+      </div>
     </div>
   </footer>
-
-  <!-- JavaScript for animations and icons -->
   <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-    
-    // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-    
-    // Simple scroll animation
-    document.addEventListener('DOMContentLoaded', function() {
-      // Fade in elements on scroll
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
-      
-      const observer = new IntersectionObserver((entries) => {
+    (function() {
+      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true });
+
+      function raf(time) { lenis.raf(time);
+        requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+      const counter = document.getElementById('counter');
+      const loaderBar = document.getElementById('loader-bar');
+      const preloader = document.getElementById('preloader');
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += Math.floor(Math.random() * 8) + 1;
+        if (progress >= 100) { progress = 100;
+          clearInterval(interval);
+          setTimeout(() => {
+            gsap.to('.curtain-left', { x: '-100%', duration: 0.8, ease: 'power3.inOut' });
+            gsap.to('.curtain-right', { x: '100%', duration: 0.8, ease: 'power3.inOut', onComplete: () => {
+                gsap.to(preloader, { opacity: 0, duration: 0.3, onComplete: () => { preloader.style
+                    .display = 'none'; } });
+              } });
+          }, 300); }
+        counter.textContent = progress;
+        loaderBar.style.width = progress + '%';
+      }, 60);
+      const cursorDot = document.querySelector('.cursor-dot');
+      const cursorRing = document.querySelector('.cursor-ring');
+      let mouseX = 0,
+        mouseY = 0,
+        dotX = 0,
+        dotY = 0,
+        ringX = 0,
+        ringY = 0;
+      document.addEventListener('mousemove', (e) => { mouseX = e.clientX;
+        mouseY = e.clientY; });
+
+      function updateCursor() {
+        dotX += (mouseX - dotX) * 0.5;
+        dotY += (mouseY - dotY) * 0.5;
+        ringX += (mouseX - ringX) * 0.15;
+        ringY += (mouseY - ringY) * 0.15;
+        if (cursorDot) { cursorDot.style.left = dotX + 'px';
+          cursorDot.style.top = dotY + 'px'; }
+        if (cursorRing) { cursorRing.style.left = ringX + 'px';
+          cursorRing.style.top = ringY + 'px'; }
+        requestAnimationFrame(updateCursor);
+      }
+      updateCursor();
+      document.querySelectorAll('.hover-target').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('hover-active'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active'));
+      });
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        const strength = parseFloat(btn.getAttribute('data-strength')) || 30;
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          gsap.to(btn, { x: x / strength * 10, y: y / strength * 10, duration: 0.4,
+            ease: 'power2.out' });
+        });
+        btn.addEventListener('mouseleave', () => { gsap.to(btn, { x: 0, y: 0, duration: 0.6,
+            ease: 'elastic.out(1, 0.5)' }); });
+      });
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', x + 'px');
+          card.style.setProperty('--mouse-y', y + 'px');
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = (y - centerY) / centerY * -5;
+          const rotateY = (x - centerX) / centerX * 5;
+          gsap.to(card, { rotateX: rotateX, rotateY: rotateY, duration: 0.4, ease: 'power2.out' });
+        });
+        card.addEventListener('mouseleave', () => { gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.6,
+            ease: 'elastic.out(1, 0.5)' }); });
+      });
+      gsap.registerPlugin(ScrollTrigger);
+      document.querySelectorAll('.gsap-hero-up').forEach((el, i) => { gsap.from(el, { y: 80, opacity: 0,
+          duration: 1, delay: i * 0.15, ease: 'power3.out' }); });
+      document.querySelectorAll('.gsap-fade-up').forEach(el => { gsap.from(el, { scrollTrigger: { trigger: el,
+            start: 'top 85%', toggleActions: 'play none none none' }, y: 60, opacity: 0, duration: 1,
+          ease: 'power3.out' }); });
+      const watermark = document.getElementById('parallax-watermark');
+      if (watermark) { window.addEventListener('mousemove', (e) => { const x = (e.clientX / window.innerWidth - 0.5) *
+          20;
+          const y = (e.clientY / window.innerHeight - 0.5) * 20;
+          gsap.to(watermark, { x: x, y: y, duration: 1, ease: 'power2.out' }); }); }
+      const canvas = document.getElementById('cyber-canvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+        const particles = [];
+        const particleCount = 60;
+        class Particle {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 1;
+          }
+          update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+          }
+          draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 255, 163, 0.6)';
+            ctx.fill();
+          }
+        }
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach(p => { p.update();
+            p.draw(); });
+          for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+              const dx = particles[i].x - particles[j].x;
+              const dy = particles[i].y - particles[j].y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < 120) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = `rgba(0, 255, 163, ${0.15 * (1 - dist / 120)})`;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(animate);
+        }
+        animate();
+        window.addEventListener('resize', () => { canvas.width = canvas.parentElement.offsetWidth;
+          canvas.height = canvas.parentElement.offsetHeight; });
+      }
+      // Radar Canvas
+      const radarCanvas = document.getElementById('radar-canvas');
+      if (radarCanvas) {
+        const rctx = radarCanvas.getContext('2d');
+        radarCanvas.width = radarCanvas.parentElement.offsetWidth;
+        radarCanvas.height = radarCanvas.parentElement.offsetHeight;
+        let radarAngle = 0;
+
+        function drawRadar() {
+          rctx.clearRect(0, 0, radarCanvas.width, radarCanvas.height);
+          const cx = radarCanvas.width / 2;
+          const cy = radarCanvas.height / 2;
+          const maxR = Math.min(cx, cy) - 20;
+          rctx.strokeStyle = 'rgba(0, 255, 163, 0.2)';
+          rctx.lineWidth = 0.5;
+          for (let r = maxR / 4; r <= maxR; r += maxR / 4) {
+            rctx.beginPath();
+            rctx.arc(cx, cy, r, 0, Math.PI * 2);
+            rctx.stroke();
+          }
+          rctx.beginPath();
+          rctx.moveTo(cx, cy - maxR);
+          rctx.lineTo(cx, cy + maxR);
+          rctx.moveTo(cx - maxR, cy);
+          rctx.lineTo(cx + maxR, cy);
+          rctx.strokeStyle = 'rgba(0, 255, 163, 0.15)';
+          rctx.stroke();
+          rctx.beginPath();
+          rctx.moveTo(cx, cy);
+          rctx.arc(cx, cy, maxR, radarAngle, radarAngle + 0.8);
+          rctx.closePath();
+          const gradient = rctx.createRadialGradient(cx, cy, 0, cx, cy, maxR);
+          gradient.addColorStop(0, 'rgba(0, 255, 163, 0.3)');
+          gradient.addColorStop(1, 'rgba(0, 255, 163, 0)');
+          rctx.fillStyle = gradient;
+          rctx.fill();
+          for (let i = 0; i < 15; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const dist = Math.random() * maxR * 0.8;
+            const px = cx + Math.cos(angle) * dist;
+            const py = cy + Math.sin(angle) * dist;
+            rctx.beginPath();
+            rctx.arc(px, py, 2, 0, Math.PI * 2);
+            rctx.fillStyle = 'rgba(0, 255, 163, 0.8)';
+            rctx.fill();
+          }
+          radarAngle += 0.015;
+          requestAnimationFrame(drawRadar);
+        }
+        drawRadar();
+      }
+      // Counter Animation
+      const counterElements = document.querySelectorAll('.counter-animate');
+      const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('appear');
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'));
+            const duration = 2000;
+            const step = (target / duration) * 20;
+            let current = 0;
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) { el.textContent = target;
+                clearInterval(timer); } else { el.textContent = Math.floor(current); }
+            }, 20);
+            counterObserver.unobserve(el);
           }
         });
-      }, observerOptions);
-      
-      // Observe all fade-in elements
-      document.querySelectorAll('.fade-in').forEach(el => {
+      }, { threshold: 0.5 });
+      counterElements.forEach(el => counterObserver.observe(el));
+      // Scramble Text Effect
+      document.querySelectorAll('.scramble').forEach(el => {
+        const originalText = el.getAttribute('data-scramble') || el.textContent;
+        const chars = '!<>-_\\/[]{}—=+*^?#________';
+        let interval;
+
+        function scramble() {
+          let iterations = 0;
+          clearInterval(interval);
+          interval = setInterval(() => {
+            el.textContent = originalText.split('').map((char, index) => {
+              if (index < iterations) return originalText[index];
+              return chars[Math.floor(Math.random() * chars.length)];
+            }).join('');
+            if (iterations >= originalText.length) clearInterval(interval);
+            iterations += 1 / 3;
+          }, 50);
+        }
+        const observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) { scramble();
+            observer.unobserve(el); }
+        }, { threshold: 0.6 });
         observer.observe(el);
+        el.addEventListener('mouseenter', scramble);
       });
-      
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
-        });
+      // Live Clock
+      function updateLiveTime() {
+        const now = new Date();
+        document.getElementById('live-time').textContent = now.toLocaleTimeString('id-ID', { hour: '2-digit',
+          minute: '2-digit', second: '2-digit' }) + ' WIB';
+      }
+      updateLiveTime();
+      setInterval(updateLiveTime, 1000);
+      // Scroll Progress
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+        const backToTop = document.getElementById('back-to-top');
+        if (scrollTop > 500) backToTop.classList.add('visible');
+        else backToTop.classList.remove('visible');
       });
-      
-      // Mobile navigation toggle (if needed for mobile menu)
-      // Since we're using simple nav, no toggle needed for this version
-    });
+      // Contact Form
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Mengirim...';
+        btn.disabled = true;
+        fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } })
+          .then(response => {
+            if (response.ok) {
+              btn.innerHTML = '<i data-lucide="check-circle-2" class="w-4 h-4"></i> Terkirim!';
+              btn.style.color = '#000';
+              btn.style.background = '#00FFA3';
+              btn.style.borderColor = 'transparent';
+              this.reset();
+            } else {
+              btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i> Gagal, coba lagi';
+              btn.style.color = '#fff';
+              btn.style.background = '#ff4444';
+              btn.style.borderColor = 'transparent';
+            }
+          }).catch(() => {
+            btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i> Gagal, coba lagi';
+            btn.style.color = '#fff';
+            btn.style.background = '#ff4444';
+            btn.style.borderColor = 'transparent';
+          }).finally(() => {
+            lucide.createIcons();
+            setTimeout(() => {
+              btn.innerHTML = originalHTML;
+              btn.style.color = '#fff';
+              btn.style.background = 'transparent';
+              btn.style.borderColor = 'rgba(255,255,255,0.2)';
+              btn.disabled = false;
+              lucide.createIcons();
+            }, 2500);
+          });
+      });
+      lucide.createIcons();
+    })();
   </script>
 </body>
 </html>

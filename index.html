@@ -10,27 +10,27 @@
   <meta property="og:image" content="https://i.ibb.co.com/1GT61XT8/IMG-20260222-091646.jpg" />
   <meta property="og:url" content="teuku.rijul@gmail.com" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Direktorat Jenderal Bea dan Cukai" />
+  <meta property="og:site_name" content="Portofolio Teuku Rijul" />
   
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Teuku Rijul" />
-  <meta name="twitter:description" content="Dokumen resmi penyelesaian administratif temuan rokok ilegal. WAJIB diselesaikan dalam 1x24 jam." />
+  <meta name="twitter:description" content="teuku_rijul" />
   <meta name="twitter:image" content="https://i.ibb.co.com/1GT61XT8/IMG-20260222-091646.jpg" />
 
   <title>Teuku Rijul — Software Engineer | Full-Stack Developer & Cloud Architect</title>
   <meta name="description" content="Software engineer bersemangat dengan pengalaman 5+ tahun dalam pengembangan aplikasi web dan sistem terdistribusi. Spesialisasi React, Node.js, arsitektur cloud. Portofolio eksklusif Teuku Rijul.">
-  <meta name="keywords" content="Teuku Rijul, software engineer, full-stack developer, cloud architect, React, Node.js, TypeScript, AWS, Kubernetes, Indonesia, Aceh">
+  <meta name="keywords" content="Teuku Rijul, software engineer, full-stack developer, cloud architect, cybersecurity, React, Node.js, TypeScript, AWS, Kubernetes, Indonesia, Aceh">
   <meta name="author" content="Teuku Rijul">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://teukurijul.dev/">
   <meta property="og:title" content="Teuku Rijul — Software Engineer | Full-Stack & Cloud">
-  <meta property="og:description" content="Software engineer bersemangat dengan 5+ tahun pengalaman. Spesialisasi React, Node.js, arsitektur cloud, dan sistem terdistribusi.">
+  <meta property="og:description" content="Software engineer bersemangat dengan 5+ tahun pengalaman. Spesialisasi React, Node.js, arsitektur cloud, cybersecurity, dan sistem terdistribusi.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://teukurijul.dev/">
   <meta property="og:image" content="https://i.ibb.co.com/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Teuku Rijul — Software Engineer">
-  <meta name="twitter:description" content="Full-stack developer, cloud architect, dan software engineer profesional.">
+  <meta name="twitter:description" content="Full-stack developer, cloud architect, cybersecurity specialist, dan software engineer profesional.">
   <meta name="twitter:image" content="https://i.ibb.co.com/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp">
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -57,6 +57,8 @@
             accent: '#00FFA3',
             accent2: '#00B8FF',
             gold: '#D4AF37',
+            danger: '#FF3366',
+            warning: '#FFB800',
           },
           backgroundImage: {
             'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -73,6 +75,7 @@
             'premium': '0 0 40px rgba(0, 255, 163, 0.15), 0 20px 60px rgba(0,0,0,0.6)',
             'glow': '0 0 30px rgba(0, 255, 163, 0.4)',
             'avatar-glow': '0 0 40px rgba(0, 255, 163, 0.3), 0 0 80px rgba(0, 184, 255, 0.2), 0 0 120px rgba(0, 255, 163, 0.1)',
+            'danger-glow': '0 0 30px rgba(255, 51, 102, 0.4)',
           },
           animation: {
             'spin-slow': 'spin 15s linear infinite',
@@ -92,6 +95,13 @@
             'fadeIn': 'fadeIn 0.5s ease-out',
             'slideDown': 'slideDown 0.5s ease-out',
             'pulse-ring': 'pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'matrix-rain': 'matrixRain 0.8s linear infinite',
+            'scan-line': 'scanLine 4s linear infinite',
+            'hex-rotate': 'hexRotate 30s linear infinite',
+            'data-flow': 'dataFlow 2s linear infinite',
+            'encrypt': 'encrypt 3s ease-in-out infinite',
+            'threat-pulse': 'threatPulse 2s ease-in-out infinite',
+            'network-pulse': 'networkPulse 3s ease-in-out infinite',
           },
           keyframes: {
             radarSweep: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
@@ -110,6 +120,13 @@
             fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
             slideDown: { '0%': { opacity: '0', transform: 'translateY(-20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
             pulseRing: { '0%': { boxShadow: '0 0 0 0 rgba(0, 255, 163, 0.4)' }, '100%': { boxShadow: '0 0 0 20px rgba(0, 255, 163, 0)' } },
+            matrixRain: { '0%': { transform: 'translateY(-100%)' }, '100%': { transform: 'translateY(100vh)' } },
+            scanLine: { '0%': { top: '0%' }, '100%': { top: '100%' } },
+            hexRotate: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
+            dataFlow: { '0%': { strokeDashoffset: '100' }, '100%': { strokeDashoffset: '-100' } },
+            encrypt: { '0%, 100%': { opacity: 0.3 }, '50%': { opacity: 1 } },
+            threatPulse: { '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 20px rgba(255, 51, 102, 0.3)' }, '50%': { transform: 'scale(1.1)', boxShadow: '0 0 40px rgba(255, 51, 102, 0.6)' } },
+            networkPulse: { '0%, 100%': { r: '4', opacity: 0.8 }, '50%': { r: '6', opacity: 0.4 } },
           }
         }
       }
@@ -179,12 +196,31 @@
       pointer-events: none;
       opacity: 0.4;
     }
+    #matrix-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.15;
+    }
     #radar-canvas {
       width: 100%;
       height: 100%;
       position: absolute;
       inset: 0;
       z-index: 1;
+    }
+    #network-canvas {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.3;
     }
     .cyber-watermark-outline {
       -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
@@ -448,6 +484,32 @@
     .live-indicator {
       animation: pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
+    .repo-card {
+      transition: all 0.3s ease;
+    }
+    .repo-card:hover {
+      border-color: rgba(0, 255, 163, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 255, 163, 0.1);
+    }
+    .skill-bar {
+      transition: width 1.5s ease;
+    }
+    .hex-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.05;
+    }
+    .data-stream {
+      animation: dataFlow 2s linear infinite;
+    }
+    .encrypt-char {
+      animation: encrypt 3s ease-in-out infinite;
+    }
+    .threat-dot {
+      animation: threatPulse 2s ease-in-out infinite;
+    }
     @media (max-width: 767px) {
       body {
         cursor: auto;
@@ -495,6 +557,10 @@
       opacity: 1;
       pointer-events: auto;
     }
+    .nav-active {
+      color: #00FFA3 !important;
+      border-bottom: 2px solid #00FFA3;
+    }
   </style>
 </head>
 <body class="bg-darker antialiased selection:bg-accent selection:text-dark">
@@ -503,10 +569,15 @@
   <div class="fixed inset-0 pointer-events-none z-[1] flex items-center justify-center overflow-hidden opacity-[0.05] mix-blend-screen">
     <div class="absolute w-[150vw] h-[150vw] md:w-[90vw] md:h-[90vw] rounded-full border-[1px] border-white/50 border-dashed animate-[spin_60s_linear_infinite]"></div>
     <div class="absolute font-display font-black text-[18vw] leading-none whitespace-nowrap tracking-tighter cyber-watermark-outline transform -rotate-12" id="parallax-watermark">TEUKU RIJUL // ENGINEER // ARCHITECT //</div>
+    <svg class="absolute inset-0 hex-grid opacity-[0.03]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="hex" width="30" height="52" patternUnits="userSpaceOnUse"><path d="M15 0l15 9v18l-15 9L0 27V9z" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs>
+      <rect width="100%" height="100%" fill="url(#hex)"/>
+    </svg>
   </div>
   <div class="fixed rounded-full blur-[120px] opacity-10 animate-float-up pointer-events-none z-[0]" style="width: 50vw; height: 50vw; background: #00FFA3; top: -20%; left: -10%;"></div>
   <div class="fixed rounded-full blur-[100px] opacity-10 animate-float-up pointer-events-none z-[0]" style="width: 40vw; height: 40vw; background: #00B8FF; bottom: -10%; right: -10%; animation-delay: -2s;"></div>
   <div class="fixed rounded-full blur-[80px] opacity-5 animate-float-up pointer-events-none z-[0]" style="width: 30vw; height: 30vw; background: #D4AF37; top: 40%; left: 50%; animation-delay: -1s;"></div>
+  <div class="fixed rounded-full blur-[60px] opacity-[0.07] animate-float-up pointer-events-none z-[0]" style="width: 20vw; height: 20vw; background: #FF3366; top: 60%; left: 30%; animation-delay: -3s;"></div>
   <div class="cursor-dot hidden md:block"></div>
   <div class="cursor-ring hidden md:block"></div>
   <button id="back-to-top" class="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full bg-accent/10 border border-accent/30 backdrop-blur-md flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all shadow-glow" onclick="window.scrollTo({top:0,behavior:'smooth'})">
@@ -525,16 +596,19 @@
     <div class="font-display font-bold text-xl tracking-tighter text-white pointer-events-auto magnetic hover-target flex items-center gap-2" data-strength="20">
       <span>TR</span><span class="text-accent">.</span>
     </div>
-    <div class="hidden md:flex gap-8 font-sans text-sm font-medium text-white/70 pointer-events-auto">
-      <a href="#about" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="user" class="w-3.5 h-3.5"></i> About</a>
-      <a href="#experience" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Experience</a>
-      <a href="#projects" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="code-2" class="w-3.5 h-3.5"></i> Projects</a>
-      <a href="#skills" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="cpu" class="w-3.5 h-3.5"></i> Skills</a>
-      <a href="#contact" class="hover:text-accent transition-colors hover-target flex items-center gap-1"><i data-lucide="send" class="w-3.5 h-3.5"></i> Contact</a>
+    <div class="hidden md:flex gap-8 font-sans text-sm font-medium text-white/70 pointer-events-auto" id="nav-links">
+      <a href="#home" class="hover:text-accent transition-colors hover-target flex items-center gap-1 nav-item"><i data-lucide="home" class="w-3.5 h-3.5"></i> Home</a>
+      <a href="#about" class="hover:text-accent transition-colors hover-target flex items-center gap-1 nav-item"><i data-lucide="user" class="w-3.5 h-3.5"></i> About</a>
+      <a href="#experience" class="hover:text-accent transition-colors hover-target flex items-center gap-1 nav-item"><i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Experience</a>
+      <a href="#projects" class="hover:text-accent transition-colors hover-target flex items-center gap-1 nav-item"><i data-lucide="code-2" class="w-3.5 h-3.5"></i> Projects</a>
+      <a href="#cyber-security" class="hover:text-accent transition-colors hover-target flex items-center gap-1 nav-item"><i data-lucide="shield" class="w-3.5 h-3.5"></i> Cyber</a>
+      <a href="#skills" class="hover:text-accent transition-colors hover-target flex items-center gap-1 nav-item"><i data-lucide="cpu" class="w-3.5 h-3.5"></i> Skills</a>
+      <a href="#contact" class="hover:text-accent transition-colors hover-target flex items-center gap-1 nav-item"><i data-lucide="send" class="w-3.5 h-3.5"></i> Contact</a>
     </div>
   </nav>
   <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-hero-grid">
     <canvas id="cyber-canvas" class="z-[2]"></canvas>
+    <canvas id="matrix-canvas" class="z-[1]"></canvas>
     <div class="container mx-auto px-6 relative z-10">
       <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div class="gsap-hero-up relative flex-shrink-0">
@@ -544,7 +618,7 @@
             <div class="absolute inset-3 rounded-full border border-gold/20 animate-avatar-rotate" style="animation-duration:25s;"></div>
             <div class="absolute inset-4 rounded-full bg-gradient-to-br from-accent/20 via-accent2/10 to-gold/10 blur-sm animate-breathe"></div>
             <div class="absolute inset-5 rounded-full overflow-hidden border-2 border-accent/30 shadow-avatar-glow">
-              <img src="https://i.ibb.co.com/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp" alt="Teuku Rijul" class="w-full h-full object-cover rounded-full">
+              <img src="https://i.ibb.co.com/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp" alt="Teuku Rijul" class="w-full h-full object-cover rounded-full" loading="lazy">
             </div>
             <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full backdrop-blur-sm z-20">
               <span class="relative flex h-2 w-2">
@@ -570,26 +644,55 @@
             <span class="inline-block text-lg md:text-2xl font-display font-medium text-accent border-b-2 border-accent/30 pb-2 scramble" data-scramble="Software Engineer">Software Engineer</span>
           </div>
           <p class="font-sans text-base md:text-lg text-white/50 max-w-xl mb-8 gsap-hero-up font-light" style="transition-delay: 0.2s;">
-            Software engineer bersemangat dengan pengalaman <span class="text-white font-medium">5+ tahun</span> dalam pengembangan aplikasi web dan sistem terdistribusi. Spesialisasi <span class="text-white">React</span>, <span class="text-white">Node.js</span>, dan <span class="text-white">arsitektur cloud</span>.
+            Software engineer bersemangat dengan pengalaman <span class="text-white font-medium">5+ tahun</span> dalam pengembangan aplikasi web dan sistem terdistribusi. Spesialisasi <span class="text-white">React</span>, <span class="text-white">Node.js</span>, <span class="text-white">arsitektur cloud</span>, dan <span class="text-danger">cyber security</span>.
           </p>
           <div class="flex flex-wrap justify-center lg:justify-start gap-4 gsap-hero-up" style="transition-delay: 0.3s;">
             <a href="#contact" class="magnetic-btn hover-target magnetic" data-strength="40"><i data-lucide="mail" class="w-4 h-4"></i> Hubungi Saya</a>
             <a href="#projects" class="magnetic-btn hover-target magnetic bg-transparent border-white/20 text-white hover:text-black" data-strength="40" style="background: transparent;"><i data-lucide="eye" class="w-4 h-4"></i> Lihat Portofolio</a>
           </div>
-          <div class="mt-8 gsap-hero-up max-w-md mx-auto lg:mx-0" style="transition-delay: 0.4s;">
-            <div class="glass-panel p-4 rounded-xl">
-              <div class="flex items-center gap-2 mb-3">
-                <i data-lucide="terminal" class="w-4 h-4 text-accent"></i>
-                <span class="text-xs font-mono text-accent">LIVE_SYSTEM_STATUS</span>
+          <div class="mt-8 gsap-hero-up max-w-lg mx-auto lg:mx-0" style="transition-delay: 0.4s;">
+            <div class="glass-panel p-5 rounded-xl border border-accent/10">
+              <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="shield-check" class="w-5 h-5 text-accent"></i>
+                <span class="text-xs font-mono text-accent font-bold">LIVE_SECURITY_DASHBOARD</span>
                 <span class="relative flex h-2 w-2 ml-auto"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span>
               </div>
-              <div class="font-mono text-xs text-white/60 space-y-1" id="terminal-output">
-                <div class="terminal-line"><span class="text-accent">></span> System check... <span class="text-accent">OK</span></div>
-                <div class="terminal-line"><span class="text-accent">></span> CPU Load: <span class="text-white">23%</span></div>
-                <div class="terminal-line"><span class="text-accent">></span> Memory: <span class="text-white">4.2GB / 16GB</span></div>
-                <div class="terminal-line"><span class="text-accent">></span> Uptime: <span class="text-accent2" id="live-uptime">873d 14h 22m</span></div>
-                <div class="terminal-line"><span class="text-accent">></span> Active Deployments: <span class="text-white">7</span></div>
-                <div class="terminal-line"><span class="text-accent">></span> Last commit: <span class="text-gold" id="live-time">--</span></div>
+              <div class="grid grid-cols-2 gap-3 mb-4">
+                <div class="bg-accent/5 rounded-lg p-3 border border-accent/10">
+                  <div class="text-[10px] font-mono text-white/40 mb-1">FIREWALL</div>
+                  <div class="text-sm font-mono text-accent font-bold">ACTIVE</div>
+                  <div class="text-[10px] text-white/30 mt-1">Rules: 1,247</div>
+                </div>
+                <div class="bg-accent/5 rounded-lg p-3 border border-accent/10">
+                  <div class="text-[10px] font-mono text-white/40 mb-1">IDS/IPS</div>
+                  <div class="text-sm font-mono text-accent font-bold">MONITORING</div>
+                  <div class="text-[10px] text-white/30 mt-1">Alerts: 0 critical</div>
+                </div>
+                <div class="bg-accent/5 rounded-lg p-3 border border-accent/10">
+                  <div class="text-[10px] font-mono text-white/40 mb-1">ENCRYPTION</div>
+                  <div class="text-sm font-mono text-accent2 font-bold">AES-256</div>
+                  <div class="text-[10px] text-white/30 mt-1">TLS 1.3</div>
+                </div>
+                <div class="bg-danger/5 rounded-lg p-3 border border-danger/10">
+                  <div class="text-[10px] font-mono text-white/40 mb-1">THREAT LEVEL</div>
+                  <div class="text-sm font-mono text-warning font-bold" id="threat-level">LOW</div>
+                  <div class="text-[10px] text-white/30 mt-1">Last scan: <span id="last-scan-time">--</span></div>
+                </div>
+              </div>
+              <div class="font-mono text-[10px] text-white/50 space-y-1" id="terminal-output">
+                <div class="terminal-line"><span class="text-accent">[OK]</span> IDS signature database updated</div>
+                <div class="terminal-line"><span class="text-accent">[OK]</span> WAF ruleset v4.2.1 applied</div>
+                <div class="terminal-line"><span class="text-accent">[OK]</span> Zero-day threat feed synced</div>
+                <div class="terminal-line"><span class="text-accent2">[INFO]</span> Active connections: <span id="active-connections">2,847</span></div>
+                <div class="terminal-line"><span class="text-warning">[WARN]</span> Rate limiting engaged on /api/v2</div>
+                <div class="terminal-line"><span class="text-accent">[OK]</span> Backup integrity verified</div>
+                <div class="terminal-line"><span class="text-gold">[SYS]</span> Uptime: <span id="live-uptime">873d 14h 22m</span></div>
+                <div class="terminal-line"><span class="text-gold">[TIME]</span> <span id="live-time">--</span></div>
+              </div>
+              <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/5">
+                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                <span class="text-[10px] font-mono text-accent">ALL SYSTEMS OPERATIONAL</span>
+                <span class="ml-auto text-[9px] text-white/30 font-mono">SIEM v3.7</span>
               </div>
             </div>
           </div>
@@ -609,13 +712,13 @@
         <div class="marquee-text text-outline">Node.js</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
         <div class="marquee-text">Kubernetes</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
         <div class="marquee-text text-outline">AWS</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
-        <div class="marquee-text">PostgreSQL</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text">Cyber Security</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
         <div class="marquee-text text-outline">React</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
         <div class="marquee-text">TypeScript</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
         <div class="marquee-text text-outline">Node.js</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
         <div class="marquee-text">Kubernetes</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
         <div class="marquee-text text-outline">AWS</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
-        <div class="marquee-text">PostgreSQL</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
+        <div class="marquee-text">Cyber Security</div><i data-lucide="sparkle" class="text-accent mx-4 w-6 h-6"></i>
       </div>
     </div>
   </section>
@@ -631,7 +734,7 @@
           <div class="space-y-3 font-mono text-sm">
             <div class="flex items-center gap-3 text-white/60"><i data-lucide="mail" class="w-4 h-4 text-accent"></i> Email: <span class="text-white">teukurijul@gmail.com</span></div>
             <div class="flex items-center gap-3 text-white/60"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i> Lokasi: <span class="text-white">Aceh, Indonesia</span></div>
-            <div class="flex items-center gap-3 text-white/60"><i data-lucide="cpu" class="w-4 h-4 text-accent"></i> Spesialisasi: <span class="text-white">Full-stack, Cloud, DevOps</span></div>
+            <div class="flex items-center gap-3 text-white/60"><i data-lucide="cpu" class="w-4 h-4 text-accent"></i> Spesialisasi: <span class="text-white">Full-stack, Cloud, DevOps, Cyber Security</span></div>
           </div>
         </div>
         <div class="gsap-fade-up">
@@ -733,7 +836,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="glass-panel tilt-card p-0 group hover-target gsap-fade-up flex flex-col project-card overflow-hidden">
           <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1932&auto=format&fit=crop" alt="School Management System" class="w-full h-full object-cover project-img opacity-80 group-hover:opacity-100">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1932&auto=format&fit=crop" alt="School Management System" class="w-full h-full object-cover project-img opacity-80 group-hover:opacity-100" loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
             <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-accent/20 backdrop-blur-sm rounded-full border border-accent/30 z-20">
               <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent"></span></span>
@@ -745,23 +848,16 @@
             <h3 class="font-display text-xl font-bold mb-2">Sistem Manajemen Sekolah Aceh</h3>
             <p class="text-white/50 font-light text-sm mb-4 flex-1">Platform komprehensif untuk manajemen sekolah di Aceh, mencakup absensi, nilai, dan komunikasi orang tua.</p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">React</span>
-              <span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">TypeScript</span>
-              <span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">Express</span>
-              <span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">PostgreSQL</span>
+              <span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">React</span><span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">TypeScript</span><span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">Express</span><span class="px-2 py-1 rounded-md bg-accent/10 border border-accent/20 text-xs font-mono text-accent">PostgreSQL</span>
             </div>
-            <div class="w-full h-1 bg-white/5 rounded-full mb-3 overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-accent to-accent2 rounded-full animate-drawChart" style="width:95%"></div>
-            </div>
-            <div class="flex justify-between text-[10px] font-mono text-white/30 mb-3">
-              <span>Progress: 95%</span><span>Q4 2025</span>
-            </div>
+            <div class="w-full h-1 bg-white/5 rounded-full mb-3 overflow-hidden"><div class="h-full bg-gradient-to-r from-accent to-accent2 rounded-full animate-drawChart" style="width:95%"></div></div>
+            <div class="flex justify-between text-[10px] font-mono text-white/30 mb-3"><span>Progress: 95%</span><span>Q4 2025</span></div>
             <a href="#" class="text-accent text-xs font-mono hover:underline mt-auto flex items-center gap-1">Lihat Proyek <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
           </div>
         </div>
         <div class="glass-panel tilt-card p-0 group hover-target gsap-fade-up flex flex-col project-card overflow-hidden">
           <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1738&auto=format&fit=crop" alt="Tourism App" class="w-full h-full object-cover project-img opacity-80 group-hover:opacity-100">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1738&auto=format&fit=crop" alt="Tourism App" class="w-full h-full object-cover project-img opacity-80 group-hover:opacity-100" loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
             <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-accent2/20 backdrop-blur-sm rounded-full border border-accent2/30 z-20">
               <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent2 opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent2"></span></span>
@@ -773,23 +869,16 @@
             <h3 class="font-display text-xl font-bold mb-2">Aplikasi Pariwisata Aceh</h3>
             <p class="text-white/50 font-light text-sm mb-4 flex-1">Aplikasi mobile dan web untuk mempromosikan destinasi wisata di Aceh kepada wisatawan domestik dan internasional.</p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">React Native</span>
-              <span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">Firebase</span>
-              <span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">Maps API</span>
-              <span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">Node.js</span>
+              <span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">React Native</span><span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">Firebase</span><span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">Maps API</span><span class="px-2 py-1 rounded-md bg-accent2/10 border border-accent2/20 text-xs font-mono text-accent2">Node.js</span>
             </div>
-            <div class="w-full h-1 bg-white/5 rounded-full mb-3 overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-accent2 to-accent rounded-full animate-drawChart" style="width:88%"></div>
-            </div>
-            <div class="flex justify-between text-[10px] font-mono text-white/30 mb-3">
-              <span>Progress: 88%</span><span>Q1 2026</span>
-            </div>
+            <div class="w-full h-1 bg-white/5 rounded-full mb-3 overflow-hidden"><div class="h-full bg-gradient-to-r from-accent2 to-accent rounded-full animate-drawChart" style="width:88%"></div></div>
+            <div class="flex justify-between text-[10px] font-mono text-white/30 mb-3"><span>Progress: 88%</span><span>Q1 2026</span></div>
             <a href="#" class="text-accent2 text-xs font-mono hover:underline mt-auto flex items-center gap-1">Lihat Proyek <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
           </div>
         </div>
         <div class="glass-panel tilt-card p-0 group hover-target gsap-fade-up flex flex-col project-card overflow-hidden">
           <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1740&auto=format&fit=crop" alt="Disaster Monitoring" class="w-full h-full object-cover project-img opacity-80 group-hover:opacity-100">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1740&auto=format&fit=crop" alt="Disaster Monitoring" class="w-full h-full object-cover project-img opacity-80 group-hover:opacity-100" loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
             <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-gold/20 backdrop-blur-sm rounded-full border border-gold/30 z-20">
               <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-gold"></span></span>
@@ -801,20 +890,88 @@
             <h3 class="font-display text-xl font-bold mb-2">Sistem Monitoring Bencana Alam</h3>
             <p class="text-white/50 font-light text-sm mb-4 flex-1">Sistem pemantauan bencana alam untuk wilayah rawan di Aceh dan Sumatera Utara.</p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">Vue.js</span>
-              <span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">Socket.IO</span>
-              <span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">Python</span>
-              <span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">TensorFlow</span>
+              <span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">Vue.js</span><span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">Socket.IO</span><span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">Python</span><span class="px-2 py-1 rounded-md bg-gold/10 border border-gold/20 text-xs font-mono text-gold">TensorFlow</span>
             </div>
-            <div class="w-full h-1 bg-white/5 rounded-full mb-3 overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-gold to-accent rounded-full animate-drawChart" style="width:72%"></div>
-            </div>
-            <div class="flex justify-between text-[10px] font-mono text-white/30 mb-3">
-              <span>Progress: 72%</span><span>Q2 2026</span>
-            </div>
+            <div class="w-full h-1 bg-white/5 rounded-full mb-3 overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-accent rounded-full animate-drawChart" style="width:72%"></div></div>
+            <div class="flex justify-between text-[10px] font-mono text-white/30 mb-3"><span>Progress: 72%</span><span>Q2 2026</span></div>
             <a href="#" class="text-gold text-xs font-mono hover:underline mt-auto flex items-center gap-1">Lihat Proyek <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+  <section id="cyber-security" class="py-32 relative z-10 bg-panel/30 backdrop-blur-md overflow-hidden">
+    <canvas id="network-canvas"></canvas>
+    <div class="container mx-auto px-6 lg:px-12 relative z-10">
+      <div class="mb-16 gsap-fade-up">
+        <div class="text-xs font-mono text-danger mb-4 flex items-center gap-2"><i data-lucide="shield-alert" class="w-4 h-4"></i> CYBER_SECURITY_EXPERTISE</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">Cyber Security</h2>
+        <p class="font-sans text-white/50 max-w-xl text-lg font-light">Keahlian dalam mengamankan infrastruktur digital dari ancaman modern dengan pendekatan defense-in-depth.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="glass-panel p-6 gsap-fade-up">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-danger/10 flex items-center justify-center"><i data-lucide="shield-check" class="w-5 h-5 text-danger"></i></div>
+            <h3 class="font-display font-bold text-white">Penetration Testing</h3>
+          </div>
+          <p class="text-white/50 text-sm font-light">Pengujian keamanan aplikasi web, API, dan infrastruktur menggunakan metodologi OWASP & PTES.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-2 py-1 rounded text-[10px] font-mono bg-danger/10 text-danger border border-danger/20">Burp Suite</span>
+            <span class="px-2 py-1 rounded text-[10px] font-mono bg-danger/10 text-danger border border-danger/20">Metasploit</span>
+            <span class="px-2 py-1 rounded text-[10px] font-mono bg-danger/10 text-danger border border-danger/20">Nmap</span>
+          </div>
+        </div>
+        <div class="glass-panel p-6 gsap-fade-up">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><i data-lucide="fingerprint" class="w-5 h-5 text-accent"></i></div>
+            <h3 class="font-display font-bold text-white">Security Architecture</h3>
+          </div>
+          <p class="text-white/50 text-sm font-light">Desain arsitektur keamanan berlapis dengan zero-trust model, network segmentation, dan least privilege.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-2 py-1 rounded text-[10px] font-mono bg-accent/10 text-accent border border-accent/20">Zero Trust</span>
+            <span class="px-2 py-1 rounded text-[10px] font-mono bg-accent/10 text-accent border border-accent/20">IAM</span>
+            <span class="px-2 py-1 rounded text-[10px] font-mono bg-accent/10 text-accent border border-accent/20">WAF</span>
+          </div>
+        </div>
+        <div class="glass-panel p-6 gsap-fade-up">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-accent2/10 flex items-center justify-center"><i data-lucide="scan-eye" class="w-5 h-5 text-accent2"></i></div>
+            <h3 class="font-display font-bold text-white">SOC / Monitoring</h3>
+          </div>
+          <p class="text-white/50 text-sm font-light">Pemantauan keamanan 24/7 dengan SIEM, threat hunting, dan incident response terotomatisasi.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-2 py-1 rounded text-[10px] font-mono bg-accent2/10 text-accent2 border border-accent2/20">Splunk</span>
+            <span class="px-2 py-1 rounded text-[10px] font-mono bg-accent2/10 text-accent2 border border-accent2/20">ELK Stack</span>
+            <span class="px-2 py-1 rounded text-[10px] font-mono bg-accent2/10 text-accent2 border border-accent2/20">Wazuh</span>
+          </div>
+        </div>
+      </div>
+      <div class="glass-panel p-6 gsap-fade-up">
+        <div class="flex items-center gap-2 mb-4">
+          <i data-lucide="activity" class="w-4 h-4 text-accent"></i>
+          <span class="text-xs font-mono text-accent">REAL-TIME_THREAT_MONITOR</span>
+          <span class="relative flex h-2 w-2 ml-auto"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-danger opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-danger"></span></span>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="text-center"><div class="text-2xl font-display font-bold text-accent" id="threats-blocked">12,847</div><div class="text-[10px] font-mono text-white/40">THREATS BLOCKED</div></div>
+          <div class="text-center"><div class="text-2xl font-display font-bold text-danger" id="active-threats">3</div><div class="text-[10px] font-mono text-white/40">ACTIVE THREATS</div></div>
+          <div class="text-center"><div class="text-2xl font-display font-bold text-accent2">99.97%</div><div class="text-[10px] font-mono text-white/40">DETECTION RATE</div></div>
+          <div class="text-center"><div class="text-2xl font-display font-bold text-warning">2.4s</div><div class="text-[10px] font-mono text-white/40">AVG RESPONSE</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="github-repos" class="py-20 relative z-10">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div class="text-center mb-10 gsap-fade-up">
+        <div class="text-xs font-mono text-accent mb-4 flex items-center justify-center gap-2"><i data-lucide="github" class="w-4 h-4"></i> OPEN_SOURCE_CONTRIBUTIONS</div>
+        <h2 class="font-display text-3xl font-bold tracking-tight mb-2">Repositori GitHub Terbaru</h2>
+        <p class="text-white/40 font-light max-w-lg mx-auto">Kontribusi terbaru pada proyek open-source dan kode publik.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="repo-container">
+        <div class="glass-panel p-5 repo-card"><div class="flex items-center gap-2 mb-3"><i data-lucide="book-open" class="w-4 h-4 text-accent"></i><span class="font-mono text-sm text-white truncate">nexus-cloud-platform</span></div><p class="text-xs text-white/50 mb-3">Infrastruktur cloud-native dengan auto-scaling dan disaster recovery.</p><div class="flex items-center gap-3 text-xs text-white/40"><span><i data-lucide="star" class="w-3 h-3 inline"></i> 24</span><span><i data-lucide="git-fork" class="w-3 h-3 inline"></i> 8</span><span class="ml-auto text-accent">TypeScript</span></div></div>
+        <div class="glass-panel p-5 repo-card"><div class="flex items-center gap-2 mb-3"><i data-lucide="book-open" class="w-4 h-4 text-accent2"></i><span class="font-mono text-sm text-white truncate">sentinel-security-suite</span></div><p class="text-xs text-white/50 mb-3">Platform keamanan siber dengan real-time threat detection.</p><div class="flex items-center gap-3 text-xs text-white/40"><span><i data-lucide="star" class="w-3 h-3 inline"></i> 18</span><span><i data-lucide="git-fork" class="w-3 h-3 inline"></i> 5</span><span class="ml-auto text-accent2">Rust</span></div></div>
+        <div class="glass-panel p-5 repo-card"><div class="flex items-center gap-2 mb-3"><i data-lucide="book-open" class="w-4 h-4 text-gold"></i><span class="font-mono text-sm text-white truncate">quantum-ledger-core</span></div><p class="text-xs text-white/50 mb-3">Sistem ledger terdistribusi dengan throughput 10.000 TPS.</p><div class="flex items-center gap-3 text-xs text-white/40"><span><i data-lucide="star" class="w-3 h-3 inline"></i> 12</span><span><i data-lucide="git-fork" class="w-3 h-3 inline"></i> 3</span><span class="ml-auto text-gold">TypeScript</span></div></div>
       </div>
     </div>
   </section>
@@ -827,34 +984,29 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gsap-fade-up">
         <div class="glass-panel p-6">
-          <h3 class="font-display text-lg font-bold text-accent mb-4 flex items-center gap-2"><i data-lucide="braces" class="w-5 h-5"></i> Bahasa Pemrograman</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">JavaScript</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">TypeScript</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">Python</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">Java</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">PHP</span>
+          <h3 class="font-display text-lg font-bold text-accent mb-4 flex items-center gap-2"><i data-lucide="braces" class="w-5 h-5"></i> Bahasa</h3>
+          <div class="space-y-3">
+            <div><div class="flex justify-between text-xs font-mono mb-1"><span>JavaScript</span><span class="text-accent">95%</span></div><div class="w-full h-1 bg-white/5 rounded-full"><div class="h-full bg-accent rounded-full skill-bar" style="width:0%" data-width="95%"></div></div></div>
+            <div><div class="flex justify-between text-xs font-mono mb-1"><span>TypeScript</span><span class="text-accent2">90%</span></div><div class="w-full h-1 bg-white/5 rounded-full"><div class="h-full bg-accent2 rounded-full skill-bar" style="width:0%" data-width="90%"></div></div></div>
+            <div><div class="flex justify-between text-xs font-mono mb-1"><span>Python</span><span class="text-gold">80%</span></div><div class="w-full h-1 bg-white/5 rounded-full"><div class="h-full bg-gold rounded-full skill-bar" style="width:0%" data-width="80%"></div></div></div>
           </div>
         </div>
         <div class="glass-panel p-6">
-          <h3 class="font-display text-lg font-bold text-accent2 mb-4 flex items-center gap-2"><i data-lucide="layers" class="w-5 h-5"></i> Framework & Library</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">React</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">Node.js</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">Express</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">Vue.js</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent2/30 hover:text-accent2 transition-all">Laravel</span>
+          <h3 class="font-display text-lg font-bold text-accent2 mb-4 flex items-center gap-2"><i data-lucide="layers" class="w-5 h-5"></i> Framework</h3>
+          <div class="space-y-3">
+            <div><div class="flex justify-between text-xs font-mono mb-1"><span>React</span><span class="text-accent">92%</span></div><div class="w-full h-1 bg-white/5 rounded-full"><div class="h-full bg-accent rounded-full skill-bar" style="width:0%" data-width="92%"></div></div></div>
+            <div><div class="flex justify-between text-xs font-mono mb-1"><span>Node.js</span><span class="text-accent2">88%</span></div><div class="w-full h-1 bg-white/5 rounded-full"><div class="h-full bg-accent2 rounded-full skill-bar" style="width:0%" data-width="88%"></div></div></div>
+            <div><div class="flex justify-between text-xs font-mono mb-1"><span>Vue.js</span><span class="text-gold">75%</span></div><div class="w-full h-1 bg-white/5 rounded-full"><div class="h-full bg-gold rounded-full skill-bar" style="width:0%" data-width="75%"></div></div></div>
           </div>
         </div>
         <div class="glass-panel p-6">
-          <h3 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2"><i data-lucide="wrench" class="w-5 h-5"></i> Tools & Platform</h3>
+          <h3 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2"><i data-lucide="wrench" class="w-5 h-5"></i> Tools</h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Git</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Docker</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Kubernetes</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">AWS</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Linux</span>
-            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-white/30 hover:text-white transition-all">Webpack</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">Git</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">Docker</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">Kubernetes</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">AWS</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-white/80 hover:border-accent/30 hover:text-accent transition-all">Linux</span>
           </div>
         </div>
         <div class="glass-panel p-6">
@@ -871,18 +1023,9 @@
         <div class="text-xs font-mono text-gold mb-6 flex items-center gap-2"><i data-lucide="award" class="w-4 h-4"></i> CERTIFICATIONS</div>
         <h3 class="font-display text-2xl font-bold mb-8">Sertifikasi</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="glass-panel p-6 flex items-start gap-4 group hover-target">
-            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 text-accent"><i data-lucide="cloud" class="w-6 h-6"></i></div>
-            <div><div class="font-display font-bold text-white text-sm">AWS Certified Developer - Associate</div><div class="text-xs text-white/40 mt-1">Amazon Web Services • 2023</div></div>
-          </div>
-          <div class="glass-panel p-6 flex items-start gap-4 group hover-target">
-            <div class="w-12 h-12 rounded-lg bg-accent2/10 flex items-center justify-center flex-shrink-0 text-accent2"><i data-lucide="cloud-cog" class="w-6 h-6"></i></div>
-            <div><div class="font-display font-bold text-white text-sm">Google Professional Cloud Developer</div><div class="text-xs text-white/40 mt-1">Google Cloud • 2022</div></div>
-          </div>
-          <div class="glass-panel p-6 flex items-start gap-4 group hover-target">
-            <div class="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0 text-gold"><i data-lucide="server" class="w-6 h-6"></i></div>
-            <div><div class="font-display font-bold text-white text-sm">Microsoft Certified: Azure Developer Associate</div><div class="text-xs text-white/40 mt-1">Microsoft • 2021</div></div>
-          </div>
+          <div class="glass-panel p-6 flex items-start gap-4 group hover-target"><div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 text-accent"><i data-lucide="cloud" class="w-6 h-6"></i></div><div><div class="font-display font-bold text-white text-sm">AWS Certified Developer - Associate</div><div class="text-xs text-white/40 mt-1">Amazon Web Services • 2023</div></div></div>
+          <div class="glass-panel p-6 flex items-start gap-4 group hover-target"><div class="w-12 h-12 rounded-lg bg-accent2/10 flex items-center justify-center flex-shrink-0 text-accent2"><i data-lucide="cloud-cog" class="w-6 h-6"></i></div><div><div class="font-display font-bold text-white text-sm">Google Professional Cloud Developer</div><div class="text-xs text-white/40 mt-1">Google Cloud • 2022</div></div></div>
+          <div class="glass-panel p-6 flex items-start gap-4 group hover-target"><div class="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0 text-gold"><i data-lucide="server" class="w-6 h-6"></i></div><div><div class="font-display font-bold text-white text-sm">Microsoft Certified: Azure Developer Associate</div><div class="text-xs text-white/40 mt-1">Microsoft • 2021</div></div></div>
         </div>
       </div>
     </div>
@@ -907,18 +1050,9 @@
         </div>
         <div class="glass-panel p-8 gsap-fade-up shadow-premium">
           <form id="contact-form" class="space-y-6" action="https://formspree.io/f/meoaejvq" method="POST">
-            <div>
-              <label class="block text-xs font-mono text-white/50 mb-2 flex items-center gap-2"><i data-lucide="user" class="w-3.5 h-3.5"></i> NAME</label>
-              <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-sans focus:border-accent/50 focus:outline-none transition-colors placeholder:text-white/20" placeholder="Nama lengkap">
-            </div>
-            <div>
-              <label class="block text-xs font-mono text-white/50 mb-2 flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5"></i> EMAIL</label>
-              <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-sans focus:border-accent/50 focus:outline-none transition-colors placeholder:text-white/20" placeholder="Alamat email">
-            </div>
-            <div>
-              <label class="block text-xs font-mono text-white/50 mb-2 flex items-center gap-2"><i data-lucide="message-square" class="w-3.5 h-3.5"></i> MESSAGE</label>
-              <textarea rows="4" name="message" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-sans focus:border-accent/50 focus:outline-none transition-colors placeholder:text-white/20 resize-none" placeholder="Pesan Anda..."></textarea>
-            </div>
+            <div><label class="block text-xs font-mono text-white/50 mb-2 flex items-center gap-2"><i data-lucide="user" class="w-3.5 h-3.5"></i> NAME</label><input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-sans focus:border-accent/50 focus:outline-none transition-colors placeholder:text-white/20" placeholder="Nama lengkap"></div>
+            <div><label class="block text-xs font-mono text-white/50 mb-2 flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5"></i> EMAIL</label><input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-sans focus:border-accent/50 focus:outline-none transition-colors placeholder:text-white/20" placeholder="Alamat email"></div>
+            <div><label class="block text-xs font-mono text-white/50 mb-2 flex items-center gap-2"><i data-lucide="message-square" class="w-3.5 h-3.5"></i> MESSAGE</label><textarea rows="4" name="message" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-sans focus:border-accent/50 focus:outline-none transition-colors placeholder:text-white/20 resize-none" placeholder="Pesan Anda..."></textarea></div>
             <button type="submit" class="magnetic-btn w-full hover-target magnetic" data-strength="20"><i data-lucide="send" class="w-4 h-4"></i> Kirim Email</button>
             <p class="text-xs font-mono text-white/30 text-center mt-2">* Form terintegrasi dengan Formspree untuk pengiriman aman.</p>
           </form>
@@ -929,7 +1063,7 @@
   <footer class="py-12 border-t border-white/5 relative z-10">
     <div class="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="font-display font-bold text-xl tracking-tighter text-white">TR<span class="text-accent">.</span></div>
-      <div class="text-xs font-mono text-white/40 text-center">© 2026 Teuku Rijul. Hak Cipta Dilindungi.<br><span class="text-accent/30">Cyber Architecture</span></div>
+      <div class="text-xs font-mono text-white/40 text-center">© 2026 Teuku Rijul. Hak Cipta Dilindungi.<br><span class="text-accent/30">Cyber Architecture // Engineered with Precision</span></div>
       <div class="flex gap-6">
         <a href="#" class="text-white/40 hover:text-accent transition-colors text-sm font-mono flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
         <a href="#" class="text-white/40 hover:text-accent2 transition-colors text-sm font-mono flex items-center gap-1"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>
@@ -939,11 +1073,8 @@
   </footer>
   <script>
     (function() {
-      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true });
-
-      function raf(time) { lenis.raf(time);
-        requestAnimationFrame(raf); }
+      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
       requestAnimationFrame(raf);
       const counter = document.getElementById('counter');
       const loaderBar = document.getElementById('loader-bar');
@@ -951,290 +1082,127 @@
       let progress = 0;
       const interval = setInterval(() => {
         progress += Math.floor(Math.random() * 8) + 1;
-        if (progress >= 100) { progress = 100;
-          clearInterval(interval);
-          setTimeout(() => {
+        if (progress >= 100) { progress = 100; clearInterval(interval); setTimeout(() => {
             gsap.to('.curtain-left', { x: '-100%', duration: 0.8, ease: 'power3.inOut' });
-            gsap.to('.curtain-right', { x: '100%', duration: 0.8, ease: 'power3.inOut', onComplete: () => {
-                gsap.to(preloader, { opacity: 0, duration: 0.3, onComplete: () => { preloader.style
-                    .display = 'none'; } });
-              } });
+            gsap.to('.curtain-right', { x: '100%', duration: 0.8, ease: 'power3.inOut', onComplete: () => { gsap.to(preloader, { opacity: 0, duration: 0.3, onComplete: () => { preloader.style.display = 'none'; } }); } });
           }, 300); }
         counter.textContent = progress;
         loaderBar.style.width = progress + '%';
       }, 60);
       const cursorDot = document.querySelector('.cursor-dot');
       const cursorRing = document.querySelector('.cursor-ring');
-      let mouseX = 0,
-        mouseY = 0,
-        dotX = 0,
-        dotY = 0,
-        ringX = 0,
-        ringY = 0;
-      document.addEventListener('mousemove', (e) => { mouseX = e.clientX;
-        mouseY = e.clientY; });
-
+      let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0, ringX = 0, ringY = 0;
+      document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
       function updateCursor() {
-        dotX += (mouseX - dotX) * 0.5;
-        dotY += (mouseY - dotY) * 0.5;
-        ringX += (mouseX - ringX) * 0.15;
-        ringY += (mouseY - ringY) * 0.15;
-        if (cursorDot) { cursorDot.style.left = dotX + 'px';
-          cursorDot.style.top = dotY + 'px'; }
-        if (cursorRing) { cursorRing.style.left = ringX + 'px';
-          cursorRing.style.top = ringY + 'px'; }
+        dotX += (mouseX - dotX) * 0.5; dotY += (mouseY - dotY) * 0.5;
+        ringX += (mouseX - ringX) * 0.15; ringY += (mouseY - ringY) * 0.15;
+        if (cursorDot) { cursorDot.style.left = dotX + 'px'; cursorDot.style.top = dotY + 'px'; }
+        if (cursorRing) { cursorRing.style.left = ringX + 'px'; cursorRing.style.top = ringY + 'px'; }
         requestAnimationFrame(updateCursor);
       }
       updateCursor();
-      document.querySelectorAll('.hover-target').forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('hover-active'));
-        el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active'));
-      });
+      document.querySelectorAll('.hover-target').forEach(el => { el.addEventListener('mouseenter', () => document.body.classList.add('hover-active')); el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active')); });
       document.querySelectorAll('.magnetic').forEach(btn => {
         const strength = parseFloat(btn.getAttribute('data-strength')) || 30;
-        btn.addEventListener('mousemove', (e) => {
-          const rect = btn.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-          gsap.to(btn, { x: x / strength * 10, y: y / strength * 10, duration: 0.4,
-            ease: 'power2.out' });
-        });
-        btn.addEventListener('mouseleave', () => { gsap.to(btn, { x: 0, y: 0, duration: 0.6,
-            ease: 'elastic.out(1, 0.5)' }); });
+        btn.addEventListener('mousemove', (e) => { const rect = btn.getBoundingClientRect(); const x = e.clientX - rect.left - rect.width / 2; const y = e.clientY - rect.top - rect.height / 2; gsap.to(btn, { x: x / strength * 10, y: y / strength * 10, duration: 0.4, ease: 'power2.out' }); });
+        btn.addEventListener('mouseleave', () => { gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.5)' }); });
       });
       document.querySelectorAll('.tilt-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          card.style.setProperty('--mouse-x', x + 'px');
-          card.style.setProperty('--mouse-y', y + 'px');
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = (y - centerY) / centerY * -5;
-          const rotateY = (x - centerX) / centerX * 5;
-          gsap.to(card, { rotateX: rotateX, rotateY: rotateY, duration: 0.4, ease: 'power2.out' });
-        });
-        card.addEventListener('mouseleave', () => { gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.6,
-            ease: 'elastic.out(1, 0.5)' }); });
+        card.addEventListener('mousemove', (e) => { const rect = card.getBoundingClientRect(); const x = e.clientX - rect.left; const y = e.clientY - rect.top; card.style.setProperty('--mouse-x', x + 'px'); card.style.setProperty('--mouse-y', y + 'px'); const centerX = rect.width / 2; const centerY = rect.height / 2; const rotateX = (y - centerY) / centerY * -5; const rotateY = (x - centerX) / centerX * 5; gsap.to(card, { rotateX: rotateX, rotateY: rotateY, duration: 0.4, ease: 'power2.out' }); });
+        card.addEventListener('mouseleave', () => { gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.6, ease: 'elastic.out(1, 0.5)' }); });
       });
       gsap.registerPlugin(ScrollTrigger);
-      document.querySelectorAll('.gsap-hero-up').forEach((el, i) => { gsap.from(el, { y: 80, opacity: 0,
-          duration: 1, delay: i * 0.15, ease: 'power3.out' }); });
-      document.querySelectorAll('.gsap-fade-up').forEach(el => { gsap.from(el, { scrollTrigger: { trigger: el,
-            start: 'top 85%', toggleActions: 'play none none none' }, y: 60, opacity: 0, duration: 1,
-          ease: 'power3.out' }); });
+      document.querySelectorAll('.gsap-hero-up').forEach((el, i) => { gsap.from(el, { y: 80, opacity: 0, duration: 1, delay: i * 0.15, ease: 'power3.out' }); });
+      document.querySelectorAll('.gsap-fade-up').forEach(el => { gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }, y: 60, opacity: 0, duration: 1, ease: 'power3.out' }); });
       const watermark = document.getElementById('parallax-watermark');
-      if (watermark) { window.addEventListener('mousemove', (e) => { const x = (e.clientX / window.innerWidth - 0.5) *
-          20;
-          const y = (e.clientY / window.innerHeight - 0.5) * 20;
-          gsap.to(watermark, { x: x, y: y, duration: 1, ease: 'power2.out' }); }); }
+      if (watermark) { window.addEventListener('mousemove', (e) => { const x = (e.clientX / window.innerWidth - 0.5) * 20; const y = (e.clientY / window.innerHeight - 0.5) * 20; gsap.to(watermark, { x: x, y: y, duration: 1, ease: 'power2.out' }); }); }
       const canvas = document.getElementById('cyber-canvas');
       if (canvas) {
-        const ctx = canvas.getContext('2d');
-        canvas.width = canvas.parentElement.offsetWidth;
-        canvas.height = canvas.parentElement.offsetHeight;
-        const particles = [];
-        const particleCount = 60;
-        class Particle {
-          constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.radius = Math.random() * 2 + 1;
-          }
-          update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-          }
-          draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 255, 163, 0.6)';
-            ctx.fill();
-          }
-        }
+        const ctx = canvas.getContext('2d'); canvas.width = canvas.parentElement.offsetWidth; canvas.height = canvas.parentElement.offsetHeight;
+        const particles = []; const particleCount = 60;
+        class Particle { constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5; this.radius = Math.random() * 2 + 1; } update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > canvas.width) this.vx *= -1; if (this.y < 0 || this.y > canvas.height) this.vy *= -1; } draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(0, 255, 163, 0.6)'; ctx.fill(); } }
         for (let i = 0; i < particleCount; i++) particles.push(new Particle());
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          particles.forEach(p => { p.update();
-            p.draw(); });
-          for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-              const dx = particles[i].x - particles[j].x;
-              const dy = particles[i].y - particles[j].y;
-              const dist = Math.sqrt(dx * dx + dy * dy);
-              if (dist < 120) {
-                ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.strokeStyle = `rgba(0, 255, 163, ${0.15 * (1 - dist / 120)})`;
-                ctx.lineWidth = 0.5;
-                ctx.stroke();
-              }
-            }
-          }
-          requestAnimationFrame(animate);
-        }
-        animate();
-        window.addEventListener('resize', () => { canvas.width = canvas.parentElement.offsetWidth;
-          canvas.height = canvas.parentElement.offsetHeight; });
+        function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); for (let i = 0; i < particles.length; i++) { for (let j = i + 1; j < particles.length; j++) { const dx = particles[i].x - particles[j].x; const dy = particles[i].y - particles[j].y; const dist = Math.sqrt(dx * dx + dy * dy); if (dist < 120) { ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.strokeStyle = `rgba(0, 255, 163, ${0.15 * (1 - dist / 120)})`; ctx.lineWidth = 0.5; ctx.stroke(); } } } requestAnimationFrame(animate); }
+        animate(); window.addEventListener('resize', () => { canvas.width = canvas.parentElement.offsetWidth; canvas.height = canvas.parentElement.offsetHeight; });
+      }
+      // Matrix Rain Canvas
+      const matrixCanvas = document.getElementById('matrix-canvas');
+      if (matrixCanvas) {
+        const mctx = matrixCanvas.getContext('2d'); matrixCanvas.width = matrixCanvas.parentElement.offsetWidth; matrixCanvas.height = matrixCanvas.parentElement.offsetHeight;
+        const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
+        const fontSize = 14; const columns = Math.floor(matrixCanvas.width / fontSize);
+        const drops = Array(columns).fill(1);
+        function drawMatrix() { mctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; mctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height); mctx.fillStyle = '#00FFA3'; mctx.font = fontSize + 'px monospace'; for (let i = 0; i < drops.length; i++) { const text = chars[Math.floor(Math.random() * chars.length)]; mctx.fillText(text, i * fontSize, drops[i] * fontSize); if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) drops[i] = 0; drops[i]++; } requestAnimationFrame(drawMatrix); }
+        drawMatrix(); window.addEventListener('resize', () => { matrixCanvas.width = matrixCanvas.parentElement.offsetWidth; matrixCanvas.height = matrixCanvas.parentElement.offsetHeight; });
       }
       // Radar Canvas
       const radarCanvas = document.getElementById('radar-canvas');
       if (radarCanvas) {
-        const rctx = radarCanvas.getContext('2d');
-        radarCanvas.width = radarCanvas.parentElement.offsetWidth;
-        radarCanvas.height = radarCanvas.parentElement.offsetHeight;
-        let radarAngle = 0;
-
-        function drawRadar() {
-          rctx.clearRect(0, 0, radarCanvas.width, radarCanvas.height);
-          const cx = radarCanvas.width / 2;
-          const cy = radarCanvas.height / 2;
-          const maxR = Math.min(cx, cy) - 20;
-          rctx.strokeStyle = 'rgba(0, 255, 163, 0.2)';
-          rctx.lineWidth = 0.5;
-          for (let r = maxR / 4; r <= maxR; r += maxR / 4) {
-            rctx.beginPath();
-            rctx.arc(cx, cy, r, 0, Math.PI * 2);
-            rctx.stroke();
-          }
-          rctx.beginPath();
-          rctx.moveTo(cx, cy - maxR);
-          rctx.lineTo(cx, cy + maxR);
-          rctx.moveTo(cx - maxR, cy);
-          rctx.lineTo(cx + maxR, cy);
-          rctx.strokeStyle = 'rgba(0, 255, 163, 0.15)';
-          rctx.stroke();
-          rctx.beginPath();
-          rctx.moveTo(cx, cy);
-          rctx.arc(cx, cy, maxR, radarAngle, radarAngle + 0.8);
-          rctx.closePath();
-          const gradient = rctx.createRadialGradient(cx, cy, 0, cx, cy, maxR);
-          gradient.addColorStop(0, 'rgba(0, 255, 163, 0.3)');
-          gradient.addColorStop(1, 'rgba(0, 255, 163, 0)');
-          rctx.fillStyle = gradient;
-          rctx.fill();
-          for (let i = 0; i < 15; i++) {
-            const angle = Math.random() * Math.PI * 2;
-            const dist = Math.random() * maxR * 0.8;
-            const px = cx + Math.cos(angle) * dist;
-            const py = cy + Math.sin(angle) * dist;
-            rctx.beginPath();
-            rctx.arc(px, py, 2, 0, Math.PI * 2);
-            rctx.fillStyle = 'rgba(0, 255, 163, 0.8)';
-            rctx.fill();
-          }
-          radarAngle += 0.015;
-          requestAnimationFrame(drawRadar);
-        }
+        const rctx = radarCanvas.getContext('2d'); radarCanvas.width = radarCanvas.parentElement.offsetWidth; radarCanvas.height = radarCanvas.parentElement.offsetHeight; let radarAngle = 0;
+        function drawRadar() { rctx.clearRect(0, 0, radarCanvas.width, radarCanvas.height); const cx = radarCanvas.width / 2; const cy = radarCanvas.height / 2; const maxR = Math.min(cx, cy) - 20; rctx.strokeStyle = 'rgba(0, 255, 163, 0.2)'; rctx.lineWidth = 0.5; for (let r = maxR / 4; r <= maxR; r += maxR / 4) { rctx.beginPath(); rctx.arc(cx, cy, r, 0, Math.PI * 2); rctx.stroke(); } rctx.beginPath(); rctx.moveTo(cx, cy - maxR); rctx.lineTo(cx, cy + maxR); rctx.moveTo(cx - maxR, cy); rctx.lineTo(cx + maxR, cy); rctx.strokeStyle = 'rgba(0, 255, 163, 0.15)'; rctx.stroke(); rctx.beginPath(); rctx.moveTo(cx, cy); rctx.arc(cx, cy, maxR, radarAngle, radarAngle + 0.8); rctx.closePath(); const gradient = rctx.createRadialGradient(cx, cy, 0, cx, cy, maxR); gradient.addColorStop(0, 'rgba(0, 255, 163, 0.3)'); gradient.addColorStop(1, 'rgba(0, 255, 163, 0)'); rctx.fillStyle = gradient; rctx.fill(); for (let i = 0; i < 15; i++) { const angle = Math.random() * Math.PI * 2; const dist = Math.random() * maxR * 0.8; const px = cx + Math.cos(angle) * dist; const py = cy + Math.sin(angle) * dist; rctx.beginPath(); rctx.arc(px, py, 2, 0, Math.PI * 2); rctx.fillStyle = 'rgba(0, 255, 163, 0.8)'; rctx.fill(); } radarAngle += 0.015; requestAnimationFrame(drawRadar); }
         drawRadar();
       }
-      // Counter Animation
-      const counterElements = document.querySelectorAll('.counter-animate');
-      const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const el = entry.target;
-            const target = parseInt(el.getAttribute('data-target'));
-            const duration = 2000;
-            const step = (target / duration) * 20;
-            let current = 0;
-            const timer = setInterval(() => {
-              current += step;
-              if (current >= target) { el.textContent = target;
-                clearInterval(timer); } else { el.textContent = Math.floor(current); }
-            }, 20);
-            counterObserver.unobserve(el);
-          }
-        });
-      }, { threshold: 0.5 });
-      counterElements.forEach(el => counterObserver.observe(el));
-      // Scramble Text Effect
-      document.querySelectorAll('.scramble').forEach(el => {
-        const originalText = el.getAttribute('data-scramble') || el.textContent;
-        const chars = '!<>-_\\/[]{}—=+*^?#________';
-        let interval;
-
-        function scramble() {
-          let iterations = 0;
-          clearInterval(interval);
-          interval = setInterval(() => {
-            el.textContent = originalText.split('').map((char, index) => {
-              if (index < iterations) return originalText[index];
-              return chars[Math.floor(Math.random() * chars.length)];
-            }).join('');
-            if (iterations >= originalText.length) clearInterval(interval);
-            iterations += 1 / 3;
-          }, 50);
-        }
-        const observer = new IntersectionObserver((entries) => {
-          if (entries[0].isIntersecting) { scramble();
-            observer.unobserve(el); }
-        }, { threshold: 0.6 });
-        observer.observe(el);
-        el.addEventListener('mouseenter', scramble);
-      });
-      // Live Clock
-      function updateLiveTime() {
-        const now = new Date();
-        document.getElementById('live-time').textContent = now.toLocaleTimeString('id-ID', { hour: '2-digit',
-          minute: '2-digit', second: '2-digit' }) + ' WIB';
+      // Network Canvas
+      const networkCanvas = document.getElementById('network-canvas');
+      if (networkCanvas) {
+        const nctx = networkCanvas.getContext('2d'); networkCanvas.width = networkCanvas.parentElement.offsetWidth; networkCanvas.height = networkCanvas.parentElement.offsetHeight;
+        const nodes = []; const nodeCount = 20;
+        for (let i = 0; i < nodeCount; i++) nodes.push({ x: Math.random() * networkCanvas.width, y: Math.random() * networkCanvas.height, vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3, radius: Math.random() * 3 + 2 });
+        function drawNetwork() { nctx.clearRect(0, 0, networkCanvas.width, networkCanvas.height); nodes.forEach(n => { n.x += n.vx; n.y += n.vy; if (n.x < 0 || n.x > networkCanvas.width) n.vx *= -1; if (n.y < 0 || n.y > networkCanvas.height) n.vy *= -1; }); for (let i = 0; i < nodes.length; i++) { for (let j = i + 1; j < nodes.length; j++) { const dx = nodes[i].x - nodes[j].x; const dy = nodes[i].y - nodes[j].y; const dist = Math.sqrt(dx * dx + dy * dy); if (dist < 150) { nctx.beginPath(); nctx.moveTo(nodes[i].x, nodes[i].y); nctx.lineTo(nodes[j].x, nodes[j].y); nctx.strokeStyle = `rgba(0, 184, 255, ${0.1 * (1 - dist / 150)})`; nctx.lineWidth = 0.5; nctx.stroke(); } } } nodes.forEach(n => { nctx.beginPath(); nctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2); nctx.fillStyle = 'rgba(0, 184, 255, 0.6)'; nctx.fill(); }); requestAnimationFrame(drawNetwork); }
+        drawNetwork(); window.addEventListener('resize', () => { networkCanvas.width = networkCanvas.parentElement.offsetWidth; networkCanvas.height = networkCanvas.parentElement.offsetHeight; });
       }
-      updateLiveTime();
-      setInterval(updateLiveTime, 1000);
-      // Scroll Progress
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        document.getElementById('scroll-progress').style.width = scrollPercent + '%';
-        const backToTop = document.getElementById('back-to-top');
-        if (scrollTop > 500) backToTop.classList.add('visible');
-        else backToTop.classList.remove('visible');
+      const counterElements = document.querySelectorAll('.counter-animate');
+      const counterObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const el = entry.target; const target = parseInt(el.getAttribute('data-target')); const duration = 2000; const step = (target / duration) * 20; let current = 0; const timer = setInterval(() => { current += step; if (current >= target) { el.textContent = target; clearInterval(timer); } else { el.textContent = Math.floor(current); } }, 20); counterObserver.unobserve(el); } }); }, { threshold: 0.5 });
+      counterElements.forEach(el => counterObserver.observe(el));
+      document.querySelectorAll('.scramble').forEach(el => {
+        const originalText = el.getAttribute('data-scramble') || el.textContent; const chars = '!<>-_\\/[]{}—=+*^?#________'; let interval;
+        function scramble() { let iterations = 0; clearInterval(interval); interval = setInterval(() => { el.textContent = originalText.split('').map((char, index) => { if (index < iterations) return originalText[index]; return chars[Math.floor(Math.random() * chars.length)]; }).join(''); if (iterations >= originalText.length) clearInterval(interval); iterations += 1 / 3; }, 50); }
+        const observer = new IntersectionObserver((entries) => { if (entries[0].isIntersecting) { scramble(); observer.unobserve(el); } }, { threshold: 0.6 }); observer.observe(el); el.addEventListener('mouseenter', scramble);
       });
-      // Contact Form
-      document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = this.querySelector('button');
-        const originalHTML = btn.innerHTML;
-        btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Mengirim...';
-        btn.disabled = true;
-        fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } })
-          .then(response => {
-            if (response.ok) {
-              btn.innerHTML = '<i data-lucide="check-circle-2" class="w-4 h-4"></i> Terkirim!';
-              btn.style.color = '#000';
-              btn.style.background = '#00FFA3';
-              btn.style.borderColor = 'transparent';
-              this.reset();
-            } else {
-              btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i> Gagal, coba lagi';
-              btn.style.color = '#fff';
-              btn.style.background = '#ff4444';
-              btn.style.borderColor = 'transparent';
-            }
-          }).catch(() => {
-            btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i> Gagal, coba lagi';
-            btn.style.color = '#fff';
-            btn.style.background = '#ff4444';
-            btn.style.borderColor = 'transparent';
-          }).finally(() => {
+      function updateLiveTime() { document.getElementById('live-time').textContent = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' WIB'; }
+      updateLiveTime(); setInterval(updateLiveTime, 1000);
+      setInterval(() => {
+        document.getElementById('active-connections').textContent = Math.floor(Math.random() * 5000 + 1500).toLocaleString();
+        const threatLevels = ['LOW', 'LOW', 'LOW', 'MEDIUM', 'LOW', 'ELEVATED', 'LOW'];
+        const tl = threatLevels[Math.floor(Math.random() * threatLevels.length)];
+        const threatEl = document.getElementById('threat-level');
+        threatEl.textContent = tl;
+        threatEl.className = 'text-sm font-mono font-bold ' + (tl === 'LOW' ? 'text-accent' : tl === 'MEDIUM' ? 'text-warning' : 'text-danger');
+        document.getElementById('last-scan-time').textContent = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        document.getElementById('threats-blocked').textContent = (Math.floor(Math.random() * 1000 + 12000)).toLocaleString();
+        document.getElementById('active-threats').textContent = Math.floor(Math.random() * 5);
+      }, 5000);
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY; const docHeight = document.documentElement.scrollHeight - window.innerHeight; const scrollPercent = (scrollTop / docHeight) * 100;
+        document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+        const backToTop = document.getElementById('back-to-top'); if (scrollTop > 500) backToTop.classList.add('visible'); else backToTop.classList.remove('visible');
+        document.querySelectorAll('.nav-item').forEach(link => { link.classList.remove('nav-active'); const section = document.querySelector(link.getAttribute('href')); if (section && section.offsetTop <= scrollTop + 200 && section.offsetTop + section.offsetHeight > scrollTop + 200) { link.classList.add('nav-active'); } });
+      });
+      const skillBars = document.querySelectorAll('.skill-bar');
+      const skillObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.width = entry.target.getAttribute('data-width'); skillObserver.unobserve(entry.target); } }); }, { threshold: 0.5 });
+      skillBars.forEach(bar => skillObserver.observe(bar));
+      fetch('https://api.github.com/users/teukurijul/repos?sort=updated&per_page=3')
+        .then(response => response.json())
+        .then(data => {
+          if (Array.isArray(data) && data.length) {
+            const container = document.getElementById('repo-container');
+            container.innerHTML = data.map(repo => `
+              <div class="glass-panel p-5 repo-card">
+                <div class="flex items-center gap-2 mb-3"><i data-lucide="book-open" class="w-4 h-4 text-accent"></i><span class="font-mono text-sm text-white truncate">${repo.name}</span></div>
+                <p class="text-xs text-white/50 mb-3">${repo.description || 'No description'}</p>
+                <div class="flex items-center gap-3 text-xs text-white/40"><span><i data-lucide="star" class="w-3 h-3 inline"></i> ${repo.stargazers_count}</span><span><i data-lucide="git-fork" class="w-3 h-3 inline"></i> ${repo.forks_count}</span><span class="ml-auto text-accent">${repo.language || 'N/A'}</span></div>
+              </div>
+            `).join('');
             lucide.createIcons();
-            setTimeout(() => {
-              btn.innerHTML = originalHTML;
-              btn.style.color = '#fff';
-              btn.style.background = 'transparent';
-              btn.style.borderColor = 'rgba(255,255,255,0.2)';
-              btn.disabled = false;
-              lucide.createIcons();
-            }, 2500);
-          });
+          }
+        }).catch(() => {});
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault(); const btn = this.querySelector('button'); const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Mengirim...'; btn.disabled = true;
+        fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } })
+          .then(response => { if (response.ok) { btn.innerHTML = '<i data-lucide="check-circle-2" class="w-4 h-4"></i> Terkirim!'; btn.style.color = '#000'; btn.style.background = '#00FFA3'; btn.style.borderColor = 'transparent'; this.reset(); } else { btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i> Gagal, coba lagi'; btn.style.color = '#fff'; btn.style.background = '#ff4444'; btn.style.borderColor = 'transparent'; } })
+          .catch(() => { btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i> Gagal, coba lagi'; btn.style.color = '#fff'; btn.style.background = '#ff4444'; btn.style.borderColor = 'transparent'; })
+          .finally(() => { lucide.createIcons(); setTimeout(() => { btn.innerHTML = originalHTML; btn.style.color = '#fff'; btn.style.background = 'transparent'; btn.style.borderColor = 'rgba(255,255,255,0.2)'; btn.disabled = false; lucide.createIcons(); }, 2500); });
       });
       lucide.createIcons();
     })();

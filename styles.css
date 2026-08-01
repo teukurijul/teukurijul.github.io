@@ -29,7 +29,7 @@ body {
   animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
 
-/* 3D Background */
+/* Kanvas WebGL 3D Background */
 #bg-canvas {
   position: fixed;
   top: 0; left: 0;
@@ -38,7 +38,7 @@ body {
   pointer-events: none;
 }
 
-/* Spotlight */
+/* Efek Spotlight Mengikuti Kursor */
 #spotlight {
   position: fixed;
   inset: 0;
@@ -48,7 +48,7 @@ body {
   transition: background 0.1s ease;
 }
 
-/* Glass Panel */
+/* Glassmorphism Panel Premium */
 .glass-panel {
   background: rgba(15, 23, 42, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -58,6 +58,7 @@ body {
   box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
+
 .glass-panel:hover {
   border-color: rgba(16, 185, 129, 0.3);
   box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -70,17 +71,28 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
 }
+
 .stat-card:hover {
   background: rgba(16, 185, 129, 0.1);
   border-color: rgba(16, 185, 129, 0.3);
   transform: translateY(-2px);
 }
 
+/* Kustomisasi Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #050816; }
 ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #10b981; }
 
-@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-@keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+@keyframes spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
 .animate-float { animation: float 6s ease-in-out infinite; }

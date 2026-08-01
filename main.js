@@ -30,12 +30,3 @@ const obs=new IntersectionObserver(e=>{
 },{threshold:.15});
 
 document.querySelectorAll(".reveal").forEach(e=>obs.observe(e));
-
----
-
-4. "robots.txt"
-
-User-agent: *
-Allow: /
-
-Sitemap: https://teukurijul.github.io/sitemap.xml

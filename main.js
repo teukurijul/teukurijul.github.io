@@ -1,44 +1,41 @@
-document.documentElement.classList.add('js-enabled');
+const menuToggle=document.getElementById("menu-toggle");
+const mobileMenu=document.getElementById("mobile-menu");
 
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
+menuToggle?.addEventListener("click",()=>mobileMenu.classList.toggle("hidden"));
 
-menuToggle?.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
+const roles=["Full-Stack Engineer","Cloud Architect","Cybersecurity Specialist"];
+let i=0,j=0,del=false;
+const el=document.getElementById("typing-role");
+
+function type(){
+  const w=roles[i];
+  el.textContent=del?w.slice(0,j--):w.slice(0,j++);
+
+  let speed=del?50:90;
+
+  if(!del&&j===w.length){del=true;speed=1200}
+  if(del&&j===0){del=false;i=(i+1)%roles.length}
+
+  setTimeout(type,speed);
+}
+type();
+
+window.addEventListener("pointermove",e=>{
+  document.getElementById("spotlight").style.setProperty("--x",e.clientX+"px");
+  document.getElementById("spotlight").style.setProperty("--y",e.clientY+"px");
 });
 
-const typingElement = document.getElementById('typing-role');
-const roles = [
-  'Full-Stack Engineer',
-  'Cloud Architect',
-  'Cybersecurity Specialist',
-  'Automation Builder'
-];
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"));
+},{threshold:.15});
 
-let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
+document.querySelectorAll(".reveal").forEach(e=>obs.observe(e));
 
-function typeRole() {
-  const current = roles[roleIndex];
+---
 
-  typingElement.textContent = deleting
-    ? current.slice(0, charIndex--)
-    : current.slice(0, charIndex++);
+4. "robots.txt"
 
-  let speed = deleting ? 50 : 90;
+User-agent: *
+Allow: /
 
-  if (!deleting && charIndex === current.length + 1) {
-    deleting = true;
-    speed = 1400;
-  }
-
-  if (deleting && charIndex === 0) {
-    deleting = false;
-    roleIndex = (roleIndex + 1) % roles.length;
-  }
-
-  setTimeout(typeRole, speed);
-}
-
-typeRole();
+Sitemap: https://teukurijul.github.io/sitemap.xml

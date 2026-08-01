@@ -1,5 +1,5 @@
 // assets/js/main.js
-// Starter JS: menu toggle, preloader hide, basic helpers
+// Starter JS: menu toggle, preloader hide, accessibility improvements
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -17,26 +17,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Mobile menu toggle
+  // Mobile menu toggle with accessibility
   var menuToggle = document.getElementById('menu-toggle');
   var mobileMenu = document.getElementById('mobile-menu');
   var menuOverlay = document.getElementById('menu-overlay');
   if (menuToggle && mobileMenu && menuOverlay) {
-    menuToggle.addEventListener('click', function () {
-      var open = mobileMenu.classList.toggle('open');
-      menuOverlay.classList.toggle('open', open);
-      var iconOpen = document.getElementById('menu-icon-open');
-      var iconClose = document.getElementById('menu-icon-close');
-      if (iconOpen) iconOpen.classList.toggle('hidden', open);
-      if (iconClose) iconClose.classList.toggle('hidden', !open);
-    });
-    menuOverlay.addEventListener('click', function () {
+    // ensure initial aria state
+    menuToggle.setAttribute('aria-expanded', 'false');
+
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      menuOverlay.classList.add('open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      // move focus to first link inside mobile menu
+      var firstLink = mobileMenu.querySelector('a');
+      if (firstLink) firstLink.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
       mobileMenu.classList.remove('open');
       menuOverlay.classList.remove('open');
-      var iconOpen = document.getElementById('menu-icon-open');
-      var iconClose = document.getElementById('menu-icon-close');
-      if (iconOpen) iconOpen.classList.remove('hidden');
-      if (iconClose) iconClose.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.focus();
+      document.body.style.overflow = '';
+    }
+
+    menuToggle.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.contains('open');
+      if (isOpen) closeMenu(); else openMenu();
+    });
+
+    menuOverlay.addEventListener('click', function () {
+      closeMenu();
+    });
+
+    // Close menu on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (mobileMenu.classList.contains('open')) {
+          closeMenu();
+        }
+      }
+    });
+
+    // Make sure mobile nav links close the menu when clicked
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeMenu();
+      });
     });
   }
 
@@ -52,4 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Enhance keyboard focus visibility for interactive elements (optional runtime helper)
+  document.body.classList.add('js-enabled');
 });

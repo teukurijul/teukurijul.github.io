@@ -1,8 +1,26 @@
 {
   "name": "Rizu Zaman Portfolio",
   "short_name": "RizuZaman",
+  "description": "Portfolio resmi Rizu Zaman — Full-Stack Engineer, Cloud Architect, dan Cybersecurity Specialist.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#050816",
-  "theme_color": "#050816"
+  "theme_color": "#050816",
+  "lang": "id-ID",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.ibb.co/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
 }

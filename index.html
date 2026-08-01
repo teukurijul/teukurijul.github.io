@@ -2,298 +2,697 @@
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Rizu Zaman | Elite Portfolio</title>
-  <meta name="description" content="Portfolio resmi Rizu Zaman — Full-Stack Engineer, Cloud Architect & Cybersecurity Specialist." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Rizu Zaman — Full-Stack Engineer · Cloud Architect · Cybersecurity Specialist</title>
+  <meta name="title" content="Rizu Zaman — Full-Stack Engineer · Cloud Architect · Cybersecurity Specialist" />
+  <meta name="description" content="Portfolio resmi Rizu Zaman. Arsitek solusi digital enterprise-grade dengan spesialisasi Full-Stack Engineering, Cloud Architecture (AWS), dan Cybersecurity." />
+  <meta name="keywords" content="Rizu Zaman, Full-Stack Engineer, Cloud Architect, Cybersecurity, AWS, React, Node.js, Portfolio Indonesia" />
+  <meta name="author" content="Rizu Zaman" />
+  <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#050816" />
+  <meta name="language" content="Indonesian" />
+  <link rel="canonical" href="https://teukurijul.github.io/" />
 
-  <!-- Integrasi Framework & Library -->
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://teukurijul.github.io/" />
+  <meta property="og:title" content="Rizu Zaman — Elite Digital Architect" />
+  <meta property="og:description" content="Arsitek Solusi Digital Masa Depan. Full-Stack Engineer · Cloud Architect · Cybersecurity Specialist." />
+  <meta property="og:image" content="https://i.ibb.co/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Rizu Zaman Portfolio" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://teukurijul.github.io/" />
+  <meta property="twitter:title" content="Rizu Zaman — Elite Digital Architect" />
+  <meta property="twitter:description" content="Arsitek Solusi Digital Masa Depan. Full-Stack Engineer · Cloud Architect · Cybersecurity Specialist." />
+  <meta property="twitter:image" content="https://i.ibb.co/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Libraries -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <!-- Font Premium -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Konfigurasi Tailwind Kustom -->
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
-          colors: { bgDark: '#050816' }
-        }
-      }
-    }
+          fontFamily: {
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            bgDark: '#050816',
+            bgDarker: '#020409',
+            accent: '#10b981',
+            accentCyan: '#06b6d4',
+          },
+        },
+      },
+    };
   </script>
 
-  <!-- Tautan ke File CSS Eksternal -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-bgDark text-white overflow-hidden" id="body-content">
+<body class="bg-bgDark text-white antialiased" id="body-content">
 
-  <!-- Layar Tunggu (Preloader) -->
-  <div id="preloader">
-    <div class="loader-ring"></div>
+  <!-- ============ PRELOADER ============ -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-counter">
+        <span class="counter-number" id="counter">0</span>
+        <span class="counter-symbol">%</span>
+      </div>
+      <div class="preloader-text">
+        <span class="text-xs font-mono tracking-[0.3em] text-gray-500">INITIALIZING</span>
+        <div class="preloader-bar">
+          <div class="preloader-progress" id="progress"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Background 3D Canvas -->
-  <canvas id="bg-canvas"></canvas>
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
 
-  <!-- Spotlight Effect -->
-  <div id="spotlight"></div>
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo magnetic">
+        <span class="logo-text">RZ</span>
+        <span class="logo-dot">.</span>
+      </a>
 
-  <!-- Navbar -->
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
-    <div class="max-w-7xl mx-auto px-4 py-4 md:py-6">
-      <div class="glass-panel !rounded-full px-6 py-3 flex items-center justify-between border-t-0 md:border-t">
-        <h1 class="text-2xl font-extrabold tracking-widest text-white cursor-pointer hover:text-emerald-400 transition-colors">
-          RZ<span class="text-emerald-500">.</span>
-        </h1>
+      <nav class="nav-menu desktop-only">
+        <a href="#about" class="nav-link magnetic"><span class="nav-number">01</span> About</a>
+        <a href="#services" class="nav-link magnetic"><span class="nav-number">02</span> Services</a>
+        <a href="#works" class="nav-link magnetic"><span class="nav-number">03</span> Works</a>
+        <a href="#process" class="nav-link magnetic"><span class="nav-number">04</span> Process</a>
+        <a href="#contact" class="nav-link magnetic"><span class="nav-number">05</span> Contact</a>
+      </nav>
 
-        <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-          <a href="#about" class="hover:text-emerald-400 transition-colors py-2">About</a>
-          <a href="#projects" class="hover:text-emerald-400 transition-colors py-2">Projects</a>
-          <a href="#contact" class="hover:text-emerald-400 transition-colors py-2">Contact</a>
-        </nav>
-
-        <a href="#contact" class="hidden md:inline-block px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500 hover:text-bgDark font-bold transition-all duration-300">
-          Hire Me
+      <div class="nav-actions">
+        <a href="#contact" class="nav-cta magnetic desktop-only">
+          <span>Hire Me</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
         </a>
-
-        <!-- Mobile Toggle -->
-        <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none p-2">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <button class="nav-toggle magnetic" id="menu-toggle" aria-label="Toggle menu">
+          <span class="toggle-line"></span>
+          <span class="toggle-line"></span>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden absolute top-full left-4 right-4 glass-panel flex-col gap-4 p-6 text-base font-medium text-gray-200 mt-2">
-      <a href="#about" class="hover:text-emerald-400 mobile-link">About</a>
-      <a href="#projects" class="hover:text-emerald-400 mobile-link">Projects</a>
-      <a href="#contact" class="hover:text-emerald-400 mobile-link">Contact</a>
-      <a href="#contact" class="mt-2 text-center py-3 rounded-xl bg-emerald-500 text-bgDark font-bold mobile-link">Hire Me</a>
-    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="min-h-screen flex items-center justify-center px-6 pt-32 pb-20 relative">
-    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
-      <!-- Teks Kiri -->
-      <div class="lg:col-span-7 space-y-8 z-10">
-        <div class="gsap-hero inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
-          <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-          </span>
-          <span class="text-emerald-400 text-sm font-semibold tracking-wide">Available for new challenges</span>
+  <!-- ============ FULLSCREEN MENU ============ -->
+  <div class="fullscreen-menu" id="fullscreen-menu">
+    <div class="menu-bg"></div>
+    <div class="menu-content">
+      <nav class="menu-nav">
+        <a href="#about" class="menu-link" data-index="1">
+          <span class="menu-number">01</span>
+          <span class="menu-text">About</span>
+          <span class="menu-arrow">→</span>
+        </a>
+        <a href="#services" class="menu-link" data-index="2">
+          <span class="menu-number">02</span>
+          <span class="menu-text">Services</span>
+          <span class="menu-arrow">→</span>
+        </a>
+        <a href="#works" class="menu-link" data-index="3">
+          <span class="menu-number">03</span>
+          <span class="menu-text">Works</span>
+          <span class="menu-arrow">→</span>
+        </a>
+        <a href="#process" class="menu-link" data-index="4">
+          <span class="menu-number">04</span>
+          <span class="menu-text">Process</span>
+          <span class="menu-arrow">→</span>
+        </a>
+        <a href="#contact" class="menu-link" data-index="5">
+          <span class="menu-number">05</span>
+          <span class="menu-text">Contact</span>
+          <span class="menu-arrow">→</span>
+        </a>
+      </nav>
+      <div class="menu-footer">
+        <div class="menu-info">
+          <span class="label">EMAIL</span>
+          <a href="mailto:teukurijulzaman@gmail.com">teukurijulzaman@gmail.com</a>
         </div>
+        <div class="menu-info">
+          <span class="label">LOCATION</span>
+          <span>Indonesia · Remote Worldwide</span>
+        </div>
+        <div class="menu-info">
+          <span class="label">SOCIAL</span>
+          <div class="social-links">
+            <a href="https://github.com/teukurijul" target="_blank">GitHub </a>
+            <a href="#" target="_blank">LinkedIn ↗</a>
+            <a href="#" target="_blank">Twitter ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <h2 class="gsap-hero text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
-          Arsitek <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Solusi Digital</span><br/>
-          Masa Depan.
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="hero">
+    <canvas id="bg-canvas"></canvas>
+    <div class="hero-grain"></div>
+    <div class="hero-spotlight" id="spotlight"></div>
+
+    <div class="hero-content">
+      <div class="hero-container">
+        <div class="hero-grid">
+          <!-- Left Content -->
+          <div class="hero-left">
+            <div class="hero-badge reveal">
+              <span class="badge-dot"></span>
+              <span class="badge-text">Available for new challenges</span>
+              <span class="badge-year">2025</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="title-line reveal">
+                <span class="title-word">Arsitek</span>
+              </span>
+              <span class="title-line reveal">
+                <span class="title-word gradient-text">Solusi Digital</span>
+              </span>
+              <span class="title-line reveal">
+                <span class="title-word">Masa Depan.</span>
+              </span>
+            </h1>
+
+            <div class="hero-description reveal">
+              <p>
+                Saya <strong>Rizu Zaman</strong>, seorang 
+                <span class="typing-role" id="typing-role"></span>
+                yang merancang sistem berkinerja tinggi, aman, dan mudah diskalakan di atas infrastruktur Cloud enterprise-grade.
+              </p>
+            </div>
+
+            <div class="hero-actions reveal">
+              <a href="#works" class="btn btn-primary magnetic">
+                <span class="btn-text">Lihat Portofolio</span>
+                <span class="btn-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </span>
+              </a>
+              <a href="#contact" class="btn btn-secondary magnetic">
+                <span class="btn-text">Mulai Diskusi</span>
+              </a>
+            </div>
+
+            <div class="hero-stats reveal">
+              <div class="stat-item">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label">Projects Delivered</div>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="8">0</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="30">0</div>
+                <div class="stat-label">Happy Clients</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content - FOTO PROFIL -->
+          <div class="hero-right reveal">
+            <div class="profile-card">
+              <div class="profile-glow"></div>
+              <div class="profile-image-wrapper">
+                <div class="profile-ring"></div>
+                <div class="profile-ring profile-ring-delay"></div>
+                <img 
+                  src="https://i.ibb.co/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp" 
+                  alt="Rizu Zaman - Full-Stack Engineer & Cloud Architect" 
+                  class="profile-image"
+                  loading="eager"
+                />
+                <div class="profile-status">
+                  <span class="status-pulse"></span>
+                  <span>Online</span>
+                </div>
+              </div>
+              <div class="profile-info">
+                <h3 class="profile-name">Rizu Zaman</h3>
+                <p class="profile-role">Engineering & Security</p>
+                <div class="profile-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">AWS</span>
+                </div>
+              </div>
+              <div class="profile-decoration">
+                <div class="deco-circle deco-1"></div>
+                <div class="deco-circle deco-2"></div>
+                <div class="deco-dot deco-3"></div>
+                <div class="deco-dot deco-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="scroll-indicator">
+          <span class="scroll-text">SCROLL</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <section class="marquee-section">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="marquee-item">Full-Stack Development</span>
+        <span class="marquee-separator">✦</span>
+        <span class="marquee-item">Cloud Architecture</span>
+        <span class="marquee-separator">✦</span>
+        <span class="marquee-item">Cybersecurity</span>
+        <span class="marquee-separator">✦</span>
+        <span class="marquee-item">DevOps & CI/CD</span>
+        <span class="marquee-separator"></span>
+        <span class="marquee-item">System Design</span>
+        <span class="marquee-separator">✦</span>
+        <span class="marquee-item">Performance Optimization</span>
+        <span class="marquee-separator">✦</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span class="marquee-item">Full-Stack Development</span>
+        <span class="marquee-separator">✦</span>
+        <span class="marquee-item">Cloud Architecture</span>
+        <span class="marquee-separator">✦</span>
+        <span class="marquee-item">Cybersecurity</span>
+        <span class="marquee-separator">✦</span>
+        <span class="marquee-item">DevOps & CI/CD</span>
+        <span class="marquee-separator">✦</span>
+        <span class="marquee-item">System Design</span>
+        <span class="marquee-separator">✦</span>
+        <span class="marquee-item">Performance Optimization</span>
+        <span class="marquee-separator">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">
+          <span class="label-line"></span>
+          <span>01 — ABOUT</span>
+        </div>
+        <h2 class="section-title reveal">
+          Rekayasa presisi untuk<br/>
+          skala <span class="gradient-text">Enterprise</span>.
         </h2>
-
-        <p class="gsap-hero text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl font-light">
-          Saya <span class="font-bold text-white">Rizu Zaman</span>,
-          seorang <br class="md:hidden" /><span id="typing-role" class="text-emerald-400 font-bold bg-emerald-400/10 px-2 py-0.5 rounded ml-1"></span>
-          yang merancang sistem berkinerja tinggi, aman, dan mudah diskalakan di atas infrastruktur Cloud.
-        </p>
-
-        <div class="gsap-hero flex flex-wrap gap-4 pt-4">
-          <a href="#projects" class="px-8 py-4 rounded-full bg-emerald-500 text-bgDark font-bold hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-105">
-            Lihat Portofolio
-          </a>
-          <a href="#contact" class="px-8 py-4 rounded-full border border-white/20 text-white font-semibold hover:border-emerald-400 hover:text-emerald-400 transition-all hover:bg-emerald-400/5">
-            Mulai Diskusi
-          </a>
-        </div>
       </div>
 
-      <!-- Gambar Profil Kanan -->
-      <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-emerald-500/20 to-cyan-500/20 blur-[80px] rounded-full z-[-1]"></div>
-        
-        <div class="glass-panel p-8 md:p-10 w-full max-w-md text-center animate-float relative z-10 border-t border-l border-white/10">
-          <div class="relative w-40 h-40 mx-auto mb-8">
-            <div class="absolute inset-0 rounded-full border-2 border-emerald-400 border-dashed animate-[spin_10s_linear_infinite]"></div>
-            <img src="https://i.ibb.co/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp" alt="Rizu Zaman" class="w-full h-full rounded-full object-cover p-1.5" />
-          </div>
-
-          <h3 class="text-3xl font-bold tracking-tight">Rizu Zaman</h3>
-          <p class="text-emerald-400 text-xs font-bold mt-2 uppercase tracking-[0.2em]">Engineering & Security</p>
-
-          <div class="grid grid-cols-3 gap-4 mt-8 text-sm">
-            <div class="stat-card">
-              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Frontend</div>
-              <div class="font-bold text-white text-base">React</div>
-            </div>
-            <div class="stat-card">
-              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Backend</div>
-              <div class="font-bold text-white text-base">Node.js</div>
-            </div>
-            <div class="stat-card">
-              <div class="text-gray-400 text-xs uppercase tracking-wider mb-1">Cloud</div>
-              <div class="font-bold text-white text-base">AWS</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-32 px-6 relative z-10 bg-gradient-to-b from-transparent to-white/[0.01]">
-    <div class="max-w-5xl mx-auto">
-      <div class="gsap-scroll text-center lg:text-left grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-white/10 text-sm text-gray-300 mb-6">
-            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            Profil Singkat
-          </div>
-          <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
-            Rekayasa presisi untuk skala <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Enterprise</span>.
-          </h2>
-          <p class="text-gray-300 leading-relaxed text-lg font-light">
-            Lulusan Teknik Komputer dan Jaringan dengan spesialisasi dalam operasional sistem digital, kontrol kualitas, dan pengembangan aplikasi web. 
-            <br><br>
-            Saya tidak hanya menulis kode, namun membangun ekosistem. Menggabungkan efisiensi rekayasa perangkat lunak dengan ketangguhan infrastruktur cloud dan protokol keamanan tingkat tinggi.
+      <div class="about-grid">
+        <div class="about-content">
+          <p class="about-text reveal">
+            Lulusan Teknik Komputer dan Jaringan dengan spesialisasi dalam operasional sistem digital, kontrol kualitas, dan pengembangan aplikasi web enterprise.
           </p>
+          <p class="about-text reveal">
+            Saya tidak hanya menulis kode, namun membangun <strong>ekosistem digital</strong>. Menggabungkan efisiensi rekayasa perangkat lunak dengan ketangguhan infrastruktur cloud dan protokol keamanan tingkat tinggi.
+          </p>
+          <p class="about-text reveal">
+            Setiap proyek yang saya tangani dirancang untuk <em>scalability</em>, <em>security</em>, dan <em>maintainability</em> — tiga pilar yang membedakan produk biasa dari produk kelas dunia.
+          </p>
+
+          <div class="about-cta reveal">
+            <a href="#contact" class="link-arrow magnetic">
+              <span>Mari berdiskusi</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
         </div>
-        
-        <!-- Tech Stack Grid -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="glass-panel p-6 text-center">
-            <div class="text-4xl mb-3">🛡️</div>
-            <h4 class="font-bold text-lg mb-1">Cybersecurity</h4>
-            <p class="text-xs text-gray-400">Pen-Testing, Audits</p>
-          </div>
-          <div class="glass-panel p-6 text-center mt-8">
-            <div class="text-4xl mb-3">☁️</div>
-            <h4 class="font-bold text-lg mb-1">Cloud Arch</h4>
-            <p class="text-xs text-gray-400">AWS, Docker, CI/CD</p>
-          </div>
-          <div class="glass-panel p-6 text-center -mt-8">
-            <div class="text-4xl mb-3">⚡</div>
-            <h4 class="font-bold text-lg mb-1">Performance</h4>
-            <p class="text-xs text-gray-400">Optimization, Web Vitals</p>
-          </div>
-          <div class="glass-panel p-6 text-center">
-            <div class="text-4xl mb-3">💻</div>
-            <h4 class="font-bold text-lg mb-1">Full-Stack</h4>
-            <p class="text-xs text-gray-400">React, Node, DBs</p>
+
+        <div class="about-visual">
+          <div class="visual-card reveal">
+            <div class="visual-header">
+              <div class="visual-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="visual-title">rizu@portfolio ~ %</span>
+            </div>
+            <div class="visual-content">
+              <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">developer</span> = {</div>
+              <div class="code-line indent"><span class="code-key">name</span>: <span class="code-string">'Rizu Zaman'</span>,</div>
+              <div class="code-line indent"><span class="code-key">role</span>: <span class="code-string">'Elite Architect'</span>,</div>
+              <div class="code-line indent"><span class="code-key">stack</span>: [<span class="code-string">'React'</span>, <span class="code-string">'Node'</span>, <span class="code-string">'AWS'</span>],</div>
+              <div class="code-line indent"><span class="code-key">passion</span>: <span class="code-string">'∞'</span>,</div>
+              <div class="code-line">};</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-32 px-6 relative z-10">
-    <div class="max-w-7xl mx-auto">
-      <div class="gsap-scroll text-center max-w-3xl mx-auto mb-20">
-        <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Studi Kasus</h2>
-        <p class="text-gray-400 text-lg">Koleksi implementasi sistem yang memecahkan masalah kompleks dunia nyata dengan antarmuka yang elegan.</p>
+  <!-- ============ SERVICES SECTION ============ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">
+          <span class="label-line"></span>
+          <span>02 — SERVICES</span>
+        </div>
+        <h2 class="section-title reveal">
+          Layanan yang saya<br/>
+          <span class="gradient-text">tawarkan</span>.
+        </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Proyek 1 -->
-        <article class="glass-panel overflow-hidden gsap-project group cursor-pointer">
-          <div class="relative h-60 overflow-hidden">
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500 z-10"></div>
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700 ease-in-out" alt="Distribution Portal">
-          </div>
-          <div class="p-8">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.2em] bg-emerald-400/10 px-3 py-1 rounded-full">B2B Dashboard</span>
-              <span class="text-gray-500 text-sm">2025</span>
+      <div class="services-list">
+        <article class="service-item reveal">
+          <div class="service-number">01</div>
+          <div class="service-content">
+            <h3 class="service-title">Full-Stack Development</h3>
+            <p class="service-desc">Pengembangan aplikasi web end-to-end dengan React, Next.js, Node.js, dan database modern. Fokus pada performa, UX, dan skalabilitas.</p>
+            <div class="service-tags">
+              <span>React</span><span>Next.js</span><span>Node.js</span><span>TypeScript</span>
             </div>
-            <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-400 transition-colors">Distribution Portal</h3>
-            <p class="text-gray-400 leading-relaxed text-sm">Sistem distribusi berskala besar dengan fokus pada performa *real-time*, validasi mitra terenkripsi, dan automasi *workflow* logistik.</p>
+          </div>
+          <div class="service-arrow">→</div>
+        </article>
+
+        <article class="service-item reveal">
+          <div class="service-number">02</div>
+          <div class="service-content">
+            <h3 class="service-title">Cloud Architecture</h3>
+            <p class="service-desc">Desain dan implementasi infrastruktur cloud AWS/GCP yang scalable, reliable, dan cost-efficient. Termasuk CI/CD pipeline dan containerization.</p>
+            <div class="service-tags">
+              <span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span>
+            </div>
+          </div>
+          <div class="service-arrow">→</div>
+        </article>
+
+        <article class="service-item reveal">
+          <div class="service-number">03</div>
+          <div class="service-content">
+            <h3 class="service-title">Cybersecurity</h3>
+            <p class="service-desc">Penetration testing, security audit, dan implementasi protokol keamanan enterprise. Melindungi aset digital Anda dari ancaman modern.</p>
+            <div class="service-tags">
+              <span>Pen-Testing</span><span>OWASP</span><span>Encryption</span><span>Compliance</span>
+            </div>
+          </div>
+          <div class="service-arrow">→</div>
+        </article>
+
+        <article class="service-item reveal">
+          <div class="service-number">04</div>
+          <div class="service-content">
+            <h3 class="service-title">Performance Optimization</h3>
+            <p class="service-desc">Audit dan optimasi performa aplikasi web. Core Web Vitals, caching strategy, dan load time reduction untuk pengalaman pengguna terbaik.</p>
+            <div class="service-tags">
+              <span>Web Vitals</span><span>CDN</span><span>Caching</span><span>Profiling</span>
+            </div>
+          </div>
+          <div class="service-arrow">→</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORKS SECTION ============ -->
+  <section class="works" id="works">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">
+          <span class="label-line"></span>
+          <span>03 — SELECTED WORKS</span>
+        </div>
+        <h2 class="section-title reveal">
+          Proyek <span class="gradient-text">unggulan</span><br/>
+          yang telah saya kerjakan.
+        </h2>
+      </div>
+
+      <div class="works-grid">
+        <article class="work-card reveal">
+          <div class="work-image">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Distribution Portal" loading="lazy" />
+            <div class="work-overlay"></div>
+          </div>
+          <div class="work-content">
+            <div class="work-meta">
+              <span class="work-category">B2B Dashboard</span>
+              <span class="work-year">2025</span>
+            </div>
+            <h3 class="work-title">Distribution Portal</h3>
+            <p class="work-desc">Sistem distribusi berskala besar dengan fokus pada performa real-time, validasi mitra terenkripsi, dan automasi workflow logistik.</p>
+            <div class="work-tech">
+              <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span>
+            </div>
+            <a href="#" class="work-link magnetic">
+              <span>View Case Study</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
           </div>
         </article>
 
-        <!-- Proyek 2 -->
-        <article class="glass-panel overflow-hidden gsap-project group cursor-pointer" style="transition-delay: 100ms;">
-          <div class="relative h-60 overflow-hidden">
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500 z-10"></div>
-            <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=900&q=80" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700 ease-in-out" alt="Security Workflow">
+        <article class="work-card reveal">
+          <div class="work-image">
+            <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=1200&q=80" alt="Security Workflow" loading="lazy" />
+            <div class="work-overlay"></div>
           </div>
-          <div class="p-8">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-cyan-400 text-xs font-bold uppercase tracking-[0.2em] bg-cyan-400/10 px-3 py-1 rounded-full">SecOps</span>
-              <span class="text-gray-500 text-sm">2026</span>
+          <div class="work-content">
+            <div class="work-meta">
+              <span class="work-category">SecOps Platform</span>
+              <span class="work-year">2025</span>
             </div>
-            <h3 class="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Security Workflow</h3>
-            <p class="text-gray-400 leading-relaxed text-sm">Infrastruktur *workflow* untuk audit perangkat secara otomatis, verifikasi identitas, dan sistem pelaporan *troubleshooting* terstandarisasi.</p>
+            <h3 class="work-title">Security Workflow</h3>
+            <p class="work-desc">Infrastruktur workflow untuk audit perangkat secara otomatis, verifikasi identitas, dan sistem pelaporan troubleshooting terstandarisasi.</p>
+            <div class="work-tech">
+              <span>Next.js</span><span>Python</span><span>Docker</span><span>OAuth2</span>
+            </div>
+            <a href="#" class="work-link magnetic">
+              <span>View Case Study</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
           </div>
         </article>
 
-        <!-- Proyek 3 -->
-        <article class="glass-panel overflow-hidden gsap-project group cursor-pointer" style="transition-delay: 200ms;">
-          <div class="relative h-60 overflow-hidden">
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500 z-10"></div>
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700 ease-in-out" alt="Interactive Portfolio">
+        <article class="work-card reveal">
+          <div class="work-image">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Interactive Engine" loading="lazy" />
+            <div class="work-overlay"></div>
           </div>
-          <div class="p-8">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-purple-400 text-xs font-bold uppercase tracking-[0.2em] bg-purple-400/10 px-3 py-1 rounded-full">Web3D</span>
-              <span class="text-gray-500 text-sm">2026</span>
+          <div class="work-content">
+            <div class="work-meta">
+              <span class="work-category">WebGL Experience</span>
+              <span class="work-year">2024</span>
             </div>
-            <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">Interactive Engine</h3>
-            <p class="text-gray-400 leading-relaxed text-sm">Eksperimen *rendering WebGL* performa tinggi yang diintegrasikan ke dalam antarmuka web reaktif, menghadirkan interaksi 3D pada *browser mobile*.</p>
+            <h3 class="work-title">Interactive Engine</h3>
+            <p class="work-desc">Eksperimen rendering WebGL performa tinggi yang diintegrasikan ke dalam antarmuka web reaktif, menghadirkan interaksi 3D pada browser mobile.</p>
+            <div class="work-tech">
+              <span>Three.js</span><span>GLSL</span><span>WebGL</span><span>GSAP</span>
+            </div>
+            <a href="#" class="work-link magnetic">
+              <span>View Case Study</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-32 px-6 relative z-10">
-    <div class="max-w-4xl mx-auto gsap-scroll">
-      <div class="glass-panel p-12 md:p-20 text-center relative overflow-hidden">
-        <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/20 rounded-full blur-[80px]"></div>
-        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-[80px]"></div>
-        
-        <div class="relative z-10">
-          <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Inisiasi Protokol Kolaborasi.</h2>
-          <p class="text-gray-300 mt-6 leading-relaxed text-lg max-w-2xl mx-auto">
+  <!-- ============ PROCESS SECTION ============ -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">
+          <span class="label-line"></span>
+          <span>04 — PROCESS</span>
+        </div>
+        <h2 class="section-title reveal">
+          Metodologi kerja<br/>
+          yang <span class="gradient-text">terstruktur</span>.
+        </h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Discovery</h3>
+          <p class="step-desc">Analisis mendalam kebutuhan bisnis, target audiens, dan tantangan teknis. Riset kompetitor dan definisi KPI.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Architecture</h3>
+          <p class="step-desc">Desain sistem, pemilihan tech stack, dan perencanaan infrastruktur cloud yang scalable dan secure.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Development</h3>
+          <p class="step-desc">Implementasi dengan agile methodology, code review ketat, dan testing menyeluruh di setiap sprint.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">04</div>
+          <h3 class="step-title">Deployment</h3>
+          <p class="step-desc">CI/CD pipeline, monitoring 24/7, dan optimasi berkelanjutan berdasarkan data real-time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-content">
+          <div class="section-label reveal">
+            <span class="label-line"></span>
+            <span>05 — CONTACT</span>
+          </div>
+          <h2 class="contact-title reveal">
+            Mari bangun<br/>
+            <span class="gradient-text">sesuatu yang luar biasa</span><br/>
+            bersama.
+          </h2>
+          <p class="contact-desc reveal">
             Mencari arsitek untuk infrastruktur cloud Anda? Atau pengembang web untuk produk revolusioner selanjutnya? Sistem saya siap menerima pesan Anda.
           </p>
 
-          <div class="flex flex-col sm:flex-row justify-center gap-6 mt-12">
-            <a href="mailto:teukurijulzaman@gmail.com" class="px-10 py-4 rounded-full bg-emerald-500 text-bgDark font-bold text-lg hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:scale-105 flex items-center justify-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-              Transmisikan Email
-            </a>
-            <a href="https://github.com/teukurijul" target="_blank" rel="noreferrer" class="px-10 py-4 rounded-full border border-white/20 glass-panel text-white font-semibold hover:border-emerald-400 hover:text-emerald-400 transition-all flex items-center justify-center gap-2 hover:bg-white/5">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-              Akses Repositori
-            </a>
+          <div class="contact-info reveal">
+            <div class="info-item">
+              <span class="info-label">Email</span>
+              <a href="mailto:teukurijulzaman@gmail.com" class="info-value magnetic">teukurijulzaman@gmail.com</a>
+            </div>
+            <div class="info-item">
+              <span class="info-label">GitHub</span>
+              <a href="https://github.com/teukurijul" target="_blank" class="info-value magnetic">@teukurijul</a>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Location</span>
+              <span class="info-value">Indonesia · Remote Worldwide</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-visual reveal">
+          <div class="visual-card contact-card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+                </svg>
+              </div>
+              <h3 class="card-title">Ready to collaborate?</h3>
+              <p class="card-text">Response time: &lt; 24 hours</p>
+              <a href="mailto:teukurijulzaman@gmail.com" class="card-cta magnetic">
+                <span>Start a project</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10 py-10 px-6 mt-10 relative z-10 glass-panel !rounded-none !border-l-0 !border-r-0 !border-b-0">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex items-center gap-2">
-        <h1 class="text-xl font-bold tracking-widest text-white mr-4">RZ<span class="text-emerald-500">.</span></h1>
-        <p class="text-gray-400 text-sm">© 2026 Rizu Zaman. All rights reserved.</p>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo magnetic">
+            <span>RZ</span><span class="logo-dot">.</span>
+          </a>
+          <p class="footer-tagline">Arsitek Solusi Digital Masa Depan</p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4 class="col-title">Navigation</h4>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#works">Works</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4 class="col-title">Social</h4>
+            <a href="https://github.com/teukurijul" target="_blank">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Dribbble</a>
+          </div>
+          <div class="footer-col">
+            <h4 class="col-title">Contact</h4>
+            <a href="mailto:teukurijulzaman@gmail.com">Email</a>
+            <a href="#">Schedule Call</a>
+          </div>
+        </div>
       </div>
-      <div class="flex items-center gap-6 text-sm text-gray-500">
-        <span class="hover:text-emerald-400 cursor-pointer transition-colors">Privacy Policy</span>
-        <span class="hover:text-emerald-400 cursor-pointer transition-colors">Terms of Service</span>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          <span>© 2025 Rizu Zaman. All rights reserved.</span>
+        </div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <div class="footer-status">
+          <span class="status-dot"></span>
+          <span>Available for work</span>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Tautan ke File JavaScript Eksternal -->
-  <script src="main.js"></script>
+  <!-- ============ BACK TO TOP ============ -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

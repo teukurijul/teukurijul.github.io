@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Teuku Rijul — Software Engineer">
   <meta property="og:description" content="Portfolio software engineer, cloud architect, dan cybersecurity enthusiast.">
-  <meta property="og:image" content="/assets/img/og-image.webp">
+  <meta property="og:image" content="/assets/img/og-image.svg">
   <link rel="manifest" href="/site.webmanifest">
 
   <!-- Preconnect & Preload fonts -->
@@ -18,7 +18,21 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main stylesheet -->
+  <!-- Preload critical assets -->
+  <link rel="preload" as="image" href="/assets/img/avatar.svg">
+  <link rel="preload" as="image" href="/assets/img/og-image.svg">
+
+  <!-- Critical CSS (inline for faster FCP) -->
+  <style>
+    :root{--bg:#050505;--primary:#00FFA3;--secondary:#7C4DFF;--accent:#00D9FF;--text:#FFFFFF;--muted:#A1A1AA}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;scroll-behavior:smooth}
+    .hero{position:relative;min-height:calc(100vh - 72px);display:flex;align-items:center;overflow:hidden}
+    .watermark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Space Grotesk;font-weight:800;font-size:140px;color:var(--text);mix-blend-mode:overlay;opacity:0.05;pointer-events:none}
+    .hero-inner{position:relative;z-index:10;display:flex;gap:48px;max-width:1200px;margin:0 auto;padding:80px 20px}
+    .title{font-family:Space Grotesk, sans-serif;font-weight:700;margin:0 0 12px;font-size:36px;letter-spacing:2px}
+    .title .name{display:block;font-size:48px;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
+  </style>
+
   <link rel="stylesheet" href="/assets/styles.css">
 
   <!-- Structured Data -->
@@ -54,8 +68,6 @@
   }
   </script>
 
-  <!-- Accessibility helpers -->
-  <style>:root{--bg:#050505}</style>
 </head>
 <body class="theme-dark">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -90,7 +102,7 @@
         <div class="hero-left">
           <div class="avatar-wrap">
             <div class="avatar-glow"></div>
-            <div class="avatar" aria-hidden="false" role="img" aria-label="Avatar of Teuku Rijul"></div>
+            <img src="/assets/img/avatar.svg" alt="Avatar Teuku Rijul" class="avatar" width="260" height="260"/>
             <div class="status">● <span class="status-text">Available</span></div>
             <div class="tech-orbit" aria-hidden="true">
               <div class="orbit">
@@ -127,7 +139,7 @@
     <section id="about" class="section about" aria-labelledby="about-title">
       <div class="container">
         <h2 id="about-title">About</h2>
-        <p class="lede">Software Engineer with 5+ years specializing in Cloud Architecture and Cybersecurity. I craft reliable, secure, and scalable systems.</p>
+        <p class="lede">I design and build secure, scalable cloud-first applications with a focus on reliability and strong security posture. Over 5+ years I’ve shipped production systems used by enterprises and startups. I combine Full-Stack development, Cloud Architecture (AWS), and practical Cybersecurity to deliver resilient products.</p>
         <div class="about-grid">
           <div class="about-left">
             <p>Availability: <span class="badge available">Open to work</span></p>
@@ -139,7 +151,8 @@
             </ul>
           </div>
           <div class="about-right">
-            <p>Short paragraph highlighting cloud, security, and full-stack experience. Focus on impact, outcomes, and collaboration.</p>
+            <p>I’ve led architecture design reviews, implemented CI/CD pipelines, hardened Linux systems, and executed threat modelling. I enjoy mentoring engineers, improving delivery velocity, and reducing operational risk.</p>
+            <p>Tools & focus: AWS (EKS, RDS, Lambda), Kubernetes, Docker, Terraform, Node.js/TypeScript, React, OWASP practices.</p>
           </div>
         </div>
       </div>
@@ -187,54 +200,59 @@
       <div class="container">
         <h2 id="projects-title">Featured Projects</h2>
         <div class="projects-grid">
-          <!-- example card -->
+
           <article class="project-card" tabindex="0">
-            <div class="thumb" aria-hidden="true"></div>
+            <img class="thumb" src="/assets/img/project-alpha.svg" alt="Project Alpha thumbnail" loading="lazy" />
             <div class="card-body">
-              <h3>Project Alpha</h3>
-              <p class="tags">React • AWS • Docker</p>
+              <h3>Project Alpha — Scalable API Platform</h3>
+              <p class="tags">React • AWS (ECS) • Docker • PostgreSQL</p>
+              <p class="card-desc">High-throughput platform with event-driven APIs, auto-scaling ECS tasks, and end-to-end monitoring.</p>
               <div class="card-cta">
-                <a class="btn small" href="#">Live Demo</a>
-                <a class="btn small ghost" href="#">GitHub</a>
+                <a class="btn small" href="https://example.com/alpha" target="_blank" rel="noopener">Live Demo</a>
+                <a class="btn small ghost" href="https://github.com/teukurijul/project-alpha" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
 
           <article class="project-card" tabindex="0">
-            <div class="thumb" aria-hidden="true"></div>
+            <img class="thumb" src="/assets/img/project-beta.svg" alt="Project Beta thumbnail" loading="lazy" />
             <div class="card-body">
-              <h3>Project Beta</h3>
-              <p class="tags">Node • Postgres • K8s</p>
+              <h3>Project Beta — Real-time Analytics</h3>
+              <p class="tags">Node • Kafka • K8s • Postgres</p>
+              <p class="card-desc">Stream processing pipeline for real-time metrics, with autoscaling consumers and resilient storage.</p>
               <div class="card-cta">
-                <a class="btn small" href="#">Live Demo</a>
-                <a class="btn small ghost" href="#">GitHub</a>
+                <a class="btn small" href="https://example.com/beta" target="_blank" rel="noopener">Live Demo</a>
+                <a class="btn small ghost" href="https://github.com/teukurijul/project-beta" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
 
           <article class="project-card" tabindex="0">
-            <div class="thumb" aria-hidden="true"></div>
+            <img class="thumb" src="/assets/img/project-gamma.svg" alt="Project Gamma thumbnail" loading="lazy" />
             <div class="card-body">
-              <h3>Project Gamma</h3>
-              <p class="tags">TypeScript • CI/CD</p>
+              <h3>Project Gamma — CI/CD for Microservices</h3>
+              <p class="tags">TypeScript • Docker • GitHub Actions • Terraform</p>
+              <p class="card-desc">Reusable pipelines and infra-as-code templates to accelerate microservice delivery with security gates.</p>
               <div class="card-cta">
-                <a class="btn small" href="#">Live Demo</a>
-                <a class="btn small ghost" href="#">GitHub</a>
+                <a class="btn small" href="https://example.com/gamma" target="_blank" rel="noopener">Live Demo</a>
+                <a class="btn small ghost" href="https://github.com/teukurijul/project-gamma" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
 
           <article class="project-card" tabindex="0">
-            <div class="thumb" aria-hidden="true"></div>
+            <img class="thumb" src="/assets/img/project-delta.svg" alt="Project Delta thumbnail" loading="lazy" />
             <div class="card-body">
-              <h3>Project Delta</h3>
-              <p class="tags">Security • Linux</p>
+              <h3>Project Delta — Security Automation</h3>
+              <p class="tags">Linux • OWASP • Pen testing • Automation</p>
+              <p class="card-desc">Automated security checks integrated into CI, plus remediation playbooks and hardening templates.</p>
               <div class="card-cta">
-                <a class="btn small" href="#">Live Demo</a>
-                <a class="btn small ghost" href="#">GitHub</a>
+                <a class="btn small" href="https://example.com/delta" target="_blank" rel="noopener">Live Demo</a>
+                <a class="btn small ghost" href="https://github.com/teukurijul/project-delta" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
+
         </div>
       </div>
     </section>
@@ -285,8 +303,8 @@
             <ul class="contact-list">
               <li>Email: <button class="copy" data-copy="mailto:hello@teukurijul.com">hello@teukurijul.com</button></li>
               <li>GitHub: <a href="https://github.com/teukurijul" target="_blank" rel="noopener">github.com/teukurijul</a></li>
-              <li>LinkedIn: <a href="#">linkedin.com/in/teukurijul</a></li>
-              <li>WhatsApp: <a href="#">+62 ...</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/in/teukurijul" target="_blank" rel="noopener">linkedin.com/in/teukurijul</a></li>
+              <li>WhatsApp: <a href="https://wa.me/628xxxx" target="_blank" rel="noopener">+62 xxxx</a></li>
             </ul>
           </div>
           <form class="contact-form" action="#" novalidate>

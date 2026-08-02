@@ -21,6 +21,7 @@
   <!-- Preload critical assets -->
   <link rel="preload" as="image" href="/assets/img/avatar.svg">
   <link rel="preload" as="image" href="/assets/img/og-image.svg">
+  <link rel="preload" as="script" href="/assets/main.js">
 
   <!-- Critical CSS (inline for faster FCP) -->
   <style>
@@ -102,7 +103,7 @@
         <div class="hero-left">
           <div class="avatar-wrap">
             <div class="avatar-glow"></div>
-            <img src="/assets/img/avatar.svg" alt="Avatar Teuku Rijul" class="avatar" width="260" height="260"/>
+            <img src="/assets/img/avatar.svg" alt="Avatar Teuku Rijul" class="avatar" width="260" height="260" loading="eager" decoding="async" fetchpriority="high" importance="high"/>
             <div class="status">● <span class="status-text">Available</span></div>
             <div class="tech-orbit" aria-hidden="true">
               <div class="orbit">
@@ -202,7 +203,7 @@
         <div class="projects-grid">
 
           <article class="project-card" tabindex="0">
-            <img class="thumb" src="/assets/img/project-alpha.svg" alt="Project Alpha thumbnail" loading="lazy" />
+            <img class="thumb" src="/assets/img/project-alpha.svg" alt="Project Alpha thumbnail" loading="lazy" decoding="async"/>
             <div class="card-body">
               <h3>Project Alpha — Scalable API Platform</h3>
               <p class="tags">React • AWS (ECS) • Docker • PostgreSQL</p>
@@ -215,7 +216,7 @@
           </article>
 
           <article class="project-card" tabindex="0">
-            <img class="thumb" src="/assets/img/project-beta.svg" alt="Project Beta thumbnail" loading="lazy" />
+            <img class="thumb" src="/assets/img/project-beta.svg" alt="Project Beta thumbnail" loading="lazy" decoding="async"/>
             <div class="card-body">
               <h3>Project Beta — Real-time Analytics</h3>
               <p class="tags">Node • Kafka • K8s • Postgres</p>
@@ -228,7 +229,7 @@
           </article>
 
           <article class="project-card" tabindex="0">
-            <img class="thumb" src="/assets/img/project-gamma.svg" alt="Project Gamma thumbnail" loading="lazy" />
+            <img class="thumb" src="/assets/img/project-gamma.svg" alt="Project Gamma thumbnail" loading="lazy" decoding="async"/>
             <div class="card-body">
               <h3>Project Gamma — CI/CD for Microservices</h3>
               <p class="tags">TypeScript • Docker • GitHub Actions • Terraform</p>
@@ -241,7 +242,7 @@
           </article>
 
           <article class="project-card" tabindex="0">
-            <img class="thumb" src="/assets/img/project-delta.svg" alt="Project Delta thumbnail" loading="lazy" />
+            <img class="thumb" src="/assets/img/project-delta.svg" alt="Project Delta thumbnail" loading="lazy" decoding="async"/>
             <div class="card-body">
               <h3>Project Delta — Security Automation</h3>
               <p class="tags">Linux • OWASP • Pen testing • Automation</p>

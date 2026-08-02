@@ -1,979 +1,324 @@
-<!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<!doctype html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  
-  <title>Rizu Zaman — Full-Stack Engineer · Cloud Architect · Cybersecurity Specialist</title>
-  <meta name="description" content="Portfolio resmi Rizu Zaman. Arsitek solusi digital enterprise-grade." />
-  <meta name="theme-color" content="#050816" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="robots" content="index, follow">
+  <title>Teuku Rijul — Software Engineer</title>
+  <meta name="description" content="Portfolio software engineer, cloud architect, dan cybersecurity enthusiast.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Teuku Rijul — Software Engineer">
+  <meta property="og:description" content="Portfolio software engineer, cloud architect, dan cybersecurity enthusiast.">
+  <meta property="og:image" content="/assets/img/og-image.webp">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Open Graph / WhatsApp Preview -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Rizu Zaman — Elite Digital Architect" />
-  <meta property="og:description" content="Arsitek Solusi Digital Masa Depan." />
-  <meta property="og:image" content="https://i.ibb.co/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp" />
+  <!-- Preconnect & Preload fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>" />
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/assets/styles.css">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Libraries -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            bgDark: '#050816',
-            accent: '#10b981',
-          },
-        },
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Teuku Rijul",
+        "url": "https://teukurijul.github.io/",
+        "sameAs": ["https://github.com/teukurijul","https://www.linkedin.com/in/teukurijul"],
+        "jobTitle": "Software Engineer",
+        "knowsAbout": ["Cloud Architecture","Cybersecurity","Full-Stack Development"]
       },
-    };
+      {
+        "@type": "WebSite",
+        "name": "Teuku Rijul Portfolio",
+        "url": "https://teukurijul.github.io/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem","position":1,"name":"Home","item":"https://teukurijul.github.io/#home"}
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "name": "Teuku Rijul — Software & Cloud Engineering",
+        "serviceType": "Software Engineering"
+      }
+    ]
+  }
   </script>
 
-  <!-- CRITICAL CSS INLINE (Untuk memastikan styling load meskipun CSS eksternal gagal) -->
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #050816;
-      color: #ffffff;
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Preloader */
-    #preloader {
-      position: fixed;
-      inset: 0;
-      background: #020409;
-      z-index: 10000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.8s ease, visibility 0.8s;
-    }
-
-    #preloader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .preloader-inner { text-align: center; }
-
-    .preloader-counter {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(4rem, 15vw, 10rem);
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 2rem;
-      background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .preloader-bar {
-      width: 200px;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 2px;
-      overflow: hidden;
-      margin: 0 auto;
-    }
-
-    .preloader-progress {
-      height: 100%;
-      background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-      width: 0%;
-      transition: width 0.3s;
-    }
-
-    /* Navigation */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 1.5rem 0;
-      transition: all 0.4s ease;
-    }
-
-    .nav.scrolled {
-      padding: 1rem 0;
-      background: rgba(5, 8, 22, 0.8);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .nav-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .nav-logo .logo-dot { color: #10b981; }
-
-    .nav-menu {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .nav-link {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #94a3b8;
-      text-decoration: none;
-      transition: color 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .nav-link:hover { color: #ffffff; }
-
-    .nav-number {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: #64748b;
-    }
-
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      border-radius: 100px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #10b981;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    .nav-cta:hover {
-      background: #10b981;
-      color: #050816;
-    }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      padding: 0.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .toggle-line {
-      width: 24px;
-      height: 2px;
-      background: #ffffff;
-      transition: all 0.3s ease;
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 8rem 0 4rem;
-    }
-
-    #bg-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-    }
-
-    .hero-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      min-height: calc(100vh - 12rem);
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem 1.5rem;
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(16, 185, 129, 0.2);
-      border-radius: 100px;
-      margin-bottom: 3rem;
-    }
-
-    .badge-dot {
-      width: 8px;
-      height: 8px;
-      background: #10b981;
-      border-radius: 50%;
-      position: relative;
-    }
-
-    .badge-dot::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: #10b981;
-      border-radius: 50%;
-      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    @keyframes ping {
-      75%, 100% { transform: scale(2); opacity: 0; }
-    }
-
-    .badge-text {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #10b981;
-    }
-
-    .badge-year {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: #64748b;
-      padding-left: 0.75rem;
-      border-left: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .hero-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(3rem, 10vw, 8rem);
-      font-weight: 700;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      margin-bottom: 2rem;
-    }
-
-    .title-line { display: block; overflow: hidden; }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #a855f7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-description {
-      max-width: 600px;
-      margin-bottom: 3rem;
-    }
-
-    .hero-description p {
-      font-size: clamp(1rem, 1.5vw, 1.25rem);
-      line-height: 1.7;
-      color: #94a3b8;
-    }
-
-    .hero-description strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    .typing-role {
-      display: inline-block;
-      padding: 0.125rem 0.5rem;
-      background: rgba(16, 185, 129, 0.1);
-      border-radius: 4px;
-      color: #10b981;
-      font-weight: 600;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 4rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem 2rem;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.9375rem;
-      text-decoration: none;
-      transition: all 0.4s ease;
-    }
-
-    .btn-primary {
-      background: #10b981;
-      color: #050816;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.4);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .btn-secondary:hover {
-      border-color: #10b981;
-      color: #10b981;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 3rem;
-      padding-top: 3rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .stat-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .stat-number::after {
-      content: '+';
-      color: #10b981;
-    }
-
-    .stat-label {
-      font-size: 0.875rem;
-      color: #64748b;
-    }
-
-    .stat-divider {
-      width: 1px;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    /* Profile Card */
-    .profile-card {
-      position: relative;
-      width: 100%;
-      max-width: 420px;
-      padding: 2.5rem;
-      background: rgba(15, 23, 42, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 32px;
-      backdrop-filter: blur(20px);
-      text-align: center;
-      transition: all 0.5s ease;
-    }
-
-    .profile-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(16, 185, 129, 0.3);
-      box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.5);
-    }
-
-    .profile-image-wrapper {
-      position: relative;
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 2rem;
-    }
-
-    .profile-image {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      position: relative;
-      z-index: 2;
-      border: 3px solid rgba(16, 185, 129, 0.3);
-    }
-
-    .profile-ring {
-      position: absolute;
-      inset: -10px;
-      border-radius: 50%;
-      border: 2px dashed rgba(16, 185, 129, 0.4);
-      animation: spin 20s linear infinite;
-    }
-
-    .profile-ring-delay {
-      inset: -20px;
-      border-color: rgba(6, 182, 212, 0.3);
-      animation-direction: reverse;
-      animation-duration: 25s;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .profile-status {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: rgba(5, 8, 22, 0.9);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #10b981;
-    }
-
-    .profile-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .profile-role {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: #10b981;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .profile-tech {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .tech-tag {
-      padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 100px;
-      font-size: 0.8125rem;
-      color: #94a3b8;
-    }
-
-    /* Marquee */
-    .marquee-section {
-      padding: 3rem 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      overflow: hidden;
-    }
-
-    .marquee {
-      display: flex;
-      overflow: hidden;
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 3rem;
-      animation: marquee 30s linear infinite;
-      flex-shrink: 0;
-    }
-
-    .marquee-item {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
-      font-weight: 600;
-      white-space: nowrap;
-      color: #94a3b8;
-    }
-
-    .marquee-separator {
-      color: #10b981;
-      font-size: 1.5rem;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-
-    /* Sections */
-    section {
-      padding: 8rem 0;
-      position: relative;
-    }
-
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .section-header { margin-bottom: 5rem; }
-
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.875rem;
-      color: #64748b;
-    }
-
-    .label-line {
-      width: 40px;
-      height: 1px;
-      background: #10b981;
-    }
-
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 700;
-      line-height: 1.05;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-      }
-
-      .hero-badge { margin: 0 auto 3rem; }
-      .hero-actions { justify-content: center; }
-      .hero-stats { justify-content: center; }
-      .profile-card { max-width: 360px; margin: 0 auto; }
-
-      .desktop-only { display: none !important; }
-      .nav-toggle { display: flex; }
-    }
-
-    @media (max-width: 768px) {
-      .hero { padding: 7rem 0 3rem; }
-      .hero-grid { min-height: auto; gap: 2rem; }
-      .profile-card { padding: 2rem; }
-      .profile-image-wrapper { width: 140px; height: 140px; }
-      .profile-name { font-size: 1.5rem; }
-      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
-      .stat-divider { display: none; }
-      section { padding: 5rem 0; }
-    }
-  </style>
-
-  <!-- External CSS (akan load jika tersedia) -->
-  <link rel="stylesheet" href="css/style.css" onerror="console.warn('CSS eksternal tidak ditemukan, menggunakan inline CSS')" />
+  <!-- Accessibility helpers -->
+  <style>:root{--bg:#050505}</style>
 </head>
-<body class="bg-bgDark text-white antialiased" id="body-content">
+<body class="theme-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="preloader-inner">
-      <div class="preloader-counter">
-        <span id="counter">0</span><span style="font-size: 0.4em; color: #64748b;">%</span>
+  <header class="nav glass" role="banner" aria-label="Primary navigation">
+    <nav class="nav-inner">
+      <a class="brand" href="#home" aria-label="Teuku Rijul home">TR</a>
+      <ul class="nav-links" role="menubar">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn ghost" href="#contact">Hubungi</a>
       </div>
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #64748b; letter-spacing: 0.3em; margin-bottom: 1rem;">INITIALIZING</div>
-      <div class="preloader-bar">
-        <div class="preloader-progress" id="progress"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navigation -->
-  <header class="nav" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
-        RZ<span class="logo-dot">.</span>
-      </a>
-
-      <nav class="nav-menu desktop-only">
-        <a href="#about" class="nav-link"><span class="nav-number">01</span> About</a>
-        <a href="#services" class="nav-link"><span class="nav-number">02</span> Services</a>
-        <a href="#works" class="nav-link"><span class="nav-number">03</span> Works</a>
-        <a href="#process" class="nav-link"><span class="nav-number">04</span> Process</a>
-        <a href="#contact" class="nav-link"><span class="nav-number">05</span> Contact</a>
-      </nav>
-
-      <div style="display: flex; align-items: center; gap: 1.5rem;">
-        <a href="#contact" class="nav-cta desktop-only">
-          <span>Hire Me</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <button class="nav-toggle" id="menu-toggle" aria-label="Toggle menu">
-          <span class="toggle-line"></span>
-          <span class="toggle-line"></span>
-        </button>
-      </div>
-    </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <canvas id="bg-canvas"></canvas>
+  <main id="main">
+    <!-- HERO 3D -->
+    <section id="home" class="hero" aria-label="Hero section">
+      <div class="hero-bg">
+        <canvas id="mesh-canvas" class="mesh"></canvas>
+        <div id="mouse-light" class="mouse-light" aria-hidden="true"></div>
+      </div>
 
-    <div class="hero-content">
-      <div class="hero-container">
-        <div class="hero-grid">
-          <!-- Left Content -->
-          <div class="hero-left">
-            <div class="hero-badge">
-              <span class="badge-dot"></span>
-              <span class="badge-text">Available for new challenges</span>
-              <span class="badge-year">2025</span>
-            </div>
+      <div class="watermark">TEUKU RIJUL</div>
 
-            <h1 class="hero-title">
-              <span class="title-line">Arsitek</span>
-              <span class="title-line"><span class="gradient-text">Solusi Digital</span></span>
-              <span class="title-line">Masa Depan.</span>
-            </h1>
-
-            <div class="hero-description">
-              <p>
-                Saya <strong>Rizu Zaman</strong>, seorang 
-                <span class="typing-role" id="typing-role"></span>
-                yang merancang sistem berkinerja tinggi, aman, dan mudah diskalakan di atas infrastruktur Cloud enterprise-grade.
-              </p>
-            </div>
-
-            <div class="hero-actions">
-              <a href="#works" class="btn btn-primary">
-                <span>Lihat Portofolio</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                </svg>
-              </a>
-              <a href="#contact" class="btn btn-secondary">
-                <span>Mulai Diskusi</span>
-              </a>
-            </div>
-
-            <div class="hero-stats">
-              <div class="stat-item">
-                <div class="stat-number" data-count="50">0</div>
-                <div class="stat-label">Projects Delivered</div>
-              </div>
-              <div class="stat-divider"></div>
-              <div class="stat-item">
-                <div class="stat-number" data-count="8">0</div>
-                <div class="stat-label">Years Experience</div>
-              </div>
-              <div class="stat-divider"></div>
-              <div class="stat-item">
-                <div class="stat-number" data-count="30">0</div>
-                <div class="stat-label">Happy Clients</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Content - Profile -->
-          <div class="hero-right">
-            <div class="profile-card">
-              <div class="profile-image-wrapper">
-                <div class="profile-ring"></div>
-                <div class="profile-ring profile-ring-delay"></div>
-                <img 
-                  src="https://i.ibb.co/HR0JZ7L/2f580896e871b01a3ba04a90eeb1a1f0-0.webp" 
-                  alt="Rizu Zaman" 
-                  class="profile-image"
-                  loading="eager"
-                />
-                <div class="profile-status">
-                  <span class="badge-dot" style="width: 6px; height: 6px;"></span>
-                  <span>Online</span>
-                </div>
-              </div>
-              <h3 class="profile-name">Rizu Zaman</h3>
-              <p class="profile-role">Engineering & Security</p>
-              <div class="profile-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">AWS</span>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="avatar-wrap">
+            <div class="avatar-glow"></div>
+            <div class="avatar" aria-hidden="false" role="img" aria-label="Avatar of Teuku Rijul"></div>
+            <div class="status">● <span class="status-text">Available</span></div>
+            <div class="tech-orbit" aria-hidden="true">
+              <div class="orbit">
+                <div class="orbit-item">React</div>
+                <div class="orbit-item">Node</div>
+                <div class="orbit-item">TS</div>
+                <div class="orbit-item">AWS</div>
+                <div class="orbit-item">Docker</div>
+                <div class="orbit-item">K8s</div>
+                <div class="orbit-item">Postgres</div>
+                <div class="orbit-item">Linux</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Marquee -->
-  <section class="marquee-section">
-    <div class="marquee">
-      <div class="marquee-track">
-        <span class="marquee-item">Full-Stack Development</span>
-        <span class="marquee-separator">✦</span>
-        <span class="marquee-item">Cloud Architecture</span>
-        <span class="marquee-separator"></span>
-        <span class="marquee-item">Cybersecurity</span>
-        <span class="marquee-separator">✦</span>
-        <span class="marquee-item">DevOps & CI/CD</span>
-        <span class="marquee-separator">✦</span>
-        <span class="marquee-item">System Design</span>
-        <span class="marquee-separator">✦</span>
-        <span class="marquee-item">Performance Optimization</span>
-        <span class="marquee-separator">✦</span>
-      </div>
-      <div class="marquee-track" aria-hidden="true">
-        <span class="marquee-item">Full-Stack Development</span>
-        <span class="marquee-separator">✦</span>
-        <span class="marquee-item">Cloud Architecture</span>
-        <span class="marquee-separator">✦</span>
-        <span class="marquee-item">Cybersecurity</span>
-        <span class="marquee-separator">✦</span>
-        <span class="marquee-item">DevOps & CI/CD</span>
-        <span class="marquee-separator">✦</span>
-        <span class="marquee-item">System Design</span>
-        <span class="marquee-separator">✦</span>
-        <span class="marquee-item">Performance Optimization</span>
-        <span class="marquee-separator">✦</span>
-      </div>
-    </div>
-  </section>
+        <div class="hero-right">
+          <h1 class="title">
+            <span class="eyebrow">Hi, I'm</span>
+            <span class="name">Teuku Rijul</span>
+          </h1>
+          <p class="roles">I am a <span id="typing" aria-live="polite"></span><span class="cursor">|</span></p>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">
-          <span class="label-line"></span>
-          <span>01 — ABOUT</span>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#contact">Hubungi Saya</a>
+            <a class="btn ghost" href="/assets/Teuku_Rijul_CV.pdf" download>Download CV</a>
+            <a class="btn outline" href="#projects">Lihat Proyek</a>
+          </div>
         </div>
-        <h2 class="section-title">
-          Rekayasa presisi untuk<br/>
-          skala <span class="gradient-text">Enterprise</span>.
-        </h2>
       </div>
+    </section>
 
-      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start;">
-        <div>
-          <p style="font-size: 1.125rem; line-height: 1.8; color: #94a3b8; margin-bottom: 1.5rem;">
-            Lulusan Teknik Komputer dan Jaringan dengan spesialisasi dalam operasional sistem digital, kontrol kualitas, dan pengembangan aplikasi web enterprise.
-          </p>
-          <p style="font-size: 1.125rem; line-height: 1.8; color: #94a3b8; margin-bottom: 1.5rem;">
-            Saya tidak hanya menulis kode, namun membangun <strong style="color: #ffffff;">ekosistem digital</strong>. Menggabungkan efisiensi rekayasa perangkat lunak dengan ketangguhan infrastruktur cloud dan protokol keamanan tingkat tinggi.
-          </p>
+    <!-- ABOUT -->
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About</h2>
+        <p class="lede">Software Engineer with 5+ years specializing in Cloud Architecture and Cybersecurity. I craft reliable, secure, and scalable systems.</p>
+        <div class="about-grid">
+          <div class="about-left">
+            <p>Availability: <span class="badge available">Open to work</span></p>
+            <ul class="stats">
+              <li><strong class="counter" data-target="25">0</strong>+ Projects</li>
+              <li><strong class="counter" data-target="10">0</strong>+ Technologies</li>
+              <li><strong class="counter" data-target="99">0</strong>% Client Satisfaction</li>
+              <li><strong class="counter" data-target="5">0</strong>+ Years Experience</li>
+            </ul>
+          </div>
+          <div class="about-right">
+            <p>Short paragraph highlighting cloud, security, and full-stack experience. Focus on impact, outcomes, and collaboration.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; overflow: hidden; backdrop-filter: blur(20px);">
-          <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: rgba(0, 0, 0, 0.2);">
-            <div style="display: flex; gap: 6px;">
-              <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></span>
-              <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></span>
-              <span style="width: 12px; height: 12px; border-radius: 50%; background: #10b981;"></span>
+    <!-- SKILLS MATRIX -->
+    <section id="skills" class="section skills" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title">Skills</h2>
+        <div class="skill-grid">
+          <div class="skill-col">
+            <h3>Frontend</h3>
+            <div class="skill"><label>React</label><progress value="90" max="100"></progress></div>
+            <div class="skill"><label>TypeScript</label><progress value="88" max="100"></progress></div>
+            <div class="skill"><label>Tailwind</label><progress value="78" max="100"></progress></div>
+            <div class="skill"><label>Next.js</label><progress value="75" max="100"></progress></div>
+          </div>
+          <div class="skill-col">
+            <h3>Backend</h3>
+            <div class="skill"><label>Node.js</label><progress value="88" max="100"></progress></div>
+            <div class="skill"><label>Express</label><progress value="82" max="100"></progress></div>
+            <div class="skill"><label>PostgreSQL</label><progress value="80" max="100"></progress></div>
+            <div class="skill"><label>MongoDB</label><progress value="70" max="100"></progress></div>
+          </div>
+          <div class="skill-col">
+            <h3>Cloud & DevOps</h3>
+            <div class="skill"><label>AWS</label><progress value="86" max="100"></progress></div>
+            <div class="skill"><label>Docker</label><progress value="85" max="100"></progress></div>
+            <div class="skill"><label>Kubernetes</label><progress value="74" max="100"></progress></div>
+            <div class="skill"><label>CI/CD</label><progress value="80" max="100"></progress></div>
+          </div>
+          <div class="skill-col">
+            <h3>Security</h3>
+            <div class="skill"><label>Linux Hardening</label><progress value="84" max="100"></progress></div>
+            <div class="skill"><label>Network Security</label><progress value="82" max="100"></progress></div>
+            <div class="skill"><label>OWASP</label><progress value="80" max="100"></progress></div>
+            <div class="skill"><label>Cloud Security</label><progress value="82" max="100"></progress></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <!-- example card -->
+          <article class="project-card" tabindex="0">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3>Project Alpha</h3>
+              <p class="tags">React • AWS • Docker</p>
+              <div class="card-cta">
+                <a class="btn small" href="#">Live Demo</a>
+                <a class="btn small ghost" href="#">GitHub</a>
+              </div>
             </div>
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #64748b;">rizu@portfolio ~ %</span>
-          </div>
-          <div style="padding: 2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.9375rem; line-height: 1.8;">
-            <div style="color: #94a3b8;"><span style="color: #c084fc;">const</span> <span style="color: #60a5fa;">developer</span> = {</div>
-            <div style="color: #94a3b8; padding-left: 1.5rem;"><span style="color: #fbbf24;">name</span>: <span style="color: #34d399;">'Rizu Zaman'</span>,</div>
-            <div style="color: #94a3b8; padding-left: 1.5rem;"><span style="color: #fbbf24;">role</span>: <span style="color: #34d399;">'Elite Architect'</span>,</div>
-            <div style="color: #94a3b8; padding-left: 1.5rem;"><span style="color: #fbbf24;">stack</span>: [<span style="color: #34d399;">'React'</span>, <span style="color: #34d399;">'Node'</span>, <span style="color: #34d399;">'AWS'</span>],</div>
-            <div style="color: #94a3b8; padding-left: 1.5rem;"><span style="color: #fbbf24;">passion</span>: <span style="color: #34d399;">'∞'</span>,</div>
-            <div style="color: #94a3b8;">};</div>
-          </div>
+          </article>
+
+          <article class="project-card" tabindex="0">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3>Project Beta</h3>
+              <p class="tags">Node • Postgres • K8s</p>
+              <div class="card-cta">
+                <a class="btn small" href="#">Live Demo</a>
+                <a class="btn small ghost" href="#">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" tabindex="0">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3>Project Gamma</h3>
+              <p class="tags">TypeScript • CI/CD</p>
+              <div class="card-cta">
+                <a class="btn small" href="#">Live Demo</a>
+                <a class="btn small ghost" href="#">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" tabindex="0">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3>Project Delta</h3>
+              <p class="tags">Security • Linux</p>
+              <div class="card-cta">
+                <a class="btn small" href="#">Live Demo</a>
+                <a class="btn small ghost" href="#">GitHub</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services Section -->
-  <section class="services" id="services" style="background: linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.02) 50%, transparent 100%);">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">
-          <span class="label-line"></span>
-          <span>02 — SERVICES</span>
-        </div>
-        <h2 class="section-title">
-          Layanan yang saya<br/>
-          <span class="gradient-text">tawarkan</span>.
-        </h2>
+    <!-- EXPERIENCE TIMELINE -->
+    <section id="experience" class="section timeline" aria-labelledby="exp-title">
+      <div class="container">
+        <h2 id="exp-title">Experience</h2>
+        <ol class="timeline-list">
+          <li>
+            <div class="time">2024</div>
+            <div class="event">
+              <h3>Software Engineer</h3>
+              <p>Full-stack development and delivery of SaaS products.</p>
+            </div>
+          </li>
+          <li>
+            <div class="time">2023</div>
+            <div class="event">
+              <h3>Cloud Infrastructure</h3>
+              <p>Design and hardening of cloud infra on AWS.</p>
+            </div>
+          </li>
+          <li>
+            <div class="time">2022</div>
+            <div class="event">
+              <h3>Security Projects</h3>
+              <p>Security assessments and remediation.</p>
+            </div>
+          </li>
+          <li>
+            <div class="time">2019</div>
+            <div class="event">
+              <h3>Freelance Development</h3>
+              <p>Client work and bespoke systems.</p>
+            </div>
+          </li>
+        </ol>
       </div>
+    </section>
 
-      <div style="display: flex; flex-direction: column;">
-        <article style="display: grid; grid-template-columns: auto 1fr auto; gap: 3rem; align-items: center; padding: 3rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); cursor: pointer; transition: all 0.4s;" onmouseover="this.style.paddingLeft='2rem'" onmouseout="this.style.paddingLeft='0'">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #64748b;">01</div>
+    <!-- CONTACT -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact</h2>
+        <div class="contact-grid">
           <div>
-            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; margin-bottom: 0.75rem; transition: color 0.3s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#ffffff'">Full-Stack Development</h3>
-            <p style="color: #94a3b8; font-size: 1rem; line-height: 1.6; max-width: 600px; margin-bottom: 1rem;">Pengembangan aplikasi web end-to-end dengan React, Next.js, Node.js, dan database modern.</p>
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-              <span style="padding: 0.375rem 0.875rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 100px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #94a3b8;">React</span>
-              <span style="padding: 0.375rem 0.875rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 100px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #94a3b8;">Next.js</span>
-              <span style="padding: 0.375rem 0.875rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 100px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #94a3b8;">Node.js</span>
-            </div>
+            <ul class="contact-list">
+              <li>Email: <button class="copy" data-copy="mailto:hello@teukurijul.com">hello@teukurijul.com</button></li>
+              <li>GitHub: <a href="https://github.com/teukurijul" target="_blank" rel="noopener">github.com/teukurijul</a></li>
+              <li>LinkedIn: <a href="#">linkedin.com/in/teukurijul</a></li>
+              <li>WhatsApp: <a href="#">+62 ...</a></li>
+            </ul>
           </div>
-          <div style="font-size: 2rem; color: #64748b; transition: all 0.3s;">→</div>
-        </article>
-
-        <article style="display: grid; grid-template-columns: auto 1fr auto; gap: 3rem; align-items: center; padding: 3rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); cursor: pointer;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #64748b;">02</div>
-          <div>
-            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; margin-bottom: 0.75rem;">Cloud Architecture</h3>
-            <p style="color: #94a3b8; font-size: 1rem; line-height: 1.6; max-width: 600px; margin-bottom: 1rem;">Desain dan implementasi infrastruktur cloud AWS/GCP yang scalable, reliable, dan cost-efficient.</p>
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-              <span style="padding: 0.375rem 0.875rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 100px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #94a3b8;">AWS</span>
-              <span style="padding: 0.375rem 0.875rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 100px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #94a3b8;">Docker</span>
-              <span style="padding: 0.375rem 0.875rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 100px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #94a3b8;">Kubernetes</span>
-            </div>
-          </div>
-          <div style="font-size: 2rem; color: #64748b;">→</div>
-        </article>
-
-        <article style="display: grid; grid-template-columns: auto 1fr auto; gap: 3rem; align-items: center; padding: 3rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); cursor: pointer;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #64748b;">03</div>
-          <div>
-            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; margin-bottom: 0.75rem;">Cybersecurity</h3>
-            <p style="color: #94a3b8; font-size: 1rem; line-height: 1.6; max-width: 600px; margin-bottom: 1rem;">Penetration testing, security audit, dan implementasi protokol keamanan enterprise.</p>
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-              <span style="padding: 0.375rem 0.875rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 100px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #94a3b8;">Pen-Testing</span>
-              <span style="padding: 0.375rem 0.875rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 100px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #94a3b8;">OWASP</span>
-            </div>
-          </div>
-          <div style="font-size: 2rem; color: #64748b;">→</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact" id="contact" style="background: linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.03) 100%);">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center;">
-        <div>
-          <div class="section-label">
-            <span class="label-line"></span>
-            <span>05 — CONTACT</span>
-          </div>
-          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.05; margin-bottom: 2rem;">
-            Mari bangun<br/>
-            <span class="gradient-text">sesuatu yang luar biasa</span><br/>
-            bersama.
-          </h2>
-          <p style="font-size: 1.125rem; line-height: 1.7; color: #94a3b8; margin-bottom: 3rem;">
-            Mencari arsitek untuk infrastruktur cloud Anda? Sistem saya siap menerima pesan Anda.
-          </p>
-
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #64748b; letter-spacing: 0.1em; margin-bottom: 0.5rem;">EMAIL</div>
-              <a href="mailto:teukurijulzaman@gmail.com" style="font-size: 1.125rem; font-weight: 500; color: #ffffff; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#ffffff'">teukurijulzaman@gmail.com</a>
-            </div>
-            <div style="padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #64748b; letter-spacing: 0.1em; margin-bottom: 0.5rem;">GITHUB</div>
-              <a href="https://github.com/teukurijul" target="_blank" style="font-size: 1.125rem; font-weight: 500; color: #ffffff; text-decoration: none;">@teukurijul</a>
-            </div>
-          </div>
-        </div>
-
-        <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 3rem; text-align: center; position: relative; overflow: hidden;">
-          <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15), transparent 70%); opacity: 0; transition: opacity 0.4s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
-          <div style="position: relative; z-index: 1;">
-            <div style="width: 80px; height: 80px; margin: 0 auto 2rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #10b981;">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
-              </svg>
-            </div>
-            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 600; margin-bottom: 0.75rem;">Ready to collaborate?</h3>
-            <p style="color: #94a3b8; margin-bottom: 2rem;">Response time: &lt; 24 hours</p>
-            <a href="mailto:teukurijulzaman@gmail.com" class="btn btn-primary" style="display: inline-flex;">
-              <span>Start a project</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
+          <form class="contact-form" action="#" novalidate>
+            <label>Nama<input name="name" type="text" required></label>
+            <label>Email<input name="email" type="email" required></label>
+            <label>Pesan<textarea name="message" rows="5" required></textarea></label>
+            <button class="btn primary" type="submit">Kirim Pesan</button>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer style="padding: 5rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-    <div class="container">
-      <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.08); flex-wrap: wrap; gap: 1rem;">
-        <div style="font-size: 0.875rem; color: #64748b;">
-          © 2025 Rizu Zaman. All rights reserved.
-        </div>
-        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #64748b;">
-          <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; position: relative;">
-            <span style="position: absolute; inset: 0; background: #10b981; border-radius: 50%; animation: ping 2s infinite;"></span>
-          </span>
-          <span>Available for work</span>
-        </div>
-      </div>
-    </div>
+  </main>
+
+  <!-- Mobile bottom nav -->
+  <nav class="mobile-nav" aria-hidden="false">
+    <a href="#home" class="m-item">Home</a>
+    <a href="#about" class="m-item">About</a>
+    <a href="#projects" class="m-item">Projects</a>
+    <a href="#contact" class="m-item">Contact</a>
+  </nav>
+
+  <!-- Command palette -->
+  <div id="cmd" class="cmd" hidden>
+    <input id="cmd-input" placeholder="Type a command or page... (Ctrl+K)" aria-label="Command palette">
+    <ul id="cmd-list"></ul>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Teuku Rijul</div>
   </footer>
 
-  <!-- Back to Top -->
-  <button id="back-to-top" style="position: fixed; bottom: 2rem; right: 2rem; width: 50px; height: 50px; background: #10b981; color: #050816; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 50; opacity: 0; visibility: hidden; transition: all 0.4s; border: none; cursor: pointer; box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.5);" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M18 15l-6-6-6 6"/>
-    </svg>
-  </button>
-
-  <!-- JavaScript -->
-  <script src="js/main.js" onerror="console.warn('JS eksternal tidak ditemukan')"></script>
+  <script defer src="/assets/main.js"></script>
 </body>
 </html>

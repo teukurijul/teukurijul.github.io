@@ -1,5 +1,12 @@
-// assets/main.js - core (minified/concise)
+// assets/main.js - core (minified/concise) + user-interaction lazy-loader
 (function(){'use strict';const $=(q,e=document)=>e.querySelector(q),$$=(q,e=document)=>Array.from(e.querySelectorAll(q));
+// lazy loader: inject main.lazy.js on interaction or idle
+let _lazyLoaded=false;function _injectLazy(){if(_lazyLoaded) return;_lazyLoaded=true;const s=document.createElement('script');s.src='/assets/main.lazy.js';s.defer=true;s.onload=function(){document.body.dispatchEvent(new Event('main.lazy.loaded'))};document.body.appendChild(s)}
+function _onUserInteract(){if('requestIdleCallback' in window){requestIdleCallback(_injectLazy,{timeout:1000})}else{setTimeout(_injectLazy,600)}window.removeEventListener('scroll',_onUserInteract);window.removeEventListener('pointermove',_onUserInteract);window.removeEventListener('keydown',_onUserInteract);window.removeEventListener('touchstart',_onUserInteract)}
+['scroll','pointermove','keydown','touchstart'].forEach(ev=>window.addEventListener(ev,_onUserInteract,{passive:true,once:true}));
+// ensure idle-load fallback (in case no interaction)
+if('requestIdleCallback' in window){requestIdleCallback(_injectLazy,{timeout:2000})}else{setTimeout(_injectLazy,2500)}
+
 // typing
 const roles=['Full-Stack Engineer','Cloud Architect','Cybersecurity Enthusiast','React & AWS Specialist'];let ri=0,ci=0,typingEl=document.getElementById('typing');function typeLoop(){const s=roles[ri];if(ci<=s.length){typingEl&&(typingEl.textContent=s.slice(0,ci));ci++;setTimeout(typeLoop,60)}else setTimeout(()=>eraseLoop(),900)}function eraseLoop(){const s=roles[ri];if(ci>0){ci--;typingEl&&(typingEl.textContent=s.slice(0,ci));setTimeout(eraseLoop,36)}else{ri=(ri+1)%roles.length;setTimeout(typeLoop,200)}}typingEl&&typeLoop();
 // year

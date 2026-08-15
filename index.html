@@ -1,348 +1,710 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Teuku Rijul | Cybersecurity & IT Architect</title>
-    
-    <!-- SEO & Meta -->
-    <meta name="description" content="Sistem Keamanan Siber & Rekayasa Perangkat Lunak Tingkat Lanjut oleh Teuku Rijul.">
-    <meta name="theme-color" content="#020617">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="site.webmanifest">
-
-    <!-- Google Fonts: Space Grotesk (Tech) & JetBrains Mono (Code/Cyber) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-    <!-- Tailwind CSS (CDN Config untuk integrasi instan) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Space Grotesk"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                    colors: {
-                        cyber: {
-                            black: '#020617', // Slate 950
-                            dark: '#0f172a',  // Slate 900
-                            border: '#1e293b', // Slate 800
-                            blue: '#0284c7',  // Sky 600
-                            cyan: '#06b6d4',  // Cyan 500
-                            neon: '#22d3ee',  // Cyan 400
-                            glow: 'rgba(34, 211, 238, 0.5)'
-                        }
-                    },
-                    backgroundImage: {
-                        'grid-pattern': 'linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rizu Zaman — Software Engineer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-600-normal.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-800-normal.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-400-normal.css"/>
+<style>
+  :root{
+    --bg:#0a0a0f;
+    --bg-2:#101018;
+    --card:#14141f;
+    --border:rgba(255,255,255,0.08);
+    --text:#e7e7ee;
+    --muted:#9ca3af;
+    --accent:#7c5cff;
+    --accent-2:#22d3ee;
+    --accent-3:#f472b6;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    margin:0;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  .mono{font-family:'JetBrains Mono',monospace}
+  .gradient-text{
+    background:linear-gradient(90deg,#a78bfa,#22d3ee,#f472b6);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    background-size:200% 200%;
+    animation:flow 6s ease infinite;
+  }
+  @keyframes flow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  .glow-card{
+    background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+    border:1px solid var(--border);
+    border-radius:16px;
+    transition:all .35s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .glow-card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),rgba(124,92,255,0.12),transparent 40%);
+    opacity:0;
+    transition:opacity .3s;
+    pointer-events:none;
+  }
+  .glow-card:hover::before{opacity:1}
+  .glow-card:hover{
+    border-color:rgba(124,92,255,0.4);
+    transform:translateY(-4px);
+  }
+  .nav-blur{
+    backdrop-filter:blur(14px);
+    background:rgba(10,10,15,0.7);
+    border-bottom:1px solid var(--border);
+  }
+  .btn-primary{
+    background:linear-gradient(90deg,#7c5cff,#22d3ee);
+    color:#fff;
+    padding:.8rem 1.6rem;
+    border-radius:999px;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    transition:all .3s;
+    box-shadow:0 8px 24px rgba(124,92,255,0.35);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(124,92,255,0.5)}
+  .btn-ghost{
+    border:1px solid var(--border);
+    padding:.8rem 1.6rem;
+    border-radius:999px;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    transition:all .3s;
+  }
+  .btn-ghost:hover{border-color:#22d3ee;color:#22d3ee}
+  .chip{
+    padding:.35rem .8rem;
+    border:1px solid var(--border);
+    border-radius:999px;
+    font-size:.8rem;
+    color:var(--muted);
+    background:rgba(255,255,255,0.02);
+  }
+  .hero-bg{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(60% 60% at 20% 20%,rgba(124,92,255,0.25),transparent 60%),
+      radial-gradient(50% 50% at 80% 30%,rgba(34,211,238,0.18),transparent 60%),
+      radial-gradient(40% 40% at 50% 80%,rgba(244,114,182,0.15),transparent 60%);
+    filter:blur(30px);
+    z-index:0;
+  }
+  .grid-bg{
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(ellipse at center,black 40%,transparent 80%);
+    z-index:0;
+  }
+  .section-title{
+    font-size:clamp(1.8rem,3vw,2.4rem);
+    font-weight:800;
+    letter-spacing:-.02em;
+    margin:0 0 .5rem;
+  }
+  .section-label{
+    font-family:'JetBrains Mono',monospace;
+    color:#22d3ee;
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.15em;
+    margin-bottom:.5rem;
+    display:inline-block;
+  }
+  .reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.22,1,.36,1)}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  .timeline{position:relative;padding-left:2rem}
+  .timeline::before{
+    content:'';
+    position:absolute;
+    left:8px;top:8px;bottom:8px;
+    width:2px;
+    background:linear-gradient(180deg,#7c5cff,#22d3ee,transparent);
+  }
+  .timeline-item{position:relative;padding-bottom:2rem}
+  .timeline-item::before{
+    content:'';
+    position:absolute;
+    left:-2rem;
+    top:8px;
+    width:18px;height:18px;
+    border-radius:50%;
+    background:#0a0a0f;
+    border:2px solid #7c5cff;
+    box-shadow:0 0 0 4px rgba(124,92,255,0.15);
+  }
+  .skill-bar{
+    height:6px;
+    background:rgba(255,255,255,0.06);
+    border-radius:999px;
+    overflow:hidden;
+  }
+  .skill-fill{
+    height:100%;
+    background:linear-gradient(90deg,#7c5cff,#22d3ee);
+    border-radius:999px;
+    width:0;
+    transition:width 1.5s cubic-bezier(.22,1,.36,1);
+  }
+  .project-img{
+    aspect-ratio:16/10;
+    overflow:hidden;
+    border-radius:12px;
+    position:relative;
+  }
+  .project-img img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .6s ease;
+  }
+  .glow-card:hover .project-img img{transform:scale(1.06)}
+  .profile-ring{
+    position:relative;
+    width:280px;height:280px;
+    border-radius:50%;
+    padding:4px;
+    background:conic-gradient(from 0deg,#7c5cff,#22d3ee,#f472b6,#7c5cff);
+    animation:spin 8s linear infinite;
+  }
+  .profile-ring img{
+    width:100%;height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    background:#0a0a0f;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .stat-num{
+    font-size:2.5rem;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:-.02em;
+  }
+  input,textarea{
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:.9rem 1rem;
+    color:var(--text);
+    width:100%;
+    font-family:inherit;
+    transition:border-color .2s;
+  }
+  input:focus,textarea:focus{outline:none;border-color:#7c5cff}
+  .nav-link{
+    position:relative;
+    color:var(--muted);
+    transition:color .2s;
+  }
+  .nav-link:hover{color:var(--text)}
+  .nav-link::after{
+    content:'';
+    position:absolute;
+    left:0;bottom:-4px;
+    width:0;height:2px;
+    background:linear-gradient(90deg,#7c5cff,#22d3ee);
+    transition:width .3s;
+  }
+  .nav-link:hover::after{width:100%}
+  .float-tag{
+    position:absolute;
+    background:rgba(20,20,31,0.8);
+    backdrop-filter:blur(10px);
+    border:1px solid var(--border);
+    padding:.5rem .9rem;
+    border-radius:999px;
+    font-size:.85rem;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    animation:floaty 4s ease-in-out infinite;
+  }
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e}
+  @media (max-width:768px){
+    .profile-ring{width:200px;height:200px}
+    .float-tag{display:none}
+  }
+</style>
 </head>
-<body class="selection:bg-cyber-cyan selection:text-cyber-black">
+<body>
 
-    <!-- Preloader / Boot Sequence -->
-    <div id="preloader">
-        <div class="font-mono text-cyber-neon text-sm md:text-base text-left w-[300px] h-[150px]" id="boot-text">
-            > MENGINISIALISASI SISTEM...<br>
-        </div>
-        <div class="w-[300px] h-1 bg-cyber-border mt-4 overflow-hidden relative">
-            <div class="absolute top-0 left-0 h-full bg-cyber-neon w-full" id="boot-bar" style="transform: scaleX(0); transform-origin: left;"></div>
-        </div>
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2 font-bold text-lg">
+      <span class="w-8 h-8 rounded-lg flex items-center justify-center mono text-sm font-bold" style="background:linear-gradient(135deg,#7c5cff,#22d3ee)">R</span>
+      <span>rizu<span class="text-cyan-400">.dev</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#education">Education</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#contact">Contact</a>
     </div>
+    <a href="#contact" class="btn-primary text-sm hidden md:inline-flex">Let's Talk →</a>
+    <button id="menuBtn" class="md:hidden p-2" aria-label="menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 flex-col gap-3 text-sm">
+    <a class="block py-2" href="#about">About</a>
+    <a class="block py-2" href="#education">Education</a>
+    <a class="block py-2" href="#skills">Skills</a>
+    <a class="block py-2" href="#projects">Projects</a>
+    <a class="block py-2" href="#experience">Experience</a>
+    <a class="block py-2" href="#contact">Contact</a>
+  </div>
+</nav>
 
-    <!-- Scanline & Cursor -->
-    <div class="scanlines"></div>
-    <div class="cursor-dot hidden md:block"></div>
-    <div class="cursor-ring hidden md:block"></div>
-
-    <!-- 3D WebGL Background -->
-    <canvas id="webgl-canvas"></canvas>
-
-    <!-- Top Navigation (Cyber Style) -->
-    <nav class="fixed w-full z-50 top-0 border-b border-cyber-border/50 bg-cyber-black/50 backdrop-blur-md transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-3">
-                    <div class="w-10 h-10 border border-cyber-neon bg-cyber-cyan/10 flex items-center justify-center font-mono font-bold text-cyber-neon relative overflow-hidden group cursor-point[...]
-                        TR
-                        <div class="absolute inset-0 bg-cyber-neon/20 translate-y-full group-hover:translate-y-0 transition-transform"></div>
-                    </div>
-                    <span class="font-mono text-sm tracking-widest text-slate-300 hidden sm:block">SYS_ADMIN</span>
-                </div>
-                
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center space-x-8 font-mono text-sm">
-                    <a href="#home" class="text-slate-400 hover:text-cyber-neon transition-colors nav-link"><span class="text-cyber-cyan mr-1">01.</span>ROOT</a>
-                    <a href="#clearance" class="text-slate-400 hover:text-cyber-neon transition-colors nav-link"><span class="text-cyber-cyan mr-1">02.</span>INTEL</a>
-                    <a href="#operations" class="text-slate-400 hover:text-cyber-neon transition-colors nav-link"><span class="text-cyber-cyan mr-1">03.</span>OPS</a>
-                    <a href="#network" class="btn-cyber py-2 px-4 text-xs">
-                        [ DECRYPT_CV ]
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-cyber-neon p-2 hover:bg-cyber-border rounded" id="mobile-menu-btn">
-                        <i class="ph-bold ph-list text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu Panel -->
-        <div class="md:hidden hidden bg-cyber-dark border-b border-cyber-border absolute w-full" id="mobile-menu">
-            <div class="px-4 pt-2 pb-6 space-y-2 font-mono text-sm flex flex-col">
-                <a href="#home" class="text-slate-300 hover:text-cyber-neon block px-3 py-3 border-b border-cyber-border/50"><span class="text-cyber-cyan mr-2">01.</span>ROOT</a>
-                <a href="#clearance" class="text-slate-300 hover:text-cyber-neon block px-3 py-3 border-b border-cyber-border/50"><span class="text-cyber-cyan mr-2">02.</span>INTEL</a>
-                <a href="#operations" class="text-slate-300 hover:text-cyber-neon block px-3 py-3 border-b border-cyber-border/50"><span class="text-cyber-cyan mr-2">03.</span>OPS</a>
-                <a href="#network" class="text-cyber-neon block px-3 py-3 font-bold mt-2"><i class="ph-bold ph-download-simple mr-2"></i>DECRYPT CV</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- MAIN CONTENT -->
-    <div class="relative z-10 w-full overflow-hidden bg-grid-pattern bg-[length:40px_40px]">
-        
-        <!-- HERO SECTION -->
-        <main id="home" class="min-h-screen flex items-center pt-20 px-6 lg:px-12 max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
-                
-                <!-- Text Data -->
-                <div class="order-2 lg:order-1 gs-reveal">
-                    <div class="font-mono text-cyber-neon text-sm md:text-base mb-6 flex items-center gap-2">
-                        <i class="ph-fill ph-shield-check"></i> 
-                        <span class="typing-text">> ACCESS GRANTED. IDENTITAS DIKONFIRMASI.</span>
-                    </div>
-                    
-                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-2 uppercase tracking-tight glitch-text" data-text="TEUKU RIJUL">
-                        TEUKU RIJUL
-                    </h1>
-                    
-                    <h2 class="text-2xl md:text-4xl font-bold text-slate-400 mb-8 font-mono">
-                        Cybersecurity <span class="text-cyber-cyan">&</span> IT Architect.
-                    </h2>
-                    
-                    <p class="text-slate-400 text-base md:text-lg max-w-xl leading-relaxed mb-10 border-l-2 border-cyber-cyan pl-4 bg-cyber-dark/30 p-4 rounded-r-lg">
-                        Membangun infrastruktur digital tingkat enterprise yang tidak dapat ditembus. Spesialisasi dalam <span class="text-white">Zero-Trust Architecture</span>, <span class="text[...]
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#operations" class="btn-cyber btn-cyber-solid">
-                            <i class="ph-bold ph-terminal"></i> INIT_PROJECTS
-                        </a>
-                        <a href="https://github.com/teukurijul" target="_blank" class="btn-cyber">
-                            <i class="ph-bold ph-git-branch"></i> REPOSITORY
-                        </a>
-                    </div>
-                </div>
-
-                <!-- HUD Profile Image -->
-                <div class="order-1 lg:order-2 flex justify-center py-10 lg:py-0 gs-reveal">
-                    <div class="hud-wrapper">
-                        <div class="hud-bracket"></div>
-                        <div class="hud-bracket-2"></div>
-                        <div class="hud-ring-outer"></div>
-                        <div class="hud-ring-inner"></div>
-                        <div class="hud-radar"></div>
-                        
-                        <!-- Profil Foto dari Assets -->
-                        <img src="assets/img/avatar.webp" 
-                             alt="Teuku Rijul Profil" 
-                             class="profile-img"
-                             loading="lazy"
-                             decoding="async">
-                              
-                        <!-- Floating Tech Tags -->
-                        <div class="absolute -right-4 top-10 bg-cyber-dark/80 border border-cyber-cyan p-2 font-mono text-xs text-cyber-neon backdrop-blur-sm rounded">
-                            [SEC_LVL_9]
-                        </div>
-                        <div class="absolute -left-6 bottom-16 bg-cyber-dark/80 border border-cyber-blue p-2 font-mono text-xs text-cyber-cyan backdrop-blur-sm rounded flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> SYSTEM_LIVE
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- SYSTEM METRICS -->
-        <section class="py-10 border-y border-cyber-border bg-cyber-dark/50 backdrop-blur-sm relative z-10">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="gs-reveal">
-                    <div class="text-3xl font-bold text-white font-mono mb-1"><span class="counter">99.9</span>%</div>
-                    <div class="text-xs text-cyber-cyan uppercase tracking-widest">System Uptime</div>
-                </div>
-                <div class="gs-reveal">
-                    <div class="text-3xl font-bold text-white font-mono mb-1"><span class="counter">0</span></div>
-                    <div class="text-xs text-cyber-cyan uppercase tracking-widest">0-Day Breaches</div>
-                </div>
-                <div class="gs-reveal">
-                    <div class="text-3xl font-bold text-white font-mono mb-1"><span class="counter">256</span>-bit</div>
-                    <div class="text-xs text-cyber-cyan uppercase tracking-widest">Encryption Std</div>
-                </div>
-                <div class="gs-reveal">
-                    <div class="text-3xl font-bold text-white font-mono mb-1"><span class="counter">50</span>+</div>
-                    <div class="text-xs text-cyber-cyan uppercase tracking-widest">Nodes Secured</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- INTEL (SKILLS) SECTION -->
-        <section id="clearance" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row gap-4 mb-16 items-start md:items-center gs-reveal">
-                <h2 class="text-3xl md:text-5xl font-bold text-white uppercase"><span class="text-cyber-cyan font-mono text-xl md:text-2xl mr-3">02.</span>Intel Data</h2>
-                <div class="h-[1px] bg-cyber-border flex-grow w-full md:w-auto mt-2 md:mt-0 relative">
-                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-cyber-cyan rotate-45"></div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Skill Node 1 -->
-                <div class="cyber-card p-8 rounded-lg gs-reveal group">
-                    <i class="ph-bold ph-shield-warning text-4xl text-cyber-cyan mb-6 group-hover:animate-pulse"></i>
-                    <h3 class="text-xl font-bold text-white mb-3 font-mono">Offensive Security</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Pengujian penetrasi tingkat lanjut, eksploitasi kerentanan zero-day, dan simulasi Red Team.
-                    </p>
-                    <div class="w-full bg-cyber-black h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-cyber-neon h-full w-[95%] shadow-[0_0_10px_#22d3ee]"></div>
-                    </div>
-                </div>
-
-                <!-- Skill Node 2 -->
-                <div class="cyber-card p-8 rounded-lg gs-reveal group">
-                    <i class="ph-bold ph-terminal-window text-4xl text-cyber-cyan mb-6 group-hover:animate-pulse"></i>
-                    <h3 class="text-xl font-bold text-white mb-3 font-mono">Full-Stack Arch</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Pengembangan infrastruktur mikroservis (React, Node.js, Go) dengan implementasi (DevSecOps).
-                    </p>
-                    <div class="w-full bg-cyber-black h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-cyber-neon h-full w-[90%] shadow-[0_0_10px_#22d3ee]"></div>
-                    </div>
-                </div>
-
-                <!-- Skill Node 3 -->
-                <div class="cyber-card p-8 rounded-lg gs-reveal group">
-                    <i class="ph-bold ph-cloud-check text-4xl text-cyber-cyan mb-6 group-hover:animate-pulse"></i>
-                    <h3 class="text-xl font-bold text-white mb-3 font-mono">Cloud Infra</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Arsitektur AWS & GCP. Manajemen identitas (IAM), enkripsi data KMS, dan pemantauan ancaman real-time.
-                    </p>
-                    <div class="w-full bg-cyber-black h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-cyber-neon h-full w-[88%] shadow-[0_0_10px_#22d3ee]"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- OPERATIONS (PROJECTS) SECTION -->
-        <section id="operations" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row gap-4 mb-16 items-start md:items-center gs-reveal">
-                <h2 class="text-3xl md:text-5xl font-bold text-white uppercase"><span class="text-cyber-cyan font-mono text-xl md:text-2xl mr-3">03.</span>Active Operations</h2>
-                <div class="h-[1px] bg-cyber-border flex-grow w-full md:w-auto mt-2 md:mt-0 relative">
-                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-cyber-cyan rotate-45"></div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- Project Alpha -->
-                <div class="cyber-card rounded-xl p-1 gs-reveal">
-                    <div class="bg-cyber-dark p-8 h-full relative z-10 rounded-lg">
-                        <div class="flex justify-between items-center mb-8 border-b border-cyber-border pb-4">
-                            <span class="font-mono text-xs text-cyber-neon px-2 py-1 bg-cyber-neon/10 border border-cyber-neon/30">[ OP_ALPHA ]</span>
-                            <div class="flex gap-4">
-                                <a href="#" class="text-slate-400 hover:text-cyber-cyan transition"><i class="ph-bold ph-github-logo text-2xl"></i></a>
-                                <a href="#" class="text-slate-400 hover:text-cyber-cyan transition"><i class="ph-bold ph-arrow-square-out text-2xl"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-cyber-cyan transition-colors">Zero-Trust Dashboard</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                            Antarmuka pusat komando terenkripsi untuk memantau otentikasi multi-faktor global dan pergerakan data anomali secara real-time.
-                        </p>
-                        <div class="flex flex-wrap gap-3 font-mono text-xs text-cyber-blue">
-                            <span>React</span> <span>WebSockets</span> <span>AES-256</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Beta -->
-                <div class="cyber-card rounded-xl p-1 gs-reveal">
-                    <div class="bg-cyber-dark p-8 h-full relative z-10 rounded-lg">
-                        <div class="flex justify-between items-center mb-8 border-b border-cyber-border pb-4">
-                            <span class="font-mono text-xs text-cyber-neon px-2 py-1 bg-cyber-neon/10 border border-cyber-neon/30">[ OP_BETA ]</span>
-                            <div class="flex gap-4">
-                                <a href="#" class="text-slate-400 hover:text-cyber-cyan transition"><i class="ph-bold ph-github-logo text-2xl"></i></a>
-                                <a href="#" class="text-slate-400 hover:text-cyber-cyan transition"><i class="ph-bold ph-arrow-square-out text-2xl"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-cyber-cyan transition-colors">Threat Intel 3D</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                            Visualisasi globe 3D berbasis WebGL yang memetakan serangan siber internasional secara langsung menggunakan feed API intelijen.
-                        </p>
-                        <div class="flex flex-wrap gap-3 font-mono text-xs text-cyber-blue">
-                            <span>Three.js</span> <span>Next.js</span> <span>Python</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TERMINAL (CONTACT) -->
-        <section id="network" class="py-24 px-6 max-w-3xl mx-auto text-center gs-reveal relative z-10">
-            <div class="inline-block p-1 border border-cyber-border bg-cyber-dark rounded-xl mb-8 w-full shadow-[0_0_30px_rgba(6,182,212,0.1)]">
-                <!-- Terminal Header -->
-                <div class="flex items-center gap-2 bg-cyber-black p-3 border-b border-cyber-border rounded-t-lg">
-                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span class="font-mono text-xs text-slate-500 ml-4">root@teukurijul:~</span>
-                </div>
-                <!-- Terminal Body -->
-                <div class="p-8 text-left font-mono">
-                    <p class="text-cyber-cyan mb-2">$ ./initiate_contact.sh</p>
-                    <p class="text-slate-300 mb-6">> Mencari channel komunikasi terenkripsi... Sukses.</p>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                        Jaringan saya selalu terbuka untuk kolaborasi tingkat tinggi, konsultasi arsitektur keamanan, atau rekayasa perangkat lunak enterprise.
-                    </p>
-                    <div class="text-center">
-                        <a href="mailto:emailanda@perusahaan.com" class="btn-cyber btn-cyber-solid w-full md:w-auto justify-center">
-                            <i class="ph-bold ph-paper-plane-tilt"></i> EXECUTE_MESSAGE
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="py-8 text-center border-t border-cyber-border/50 bg-cyber-black font-mono text-xs text-slate-500 relative z-10">
-            <p>> // SYSTEM_HALTED. DIBANGUN OLEH TEUKU RIJUL. &copy; 2024</p>
-            <p class="mt-2 text-cyber-blue flex items-center justify-center gap-2">
-                <i class="ph-fill ph-lock-key"></i> ENKRIPSI END-TO-END AKTIF
-            </p>
-        </footer>
-
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+  <div class="hero-bg"></div>
+  <div class="grid-bg"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center w-full">
+    <div>
+      <div class="inline-flex items-center gap-2 chip mb-6">
+        <span class="dot"></span>
+        <span>Available for new opportunities · Jakarta, ID 🇮</span>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-4">
+        Hi, I'm <span class="gradient-text">Rizu Zaman</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-2 mono">
+        &lt;SoftwareEngineer /&gt;
+      </p>
+      <p class="text-gray-400 text-lg max-w-lg mb-8">
+        I design distributed systems that don't flinch under load — and interfaces that feel inevitable. Five years of turning tangled problems into clean, production-grade code, from Jakarta to the world.
+      </p>
+      <div class="flex flex-wrap gap-3 mb-10">
+        <a href="#projects" class="btn-primary">View My Work
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10m-4-4l4 4-4 4"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-gray-400">
+        <a href="#" class="hover:text-cyan-400 transition">GitHub</a>
+        <span>·</span>
+        <a href="#" class="hover:text-cyan-400 transition">LinkedIn</a>
+        <span>·</span>
+        <a href="#" class="hover:text-cyan-400 transition">Twitter</a>
+        <span>·</span>
+        <a href="mailto:hello@rizuzaman.dev" class="hover:text-cyan-400 transition">Email</a>
+      </div>
     </div>
+    <div class="relative flex justify-center">
+      <div class="profile-ring">
+        <img src="https://i.ibb.co.com/gLnFBLbL/IMG-20260810-124727.png" alt="Rizu Zaman"/>
+      </div>
+      <div class="float-tag" style="top:10%;left:-5%;animation-delay:0s">
+        <span style="color:#f472b6">●</span> React · Next.js
+      </div>
+      <div class="float-tag" style="bottom:20%;right:-5%;animation-delay:1.5s">
+        <span style="color:#22d3ee">●</span> Go · Kubernetes
+      </div>
+      <div class="float-tag" style="top:55%;left:-10%;animation-delay:2.5s">
+        <span style="color:#a78bfa">●</span> Python · ML
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- External Libraries JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<!-- ABOUT -->
+<section id="about" class="py-24 relative">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal">
+      <span class="section-label">01 · About Me</span>
+      <h2 class="section-title">Calm systems. Crafted interfaces.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="glow-card p-8 md:col-span-2 reveal">
+        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+          I'm a full-stack software engineer based in Jakarta, Indonesia, obsessed with building systems that scale and products people actually enjoy. My journey started with flashing custom ROMs on a second-hand Android phone — and evolved into architecting microservices that serve millions of requests a day.
+        </p>
+        <p class="text-gray-400 leading-relaxed mb-4">
+          Today I work at the intersection of backend infrastructure and frontend craft. I believe great software is invisible — it just works, beautifully, on the worst traffic day of the year.
+        </p>
+        <p class="text-gray-400 leading-relaxed">
+          Outside of code, I write technical essays, mentor early-career devs in the Indonesian community, and chase sunrise hikes with a camera and too much kopi tubruk.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 md:col-span-1">
+        <div class="glow-card p-6 reveal">
+          <div class="stat-num gradient-text">5+</div>
+          <div class="text-gray-400 text-sm mt-1">Years of Experience</div>
+        </div>
+        <div class="glow-card p-6 reveal">
+          <div class="stat-num gradient-text">40+</div>
+          <div class="text-gray-400 text-sm mt-1">Projects Shipped</div>
+        </div>
+        <div class="glow-card p-6 reveal">
+          <div class="stat-num gradient-text">12M</div>
+          <div class="text-gray-400 text-sm mt-1">Users Reached</div>
+        </div>
+        <div class="glow-card p-6 reveal">
+          <div class="stat-num gradient-text">8</div>
+          <div class="text-gray-400 text-sm mt-1">Open Source Repos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Custom Main JS -->
-    <script src="main.js"></script>
+<!-- EDUCATION -->
+<section id="education" class="py-24 relative" style="background:var(--bg-2)">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal">
+      <span class="section-label">02 · Education</span>
+      <h2 class="section-title">Academic Journey</h2>
+    </div>
+    <div class="timeline mt-12 max-w-3xl">
+      <div class="timeline-item reveal">
+        <div class="glow-card p-6">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-xl font-bold">M.S. Computer Science</h3>
+            <span class="chip mono">2019 — 2021</span>
+          </div>
+          <p class="text-cyan-400 mb-3">Institut Teknologi Bandung (ITB)</p>
+          <p class="text-gray-400 text-sm mb-3">Specialization in Distributed Systems and Machine Learning. Thesis on fault-tolerant consensus algorithms for edge computing across archipelago network conditions.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">GPA 3.94</span>
+            <span class="chip">Cum Laude</span>
+            <span class="chip">Research Assistant</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="glow-card p-6">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-xl font-bold">B.S. Computer Science</h3>
+            <span class="chip mono">2015 — 2019</span>
+          </div>
+          <p class="text-cyan-400 mb-3">Universitas Indonesia, Depok</p>
+          <p class="text-gray-400 text-sm mb-3">Focus on operating systems, compilers, and embedded systems. Led the university's competitive programming team for two years.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Cum Laude</span>
+            <span class="chip">ACM-ICPC Jakarta Regional Finalist</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="glow-card p-6">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-xl font-bold">Online Certifications</h3>
+            <span class="chip mono">2021 — Present</span>
+          </div>
+          <p class="text-cyan-400 mb-3">Continuous Learning</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">AWS Solutions Architect Pro</span>
+            <span class="chip">Google Cloud Professional</span>
+            <span class="chip">Kubernetes CKA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal">
+      <span class="section-label">03 · Skills</span>
+      <h2 class="section-title">Technical Toolkit</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="glow-card p-6 reveal">
+        <div class="text-2xl mb-2">⚡</div>
+        <h3 class="text-lg font-bold mb-4">Frontend</h3>
+        <ul class="space-y-3 text-sm">
+          <li><div class="flex justify-between mb-1"><span>React / Next.js</span><span class="text-gray-500 mono">95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95%"></div></div></li>
+          <li><div class="flex justify-between mb-1"><span>TypeScript</span><span class="text-gray-500 mono">92%</span></div><div class="skill-bar"><div class="skill-fill" data-w="92%"></div></div></li>
+          <li><div class="flex justify-between mb-1"><span>Tailwind / CSS</span><span class="text-gray-500 mono">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90%"></div></div></li>
+          <li><div class="flex justify-between mb-1"><span>Vue.js</span><span class="text-gray-500 mono">78%</span></div><div class="skill-bar"><div class="skill-fill" data-w="78%"></div></div></li>
+        </ul>
+      </div>
+      <div class="glow-card p-6 reveal">
+        <div class="text-2xl mb-2">🛠️</div>
+        <h3 class="text-lg font-bold mb-4">Backend</h3>
+        <ul class="space-y-3 text-sm">
+          <li><div class="flex justify-between mb-1"><span>Go</span><span class="text-gray-500 mono">93%</span></div><div class="skill-bar"><div class="skill-fill" data-w="93%"></div></div></li>
+          <li><div class="flex justify-between mb-1"><span>Python / FastAPI</span><span class="text-gray-500 mono">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90%"></div></div></li>
+          <li><div class="flex justify-between mb-1"><span>Node.js</span><span class="text-gray-500 mono">88%</span></div><div class="skill-bar"><div class="skill-fill" data-w="88%"></div></div></li>
+          <li><div class="flex justify-between mb-1"><span>Rust</span><span class="text-gray-500 mono">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="70%"></div></div></li>
+        </ul>
+      </div>
+      <div class="glow-card p-6 reveal">
+        <div class="text-2xl mb-2">☁️</div>
+        <h3 class="text-lg font-bold mb-4">DevOps & Data</h3>
+        <ul class="space-y-3 text-sm">
+          <li><div class="flex justify-between mb-1"><span>AWS / GCP</span><span class="text-gray-500 mono">92%</span></div><div class="skill-bar"><div class="skill-fill" data-w="92%"></div></div></li>
+          <li><div class="flex justify-between mb-1"><span>Kubernetes / Docker</span><span class="text-gray-500 mono">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90%"></div></div></li>
+          <li><div class="flex justify-between mb-1"><span>PostgreSQL / Redis</span><span class="text-gray-500 mono">88%</span></div><div class="skill-bar"><div class="skill-fill" data-w="88%"></div></div></li>
+          <li><div class="flex justify-between mb-1"><span>Kafka / gRPC</span><span class="text-gray-500 mono">82%</span></div><div class="skill-bar"><div class="skill-fill" data-w="82%"></div></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24" style="background:var(--bg-2)">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal">
+      <span class="section-label">04 · Projects</span>
+      <h2 class="section-title">Selected Work</h2>
+      <p class="text-gray-400 max-w-2xl mt-2">A curated selection of products I've designed, built, and shipped.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 mt-10">
+      <div class="glow-card p-6 reveal">
+        <div class="project-img mb-4">
+          <img src="https://image.qwenlm.ai/public_source/671c979d-4de2-4c0d-b1b6-0d5eb721ee5f/14cf7173b-4413-4315-ba70-09560f3a05c3.png" alt="Pulse Analytics"/>
+        </div>
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xl font-bold">Pulse Analytics</h3>
+          <span class="chip mono">2024</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Real-time analytics platform processing 2B+ events daily with sub-second query latency. Built a custom columnar storage engine on top of ClickHouse.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="chip">Go</span><span class="chip">ClickHouse</span><span class="chip">Kafka</span><span class="chip">React</span>
+        </div>
+        <a href="#" class="text-cyan-400 text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
+      </div>
+
+      <div class="glow-card p-6 reveal">
+        <div class="project-img mb-4">
+          <img src="https://image.qwenlm.ai/public_source/671c979d-4de2-4c0d-b1b6-0d5eb721ee5f/1097f2e79-a474-4ce5-91a8-54daadbedbed.png" alt="Finly"/>
+        </div>
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xl font-bold">Finly — Smart Budgeting</h3>
+          <span class="chip mono">2023</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Mobile-first personal finance app with AI-driven insights. 250K+ downloads with a 4.8★ rating. End-to-end encrypted by design.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="chip">React Native</span><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Plaid</span>
+        </div>
+        <a href="#" class="text-cyan-400 text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
+      </div>
+
+      <div class="glow-card p-6 reveal">
+        <div class="project-img mb-4">
+          <img src="https://image.qwenlm.ai/public_source/671c979d-4de2-4c0d-b1b6-0d5eb721ee5f/166997689-f44b-408d-8dda-fb75e9b99938.png" alt="Nimbus"/>
+        </div>
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xl font-bold">Nimbus Cloud</h3>
+          <span class="chip mono">2022</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Internal PaaS enabling product teams to deploy services with one command. Cut deployment time from 40 minutes to 90 seconds across 200+ microservices.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="chip">Kubernetes</span><span class="chip">Terraform</span><span class="chip">Go</span><span class="chip">gRPC</span>
+        </div>
+        <a href="#" class="text-cyan-400 text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
+      </div>
+
+      <div class="glow-card p-6 reveal">
+        <div class="project-img mb-4" style="background:linear-gradient(135deg,#7c5cff33,#22d3ee33);display:flex;align-items:center;justify-content:center">
+          <div class="text-6xl mono text-gray-200 font-bold tracking-tighter">&lt;/&gt; open-source</div>
+        </div>
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xl font-bold">Open Source Contributions</h3>
+          <span class="chip mono">Ongoing</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Maintainer of <span class="mono text-cyan-400">go-ratekit</span> (3.2K ★) and contributor to Kubernetes, Prometheus, and the React core docs. I believe in giving back to the tools that built my career.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="chip">Go</span><span class="chip">TypeScript</span><span class="chip">Docs</span><span class="chip">Mentorship</span>
+        </div>
+        <a href="#" class="text-cyan-400 text-sm font-medium inline-flex items-center gap-1">Browse GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal">
+      <span class="section-label">05 · Experience</span>
+      <h2 class="section-title">Professional Path</h2>
+    </div>
+    <div class="timeline mt-12 max-w-3xl">
+      <div class="timeline-item reveal">
+        <div class="glow-card p-6">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-xl font-bold">Senior Software Engineer</h3>
+            <span class="chip mono">2023 — Present</span>
+          </div>
+          <p class="text-cyan-400 mb-3">GoTo (Gojek Tokopedia) · Jakarta, Indonesia</p>
+          <ul class="text-gray-400 text-sm space-y-1 list-disc list-inside">
+            <li>Lead architect of the new merchant onboarding pipeline serving 50K+ signups/week across GoPay and Tokopedia</li>
+            <li>Migrated legacy monolith to event-driven microservices, reducing P99 latency by 68%</li>
+            <li>Mentor 4 junior engineers and drive the platform team's technical RFC process</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="glow-card p-6">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-xl font-bold">Software Engineer II</h3>
+            <span class="chip mono">2021 — 2023</span>
+          </div>
+          <p class="text-cyan-400 mb-3">Traveloka · Jakarta, Indonesia</p>
+          <ul class="text-gray-400 text-sm space-y-1 list-disc list-inside">
+            <li>Built search ranking features used by 150M+ travelers across Southeast Asia, improving conversion by 12%</li>
+            <li>Shipped the hotel pricing recommendation engine with Python and TensorFlow</li>
+            <li>Owned the observability stack migration to OpenTelemetry across 40 services</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="glow-card p-6">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <h3 class="text-xl font-bold">Software Engineering Intern</h3>
+            <span class="chip mono">Summer 2020</span>
+          </div>
+          <p class="text-cyan-400 mb-3">Tokopedia · Jakarta, Indonesia</p>
+          <ul class="text-gray-400 text-sm space-y-1 list-disc list-inside">
+            <li>Designed a caching layer for the product recommendation feed, reducing DB load by 35%</li>
+            <li>Received a return offer and a top-tier performance rating</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 relative" style="background:var(--bg-2)">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="reveal">
+      <span class="section-label">06 · Contact</span>
+      <h2 class="section-title">Let's build something worth shipping.</h2>
+      <p class="text-gray-400 max-w-xl mx-auto mt-2 mb-10">Have a project in mind, a role to discuss, or just want to talk distributed systems over a cup of kopi? My inbox is always open — Jakarta time (WIB, UTC+7).</p>
+    </div>
+    <form id="contactForm" class="glow-card p-8 text-left reveal">
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="text-sm text-gray-400 mb-2 block">Name</label>
+          <input type="text" required placeholder="Your name"/>
+        </div>
+        <div>
+          <label class="text-sm text-gray-400 mb-2 block">Email</label>
+          <input type="email" required placeholder="you@example.com"/>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="text-sm text-gray-400 mb-2 block">Subject</label>
+        <input type="text" required placeholder="What's this about?"/>
+      </div>
+      <div class="mb-6">
+        <label class="text-sm text-gray-400 mb-2 block">Message</label>
+        <textarea rows="5" required placeholder="Tell me about your idea..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary w-full justify-center">
+        Send Message
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10m-4-4l4 4-4 4"/></svg>
+      </button>
+      <div id="formMsg" class="text-center mt-4 text-sm text-cyan-400 hidden">✓ Thanks! Your message has been sent.</div>
+    </form>
+    <div class="flex flex-wrap justify-center gap-4 mt-10">
+      <a href="mailto:hello@rizuzaman.dev" class="chip hover:border-cyan-400 hover:text-cyan-400 transition">✉ hello@rizuzaman.dev</a>
+      <a href="#" class="chip hover:border-cyan-400 hover:text-cyan-400 transition">🐙 github.com/rizuzaman</a>
+      <a href="#" class="chip hover:border-cyan-400 hover:text-cyan-400 transition">💼 linkedin.com/in/rizuzaman</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 border-t" style="border-color:var(--border)">
+  <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4 text-sm text-gray-500">
+    <div class="mono">© 2026 Rizu Zaman · Built with ❤ and too much kopi</div>
+    <div>v3.0.0 · Last updated August 2026</div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('.skill-fill').forEach(b=>{
+          b.style.width = b.dataset.w;
+        });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Card mouse glow
+  document.querySelectorAll('.glow-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx',(e.clientX-r.left)+'px');
+      card.style.setProperty('--my',(e.clientY-r.top)+'px');
+    });
+  });
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click',()=>{
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    });
+  });
+
+  // Contact form
+  document.getElementById('contactForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const msg = document.getElementById('formMsg');
+    msg.classList.remove('hidden');
+    e.target.reset();
+    setTimeout(()=>msg.classList.add('hidden'),4000);
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll',()=>{
+    let current = '';
+    sections.forEach(s=>{
+      const top = s.offsetTop - 120;
+      if(scrollY >= top) current = s.id;
+    });
+    navLinks.forEach(l=>{
+      l.style.color = l.getAttribute('href') === '#'+current ? '#22d3ee' : '';
+    });
+  });
+</script>
 </body>
 </html>
